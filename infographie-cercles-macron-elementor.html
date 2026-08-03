@@ -546,7 +546,6 @@ var DATA={"n0":{"wiki":"Brigitte Macron","ini":"BM","nom":"Brigitte Macron","fon
 var CERCLES=["Famille et intime","Deuxième gauche","Haute administration","Entreprise et finance","Conquête électorale"];
 var TOTAL=19;
 var doux=(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)?'auto':'smooth';
-var tactile=window.matchMedia&&window.matchMedia('(pointer: coarse)').matches;
 var nInstance=0;
 
 /* Portraits : image principale de l'article Wikipédia (deux requêtes
@@ -708,17 +707,6 @@ function init(root){
   }
   majHint();
   window.addEventListener('resize',majHint);
-  ajusterPastilles(root);
-
-  /* Portrait en tête de chaque notice du répertoire. */
-  items.forEach(function(i){
-    var tete=i.querySelector('.sap-item-tete');
-    if(!tete||tete.querySelector('.sap-avatar')) return;
-    var av=document.createElement('span');
-    av.className='sap-avatar';
-    tete.insertBefore(av,tete.firstChild);
-    garnirAvatar(av,i.getAttribute('data-node'));
-  });
 
   function visibleN(el){
     return (ringF===null||+el.getAttribute('data-ring')===ringF)
@@ -749,10 +737,12 @@ function init(root){
     }
   }
 
-  function flash(cible){
+  /* Met en évidence la notice ; scroll=true seulement quand l'utilisateur
+     demande explicitement à rejoindre le répertoire (lien de la fiche). */
+  function flash(cible,scroll){
     items.forEach(function(i){i.classList.remove('flash');});
     cible.classList.add('flash');
-    cible.scrollIntoView({behavior:doux,block:'center'});
+    if(scroll) cible.scrollIntoView({behavior:doux,block:'center'});
   }
 
   function montrer(id){
@@ -781,7 +771,7 @@ function init(root){
     var b=e.target.closest?e.target.closest('.sap-fiche-lien'):null;
     if(!b) return;
     var cible=root.querySelector('.sap-item[data-node="'+b.getAttribute('data-cible')+'"]');
-    if(cible) flash(cible);
+    if(cible) flash(cible,true);
   });
 
   noeuds.forEach(function(n,idx){
@@ -789,13 +779,12 @@ function init(root){
     n.addEventListener('mouseenter',function(){montrer(id);});
     n.addEventListener('focus',function(){montrer(id);});
     n.addEventListener('click',function(){
-      /* Sur écran tactile, le premier appui ouvre la fiche ; le second
-         seulement fait défiler jusqu'au répertoire. */
-      var deja=(courant===id);
+      /* Le clic ouvre la fiche sous la carte et marque la notice, sans
+         faire défiler la page : le défilement ne part que du lien
+         « Voir dans le répertoire » de la fiche. */
       montrer(id);
-      if(tactile&&!deja) return;
       var cible=root.querySelector('.sap-item[data-node="'+id+'"]');
-      if(cible) flash(cible);
+      if(cible) flash(cible,false);
     });
     n.addEventListener('keydown',function(e){
       if(e.key==='Enter'||e.key===' '){e.preventDefault();n.click();}
@@ -839,6 +828,20 @@ function init(root){
   });
 
   peindre();
+
+  /* Enrichissements cosmétiques en dernier : un échec éventuel (réseau,
+     API) ne doit jamais empêcher les interactions ci-dessus. */
+  try{ajusterPastilles(root);}catch(e){}
+  try{
+    items.forEach(function(i){
+      var tete=i.querySelector('.sap-item-tete');
+      if(!tete||tete.querySelector('.sap-avatar')) return;
+      var av=document.createElement('span');
+      av.className='sap-avatar';
+      tete.insertBefore(av,tete.firstChild);
+      garnirAvatar(av,i.getAttribute('data-node'));
+    });
+  }catch(e){}
 }
 
 function boot(){
