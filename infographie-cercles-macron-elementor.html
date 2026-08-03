@@ -1,0 +1,718 @@
+<!-- ============================================================
+  SAPERE — Les cinq cercles qui ont fabriqué Macron
+  Version Elementor Pro / WordPress
+
+  INTÉGRATION :
+  1. Dans Elementor, ajoutez un widget « HTML » (ou « Code personnalisé »
+     Elementor Pro, emplacement : corps de page).
+  2. Collez l'intégralité de ce fichier dans le widget. Rien d'autre à faire :
+     le bloc est autonome (styles, script et polices inclus, aucun <head> requis).
+  3. Le bloc est ré-initialisé automatiquement dans l'aperçu de l'éditeur
+     Elementor et supporte plusieurs instances sur une même page.
+
+  FONCTIONNALITÉS :
+  - Fiche détaillée au survol / focus / toucher de chaque nom.
+  - Filtre par fonction (7 fonctions) ET par cercle (5 cercles), combinables.
+  - Compteur d'entrées visibles, bouton « Tout réafficher », touche Échap.
+  - Navigation clavier complète (Tab, Entrée, Espace, flèches entre les noms).
+  - Lien direct fiche → notice complète du répertoire.
+  - Respecte prefers-reduced-motion ; styles d'impression inclus.
+============================================================ -->
+<div class="sap-cercles" lang="fr">
+<style>
+/* ---- Blindage contre les styles du thème WordPress / Elementor ---- */
+.sap-cercles,.sap-cercles *,.sap-cercles *::before,.sap-cercles *::after{box-sizing:border-box}
+.sap-cercles h1,.sap-cercles h2,.sap-cercles h3,.sap-cercles h4{
+  margin:0;padding:0;border:0;background:none;color:var(--encre);
+  font-family:var(--serif);font-weight:600;line-height:1.16;text-transform:none;letter-spacing:normal}
+.sap-cercles p{margin:0 0 1em;padding:0}
+.sap-cercles p:last-child{margin-bottom:0}
+.sap-cercles ul{margin:0;padding:0;list-style:none}
+.sap-cercles button{
+  -webkit-appearance:none;appearance:none;font-family:inherit;font-size:inherit;line-height:inherit;
+  color:inherit;background:none;border:0;border-radius:0;box-shadow:none;text-shadow:none;
+  text-transform:none;letter-spacing:normal;margin:0;padding:0;cursor:pointer;min-height:0;min-width:0}
+.sap-cercles button:hover,.sap-cercles button:focus{background:none;color:inherit;box-shadow:none}
+.sap-cercles blockquote{margin:0;padding:0;border:0;background:none;quotes:none}
+.sap-cercles blockquote::before,.sap-cercles blockquote::after{content:none}
+.sap-cercles a{box-shadow:none}
+.sap-cercles svg{max-width:none}
+
+.sap-cercles{
+  --papier:#EEF1F5; --papier-clair:#F8FAFC; --carte:#E4E9EF;
+  --encre:#141C27; --encre-2:#3D4A5A; --encre-3:#6E7B8B;
+  --trait:#C3CCD8; --trait-fin:#D6DDE6; --bleu-src:#003399;
+  --serif:"Spectral",Georgia,"Times New Roman",serif;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --etroit:"Archivo Narrow","Archivo",Arial,sans-serif;
+  background:var(--papier); color:var(--encre); font-family:var(--serif);
+  font-size:17px; line-height:1.62; padding:clamp(22px,4vw,60px) 0; margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+.sap-wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+
+.sap-eyebrow{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--encre-3);margin:0 0 18px;display:flex;align-items:center;gap:12px}
+.sap-eyebrow::after{content:"";flex:1;height:1px;background:var(--trait)}
+.sap-cercles h1{font-size:clamp(30px,5.4vw,54px);letter-spacing:-.018em;max-width:16ch}
+.sap-chapo{font-size:clamp(17px,2vw,20.5px);font-style:italic;color:var(--encre-2);
+  max-width:62ch;margin-top:20px;line-height:1.6}
+.sap-filet{height:1px;background:var(--trait);margin:34px 0 0;border:0}
+
+/* carte */
+.sap-scene{margin:30px 0 0;background:var(--carte);border:1px solid var(--trait);
+  border-radius:4px;padding:clamp(10px,2vw,20px);position:relative}
+.sap-scroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+.sap-scroll>svg{display:block;width:100%;min-width:940px;height:auto}
+.sap-hint{display:none;font-family:var(--sans);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--encre-3);padding:0 4px 8px}
+@media(max-width:640px){.sap-hint{display:block}}
+
+.sap-anneau{fill:none;stroke:#B9C4D2;stroke-width:1;stroke-dasharray:3 5;transition:stroke .25s,stroke-width .25s}
+.sap-anneau.on{stroke:var(--encre-2);stroke-dasharray:none;stroke-width:1.4}
+.sap-spoke{stroke:#B9C4D2;stroke-width:1;stroke-dasharray:2 6}
+.sap-grad circle{fill:var(--carte);stroke:#9FAEC0;stroke-width:1.2;transition:fill .2s,stroke .2s}
+.sap-grad text{font-family:var(--sans);font-size:15px;font-weight:600;fill:var(--encre-2)}
+.sap-grad{cursor:pointer}
+.sap-grad:hover circle,.sap-grad:focus-visible circle,.sap-grad.on circle{fill:var(--encre);stroke:var(--encre)}
+.sap-grad:hover text,.sap-grad:focus-visible text,.sap-grad.on text{fill:#fff}
+.sap-grad:focus{outline:none}
+.sap-grad:focus-visible circle{stroke-width:3}
+
+.sap-cle-titre{font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:.24em;fill:#7C8A9B}
+.sap-cle-filet{stroke:#B9C4D2;stroke-width:1}
+.sap-cle{cursor:pointer}
+.sap-cle:focus{outline:none}
+.sap-cle-hit{fill:transparent}
+.sap-cle-num{font-family:var(--sans);font-size:15px;font-weight:600;fill:#8B98A8}
+.sap-cle-txt{font-family:var(--etroit);font-size:23px;font-weight:600;fill:var(--encre-2);transition:fill .18s}
+.sap-cle-per{font-family:var(--sans);font-size:12px;letter-spacing:.13em;fill:#8B98A8;text-transform:uppercase}
+.sap-cle:hover .sap-cle-txt,.sap-cle:focus-visible .sap-cle-txt,.sap-cle.on .sap-cle-txt{fill:var(--encre)}
+.sap-cle:hover .sap-cle-hit,.sap-cle:focus-visible .sap-cle-hit,.sap-cle.on .sap-cle-hit{fill:#D5DCE5}
+.sap-centre-halo{fill:none;stroke:#A9B7C7;stroke-width:1}
+.sap-centre-disque{fill:#DDE3EB;stroke:var(--encre);stroke-width:1.6}
+.sap-centre-l1,.sap-centre-l2{font-family:var(--etroit);font-weight:600;font-size:21px;
+  letter-spacing:.06em;fill:var(--encre)}
+.sap-centre-l3{font-family:var(--sans);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;fill:var(--encre-3)}
+
+.sap-noeud{cursor:pointer}
+.sap-noeud:focus{outline:none}
+.sap-pastille{fill:#FBFCFD;stroke:#B4C0CE;stroke-width:1;transition:fill .18s,stroke .18s}
+.sap-barre{transition:opacity .18s}
+.sap-nom{font-family:var(--etroit);font-weight:600;font-size:17px;fill:var(--encre)}
+.sap-fonc{font-family:var(--sans);font-weight:600;font-size:9.5px;letter-spacing:.14em}
+.sap-noeud:hover .sap-pastille,.sap-noeud:focus-visible .sap-pastille,.sap-noeud.on .sap-pastille{
+  stroke-width:2}
+.sap-noeud.eteint{opacity:.2}
+.sap-noeud.eteint .sap-pastille{stroke-dasharray:2 3}
+
+/* fiche */
+.sap-fiche{display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin-top:14px;
+  background:var(--papier-clair);border:1px solid var(--trait);border-radius:4px;
+  padding:20px 22px;min-height:150px}
+.sap-fiche-vide{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--encre-2);
+  max-width:52ch;line-height:1.5}
+.sap-fiche-tete{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:4px}
+.sap-fiche h3{font-size:24px;letter-spacing:-.01em}
+.sap-fiche .sap-tag{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:#fff;background:var(--f,#4C4F58);border:0;padding:4px 9px;border-radius:2px}
+.sap-fiche .sap-qual{font-family:var(--sans);font-size:12.5px;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--encre-3);margin:0 0 12px}
+.sap-fiche .sap-corps{font-size:17.5px;max-width:64ch;color:var(--encre)}
+.sap-fiche-cercle{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--encre-3);margin-top:14px;padding-top:12px;border-top:1px solid var(--trait-fin)}
+.sap-fiche-actions{margin-top:10px}
+.sap-fiche-lien{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;border-bottom:1px solid var(--trait);color:var(--encre-2);padding:2px 0}
+.sap-fiche-lien:hover,.sap-fiche-lien:focus-visible{border-color:var(--encre);color:var(--encre)}
+
+/* legende */
+.sap-legende{margin-top:34px}
+.sap-legende-tete{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
+  gap:10px;margin-bottom:14px}
+.sap-legende-tete h2{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--encre-3)}
+.sap-legende-outils{display:flex;align-items:baseline;gap:18px}
+.sap-compte{font-family:var(--sans);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--encre-3)}
+.sap-reset{font-family:var(--sans);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+  border-bottom:1px solid var(--trait);color:var(--encre-2);padding:2px 0}
+.sap-reset:hover,.sap-reset:focus-visible{border-color:var(--encre);color:var(--encre)}
+.sap-lgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;
+  background:var(--trait-fin);border:1px solid var(--trait-fin)}
+.sap-lg{display:flex;gap:11px;align-items:flex-start;text-align:left;background:var(--papier-clair);
+  padding:13px 14px;font:inherit;transition:background .16s}
+.sap-lg:hover{background:#fff}
+.sap-lg[aria-pressed="true"],.sap-lg[aria-pressed="true"]:hover{background:var(--encre)}
+.sap-lg[aria-pressed="true"] strong,.sap-lg[aria-pressed="true"] em{color:#fff}
+.sap-lg-pt{width:11px;height:11px;border-radius:50%;flex:0 0 11px;margin-top:5px}
+.sap-lg-txt{display:flex;flex-direction:column;gap:2px}
+.sap-lg strong{font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--encre)}
+.sap-lg em{font-family:var(--serif);font-size:14px;font-style:italic;color:var(--encre-3);line-height:1.4}
+
+/* aphorisme */
+.sap-aph{margin:52px 0;padding:0 0 0 22px;border-left:3px solid var(--encre);
+  font-size:clamp(21px,3.2vw,30px);line-height:1.34;letter-spacing:-.01em;max-width:22ch;font-weight:600}
+.sap-aph small{display:block;font-family:var(--sans);font-size:11px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--encre-3);margin-top:14px}
+
+/* repertoire */
+.sap-h2{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--encre-3);margin:0 0 6px;
+  padding-bottom:12px;border-bottom:1px solid var(--trait)}
+.sap-bloc{margin-top:38px;transition:opacity .2s}
+.sap-bloc.eteint{opacity:.35}
+.sap-bloc-tete{display:flex;gap:16px;align-items:center;margin-bottom:8px}
+.sap-bloc-num{font-family:var(--sans);font-size:14px;font-weight:600;color:#fff;background:var(--encre);
+  width:30px;height:30px;border-radius:50%;display:grid;place-items:center;flex:0 0 30px}
+.sap-bloc h3{font-size:25px;letter-spacing:-.012em}
+.sap-bloc-meta{font-family:var(--sans);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--encre-3);margin:3px 0 0}
+.sap-bloc-sous{font-style:italic;color:var(--encre-2);margin:0 0 18px;padding-left:46px;max-width:64ch}
+.sap-liste{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1px;
+  background:var(--trait-fin);border:1px solid var(--trait-fin)}
+.sap-item{background:var(--papier-clair);padding:17px 18px 18px;border-top:3px solid var(--f);
+  transition:background .2s,box-shadow .2s,opacity .2s}
+.sap-item.flash{background:#fff;box-shadow:inset 0 0 0 2px var(--encre)}
+.sap-item.eteint{opacity:.34}
+.sap-item-tete{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 10px}
+.sap-item h4{font-size:19px;letter-spacing:-.008em}
+.sap-tag{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--f);border:1px solid var(--f);padding:2px 6px;border-radius:2px}
+.sap-qual{font-family:var(--sans);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--encre-3);margin:7px 0 9px}
+.sap-corps{font-size:16px;line-height:1.58;margin:0;color:var(--encre-2)}
+.sap-ref a{color:var(--bleu-src);text-decoration:none;font-size:.7em;vertical-align:super}
+.sap-ref a:hover{text-decoration:underline}
+
+/* analyse */
+.sap-analyse{margin-top:60px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px}
+.sap-analyse h3{font-size:22px;margin-bottom:12px}
+.sap-analyse p{font-size:17px;color:var(--encre-2)}
+.sap-analyse .sap-lead{font-size:18.5px;color:var(--encre)}
+.sap-reserve{background:var(--papier-clair);border:1px solid var(--trait);padding:22px 24px;border-radius:4px}
+.sap-reserve ul{margin:0;padding-left:19px;list-style:disc}
+.sap-reserve li{margin-bottom:12px;font-size:15.5px;color:var(--encre-2);line-height:1.55}
+.sap-reserve li:last-child{margin-bottom:0}
+.sap-reserve li strong{color:var(--encre)}
+
+.sap-pied{margin-top:56px;padding-top:20px;border-top:1px solid var(--trait);
+  font-family:var(--sans);font-size:12.5px;color:var(--encre-3);line-height:1.7}
+.sap-pied a{color:var(--bleu-src)}
+.sap-pied strong{color:var(--encre-2);font-weight:600}
+
+@media(prefers-reduced-motion:reduce){.sap-cercles *{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+@media print{
+  .sap-cercles{background:#fff;padding:0}
+  .sap-hint,.sap-reset,.sap-fiche-actions{display:none!important}
+  .sap-scene,.sap-fiche,.sap-item,.sap-lg,.sap-reserve{background:#fff}
+  .sap-noeud.eteint,.sap-item.eteint,.sap-bloc.eteint{opacity:1}
+  .sap-scroll{overflow:visible}
+}
+</style>
+
+<div class="sap-wrap">
+
+  <p class="sap-eyebrow">SAPERE &middot; Cartographie du pouvoir</p>
+  <h1>Les cinq cercles qui ont fabriqué Macron</h1>
+  <p class="sap-chapo">On répète depuis 2017 qu'un homme est sorti de nulle part. Sans parti, sans troupes, sans passé. La légende n'est vraie qu'à moitié. Il n'avait pas d'appareil : c'est exact. Mais il avait cinq réseaux, tous constitués longtemps avant lui, et il aura mis vingt-cinq ans à les traverser un par un. Cette carte les remet à leur place.</p>
+  <hr class="sap-filet">
+
+  <div class="sap-scene">
+    <p class="sap-hint">Faites glisser la carte horizontalement</p>
+    <div class="sap-scroll">
+<svg class="sap-carte" viewBox="0 0 1440 1440" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Les cinq cercles qui ont fabriqué Macron</title>
+<desc>Cartographie concentrique. Emmanuel Macron au centre, entouré de cinq cercles successifs regroupant dix-neuf personnes ou institutions. Le répertoire complet figure sous la carte.</desc>
+<g class="sap-trames">
+<circle class="sap-anneau" data-ring="0" cx="720.0" cy="720.0" r="175"/>
+<circle class="sap-anneau" data-ring="1" cx="720.0" cy="720.0" r="268"/>
+<circle class="sap-anneau" data-ring="2" cx="720.0" cy="720.0" r="368"/>
+<circle class="sap-anneau" data-ring="3" cx="720.0" cy="720.0" r="470"/>
+<circle class="sap-anneau" data-ring="4" cx="720.0" cy="720.0" r="572"/>
+<line class="sap-spoke" x1="794.0" y1="720.0" x2="1350.0" y2="720.0"/>
+</g>
+<g class="sap-graduations">
+<g class="sap-grad sap-ringctl" data-ring="0" tabindex="0" role="button" aria-pressed="false" aria-label="Filtrer sur le cercle 1, Famille et intime">
+<circle cx="895.0" cy="720.0" r="15"/>
+<text x="895.0" y="725.0" text-anchor="middle">1</text>
+</g>
+<g class="sap-grad sap-ringctl" data-ring="1" tabindex="0" role="button" aria-pressed="false" aria-label="Filtrer sur le cercle 2, Deuxième gauche">
+<circle cx="988.0" cy="720.0" r="15"/>
+<text x="988.0" y="725.0" text-anchor="middle">2</text>
+</g>
+<g class="sap-grad sap-ringctl" data-ring="2" tabindex="0" role="button" aria-pressed="false" aria-label="Filtrer sur le cercle 3, Haute administration">
+<circle cx="1088.0" cy="720.0" r="15"/>
+<text x="1088.0" y="725.0" text-anchor="middle">3</text>
+</g>
+<g class="sap-grad sap-ringctl" data-ring="3" tabindex="0" role="button" aria-pressed="false" aria-label="Filtrer sur le cercle 4, Entreprise et finance">
+<circle cx="1190.0" cy="720.0" r="15"/>
+<text x="1190.0" y="725.0" text-anchor="middle">4</text>
+</g>
+<g class="sap-grad sap-ringctl" data-ring="4" tabindex="0" role="button" aria-pressed="false" aria-label="Filtrer sur le cercle 5, Conquête électorale">
+<circle cx="1292.0" cy="720.0" r="15"/>
+<text x="1292.0" y="725.0" text-anchor="middle">5</text>
+</g>
+</g>
+<g class="sap-cle-bloc">
+<text class="sap-cle-titre" x="40" y="64">LES CINQ CERCLES</text>
+<line class="sap-cle-filet" x1="40" y1="80" x2="300" y2="80"/>
+<g class="sap-cle sap-ringctl" data-ring="0" tabindex="0" role="button" aria-pressed="false" aria-label="Filtrer sur le cercle 1, Famille et intime">
+<rect class="sap-cle-hit" x="34" y="92" width="290" height="32" rx="3"/>
+<text class="sap-cle-num" x="42" y="116">1</text>
+<text class="sap-cle-txt" x="70" y="116">Famille et intime</text>
+<text class="sap-cle-per" x="70" y="132">depuis l'enfance</text>
+</g>
+<g class="sap-cle sap-ringctl" data-ring="1" tabindex="0" role="button" aria-pressed="false" aria-label="Filtrer sur le cercle 2, Deuxième gauche">
+<rect class="sap-cle-hit" x="34" y="138" width="290" height="32" rx="3"/>
+<text class="sap-cle-num" x="42" y="162">2</text>
+<text class="sap-cle-txt" x="70" y="162">Deuxième gauche</text>
+<text class="sap-cle-per" x="70" y="178">2002 à 2016</text>
+</g>
+<g class="sap-cle sap-ringctl" data-ring="2" tabindex="0" role="button" aria-pressed="false" aria-label="Filtrer sur le cercle 3, Haute administration">
+<rect class="sap-cle-hit" x="34" y="184" width="290" height="32" rx="3"/>
+<text class="sap-cle-num" x="42" y="208">3</text>
+<text class="sap-cle-txt" x="70" y="208">Haute administration</text>
+<text class="sap-cle-per" x="70" y="224">2004 à 2014</text>
+</g>
+<g class="sap-cle sap-ringctl" data-ring="3" tabindex="0" role="button" aria-pressed="false" aria-label="Filtrer sur le cercle 4, Entreprise et finance">
+<rect class="sap-cle-hit" x="34" y="230" width="290" height="32" rx="3"/>
+<text class="sap-cle-num" x="42" y="254">4</text>
+<text class="sap-cle-txt" x="70" y="254">Entreprise et finance</text>
+<text class="sap-cle-per" x="70" y="270">2007 à 2012</text>
+</g>
+<g class="sap-cle sap-ringctl" data-ring="4" tabindex="0" role="button" aria-pressed="false" aria-label="Filtrer sur le cercle 5, Conquête électorale">
+<rect class="sap-cle-hit" x="34" y="276" width="290" height="32" rx="3"/>
+<text class="sap-cle-num" x="42" y="300">5</text>
+<text class="sap-cle-txt" x="70" y="300">Conquête électorale</text>
+<text class="sap-cle-per" x="70" y="316">2016 à 2017</text>
+</g>
+</g>
+<g class="sap-centre">
+<circle class="sap-centre-halo" cx="720.0" cy="720.0" r="88.0"/>
+<circle class="sap-centre-disque" cx="720.0" cy="720.0" r="74.0"/>
+<text class="sap-centre-l1" x="720.0" y="714.0" text-anchor="middle">EMMANUEL</text>
+<text class="sap-centre-l2" x="720.0" y="738.0" text-anchor="middle">MACRON</text>
+<text class="sap-centre-l3" x="720.0" y="760.0" text-anchor="middle">sans couleur propre</text>
+</g>
+<g class="sap-noeuds">
+<g class="sap-noeud" data-id="n0" data-ring="0" data-fonc="conseille" tabindex="0" role="button" aria-label="Brigitte Macron, conseille">
+<rect class="sap-pastille" x="643.8" y="520.0" width="152.5" height="50.0" rx="7"/>
+<rect class="sap-barre" x="643.8" y="520.0" width="5" height="50.0" rx="2.5" fill="#157F86"/>
+<text class="sap-nom" x="661.8" y="541.0">Brigitte Macron</text>
+<text class="sap-fonc" x="661.8" y="560.0" fill="#157F86">CONSEILLE</text>
+</g>
+<g class="sap-noeud" data-id="n1" data-ring="0" data-fonc="introduit" tabindex="0" role="button" aria-label="Manette Noguès, introduit">
+<rect class="sap-pastille" x="489.1" y="769.0" width="144.6" height="50.0" rx="7"/>
+<rect class="sap-barre" x="489.1" y="769.0" width="5" height="50.0" rx="2.5" fill="#1F6FB2"/>
+<text class="sap-nom" x="507.1" y="790.0">Manette Noguès</text>
+<text class="sap-fonc" x="507.1" y="809.0" fill="#1F6FB2">INTRODUIT</text>
+</g>
+<g class="sap-noeud" data-id="n2" data-ring="0" data-fonc="legitime" tabindex="0" role="button" aria-label="Famille Trogneux, légitime">
+<rect class="sap-pastille" x="798.4" y="769.0" width="160.4" height="50.0" rx="7"/>
+<rect class="sap-barre" x="798.4" y="769.0" width="5" height="50.0" rx="2.5" fill="#6E4A9E"/>
+<text class="sap-nom" x="816.4" y="790.0">Famille Trogneux</text>
+<text class="sap-fonc" x="816.4" y="809.0" fill="#6E4A9E">LÉGITIME</text>
+</g>
+<g class="sap-noeud" data-id="n3" data-ring="1" data-fonc="finance" tabindex="0" role="button" aria-label="Henry Hermand, finance">
+<rect class="sap-pastille" x="862.8" y="530.0" width="136.7" height="50.0" rx="7"/>
+<rect class="sap-barre" x="862.8" y="530.0" width="5" height="50.0" rx="2.5" fill="#0B7A5C"/>
+<text class="sap-nom" x="880.8" y="551.0">Henry Hermand</text>
+<text class="sap-fonc" x="880.8" y="570.0" fill="#0B7A5C">FINANCE</text>
+</g>
+<g class="sap-noeud" data-id="n4" data-ring="1" data-fonc="legitime" tabindex="0" role="button" aria-label="Michel Rocard, légitime">
+<rect class="sap-pastille" x="419.6" y="561.0" width="136.7" height="50.0" rx="7"/>
+<rect class="sap-barre" x="419.6" y="561.0" width="5" height="50.0" rx="2.5" fill="#6E4A9E"/>
+<text class="sap-nom" x="437.6" y="582.0">Michel Rocard</text>
+<text class="sap-fonc" x="437.6" y="601.0" fill="#6E4A9E">LÉGITIME</text>
+</g>
+<g class="sap-noeud" data-id="n5" data-ring="1" data-fonc="introduit" tabindex="0" role="button" aria-label="Jean-Pierre Jouyet, introduit">
+<rect class="sap-pastille" x="641.3" y="962.8" width="176.2" height="50.0" rx="7"/>
+<rect class="sap-barre" x="641.3" y="962.8" width="5" height="50.0" rx="2.5" fill="#1F6FB2"/>
+<text class="sap-nom" x="659.3" y="983.8">Jean-Pierre Jouyet</text>
+<text class="sap-fonc" x="659.3" y="1002.8" fill="#1F6FB2">INTRODUIT</text>
+</g>
+<g class="sap-noeud" data-id="n6" data-ring="2" data-fonc="introduit" tabindex="0" role="button" aria-label="Jacques Attali, introduit">
+<rect class="sap-pastille" x="761.4" y="345.0" width="144.6" height="50.0" rx="7"/>
+<rect class="sap-barre" x="761.4" y="345.0" width="5" height="50.0" rx="2.5" fill="#1F6FB2"/>
+<text class="sap-nom" x="779.4" y="366.0">Jacques Attali</text>
+<text class="sap-fonc" x="779.4" y="385.0" fill="#1F6FB2">INTRODUIT</text>
+</g>
+<g class="sap-noeud" data-id="n7" data-ring="2" data-fonc="legitime" tabindex="0" role="button" aria-label="Inspection des finances, légitime">
+<rect class="sap-pastille" x="247.7" y="746.2" width="215.7" height="50.0" rx="7"/>
+<rect class="sap-barre" x="247.7" y="746.2" width="5" height="50.0" rx="2.5" fill="#6E4A9E"/>
+<text class="sap-nom" x="265.7" y="767.2">Inspection des finances</text>
+<text class="sap-fonc" x="265.7" y="786.2" fill="#6E4A9E">LÉGITIME</text>
+</g>
+<g class="sap-noeud" data-id="n8" data-ring="2" data-fonc="recrute" tabindex="0" role="button" aria-label="Pierre-René Lemas, recrute">
+<rect class="sap-pastille" x="486.2" y="1031.2" width="168.3" height="50.0" rx="7"/>
+<rect class="sap-barre" x="486.2" y="1031.2" width="5" height="50.0" rx="2.5" fill="#B26A0A"/>
+<text class="sap-nom" x="504.2" y="1052.2">Pierre-René Lemas</text>
+<text class="sap-fonc" x="504.2" y="1071.2" fill="#B26A0A">RECRUTE</text>
+</g>
+<g class="sap-noeud" data-id="n9" data-ring="2" data-fonc="execute" tabindex="0" role="button" aria-label="Nicolas Revel, exécute">
+<rect class="sap-pastille" x="970.3" y="879.0" width="136.7" height="50.0" rx="7"/>
+<rect class="sap-barre" x="970.3" y="879.0" width="5" height="50.0" rx="2.5" fill="#4C4F58"/>
+<text class="sap-nom" x="988.3" y="900.0">Nicolas Revel</text>
+<text class="sap-fonc" x="988.3" y="919.0" fill="#4C4F58">EXÉCUTE</text>
+</g>
+<g class="sap-noeud" data-id="n10" data-ring="3" data-fonc="introduit" tabindex="0" role="button" aria-label="Serge Weinberg, introduit">
+<rect class="sap-pastille" x="917.3" y="310.0" width="144.6" height="50.0" rx="7"/>
+<rect class="sap-barre" x="917.3" y="310.0" width="5" height="50.0" rx="2.5" fill="#1F6FB2"/>
+<text class="sap-nom" x="935.3" y="331.0">Serge Weinberg</text>
+<text class="sap-fonc" x="935.3" y="350.0" fill="#1F6FB2">INTRODUIT</text>
+</g>
+<g class="sap-noeud" data-id="n11" data-ring="3" data-fonc="conseille" tabindex="0" role="button" aria-label="Alain Minc, conseille">
+<rect class="sap-pastille" x="424.0" y="288.0" width="122.0" height="50.0" rx="7"/>
+<rect class="sap-barre" x="424.0" y="288.0" width="5" height="50.0" rx="2.5" fill="#157F86"/>
+<text class="sap-nom" x="442.0" y="309.0">Alain Minc</text>
+<text class="sap-fonc" x="442.0" y="328.0" fill="#157F86">CONSEILLE</text>
+</g>
+<g class="sap-noeud" data-id="n12" data-ring="3" data-fonc="finance" tabindex="0" role="button" aria-label="Banque Rothschild, finance">
+<rect class="sap-pastille" x="237.3" y="944.1" width="168.3" height="50.0" rx="7"/>
+<rect class="sap-barre" x="237.3" y="944.1" width="5" height="50.0" rx="2.5" fill="#0B7A5C"/>
+<text class="sap-nom" x="255.3" y="965.1">Banque Rothschild</text>
+<text class="sap-fonc" x="255.3" y="984.1" fill="#0B7A5C">FINANCE</text>
+</g>
+<g class="sap-noeud" data-id="n13" data-ring="3" data-fonc="legitime" tabindex="0" role="button" aria-label="David de Rothschild, légitime">
+<rect class="sap-pastille" x="863.0" y="1102.0" width="184.1" height="50.0" rx="7"/>
+<rect class="sap-barre" x="863.0" y="1102.0" width="5" height="50.0" rx="2.5" fill="#6E4A9E"/>
+<text class="sap-nom" x="881.0" y="1123.0">David de Rothschild</text>
+<text class="sap-fonc" x="881.0" y="1142.0" fill="#6E4A9E">LÉGITIME</text>
+</g>
+<g class="sap-noeud" data-id="n14" data-ring="4" data-fonc="rallie" tabindex="0" role="button" aria-label="Gérard Collomb, rallie">
+<rect class="sap-pastille" x="597.8" y="125.2" width="144.6" height="50.0" rx="7"/>
+<rect class="sap-barre" x="597.8" y="125.2" width="5" height="50.0" rx="2.5" fill="#A8143C"/>
+<text class="sap-nom" x="615.8" y="146.2">Gérard Collomb</text>
+<text class="sap-fonc" x="615.8" y="165.2" fill="#A8143C">RALLIE</text>
+</g>
+<g class="sap-noeud" data-id="n15" data-ring="4" data-fonc="legitime" tabindex="0" role="button" aria-label="François Bayrou, légitime">
+<rect class="sap-pastille" x="113.4" y="480.7" width="152.5" height="50.0" rx="7"/>
+<rect class="sap-barre" x="113.4" y="480.7" width="5" height="50.0" rx="2.5" fill="#6E4A9E"/>
+<text class="sap-nom" x="131.4" y="501.7">François Bayrou</text>
+<text class="sap-fonc" x="131.4" y="520.7" fill="#6E4A9E">LÉGITIME</text>
+</g>
+<g class="sap-noeud" data-id="n16" data-ring="4" data-fonc="execute" tabindex="0" role="button" aria-label="Richard Ferrand, exécute">
+<rect class="sap-pastille" x="181.0" y="1031.2" width="152.5" height="50.0" rx="7"/>
+<rect class="sap-barre" x="181.0" y="1031.2" width="5" height="50.0" rx="2.5" fill="#4C4F58"/>
+<text class="sap-nom" x="199.0" y="1052.2">Richard Ferrand</text>
+<text class="sap-fonc" x="199.0" y="1071.2" fill="#4C4F58">EXÉCUTE</text>
+</g>
+<g class="sap-noeud" data-id="n17" data-ring="4" data-fonc="rallie" tabindex="0" role="button" aria-label="Jean-Yves Le Drian, rallie">
+<rect class="sap-pastille" x="750.8" y="1254.5" width="176.2" height="50.0" rx="7"/>
+<rect class="sap-barre" x="750.8" y="1254.5" width="5" height="50.0" rx="2.5" fill="#A8143C"/>
+<text class="sap-nom" x="768.8" y="1275.5">Jean-Yves Le Drian</text>
+<text class="sap-fonc" x="768.8" y="1294.5" fill="#A8143C">RALLIE</text>
+</g>
+<g class="sap-noeud" data-id="n18" data-ring="4" data-fonc="execute" tabindex="0" role="button" aria-label="Édouard Philippe, exécute">
+<rect class="sap-pastille" x="1158.2" y="453.3" width="160.4" height="50.0" rx="7"/>
+<rect class="sap-barre" x="1158.2" y="453.3" width="5" height="50.0" rx="2.5" fill="#4C4F58"/>
+<text class="sap-nom" x="1176.2" y="474.3">Édouard Philippe</text>
+<text class="sap-fonc" x="1176.2" y="493.3" fill="#4C4F58">EXÉCUTE</text>
+</g>
+</g>
+</svg>
+    </div>
+    <div class="sap-fiche" aria-live="polite">
+      <p class="sap-fiche-vide">Survolez un nom, ou touchez-le. Le centre est la seule pastille sans couleur : tout ce qui colore Emmanuel Macron lui vient des cercles.</p>
+    </div>
+  </div>
+
+  <div class="sap-legende">
+    <div class="sap-legende-tete">
+      <h2>Sept fonctions &middot; cliquez pour suivre l'une d'elles à travers les cinq cercles</h2>
+      <div class="sap-legende-outils">
+        <span class="sap-compte" aria-live="polite"></span>
+        <button class="sap-reset" type="button">Tout réafficher</button>
+      </div>
+    </div>
+    <div class="sap-lgs">
+<button class="sap-lg" type="button" data-fonc="introduit" aria-pressed="false"><span class="sap-lg-pt" style="background:#1F6FB2"></span><span class="sap-lg-txt"><strong>Introduit</strong><em>Ouvre une porte que le suivant franchira</em></span></button>
+<button class="sap-lg" type="button" data-fonc="finance" aria-pressed="false"><span class="sap-lg-pt" style="background:#0B7A5C"></span><span class="sap-lg-txt"><strong>Finance</strong><em>Fournit l'argent, personnel ou politique</em></span></button>
+<button class="sap-lg" type="button" data-fonc="legitime" aria-pressed="false"><span class="sap-lg-pt" style="background:#6E4A9E"></span><span class="sap-lg-txt"><strong>Légitime</strong><em>Prête un nom, un blason, une filiation</em></span></button>
+<button class="sap-lg" type="button" data-fonc="recrute" aria-pressed="false"><span class="sap-lg-pt" style="background:#B26A0A"></span><span class="sap-lg-txt"><strong>Recrute</strong><em>Signe la nomination, donne le poste</em></span></button>
+<button class="sap-lg" type="button" data-fonc="rallie" aria-pressed="false"><span class="sap-lg-pt" style="background:#A8143C"></span><span class="sap-lg-txt"><strong>Rallie</strong><em>Apporte ses électeurs et sa notabilité</em></span></button>
+<button class="sap-lg" type="button" data-fonc="conseille" aria-pressed="false"><span class="sap-lg-pt" style="background:#157F86"></span><span class="sap-lg-txt"><strong>Conseille</strong><em>Oriente la trajectoire, sans mandat</em></span></button>
+<button class="sap-lg" type="button" data-fonc="execute" aria-pressed="false"><span class="sap-lg-pt" style="background:#4C4F58"></span><span class="sap-lg-txt"><strong>Exécute</strong><em>Transforme l'intention en machine</em></span></button>
+    </div>
+  </div>
+
+  <blockquote class="sap-aph">Macron ne surgit pas sans réseau. Il surgit sans appareil.
+    <small>La lecture SAPERE</small></blockquote>
+
+  <h2 class="sap-h2">Le répertoire des dix-neuf</h2>
+<section class="sap-bloc" data-ring="0">
+<header class="sap-bloc-tete"><span class="sap-bloc-num">1</span><div><h3>Famille et intime</h3><p class="sap-bloc-meta">depuis l'enfance</p></div></header>
+<p class="sap-bloc-sous">Le cercle qui donne la langue, la confiance et un premier ancrage social.</p>
+<ul class="sap-liste">
+<li class="sap-item" data-node="n0" data-ring="0" data-fonc="conseille" style="--f:#157F86"><div class="sap-item-tete"><h4>Brigitte Macron</h4><span class="sap-tag">Conseille</span></div><p class="sap-qual">Professeure de lettres, Amiens</p><p class="sap-corps">Elle anime l'atelier théâtre du lycée La Providence où elle rencontre l'élève Macron en 1993. Ils se marient en 2007. Relectrice permanente des discours, elle forme la voix bien avant que la voix ne serve.</p></li>
+<li class="sap-item" data-node="n1" data-ring="0" data-fonc="introduit" style="--f:#1F6FB2"><div class="sap-item-tete"><h4>Manette Noguès</h4><span class="sap-tag">Introduit</span></div><p class="sap-qual">Grand-mère maternelle, directrice d'école</p><p class="sap-corps">Germaine Noguès élève l'enfant à Bagnères-de-Bigorre autant qu'à Amiens : Molière, Racine, le piano, les longues conversations du soir. Le premier réseau de Macron est un réseau scolaire, et il est domestique.</p></li>
+<li class="sap-item" data-node="n2" data-ring="0" data-fonc="legitime" style="--f:#6E4A9E"><div class="sap-item-tete"><h4>Famille Trogneux</h4><span class="sap-tag">Légitime</span></div><p class="sap-qual">Chocolatiers amiénois, cinq générations</p><p class="sap-corps">D'abord réticente devant le mariage, la famille finit par l'agréger à une bourgeoisie provinciale installée. Ce n'est pas une fortune : c'est une respectabilité, ce qui en politique française vaut souvent davantage.</p></li>
+</ul></section>
+<section class="sap-bloc" data-ring="1">
+<header class="sap-bloc-tete"><span class="sap-bloc-num">2</span><div><h3>Deuxième gauche</h3><p class="sap-bloc-meta">2002 à 2016</p></div></header>
+<p class="sap-bloc-sous">Le cercle qui donne une généalogie politique, et le premier argent.</p>
+<ul class="sap-liste">
+<li class="sap-item" data-node="n3" data-ring="1" data-fonc="finance" style="--f:#0B7A5C"><div class="sap-item-tete"><h4>Henry Hermand</h4><span class="sap-tag">Finance</span></div><p class="sap-qual">Entrepreneur, mécène de la deuxième gauche</p><p class="sap-corps">Rencontré en 2002 pendant un stage de l'ENA à la préfecture de l'Oise. Il prête 550,000 euros pour l'achat du premier appartement parisien, sert de témoin au mariage de 2007, puis héberge dans ses locaux les premiers pas d'En Marche en 2016. <sup class="sap-ref"><a href="https://www.lemonde.fr/disparitions/article/2016/11/06/henry-hermand-mentor-de-macron-est-mort_5026284_3382.html" target="_blank" rel="noopener" aria-label="Source : Le Monde, nécrologie du 6 novembre 2016" title="Le Monde, nécrologie du 6 novembre 2016">↗</a></sup></p></li>
+<li class="sap-item" data-node="n4" data-ring="1" data-fonc="legitime" style="--f:#6E4A9E"><div class="sap-item-tete"><h4>Michel Rocard</h4><span class="sap-tag">Légitime</span></div><p class="sap-qual">Ancien Premier ministre, figure tutélaire</p><p class="sap-corps">Il n'a jamais été son patron. Il lui fournit mieux : une généalogie. Réformisme, méfiance envers l'État jacobin, primat de la société civile. Le vocabulaire est déjà écrit, il suffira de le reprendre.</p></li>
+<li class="sap-item" data-node="n5" data-ring="1" data-fonc="introduit" style="--f:#1F6FB2"><div class="sap-item-tete"><h4>Jean-Pierre Jouyet</h4><span class="sap-tag">Introduit</span></div><p class="sap-qual">Inspecteur des finances, ami de Hollande</p><p class="sap-corps">Croisé à la commission Attali, il devient le passeur central. Il parraine l'entrée à l'Élysée en 2012, puis appuie la nomination à Bercy en 2014. Un seul homme relie ici la deuxième gauche, le corps et le pouvoir. <sup class="sap-ref"><a href="https://fr.wikipedia.org/wiki/Jean-Pierre_Jouyet" target="_blank" rel="noopener" aria-label="Source : Wikipédia, Jean-Pierre Jouyet" title="Wikipédia, Jean-Pierre Jouyet">↗</a></sup></p></li>
+</ul></section>
+<section class="sap-bloc" data-ring="2">
+<header class="sap-bloc-tete"><span class="sap-bloc-num">3</span><div><h3>Haute administration</h3><p class="sap-bloc-meta">2004 à 2014</p></div></header>
+<p class="sap-bloc-sous">Le cercle qui donne le statut, les dossiers et l'accès au sommet de l'État.</p>
+<ul class="sap-liste">
+<li class="sap-item" data-node="n6" data-ring="2" data-fonc="introduit" style="--f:#1F6FB2"><div class="sap-item-tete"><h4>Jacques Attali</h4><span class="sap-tag">Introduit</span></div><p class="sap-qual">Président de la commission pour la croissance</p><p class="sap-corps">En 2007 et 2008, Macron est rapporteur adjoint de la commission Attali, à vingt-neuf ans. Il en ressort avec une doctrine libérale et, surtout, avec les numéros de téléphone de la moitié du patronat français.</p></li>
+<li class="sap-item" data-node="n7" data-ring="2" data-fonc="legitime" style="--f:#6E4A9E"><div class="sap-item-tete"><h4>Inspection des finances</h4><span class="sap-tag">Légitime</span></div><p class="sap-qual">Corps de sortie, promotion Senghor 2004</p><p class="sap-corps">Le corps ne donne pas un poste : il donne un statut. Un droit d'entrée dans toutes les pièces, une confrérie d'anciens, et la présomption de compétence qui dispense d'avoir à la prouver.</p></li>
+<li class="sap-item" data-node="n8" data-ring="2" data-fonc="recrute" style="--f:#B26A0A"><div class="sap-item-tete"><h4>Pierre-René Lemas</h4><span class="sap-tag">Recrute</span></div><p class="sap-qual">Secrétaire général de l'Élysée, 2012 à 2014</p><p class="sap-corps">C'est lui qui fait du banquier de trente-quatre ans son secrétaire général adjoint chargé de l'économie, en mai 2012. La nomination est le premier acte proprement politique de la trajectoire.</p></li>
+<li class="sap-item" data-node="n9" data-ring="2" data-fonc="execute" style="--f:#4C4F58"><div class="sap-item-tete"><h4>Nicolas Revel</h4><span class="sap-tag">Exécute</span></div><p class="sap-qual">Secrétaire général adjoint, en tandem</p><p class="sap-corps">Chargé du social quand Macron tient l'économie, de 2012 à 2014. Le binôme frotte d'abord, puis fonctionne. C'est là que s'apprend la mécanique réelle de l'État, celle qui transforme une intention en texte. <sup class="sap-ref"><a href="https://fr.wikipedia.org/wiki/Nicolas_Revel" target="_blank" rel="noopener" aria-label="Source : Wikipédia, Nicolas Revel" title="Wikipédia, Nicolas Revel">↗</a></sup></p></li>
+</ul></section>
+<section class="sap-bloc" data-ring="3">
+<header class="sap-bloc-tete"><span class="sap-bloc-num">4</span><div><h3>Entreprise et finance</h3><p class="sap-bloc-meta">2007 à 2012</p></div></header>
+<p class="sap-bloc-sous">Le cercle qui donne l'indépendance matérielle, et un blason encombrant.</p>
+<ul class="sap-liste">
+<li class="sap-item" data-node="n10" data-ring="3" data-fonc="introduit" style="--f:#1F6FB2"><div class="sap-item-tete"><h4>Serge Weinberg</h4><span class="sap-tag">Introduit</span></div><p class="sap-qual">Administrateur de Rothschild, commission Attali</p><p class="sap-corps">Avec Jacques Attali et Xavier Fontanet, il recommande le jeune inspecteur à François Henrot, associé-gérant de la banque. Trois recommandations suffisent : la commission Attali a fonctionné comme un sas. <sup class="sap-ref"><a href="https://fr.wikipedia.org/wiki/Serge_Weinberg" target="_blank" rel="noopener" aria-label="Source : Wikipédia, Serge Weinberg" title="Wikipédia, Serge Weinberg">↗</a></sup></p></li>
+<li class="sap-item" data-node="n11" data-ring="3" data-fonc="conseille" style="--f:#157F86"><div class="sap-item-tete"><h4>Alain Minc</h4><span class="sap-tag">Conseille</span></div><p class="sap-qual">Conseiller de dirigeants, essayiste</p><p class="sap-corps">Le conseil fondateur, donné dès la sortie de l'ENA : pour faire de la politique aujourd'hui, il faut être riche ou ascète. Va d'abord fabriquer ton épargne. Le détour par la finance est une stratégie, pas un accident. <sup class="sap-ref"><a href="https://www.franceinfo.fr/elections/presidentielle/quand-emmanuel-macron-etait-banquier-d-affaires-un-element-prometteur-mais-sans-plus_2171646.html" target="_blank" rel="noopener" aria-label="Source : franceinfo, 4 mai 2017" title="franceinfo, 4 mai 2017">↗</a></sup></p></li>
+<li class="sap-item" data-node="n12" data-ring="3" data-fonc="finance" style="--f:#0B7A5C"><div class="sap-item-tete"><h4>Banque Rothschild</h4><span class="sap-tag">Finance</span></div><p class="sap-qual">Rothschild &amp; Cie, 2008 à 2012</p><p class="sap-corps">Entré en septembre 2008, associé-gérant en 2010. Le conseil de Nestlé pour le rachat de la nutrition infantile de Pfizer, en 2012, le rend millionnaire. Quatre ans auront suffi à acheter la liberté de se présenter.</p></li>
+<li class="sap-item" data-node="n13" data-ring="3" data-fonc="legitime" style="--f:#6E4A9E"><div class="sap-item-tete"><h4>David de Rothschild</h4><span class="sap-tag">Légitime</span></div><p class="sap-qual">Chef de la maison</p><p class="sap-corps">Il ne recrute pas lui-même. Il adoube. Ce que Macron gagne boulevard Haussmann n'est pas seulement de l'argent : c'est un nom, et ce nom lui sera reproché jusqu'au dernier meeting.</p></li>
+</ul></section>
+<section class="sap-bloc" data-ring="4">
+<header class="sap-bloc-tete"><span class="sap-bloc-num">5</span><div><h3>Conquête électorale</h3><p class="sap-bloc-meta">2016 à 2017</p></div></header>
+<p class="sap-bloc-sous">Le cercle qui convertit tout le reste en bulletins de vote.</p>
+<ul class="sap-liste">
+<li class="sap-item" data-node="n14" data-ring="4" data-fonc="rallie" style="--f:#A8143C"><div class="sap-item-tete"><h4>Gérard Collomb</h4><span class="sap-tag">Rallie</span></div><p class="sap-qual">Maire de Lyon, sénateur socialiste</p><p class="sap-corps">Premier poids lourd du PS à se déclarer, en octobre 2016. Il apporte une grande ville, une machine d'élus locaux, et c'est lui qui amorce le rapprochement avec François Bayrou. <sup class="sap-ref"><a href="https://www.cnews.fr/france/2017-05-07/qui-sont-les-soutiens-demmanuel-macron-754208" target="_blank" rel="noopener" aria-label="Source : CNews, 7 mai 2017" title="CNews, 7 mai 2017">↗</a></sup></p></li>
+<li class="sap-item" data-node="n15" data-ring="4" data-fonc="legitime" style="--f:#6E4A9E"><div class="sap-item-tete"><h4>François Bayrou</h4><span class="sap-tag">Légitime</span></div><p class="sap-qual">Président du MoDem</p><p class="sap-corps">Le 22 février 2017, il renonce à une quatrième candidature et propose une alliance. Le centre historique, celui qui a fait 18 pour cent en 2007, valide le nouveau venu. C'est le moment où la candidature devient crédible. <sup class="sap-ref"><a href="https://feeds.bbci.co.uk/news/world-europe-39058386" target="_blank" rel="noopener" aria-label="Source : BBC News, 22 février 2017" title="BBC News, 22 février 2017">↗</a></sup></p></li>
+<li class="sap-item" data-node="n16" data-ring="4" data-fonc="execute" style="--f:#4C4F58"><div class="sap-item-tete"><h4>Richard Ferrand</h4><span class="sap-tag">Exécute</span></div><p class="sap-qual">Député du Finistère, secrétaire général d'En Marche</p><p class="sap-corps">Premier député socialiste à franchir le pas, en avril 2016. Il monte l'organisation quand le mouvement n'a ni élus, ni trésorerie, ni siège. L'appareil manquant, quelqu'un doit bien en tenir lieu.</p></li>
+<li class="sap-item" data-node="n17" data-ring="4" data-fonc="rallie" style="--f:#A8143C"><div class="sap-item-tete"><h4>Jean-Yves Le Drian</h4><span class="sap-tag">Rallie</span></div><p class="sap-qual">Ministre de la Défense en exercice</p><p class="sap-corps">Le 23 mars 2017, il annonce son soutien dans Ouest-France. Un ministre en fonction quitte le camp de son propre président : la rupture est consommée au sommet du Parti socialiste. <sup class="sap-ref"><a href="https://www.cnews.fr/france/2017-05-07/qui-sont-les-soutiens-demmanuel-macron-754208" target="_blank" rel="noopener" aria-label="Source : CNews, 7 mai 2017" title="CNews, 7 mai 2017">↗</a></sup></p></li>
+<li class="sap-item" data-node="n18" data-ring="4" data-fonc="execute" style="--f:#4C4F58"><div class="sap-item-tete"><h4>Édouard Philippe</h4><span class="sap-tag">Exécute</span></div><p class="sap-qual">Maire du Havre, juppéiste</p><p class="sap-corps">Le 15 mai 2017, un homme de la droite entre à Matignon. Le premier acte de gouvernement n'est pas une réforme : c'est une captation. Le cercle électoral se referme sur l'adversaire.</p></li>
+</ul></section>
+
+  <div class="sap-analyse">
+    <div>
+      <h3>Ce que la carte démontre</h3>
+      <p class="sap-lead">Aucun des cinq cercles n'a été bâti par lui. Chacun existait déjà, avec son argent, sa légitimité et son carnet d'adresses. Henry Hermand finançait la deuxième gauche trente ans avant de croiser un stagiaire de l'ENA. L'Inspection des finances ouvrait des portes bien avant 2004. Le MoDem attendait depuis 2007. Ce que Macron invente, ce n'est pas un réseau : c'est l'assemblage.</p>
+      <p>Faites l'essai sur la carte : isolez la fonction « légitime ». Il reste exactement cinq noms, un par cercle. La famille Trogneux, Michel Rocard, l'Inspection des finances, David de Rothschild, François Bayrou. Un chocolatier d'Amiens, un ancien Premier ministre, un corps de l'État, une banque d'affaires, un parti du centre. Rien de commun entre eux, sinon l'usage qui en a été fait : chacun a prêté un nom à quelqu'un qui n'en avait pas encore.</p>
+      <p>La carrière politique française classique consiste à emprunter un appareil et à le gravir. Une fédération, un courant, une mairie, une investiture. L'appareil fait le travail ingrat : il convertit un réseau en bulletins, il encaisse les défaites, et il survit à celui qui le dirige. Macron saute cette étape. Il emprunte cinq réseaux et n'en gravit aucun.</p>
+      <p>D'où la force : la vitesse. Trois ans séparent l'entrée à Bercy de l'entrée à l'Élysée. Et d'où la fragilité : rien ne se transmet. Gérard Collomb s'en va dès 2018. Richard Ferrand perd son siège en 2022. Édouard Philippe a fondé son propre parti l'année précédente. Un appareil produit des successeurs. Un assemblage produit des ruptures.</p>
+    </div>
+    <div class="sap-reserve">
+      <h3>Ce que la carte ne montre pas</h3>
+      <ul>
+        <li><strong>Le temps.</strong> Les cercles ne s'allument pas dans l'ordre et ils se chevauchent : la commission Attali de 2007 et l'entrée chez Rothschild en 2008 relèvent de la même séquence, non de deux étages successifs.</li>
+        <li><strong>Les sorties.</strong> Le schéma fige un état de mai 2017. Il ne dit rien des ruptures qui suivent, alors qu'elles sont la meilleure preuve de sa thèse.</li>
+        <li><strong>Les cercles manquants.</strong> La campagne doit aussi à une équipe jeune et sans notoriété, autour d'Ismaël Emelien, de Julien Denormandie et de Benjamin Griveaux, ainsi qu'au traitement médiatique de 2016 et 2017. Ni l'un ni l'autre ne tiennent dans une géométrie concentrique.</li>
+        <li><strong>Le nœud discutable.</strong> Nicolas Revel figure ici comme binôme d'apprentissage plus que comme fabricant. Alexis Kohler, directeur de cabinet à Bercy puis secrétaire général de l'Élysée, aurait une place mieux fondée sous l'étiquette « exécute ».</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sap-pied">
+    <p><strong>Méthode.</strong> Dix-neuf entrées réparties en cinq cercles concentriques. La distance au centre indique le cercle d'appartenance, la couleur indique la fonction exercée, et non l'importance. Les fonctions sont lisibles transversalement : elles se répètent d'un cercle à l'autre, ce qui est le principal enseignement du schéma.</p>
+    <p><strong>Sources principales.</strong> <a href="https://fr.wikipedia.org/wiki/Emmanuel_Macron" target="_blank" rel="noopener">Notice Emmanuel Macron</a> ; <a href="https://www.lemonde.fr/disparitions/article/2016/11/06/henry-hermand-mentor-de-macron-est-mort_5026284_3382.html" target="_blank" rel="noopener">Le Monde, 6 novembre 2016</a> ; <a href="https://www.franceinfo.fr/elections/presidentielle/quand-emmanuel-macron-etait-banquier-d-affaires-un-element-prometteur-mais-sans-plus_2171646.html" target="_blank" rel="noopener">franceinfo, 4 mai 2017</a> ; <a href="https://www.cnews.fr/france/2017-05-07/qui-sont-les-soutiens-demmanuel-macron-754208" target="_blank" rel="noopener">CNews, 7 mai 2017</a> ; <a href="https://feeds.bbci.co.uk/news/world-europe-39058386" target="_blank" rel="noopener">BBC News, 22 février 2017</a>.</p>
+    <p>Une exclusivité SAPERE</p>
+  </div>
+
+</div>
+</div>
+<script>
+(function(){
+'use strict';
+
+/* Chargement des polices Google Fonts, dédupliqué (une seule injection
+   même si le widget est présent plusieurs fois sur la page). */
+function chargerPolices(){
+  if(document.getElementById('sap-fonts')) return;
+  var pc1=document.createElement('link'); pc1.rel='preconnect'; pc1.href='https://fonts.googleapis.com';
+  var pc2=document.createElement('link'); pc2.rel='preconnect'; pc2.href='https://fonts.gstatic.com'; pc2.crossOrigin='anonymous';
+  var l=document.createElement('link'); l.id='sap-fonts'; l.rel='stylesheet';
+  l.href='https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@500;600&display=swap';
+  var head=document.head||document.getElementsByTagName('head')[0];
+  head.appendChild(pc1); head.appendChild(pc2); head.appendChild(l);
+}
+
+var DATA={"n0":{"nom":"Brigitte Macron","fonc":"Conseille","qual":"Professeure de lettres, Amiens","corps":"Elle anime l'atelier théâtre du lycée La Providence où elle rencontre l'élève Macron en 1993. Ils se marient en 2007. Relectrice permanente des discours, elle forme la voix bien avant que la voix ne serve.","ring":0,"col":"#157F86"},"n1":{"nom":"Manette Noguès","fonc":"Introduit","qual":"Grand-mère maternelle, directrice d'école","corps":"Germaine Noguès élève l'enfant à Bagnères-de-Bigorre autant qu'à Amiens : Molière, Racine, le piano, les longues conversations du soir. Le premier réseau de Macron est un réseau scolaire, et il est domestique.","ring":0,"col":"#1F6FB2"},"n2":{"nom":"Famille Trogneux","fonc":"Légitime","qual":"Chocolatiers amiénois, cinq générations","corps":"D'abord réticente devant le mariage, la famille finit par l'agréger à une bourgeoisie provinciale installée. Ce n'est pas une fortune : c'est une respectabilité, ce qui en politique française vaut souvent davantage.","ring":0,"col":"#6E4A9E"},"n3":{"nom":"Henry Hermand","fonc":"Finance","qual":"Entrepreneur, mécène de la deuxième gauche","corps":"Rencontré en 2002 pendant un stage de l'ENA à la préfecture de l'Oise. Il prête 550,000 euros pour l'achat du premier appartement parisien, sert de témoin au mariage de 2007, puis héberge dans ses locaux les premiers pas d'En Marche en 2016.","ring":1,"col":"#0B7A5C"},"n4":{"nom":"Michel Rocard","fonc":"Légitime","qual":"Ancien Premier ministre, figure tutélaire","corps":"Il n'a jamais été son patron. Il lui fournit mieux : une généalogie. Réformisme, méfiance envers l'État jacobin, primat de la société civile. Le vocabulaire est déjà écrit, il suffira de le reprendre.","ring":1,"col":"#6E4A9E"},"n5":{"nom":"Jean-Pierre Jouyet","fonc":"Introduit","qual":"Inspecteur des finances, ami de Hollande","corps":"Croisé à la commission Attali, il devient le passeur central. Il parraine l'entrée à l'Élysée en 2012, puis appuie la nomination à Bercy en 2014. Un seul homme relie ici la deuxième gauche, le corps et le pouvoir.","ring":1,"col":"#1F6FB2"},"n6":{"nom":"Jacques Attali","fonc":"Introduit","qual":"Président de la commission pour la croissance","corps":"En 2007 et 2008, Macron est rapporteur adjoint de la commission Attali, à vingt-neuf ans. Il en ressort avec une doctrine libérale et, surtout, avec les numéros de téléphone de la moitié du patronat français.","ring":2,"col":"#1F6FB2"},"n7":{"nom":"Inspection des finances","fonc":"Légitime","qual":"Corps de sortie, promotion Senghor 2004","corps":"Le corps ne donne pas un poste : il donne un statut. Un droit d'entrée dans toutes les pièces, une confrérie d'anciens, et la présomption de compétence qui dispense d'avoir à la prouver.","ring":2,"col":"#6E4A9E"},"n8":{"nom":"Pierre-René Lemas","fonc":"Recrute","qual":"Secrétaire général de l'Élysée, 2012 à 2014","corps":"C'est lui qui fait du banquier de trente-quatre ans son secrétaire général adjoint chargé de l'économie, en mai 2012. La nomination est le premier acte proprement politique de la trajectoire.","ring":2,"col":"#B26A0A"},"n9":{"nom":"Nicolas Revel","fonc":"Exécute","qual":"Secrétaire général adjoint, en tandem","corps":"Chargé du social quand Macron tient l'économie, de 2012 à 2014. Le binôme frotte d'abord, puis fonctionne. C'est là que s'apprend la mécanique réelle de l'État, celle qui transforme une intention en texte.","ring":2,"col":"#4C4F58"},"n10":{"nom":"Serge Weinberg","fonc":"Introduit","qual":"Administrateur de Rothschild, commission Attali","corps":"Avec Jacques Attali et Xavier Fontanet, il recommande le jeune inspecteur à François Henrot, associé-gérant de la banque. Trois recommandations suffisent : la commission Attali a fonctionné comme un sas.","ring":3,"col":"#1F6FB2"},"n11":{"nom":"Alain Minc","fonc":"Conseille","qual":"Conseiller de dirigeants, essayiste","corps":"Le conseil fondateur, donné dès la sortie de l'ENA : pour faire de la politique aujourd'hui, il faut être riche ou ascète. Va d'abord fabriquer ton épargne. Le détour par la finance est une stratégie, pas un accident.","ring":3,"col":"#157F86"},"n12":{"nom":"Banque Rothschild","fonc":"Finance","qual":"Rothschild & Cie, 2008 à 2012","corps":"Entré en septembre 2008, associé-gérant en 2010. Le conseil de Nestlé pour le rachat de la nutrition infantile de Pfizer, en 2012, le rend millionnaire. Quatre ans auront suffi à acheter la liberté de se présenter.","ring":3,"col":"#0B7A5C"},"n13":{"nom":"David de Rothschild","fonc":"Légitime","qual":"Chef de la maison","corps":"Il ne recrute pas lui-même. Il adoube. Ce que Macron gagne boulevard Haussmann n'est pas seulement de l'argent : c'est un nom, et ce nom lui sera reproché jusqu'au dernier meeting.","ring":3,"col":"#6E4A9E"},"n14":{"nom":"Gérard Collomb","fonc":"Rallie","qual":"Maire de Lyon, sénateur socialiste","corps":"Premier poids lourd du PS à se déclarer, en octobre 2016. Il apporte une grande ville, une machine d'élus locaux, et c'est lui qui amorce le rapprochement avec François Bayrou.","ring":4,"col":"#A8143C"},"n15":{"nom":"François Bayrou","fonc":"Légitime","qual":"Président du MoDem","corps":"Le 22 février 2017, il renonce à une quatrième candidature et propose une alliance. Le centre historique, celui qui a fait 18 pour cent en 2007, valide le nouveau venu. C'est le moment où la candidature devient crédible.","ring":4,"col":"#6E4A9E"},"n16":{"nom":"Richard Ferrand","fonc":"Exécute","qual":"Député du Finistère, secrétaire général d'En Marche","corps":"Premier député socialiste à franchir le pas, en avril 2016. Il monte l'organisation quand le mouvement n'a ni élus, ni trésorerie, ni siège. L'appareil manquant, quelqu'un doit bien en tenir lieu.","ring":4,"col":"#4C4F58"},"n17":{"nom":"Jean-Yves Le Drian","fonc":"Rallie","qual":"Ministre de la Défense en exercice","corps":"Le 23 mars 2017, il annonce son soutien dans Ouest-France. Un ministre en fonction quitte le camp de son propre président : la rupture est consommée au sommet du Parti socialiste.","ring":4,"col":"#A8143C"},"n18":{"nom":"Édouard Philippe","fonc":"Exécute","qual":"Maire du Havre, juppéiste","corps":"Le 15 mai 2017, un homme de la droite entre à Matignon. Le premier acte de gouvernement n'est pas une réforme : c'est une captation. Le cercle électoral se referme sur l'adversaire.","ring":4,"col":"#4C4F58"}};
+var CERCLES=["Famille et intime","Deuxième gauche","Haute administration","Entreprise et finance","Conquête électorale"];
+var TOTAL=19;
+var doux=(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)?'auto':'smooth';
+var tactile=window.matchMedia&&window.matchMedia('(pointer: coarse)').matches;
+var nInstance=0;
+
+function init(root){
+  if(root.getAttribute('data-sap-init')) return;
+  root.setAttribute('data-sap-init','1');
+  nInstance++;
+
+  /* Identifiants d'accessibilité uniques par instance (le widget peut
+     être dupliqué sur une même page sans collision d'id). */
+  var svg=root.querySelector('svg.sap-carte');
+  if(svg){
+    var t=svg.querySelector('title'), d=svg.querySelector('desc');
+    var ids=[];
+    if(t){t.id='sap-carte-titre-'+nInstance; ids.push(t.id);}
+    if(d){d.id='sap-carte-desc-'+nInstance; ids.push(d.id);}
+    if(ids.length) svg.setAttribute('aria-labelledby',ids.join(' '));
+  }
+
+  var fiche=root.querySelector('.sap-fiche');
+  var vide=fiche?fiche.innerHTML:'';
+  var noeuds=[].slice.call(root.querySelectorAll('.sap-noeud'));
+  var items=[].slice.call(root.querySelectorAll('.sap-item'));
+  var blocs=[].slice.call(root.querySelectorAll('.sap-bloc'));
+  var anneaux=[].slice.call(root.querySelectorAll('.sap-anneau'));
+  var ctls=[].slice.call(root.querySelectorAll('.sap-ringctl'));
+  var lgs=[].slice.call(root.querySelectorAll('.sap-lg'));
+  var compte=root.querySelector('.sap-compte');
+  var scroller=root.querySelector('.sap-scroll');
+  var hint=root.querySelector('.sap-hint');
+  var foncF=null, ringF=null, courant=null;
+
+  /* L'indication de glissement n'apparaît que si la carte déborde réellement. */
+  function majHint(){
+    if(hint&&scroller) hint.style.display=(scroller.scrollWidth>scroller.clientWidth+4)?'block':'none';
+  }
+  majHint();
+  window.addEventListener('resize',majHint);
+
+  function visibleN(el){
+    return (ringF===null||+el.getAttribute('data-ring')===ringF)
+        && (foncF===null||el.getAttribute('data-fonc')===foncF);
+  }
+
+  function peindre(){
+    var nb=0;
+    noeuds.forEach(function(n){
+      var ok=visibleN(n);
+      if(ok) nb++;
+      n.classList.toggle('eteint',!ok);
+      n.classList.toggle('on',n.getAttribute('data-id')===courant);
+    });
+    items.forEach(function(i){ i.classList.toggle('eteint',!visibleN(i)); });
+    blocs.forEach(function(b){ b.classList.toggle('eteint', ringF!==null && +b.getAttribute('data-ring')!==ringF); });
+    lgs.forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-fonc')===foncF)); });
+    var ringVisu = ringF!==null ? ringF : (courant&&DATA[courant] ? DATA[courant].ring : null);
+    anneaux.forEach(function(a){ a.classList.toggle('on', ringVisu!==null && +a.getAttribute('data-ring')===ringVisu); });
+    ctls.forEach(function(g){
+      g.classList.toggle('on', ringVisu!==null && +g.getAttribute('data-ring')===ringVisu);
+      g.setAttribute('aria-pressed', String(ringF!==null && +g.getAttribute('data-ring')===ringF));
+    });
+    if(compte){
+      compte.textContent=(ringF===null&&foncF===null)
+        ? TOTAL+' entrées'
+        : nb+(nb>1?' entrées':' entrée')+' sur '+TOTAL;
+    }
+  }
+
+  function flash(cible){
+    items.forEach(function(i){i.classList.remove('flash');});
+    cible.classList.add('flash');
+    cible.scrollIntoView({behavior:doux,block:'center'});
+  }
+
+  function montrer(id){
+    var d=DATA[id]; if(!d||!fiche) return;
+    courant=id;
+    fiche.innerHTML='<div style="--f:'+d.col+'">'
+      +'<div class="sap-fiche-tete"><h3>'+d.nom+'</h3><span class="sap-tag">'+d.fonc+'</span></div>'
+      +'<p class="sap-qual">'+d.qual+'</p>'
+      +'<p class="sap-corps">'+d.corps+'</p>'
+      +'<p class="sap-fiche-cercle">Cercle '+(d.ring+1)+' &middot; '+CERCLES[d.ring]+'</p>'
+      +'<p class="sap-fiche-actions"><button type="button" class="sap-fiche-lien" data-cible="'+id+'">Voir dans le répertoire &darr;</button></p>'
+      +'</div>';
+    peindre();
+  }
+
+  function reinit(){
+    foncF=null; ringF=null; courant=null;
+    if(fiche) fiche.innerHTML=vide;
+    items.forEach(function(i){i.classList.remove('flash');});
+    peindre();
+  }
+
+  /* Lien fiche → notice du répertoire (délégation : la fiche est régénérée). */
+  if(fiche) fiche.addEventListener('click',function(e){
+    var b=e.target.closest?e.target.closest('.sap-fiche-lien'):null;
+    if(!b) return;
+    var cible=root.querySelector('.sap-item[data-node="'+b.getAttribute('data-cible')+'"]');
+    if(cible) flash(cible);
+  });
+
+  noeuds.forEach(function(n,idx){
+    var id=n.getAttribute('data-id');
+    n.addEventListener('mouseenter',function(){montrer(id);});
+    n.addEventListener('focus',function(){montrer(id);});
+    n.addEventListener('click',function(){
+      /* Sur écran tactile, le premier appui ouvre la fiche ; le second
+         seulement fait défiler jusqu'au répertoire. */
+      var deja=(courant===id);
+      montrer(id);
+      if(tactile&&!deja) return;
+      var cible=root.querySelector('.sap-item[data-node="'+id+'"]');
+      if(cible) flash(cible);
+    });
+    n.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();n.click();}
+      else if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();(noeuds[idx+1]||noeuds[0]).focus();}
+      else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();(noeuds[idx-1]||noeuds[noeuds.length-1]).focus();}
+    });
+  });
+
+  /* Graduations et clé : filtre par cercle, combinable avec le filtre fonction. */
+  ctls.forEach(function(g){
+    function bascule(){
+      var r=+g.getAttribute('data-ring');
+      ringF=(ringF===r)?null:r;
+      peindre();
+      if(ringF!==null){
+        var bloc=root.querySelector('.sap-bloc[data-ring="'+r+'"]');
+        if(bloc) bloc.scrollIntoView({behavior:doux,block:'start'});
+      }
+    }
+    g.addEventListener('click',bascule);
+    g.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();bascule();}
+    });
+  });
+
+  /* Légende : filtre par fonction. */
+  lgs.forEach(function(b){
+    b.addEventListener('click',function(){
+      var f=b.getAttribute('data-fonc');
+      foncF=(foncF===f)?null:f;
+      peindre();
+    });
+  });
+
+  var reset=root.querySelector('.sap-reset');
+  if(reset) reset.addEventListener('click',reinit);
+
+  /* Échap remet tout à zéro. */
+  root.addEventListener('keydown',function(e){
+    if(e.key==='Escape'||e.key==='Esc') reinit();
+  });
+
+  peindre();
+}
+
+function boot(){
+  chargerPolices();
+  [].forEach.call(document.querySelectorAll('.sap-cercles'),init);
+}
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',boot);
+}else{
+  boot();
+}
+
+/* Ré-initialisation dans l'aperçu de l'éditeur Elementor : le widget est
+   re-rendu à chaque modification, il faut relancer l'init sur le nouveau DOM. */
+window.addEventListener('elementor/frontend/init',function(){
+  if(window.elementorFrontend&&window.elementorFrontend.hooks){
+    window.elementorFrontend.hooks.addAction('frontend/element_ready/html.default',boot);
+    window.elementorFrontend.hooks.addAction('frontend/element_ready/shortcode.default',boot);
+    window.elementorFrontend.hooks.addAction('frontend/element_ready/text-editor.default',boot);
+  }
+});
+})();
+</script>
