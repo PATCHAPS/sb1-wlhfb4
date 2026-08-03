@@ -774,17 +774,21 @@ function init(root){
     if(cible) flash(cible,true);
   });
 
+  var gelSurvol=0;
   noeuds.forEach(function(n,idx){
     var id=n.getAttribute('data-id');
-    n.addEventListener('mouseenter',function(){montrer(id);});
+    n.addEventListener('mouseenter',function(){
+      /* Pendant le défilement déclenché par un clic, les pastilles glissent
+         sous le curseur : on ignore ces survols pour ne pas écraser la fiche. */
+      if(Date.now()<gelSurvol) return;
+      montrer(id);
+    });
     n.addEventListener('focus',function(){montrer(id);});
     n.addEventListener('click',function(){
-      /* Le clic ouvre la fiche sous la carte et marque la notice, sans
-         faire défiler la page : le défilement ne part que du lien
-         « Voir dans le répertoire » de la fiche. */
       montrer(id);
+      gelSurvol=Date.now()+1200;
       var cible=root.querySelector('.sap-item[data-node="'+id+'"]');
-      if(cible) flash(cible,false);
+      if(cible) flash(cible,true);
     });
     n.addEventListener('keydown',function(e){
       if(e.key==='Enter'||e.key===' '){e.preventDefault();n.click();}
