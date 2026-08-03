@@ -113,7 +113,7 @@
   padding:20px 22px;min-height:150px}
 .sap-fiche-vide{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--encre-2);
   max-width:52ch;line-height:1.5}
-.sap-fiche-tete{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:4px}
+.sap-fiche-tete{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:4px}
 .sap-fiche h3{font-size:24px;letter-spacing:-.01em}
 .sap-fiche .sap-tag{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.16em;
   text-transform:uppercase;color:#fff;background:var(--f,#4C4F58);border:0;padding:4px 9px;border-radius:2px}
@@ -177,7 +177,15 @@
   transition:background .2s,box-shadow .2s,opacity .2s}
 .sap-item.flash{background:#fff;box-shadow:inset 0 0 0 2px var(--encre)}
 .sap-item.eteint{opacity:.34}
-.sap-item-tete{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 10px}
+.sap-item-tete{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+
+/* portraits */
+.sap-avatar{width:44px;height:44px;border-radius:50%;flex:0 0 44px;background:var(--f,#4C4F58);
+  color:#fff;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;
+  position:relative;font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.05em;
+  border:2px solid #fff;box-shadow:0 0 0 1px var(--trait)}
+.sap-avatar img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;margin:0;border-radius:0}
+.sap-avatar-g{width:66px;height:66px;flex:0 0 66px;font-size:20px}
 .sap-item h4{font-size:19px;letter-spacing:-.008em}
 .sap-tag{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.15em;
   text-transform:uppercase;color:var(--f);border:1px solid var(--f);padding:2px 6px;border-radius:2px}
@@ -510,6 +518,7 @@
   <div class="sap-pied">
     <p><strong>Méthode.</strong> Dix-neuf entrées réparties en cinq cercles concentriques. La distance au centre indique le cercle d'appartenance, la couleur indique la fonction exercée, et non l'importance. Les fonctions sont lisibles transversalement : elles se répètent d'un cercle à l'autre, ce qui est le principal enseignement du schéma.</p>
     <p><strong>Sources principales.</strong> <a href="https://fr.wikipedia.org/wiki/Emmanuel_Macron" target="_blank" rel="noopener">Notice Emmanuel Macron</a> ; <a href="https://www.lemonde.fr/disparitions/article/2016/11/06/henry-hermand-mentor-de-macron-est-mort_5026284_3382.html" target="_blank" rel="noopener">Le Monde, 6 novembre 2016</a> ; <a href="https://www.franceinfo.fr/elections/presidentielle/quand-emmanuel-macron-etait-banquier-d-affaires-un-element-prometteur-mais-sans-plus_2171646.html" target="_blank" rel="noopener">franceinfo, 4 mai 2017</a> ; <a href="https://www.cnews.fr/france/2017-05-07/qui-sont-les-soutiens-demmanuel-macron-754208" target="_blank" rel="noopener">CNews, 7 mai 2017</a> ; <a href="https://feeds.bbci.co.uk/news/world-europe-39058386" target="_blank" rel="noopener">BBC News, 22 février 2017</a>.</p>
+    <p><strong>Portraits.</strong> Chargés dynamiquement depuis <a href="https://fr.wikipedia.org" target="_blank" rel="noopener">Wikipédia</a> (photographies libres de Wikimédia Commons) ; auteurs et licences indiqués sur les pages sources. En l'absence de photographie, un monogramme remplace le portrait.</p>
     <p>Une exclusivité SAPERE</p>
   </div>
 
@@ -531,12 +540,43 @@ function chargerPolices(){
   head.appendChild(pc1); head.appendChild(pc2); head.appendChild(l);
 }
 
-var DATA={"n0":{"nom":"Brigitte Macron","fonc":"Conseille","qual":"Professeure de lettres, Amiens","corps":"Elle anime l'atelier théâtre du lycée La Providence où elle rencontre l'élève Macron en 1993. Ils se marient en 2007. Relectrice permanente des discours, elle forme la voix bien avant que la voix ne serve.","ring":0,"col":"#157F86"},"n1":{"nom":"Manette Noguès","fonc":"Introduit","qual":"Grand-mère maternelle, directrice d'école","corps":"Germaine Noguès élève l'enfant à Bagnères-de-Bigorre autant qu'à Amiens : Molière, Racine, le piano, les longues conversations du soir. Le premier réseau de Macron est un réseau scolaire, et il est domestique.","ring":0,"col":"#1F6FB2"},"n2":{"nom":"Famille Trogneux","fonc":"Légitime","qual":"Chocolatiers amiénois, cinq générations","corps":"D'abord réticente devant le mariage, la famille finit par l'agréger à une bourgeoisie provinciale installée. Ce n'est pas une fortune : c'est une respectabilité, ce qui en politique française vaut souvent davantage.","ring":0,"col":"#6E4A9E"},"n3":{"nom":"Henry Hermand","fonc":"Finance","qual":"Entrepreneur, mécène de la deuxième gauche","corps":"Rencontré en 2002 pendant un stage de l'ENA à la préfecture de l'Oise. Il prête 550,000 euros pour l'achat du premier appartement parisien, sert de témoin au mariage de 2007, puis héberge dans ses locaux les premiers pas d'En Marche en 2016.","ring":1,"col":"#0B7A5C"},"n4":{"nom":"Michel Rocard","fonc":"Légitime","qual":"Ancien Premier ministre, figure tutélaire","corps":"Il n'a jamais été son patron. Il lui fournit mieux : une généalogie. Réformisme, méfiance envers l'État jacobin, primat de la société civile. Le vocabulaire est déjà écrit, il suffira de le reprendre.","ring":1,"col":"#6E4A9E"},"n5":{"nom":"Jean-Pierre Jouyet","fonc":"Introduit","qual":"Inspecteur des finances, ami de Hollande","corps":"Croisé à la commission Attali, il devient le passeur central. Il parraine l'entrée à l'Élysée en 2012, puis appuie la nomination à Bercy en 2014. Un seul homme relie ici la deuxième gauche, le corps et le pouvoir.","ring":1,"col":"#1F6FB2"},"n6":{"nom":"Jacques Attali","fonc":"Introduit","qual":"Président de la commission pour la croissance","corps":"En 2007 et 2008, Macron est rapporteur adjoint de la commission Attali, à vingt-neuf ans. Il en ressort avec une doctrine libérale et, surtout, avec les numéros de téléphone de la moitié du patronat français.","ring":2,"col":"#1F6FB2"},"n7":{"nom":"Inspection des finances","fonc":"Légitime","qual":"Corps de sortie, promotion Senghor 2004","corps":"Le corps ne donne pas un poste : il donne un statut. Un droit d'entrée dans toutes les pièces, une confrérie d'anciens, et la présomption de compétence qui dispense d'avoir à la prouver.","ring":2,"col":"#6E4A9E"},"n8":{"nom":"Pierre-René Lemas","fonc":"Recrute","qual":"Secrétaire général de l'Élysée, 2012 à 2014","corps":"C'est lui qui fait du banquier de trente-quatre ans son secrétaire général adjoint chargé de l'économie, en mai 2012. La nomination est le premier acte proprement politique de la trajectoire.","ring":2,"col":"#B26A0A"},"n9":{"nom":"Nicolas Revel","fonc":"Exécute","qual":"Secrétaire général adjoint, en tandem","corps":"Chargé du social quand Macron tient l'économie, de 2012 à 2014. Le binôme frotte d'abord, puis fonctionne. C'est là que s'apprend la mécanique réelle de l'État, celle qui transforme une intention en texte.","ring":2,"col":"#4C4F58"},"n10":{"nom":"Serge Weinberg","fonc":"Introduit","qual":"Administrateur de Rothschild, commission Attali","corps":"Avec Jacques Attali et Xavier Fontanet, il recommande le jeune inspecteur à François Henrot, associé-gérant de la banque. Trois recommandations suffisent : la commission Attali a fonctionné comme un sas.","ring":3,"col":"#1F6FB2"},"n11":{"nom":"Alain Minc","fonc":"Conseille","qual":"Conseiller de dirigeants, essayiste","corps":"Le conseil fondateur, donné dès la sortie de l'ENA : pour faire de la politique aujourd'hui, il faut être riche ou ascète. Va d'abord fabriquer ton épargne. Le détour par la finance est une stratégie, pas un accident.","ring":3,"col":"#157F86"},"n12":{"nom":"Banque Rothschild","fonc":"Finance","qual":"Rothschild & Cie, 2008 à 2012","corps":"Entré en septembre 2008, associé-gérant en 2010. Le conseil de Nestlé pour le rachat de la nutrition infantile de Pfizer, en 2012, le rend millionnaire. Quatre ans auront suffi à acheter la liberté de se présenter.","ring":3,"col":"#0B7A5C"},"n13":{"nom":"David de Rothschild","fonc":"Légitime","qual":"Chef de la maison","corps":"Il ne recrute pas lui-même. Il adoube. Ce que Macron gagne boulevard Haussmann n'est pas seulement de l'argent : c'est un nom, et ce nom lui sera reproché jusqu'au dernier meeting.","ring":3,"col":"#6E4A9E"},"n14":{"nom":"Gérard Collomb","fonc":"Rallie","qual":"Maire de Lyon, sénateur socialiste","corps":"Premier poids lourd du PS à se déclarer, en octobre 2016. Il apporte une grande ville, une machine d'élus locaux, et c'est lui qui amorce le rapprochement avec François Bayrou.","ring":4,"col":"#A8143C"},"n15":{"nom":"François Bayrou","fonc":"Légitime","qual":"Président du MoDem","corps":"Le 22 février 2017, il renonce à une quatrième candidature et propose une alliance. Le centre historique, celui qui a fait 18 pour cent en 2007, valide le nouveau venu. C'est le moment où la candidature devient crédible.","ring":4,"col":"#6E4A9E"},"n16":{"nom":"Richard Ferrand","fonc":"Exécute","qual":"Député du Finistère, secrétaire général d'En Marche","corps":"Premier député socialiste à franchir le pas, en avril 2016. Il monte l'organisation quand le mouvement n'a ni élus, ni trésorerie, ni siège. L'appareil manquant, quelqu'un doit bien en tenir lieu.","ring":4,"col":"#4C4F58"},"n17":{"nom":"Jean-Yves Le Drian","fonc":"Rallie","qual":"Ministre de la Défense en exercice","corps":"Le 23 mars 2017, il annonce son soutien dans Ouest-France. Un ministre en fonction quitte le camp de son propre président : la rupture est consommée au sommet du Parti socialiste.","ring":4,"col":"#A8143C"},"n18":{"nom":"Édouard Philippe","fonc":"Exécute","qual":"Maire du Havre, juppéiste","corps":"Le 15 mai 2017, un homme de la droite entre à Matignon. Le premier acte de gouvernement n'est pas une réforme : c'est une captation. Le cercle électoral se referme sur l'adversaire.","ring":4,"col":"#4C4F58"}};
+var DATA={"n0":{"wiki":"Brigitte Macron","ini":"BM","nom":"Brigitte Macron","fonc":"Conseille","qual":"Professeure de lettres, Amiens","corps":"Elle anime l'atelier théâtre du lycée La Providence où elle rencontre l'élève Macron en 1993. Ils se marient en 2007. Relectrice permanente des discours, elle forme la voix bien avant que la voix ne serve.","ring":0,"col":"#157F86"},"n1":{"wiki":null,"ini":"MN","nom":"Manette Noguès","fonc":"Introduit","qual":"Grand-mère maternelle, directrice d'école","corps":"Germaine Noguès élève l'enfant à Bagnères-de-Bigorre autant qu'à Amiens : Molière, Racine, le piano, les longues conversations du soir. Le premier réseau de Macron est un réseau scolaire, et il est domestique.","ring":0,"col":"#1F6FB2"},"n2":{"wiki":"Famille Trogneux","ini":"FT","nom":"Famille Trogneux","fonc":"Légitime","qual":"Chocolatiers amiénois, cinq générations","corps":"D'abord réticente devant le mariage, la famille finit par l'agréger à une bourgeoisie provinciale installée. Ce n'est pas une fortune : c'est une respectabilité, ce qui en politique française vaut souvent davantage.","ring":0,"col":"#6E4A9E"},"n3":{"wiki":"Henry Hermand","ini":"HH","nom":"Henry Hermand","fonc":"Finance","qual":"Entrepreneur, mécène de la deuxième gauche","corps":"Rencontré en 2002 pendant un stage de l'ENA à la préfecture de l'Oise. Il prête 550,000 euros pour l'achat du premier appartement parisien, sert de témoin au mariage de 2007, puis héberge dans ses locaux les premiers pas d'En Marche en 2016.","ring":1,"col":"#0B7A5C"},"n4":{"wiki":"Michel Rocard","ini":"MR","nom":"Michel Rocard","fonc":"Légitime","qual":"Ancien Premier ministre, figure tutélaire","corps":"Il n'a jamais été son patron. Il lui fournit mieux : une généalogie. Réformisme, méfiance envers l'État jacobin, primat de la société civile. Le vocabulaire est déjà écrit, il suffira de le reprendre.","ring":1,"col":"#6E4A9E"},"n5":{"wiki":"Jean-Pierre Jouyet","ini":"JJ","nom":"Jean-Pierre Jouyet","fonc":"Introduit","qual":"Inspecteur des finances, ami de Hollande","corps":"Croisé à la commission Attali, il devient le passeur central. Il parraine l'entrée à l'Élysée en 2012, puis appuie la nomination à Bercy en 2014. Un seul homme relie ici la deuxième gauche, le corps et le pouvoir.","ring":1,"col":"#1F6FB2"},"n6":{"wiki":"Jacques Attali","ini":"JA","nom":"Jacques Attali","fonc":"Introduit","qual":"Président de la commission pour la croissance","corps":"En 2007 et 2008, Macron est rapporteur adjoint de la commission Attali, à vingt-neuf ans. Il en ressort avec une doctrine libérale et, surtout, avec les numéros de téléphone de la moitié du patronat français.","ring":2,"col":"#1F6FB2"},"n7":{"wiki":"Inspection générale des finances (France)","ini":"IF","nom":"Inspection des finances","fonc":"Légitime","qual":"Corps de sortie, promotion Senghor 2004","corps":"Le corps ne donne pas un poste : il donne un statut. Un droit d'entrée dans toutes les pièces, une confrérie d'anciens, et la présomption de compétence qui dispense d'avoir à la prouver.","ring":2,"col":"#6E4A9E"},"n8":{"wiki":"Pierre-René Lemas","ini":"PL","nom":"Pierre-René Lemas","fonc":"Recrute","qual":"Secrétaire général de l'Élysée, 2012 à 2014","corps":"C'est lui qui fait du banquier de trente-quatre ans son secrétaire général adjoint chargé de l'économie, en mai 2012. La nomination est le premier acte proprement politique de la trajectoire.","ring":2,"col":"#B26A0A"},"n9":{"wiki":"Nicolas Revel (haut fonctionnaire)","ini":"NR","nom":"Nicolas Revel","fonc":"Exécute","qual":"Secrétaire général adjoint, en tandem","corps":"Chargé du social quand Macron tient l'économie, de 2012 à 2014. Le binôme frotte d'abord, puis fonctionne. C'est là que s'apprend la mécanique réelle de l'État, celle qui transforme une intention en texte.","ring":2,"col":"#4C4F58"},"n10":{"wiki":"Serge Weinberg","ini":"SW","nom":"Serge Weinberg","fonc":"Introduit","qual":"Administrateur de Rothschild, commission Attali","corps":"Avec Jacques Attali et Xavier Fontanet, il recommande le jeune inspecteur à François Henrot, associé-gérant de la banque. Trois recommandations suffisent : la commission Attali a fonctionné comme un sas.","ring":3,"col":"#1F6FB2"},"n11":{"wiki":"Alain Minc","ini":"AM","nom":"Alain Minc","fonc":"Conseille","qual":"Conseiller de dirigeants, essayiste","corps":"Le conseil fondateur, donné dès la sortie de l'ENA : pour faire de la politique aujourd'hui, il faut être riche ou ascète. Va d'abord fabriquer ton épargne. Le détour par la finance est une stratégie, pas un accident.","ring":3,"col":"#157F86"},"n12":{"wiki":"Rothschild & Co","ini":"BR","nom":"Banque Rothschild","fonc":"Finance","qual":"Rothschild & Cie, 2008 à 2012","corps":"Entré en septembre 2008, associé-gérant en 2010. Le conseil de Nestlé pour le rachat de la nutrition infantile de Pfizer, en 2012, le rend millionnaire. Quatre ans auront suffi à acheter la liberté de se présenter.","ring":3,"col":"#0B7A5C"},"n13":{"wiki":"David de Rothschild (banquier)","ini":"DR","nom":"David de Rothschild","fonc":"Légitime","qual":"Chef de la maison","corps":"Il ne recrute pas lui-même. Il adoube. Ce que Macron gagne boulevard Haussmann n'est pas seulement de l'argent : c'est un nom, et ce nom lui sera reproché jusqu'au dernier meeting.","ring":3,"col":"#6E4A9E"},"n14":{"wiki":"Gérard Collomb","ini":"GC","nom":"Gérard Collomb","fonc":"Rallie","qual":"Maire de Lyon, sénateur socialiste","corps":"Premier poids lourd du PS à se déclarer, en octobre 2016. Il apporte une grande ville, une machine d'élus locaux, et c'est lui qui amorce le rapprochement avec François Bayrou.","ring":4,"col":"#A8143C"},"n15":{"wiki":"François Bayrou","ini":"FB","nom":"François Bayrou","fonc":"Légitime","qual":"Président du MoDem","corps":"Le 22 février 2017, il renonce à une quatrième candidature et propose une alliance. Le centre historique, celui qui a fait 18 pour cent en 2007, valide le nouveau venu. C'est le moment où la candidature devient crédible.","ring":4,"col":"#6E4A9E"},"n16":{"wiki":"Richard Ferrand","ini":"RF","nom":"Richard Ferrand","fonc":"Exécute","qual":"Député du Finistère, secrétaire général d'En Marche","corps":"Premier député socialiste à franchir le pas, en avril 2016. Il monte l'organisation quand le mouvement n'a ni élus, ni trésorerie, ni siège. L'appareil manquant, quelqu'un doit bien en tenir lieu.","ring":4,"col":"#4C4F58"},"n17":{"wiki":"Jean-Yves Le Drian","ini":"JL","nom":"Jean-Yves Le Drian","fonc":"Rallie","qual":"Ministre de la Défense en exercice","corps":"Le 23 mars 2017, il annonce son soutien dans Ouest-France. Un ministre en fonction quitte le camp de son propre président : la rupture est consommée au sommet du Parti socialiste.","ring":4,"col":"#A8143C"},"n18":{"wiki":"Édouard Philippe","ini":"EP","nom":"Édouard Philippe","fonc":"Exécute","qual":"Maire du Havre, juppéiste","corps":"Le 15 mai 2017, un homme de la droite entre à Matignon. Le premier acte de gouvernement n'est pas une réforme : c'est une captation. Le cercle électoral se referme sur l'adversaire.","ring":4,"col":"#4C4F58"}};
 var CERCLES=["Famille et intime","Deuxième gauche","Haute administration","Entreprise et finance","Conquête électorale"];
 var TOTAL=19;
 var doux=(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)?'auto':'smooth';
 var tactile=window.matchMedia&&window.matchMedia('(pointer: coarse)').matches;
 var nInstance=0;
+
+/* Portraits : chargés par le navigateur du visiteur depuis l'API publique de
+   Wikipédia (photos libres de Wikimédia Commons). En cas d'absence de photo,
+   d'échec réseau ou de blocage, le monogramme à initiales reste affiché. */
+var PORTRAITS={};
+function obtenirPortrait(id,cb){
+  var d=DATA[id];
+  if(!d||!d.wiki||!window.fetch){cb(null);return;}
+  var p=PORTRAITS[id];
+  if(p===null||typeof p==='string'){cb(p);return;}
+  if(p&&p.push){p.push(cb);return;}
+  PORTRAITS[id]=[cb];
+  function fin(u){var cbs=PORTRAITS[id];PORTRAITS[id]=u;cbs.forEach(function(f){f(u);});}
+  fetch('https://fr.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(d.wiki.replace(/ /g,'_')))
+    .then(function(r){return r.ok?r.json():null;})
+    .then(function(j){fin(j&&j.thumbnail&&j.thumbnail.source?j.thumbnail.source:null);})
+    .catch(function(){fin(null);});
+}
+function garnirAvatar(el,id){
+  var d=DATA[id]; if(!el||!d) return;
+  el.textContent=d.ini||'';
+  el.setAttribute('aria-hidden','true');
+  obtenirPortrait(id,function(u){
+    if(!u||el.querySelector('img')) return;
+    var img=document.createElement('img');
+    img.alt=''; img.loading='lazy'; img.referrerPolicy='no-referrer';
+    img.onerror=function(){if(img.parentNode)img.parentNode.removeChild(img);};
+    img.src=u;
+    el.appendChild(img);
+  });
+}
 
 /* Ajuste la largeur des pastilles de la carte à la longueur réelle du texte :
    selon la police effectivement chargée (Archivo Narrow ou police de secours),
@@ -598,6 +638,16 @@ function init(root){
   window.addEventListener('resize',majHint);
   ajusterPastilles(root);
 
+  /* Portrait en tête de chaque notice du répertoire. */
+  items.forEach(function(i){
+    var tete=i.querySelector('.sap-item-tete');
+    if(!tete||tete.querySelector('.sap-avatar')) return;
+    var av=document.createElement('span');
+    av.className='sap-avatar';
+    tete.insertBefore(av,tete.firstChild);
+    garnirAvatar(av,i.getAttribute('data-node'));
+  });
+
   function visibleN(el){
     return (ringF===null||+el.getAttribute('data-ring')===ringF)
         && (foncF===null||el.getAttribute('data-fonc')===foncF);
@@ -637,12 +687,13 @@ function init(root){
     var d=DATA[id]; if(!d||!fiche) return;
     courant=id;
     fiche.innerHTML='<div style="--f:'+d.col+'">'
-      +'<div class="sap-fiche-tete"><h3>'+d.nom+'</h3><span class="sap-tag">'+d.fonc+'</span></div>'
+      +'<div class="sap-fiche-tete"><span class="sap-avatar sap-avatar-g"></span><h3>'+d.nom+'</h3><span class="sap-tag">'+d.fonc+'</span></div>'
       +'<p class="sap-qual">'+d.qual+'</p>'
       +'<p class="sap-corps">'+d.corps+'</p>'
       +'<p class="sap-fiche-cercle">Cercle '+(d.ring+1)+' &middot; '+CERCLES[d.ring]+'</p>'
       +'<p class="sap-fiche-actions"><button type="button" class="sap-fiche-lien" data-cible="'+id+'">Voir dans le répertoire &darr;</button></p>'
       +'</div>';
+    garnirAvatar(fiche.querySelector('.sap-avatar'),id);
     peindre();
   }
 
