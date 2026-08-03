@@ -212,6 +212,13 @@
   font-family:var(--sans);font-size:12.5px;color:var(--encre-3);line-height:1.7}
 .sap-pied a{color:var(--bleu-src)}
 .sap-pied strong{color:var(--encre-2);font-weight:600}
+/* crédits des portraits, repliés par défaut (attribution CC accessible en un clic) */
+.sap-credits-bloc{margin:0 0 1em;padding:0;border:0;background:none}
+.sap-credits-bloc summary{cursor:pointer;font-size:11px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--encre-3);list-style:revert}
+.sap-credits-bloc summary:hover{color:var(--encre-2)}
+.sap-credits-bloc[open] summary{margin-bottom:6px}
+.sap-credits-bloc p{margin:0;font-size:11.5px;line-height:1.65}
 
 @media(prefers-reduced-motion:reduce){.sap-cercles *{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 @media print{
@@ -520,7 +527,10 @@
   <div class="sap-pied">
     <p><strong>Méthode.</strong> Dix-neuf entrées réparties en cinq cercles concentriques. La distance au centre indique le cercle d'appartenance, la couleur indique la fonction exercée, et non l'importance. Les fonctions sont lisibles transversalement : elles se répètent d'un cercle à l'autre, ce qui est le principal enseignement du schéma.</p>
     <p><strong>Sources principales.</strong> <a href="https://fr.wikipedia.org/wiki/Emmanuel_Macron" target="_blank" rel="noopener">Notice Emmanuel Macron</a> ; <a href="https://www.lemonde.fr/disparitions/article/2016/11/06/henry-hermand-mentor-de-macron-est-mort_5026284_3382.html" target="_blank" rel="noopener">Le Monde, 6 novembre 2016</a> ; <a href="https://www.franceinfo.fr/elections/presidentielle/quand-emmanuel-macron-etait-banquier-d-affaires-un-element-prometteur-mais-sans-plus_2171646.html" target="_blank" rel="noopener">franceinfo, 4 mai 2017</a> ; <a href="https://www.cnews.fr/france/2017-05-07/qui-sont-les-soutiens-demmanuel-macron-754208" target="_blank" rel="noopener">CNews, 7 mai 2017</a> ; <a href="https://feeds.bbci.co.uk/news/world-europe-39058386" target="_blank" rel="noopener">BBC News, 22 février 2017</a>.</p>
-    <p><strong>Portraits.</strong> Photographies issues de <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimédia Commons</a>, chargées via l'API de Wikipédia ; en l'absence de photographie librement réutilisable, un monogramme remplace le portrait.<span class="sap-credits"></span></p>
+    <details class="sap-credits-bloc">
+      <summary>Crédits des portraits</summary>
+      <p>Photographies issues de <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimédia Commons</a>, chargées via l'API de Wikipédia ; en l'absence de photographie librement réutilisable, un monogramme remplace le portrait.<span class="sap-credits"></span></p>
+    </details>
     <p>Une exclusivité SAPERE</p>
   </div>
 
