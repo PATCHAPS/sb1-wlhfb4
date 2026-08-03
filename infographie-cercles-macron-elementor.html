@@ -100,7 +100,7 @@
 .sap-noeud:focus{outline:none}
 .sap-pastille{fill:#FBFCFD;stroke:#B4C0CE;stroke-width:1;transition:fill .18s,stroke .18s}
 .sap-barre{transition:opacity .18s}
-.sap-nom{font-family:var(--etroit);font-weight:600;font-size:17px;fill:var(--encre)}
+.sap-nom{font-family:var(--etroit);font-weight:600;font-size:16px;fill:var(--encre)}
 .sap-fonc{font-family:var(--sans);font-weight:600;font-size:9.5px;letter-spacing:.14em}
 .sap-noeud:hover .sap-pastille,.sap-noeud:focus-visible .sap-pastille,.sap-noeud.on .sap-pastille{
   stroke-width:2}
@@ -117,9 +117,9 @@
 .sap-fiche h3{font-size:24px;letter-spacing:-.01em}
 .sap-fiche .sap-tag{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.16em;
   text-transform:uppercase;color:#fff;background:var(--f,#4C4F58);border:0;padding:4px 9px;border-radius:2px}
-.sap-fiche .sap-qual{font-family:var(--sans);font-size:12.5px;letter-spacing:.05em;
+.sap-fiche .sap-qual{font-family:var(--sans);font-size:11px;letter-spacing:.05em;
   text-transform:uppercase;color:var(--encre-3);margin:0 0 12px}
-.sap-fiche .sap-corps{font-size:17.5px;max-width:64ch;color:var(--encre)}
+.sap-fiche .sap-corps{font-size:15.5px;max-width:64ch;color:var(--encre)}
 .sap-fiche-cercle{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
   color:var(--encre-3);margin-top:14px;padding-top:12px;border-top:1px solid var(--trait-fin)}
 .sap-fiche-actions{margin-top:10px}
@@ -181,9 +181,9 @@
 .sap-item h4{font-size:19px;letter-spacing:-.008em}
 .sap-tag{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.15em;
   text-transform:uppercase;color:var(--f);border:1px solid var(--f);padding:2px 6px;border-radius:2px}
-.sap-qual{font-family:var(--sans);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;
+.sap-qual{font-family:var(--sans);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;
   color:var(--encre-3);margin:7px 0 9px}
-.sap-corps{font-size:16px;line-height:1.58;margin:0;color:var(--encre-2)}
+.sap-corps{font-size:14px;line-height:1.55;margin:0;color:var(--encre-2)}
 .sap-ref a{color:var(--bleu-src);text-decoration:none;font-size:.7em;vertical-align:super}
 .sap-ref a:hover{text-decoration:underline}
 
@@ -538,6 +538,29 @@ var doux=(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)
 var tactile=window.matchMedia&&window.matchMedia('(pointer: coarse)').matches;
 var nInstance=0;
 
+/* Ajuste la largeur des pastilles de la carte à la longueur réelle du texte :
+   selon la police effectivement chargée (Archivo Narrow ou police de secours),
+   les noms peuvent être plus larges que prévu. Ré-exécuté après le chargement
+   des polices. La largeur ne descend jamais sous la largeur d'origine. */
+function ajusterPastilles(root){
+  [].forEach.call(root.querySelectorAll('.sap-noeud'),function(n){
+    var past=n.querySelector('.sap-pastille');
+    var barre=n.querySelector('.sap-barre');
+    var nom=n.querySelector('.sap-nom');
+    var fonc=n.querySelector('.sap-fonc');
+    if(!past||!nom) return;
+    try{
+      var w=nom.getComputedTextLength();
+      if(fonc) w=Math.max(w,fonc.getComputedTextLength());
+      if(!w) return;
+      var orig=past.getAttribute('data-w0');
+      if(orig===null){orig=past.getAttribute('width');past.setAttribute('data-w0',orig);}
+      /* 18 px de marge gauche (après la barre colorée) + 16 px à droite */
+      past.setAttribute('width',Math.max(parseFloat(orig),Math.ceil(w+34)));
+    }catch(e){}
+  });
+}
+
 function init(root){
   if(root.getAttribute('data-sap-init')) return;
   root.setAttribute('data-sap-init','1');
@@ -573,6 +596,7 @@ function init(root){
   }
   majHint();
   window.addEventListener('resize',majHint);
+  ajusterPastilles(root);
 
   function visibleN(el){
     return (ringF===null||+el.getAttribute('data-ring')===ringF)
@@ -697,6 +721,12 @@ function init(root){
 function boot(){
   chargerPolices();
   [].forEach.call(document.querySelectorAll('.sap-cercles'),init);
+  /* Re-mesure les pastilles une fois les polices réellement chargées. */
+  if(document.fonts&&document.fonts.ready){
+    document.fonts.ready.then(function(){
+      [].forEach.call(document.querySelectorAll('.sap-cercles'),ajusterPastilles);
+    });
+  }
 }
 
 if(document.readyState==='loading'){
