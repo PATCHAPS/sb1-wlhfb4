@@ -10,8 +10,14 @@ LA FICHE elle-même (le MASTER fait foi) et l'empreinte MD5 de chaque fichier.
 Le calibrage ci-dessous n'est qu'une référence : tout écart entre lui et la
 fiche est signalé, jamais corrigé en silence.
 
+Le dossier Téléchargements est aussi parcouru : une fiche téléchargée depuis
+une discussion avec Claude et pas encore rangée y est souvent la plus récente.
+Pour chaque rôle (MASTER, PUBLIC), la version retenue est la plus récente,
+d'après la date du nom de fichier puis la date d'enregistrement ; l'index
+signale toute version prise dans Téléchargements, à ranger en `actuel`.
+
 Usage :
-    python3 regrouper_asie_sud_est.py CHEMIN_DU_DOSSIER_SAPERE [--dest DOSSIER] [--simuler]
+    python3 regrouper_asie_sud_est.py CHEMIN_DU_DOSSIER_SAPERE [--telechargements DOSSIER] [--dest DOSSIER] [--simuler]
 
 Exemple :
     python3 regrouper_asie_sud_est.py ~/SAPERE --simuler
@@ -80,6 +86,50 @@ def fichiers_du_pays(ff: Path, iso: str):
     return None, []
 
 
+DATE_NOM = re.compile(r"(20\d\d-\d\d-\d\d)")
+
+
+def role(f: Path):
+    for r in ("_Master_", "_Public_"):
+        if r in f.name:
+            return r.strip("_")
+    return None
+
+
+def fraicheur(f: Path):
+    """Clé de tri : date du nom de fichier, puis date d'enregistrement."""
+    m = DATE_NOM.search(f.name)
+    return (m.group(1) if m else "0000-00-00", f.stat().st_mtime)
+
+
+def dossiers_telechargements(explicite):
+    if explicite:
+        return [explicite.expanduser()]
+    home = Path.home()
+    return [d for d in (home / "Downloads", home / "Téléchargements") if d.is_dir()]
+
+
+def telecharges_du_pays(dossiers, iso):
+    trouves = []
+    for d in dossiers:
+        trouves += [p for p in d.rglob(f"Claude-Sapere_{iso}_*") if p.is_file() and p.suffix in EXTENSIONS]
+    return trouves
+
+
+def fusionner(ranges, telecharges):
+    """Garde, par rôle, la version la plus récente ; rend (fichiers, pris_en_telechargement)."""
+    retenus, pris = [p for p in ranges if role(p) is None], []
+    for r in ("Master", "Public"):
+        cands = [p for p in ranges + telecharges if role(p) == r]
+        if not cands:
+            continue
+        meilleur = max(cands, key=fraicheur)
+        retenus.append(meilleur)
+        if meilleur in telecharges:
+            pris.append(meilleur)
+    return retenus, pris
+
+
 SCORE = re.compile(r"(\d,\d)\s*/\s*5")
 
 
@@ -109,17 +159,23 @@ def etat(fichiers) -> str:
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("sapere", type=Path, help="dossier SAPERE du disque")
+    ap.add_argument("--telechargements", type=Path, help="dossier des téléchargements (défaut : ~/Downloads et ~/Téléchargements)")
     ap.add_argument("--dest", type=Path, help="dossier de regroupement (défaut : dossiers/forces-et-failles/asie-du-sud-est/regroupement_AAAA-MM-JJ)")
     ap.add_argument("--simuler", action="store_true", help="affiche ce qui serait copié, sans rien écrire")
     a = ap.parse_args()
 
     ff = trouver_racine_ff(a.sapere.expanduser().resolve())
     dest = a.dest or ff / "asie-du-sud-est" / f"regroupement_{date.today().isoformat()}"
-    print(f"Source : {ff}\nDestination : {dest}{'  (simulation)' if a.simuler else ''}\n")
+    dl = dossiers_telechargements(a.telechargements)
+    print(f"Source : {ff}\nTéléchargements : {', '.join(map(str, dl)) or 'aucun'}\nDestination : {dest}{'  (simulation)' if a.simuler else ''}\n")
 
-    lignes, copies, ecarts = [], 0, []
+    lignes, copies, ecarts, a_ranger = [], 0, [], []
     for rang, (iso, nom, calib, niveau) in enumerate(PAYS, 1):
         source, fs = fichiers_du_pays(ff, iso)
+        fs, pris = fusionner(fs, telecharges_du_pays(dl, iso))
+        if pris:
+            source = (source + " + " if source else "") + "Téléchargements"
+            a_ranger += [f"{nom} : {p}" for p in pris]
         st = etat(fs)
         lu, lu_dans = lire_score(fs)
         if lu and lu != calib:
@@ -151,12 +207,20 @@ def main():
         "|---|---|---|---|---|---|---|",
         *lignes,
         "",
+        "## Versions prises dans Téléchargements (plus récentes que le rangement, à verser en `actuel`)",
+        "",
+        *([f"- {x}" for x in a_ranger] or ["Aucune."]),
+        "",
         "## Écarts entre fiches et calibrage",
         "",
         *([f"- {e}" for e in ecarts] or ["Aucun."]),
         "",
         "Le classement se recalcule sur les scores lus : ne jamais le recopier du calibrage.",
     ])
+    if a_ranger:
+        print("\nPLUS RÉCENT DANS TÉLÉCHARGEMENTS (à ranger en actuel) :")
+        for x in a_ranger:
+            print("  - " + x)
     if ecarts:
         print("\nÉCARTS fiche / calibrage (à reporter dans le cadre) :")
         for e in ecarts:
