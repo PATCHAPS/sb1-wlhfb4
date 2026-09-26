@@ -92,16 +92,20 @@ DATE_NOM = re.compile(r"(20\d\d-\d\d-\d\d)")
 
 
 def role(f: Path):
-    for r in ("_Master_", "_Public_"):
-        if r in f.name:
-            return r.strip("_")
+    """MASTER ou PUBLIC, que le fichier soit nommé Claude-Sapere_XXX_Master_… ou MASTER.html."""
+    n = f.name
+    if "_Master_" in n or n.upper() == "MASTER.HTML":
+        return "Master"
+    if "_Public_" in n or n.upper() == "PUBLIC.HTML":
+        return "Public"
     return None
 
 
 def fraicheur(f: Path):
     """Clé de tri : date du nom de fichier, puis date d'enregistrement."""
     m = DATE_NOM.search(f.name)
-    return (m.group(1) if m else "0000-00-00", f.stat().st_mtime)
+    mt = f.stat().st_mtime
+    return (m.group(1) if m else date.fromtimestamp(mt).isoformat(), mt)
 
 
 def dossiers_telechargements(explicite):
@@ -111,7 +115,7 @@ def dossiers_telechargements(explicite):
     return [d for d in (home / "Downloads", home / "Téléchargements") if d.is_dir()]
 
 
-IGNORES = {"Library", "Applications", "node_modules", "_archives-millesimes-anterieurs"}
+IGNORES = {"Library", "Applications", "node_modules", "_archives-millesimes-anterieurs", "historique"}
 
 
 def inventaire(racines, exclure):
@@ -142,21 +146,28 @@ def fusionner(ranges, telecharges):
         if not cands:
             continue
         meilleur = max(cands, key=fraicheur)
+        deja = [p for p in ranges if role(p) == r and md5(p) == md5(meilleur)]
+        if deja:
+            meilleur = deja[0]  # contenu identique déjà rangé : rien à verser
         retenus.append(meilleur)
         if meilleur in telecharges:
             pris.append(meilleur)
     return retenus, pris
 
 
-SCORE = re.compile(r"(\d,\d)\s*/\s*5")
+NIVEAUX = r"(?:Solidement ancr|R[ée]silient sous contrainte|Sous tension structurelle|Fragile et d[ée]pendant|D[ée]faillance critique)"
+# Cartouche du PUBLIC : « 3,6/5 · Résilient sous contrainte · ... » (balises éventuelles entre les deux).
+SCORE_GLOBAL = re.compile(r"(\d,\d)\s*(?:</?[^>]+>\s*)*/\s*5\s*(?:</?[^>]+>\s*)*(?:·|&middot;|&#183;|-)?\s*(?:</?[^>]+>\s*)*" + NIVEAUX)
 
 
 def lire_score(fichiers):
-    """Score affiché, lu dans le MASTER d'abord, sinon dans le PUBLIC."""
-    for marque in ("_Master_", "_Public_"):
+    """Score GLOBAL : le « X,X/5 » immédiatement suivi d'un libellé de niveau
+    (cartouche du hero), lu dans le PUBLIC puis le MASTER. Une note de pilier
+    isolée n'est jamais prise pour le score."""
+    for r in ("Public", "Master"):
         for f in fichiers:
-            if marque in f.name and f.suffix == ".html":
-                m = SCORE.search(f.read_text(encoding="utf-8", errors="ignore"))
+            if role(f) == r and f.suffix == ".html":
+                m = SCORE_GLOBAL.search(f.read_text(encoding="utf-8", errors="ignore"))
                 if m:
                     return m.group(1), f.name
     return None, None
@@ -164,9 +175,9 @@ def lire_score(fichiers):
 
 def etat(fichiers) -> str:
     noms = [p.name for p in fichiers]
-    m = any("_Master_" in n for n in noms)
-    p = any("_Public_" in n for n in noms)
-    s = any("veille-seuils-bascule" in n for n in noms)
+    m = any(role(f) == "Master" for f in fichiers)
+    p = any(role(f) == "Public" for f in fichiers)
+    s = any("veille-seuils-bascule" in n or "SEUILS" in n.upper() for n in noms)
     if m and p:
         return "MASTER + PUBLIC" + (" + seuils" if s else "")
     if m or p:
@@ -205,7 +216,7 @@ def main():
         lu, lu_dans = lire_score(fs)
         if lu and lu != calib:
             ecarts.append(f"{nom} : fiche {lu} ({lu_dans}), calibrage {calib}")
-        score = lu or f"{calib} (calibrage, fiche absente)"
+        score = lu or (f"illisible (calibrage {calib})" if fs else f"{calib} (calibrage, fiche absente)")
         alerte = "  ÉCART" if lu and lu != calib else ""
         print(f"{rang:>2}. {nom:<15} {score:<6} {st:<28} {source or ''}{alerte}")
         lignes.append(f"| {rang} | {nom} | {iso} | {score}{' ⚠ calibrage ' + calib if alerte else ''} | {niveau if not alerte else 'à relire'} | {st} | {source or 'n.d.'} |")
