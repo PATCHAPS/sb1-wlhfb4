@@ -1,0 +1,91 @@
+# Les Forces et les Failles · Asie du Sud-Est · cadre de travail
+
+Document de référence du Projet. État au 26 septembre 2026, révision b : notes relevées dans les MASTER en `actuel`, qui font foi. Remplace la version du même jour, dont les notes de Singapour, de la Thaïlande et de Brunei n'avaient pas suivi les arbitrages faits en séance. Les faits sourcés restent dans les fichiers de calibrage et de collecte.
+
+## 1. Périmètre
+
+Onze pays, sous-région « Asie du Sud-Est » de la nomenclature asiatique SAPERE (47 pays) : Brunei, Cambodge, Indonésie, Laos, Malaisie, Myanmar, Philippines, Singapour, Thaïlande, Timor-Oriental, Vietnam.
+
+Grille : SAPERE 2.2, **grille v3**, skill `forces-et-failles` (révision 2026-09-26-d). Signature en pied de page : « Cadre d'évaluation SAPERE 2.2, grille v3 ».
+
+## 2. Notes
+
+Pour les sept fiches écrites, notes relevées le 26 septembre 2026 dans `[ISO3]/2026/actuel/MASTER.html` (littéral `var DATA`), somme recalculée. Pour les quatre pays à écrire, notes du calibrage validé le 25 septembre 2026.
+
+| Pays | I | II | III | IV | V | VI | VII | VIII | IX | Somme | Score | Source |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Singapour | **2,9** | **4,2** | **3,3** | **4,1** | 2,4 | **4,3** | **4,4** | **2,9** | **3,6** | 3,5685 | **3,6** | MASTER |
+| Malaisie | 2,9 | 3,8 | 3,4 | 3,5 | 3,6 | 3,3 | 3,2 | 3,3 | 3,6 | 3,3885 | 3,4 | calibrage, score confirmé par la fiche |
+| Vietnam | 3,8 | 3,4 | 3,4 | 3,4 | 2,9 | 3,6 | 2,8 | 2,5 | 3,2 | 3,2405 | 3,2 | calibrage, score confirmé par la fiche |
+| Indonésie | 3,6 | 3,0 | 2,9 | 3,7 | 3,8 | 3,0 | 2,5 | 2,9 | 3,6 | 3,2085 | 3,2 | calibrage, score confirmé par la fiche |
+| Thaïlande | **3,1** | **3,5** | **3,0** | **3,3** | 2,7 | **2,9** | **2,9** | **2,3** | **3,7** | 3,0340 | **3,0** | MASTER |
+| Philippines | 3,2 | 2,8 | 2,7 | 3,2 | 2,3 | 2,8 | 2,5 | 2,8 | 3,4 | 2,8690 | 2,9 | calibrage, score confirmé par la fiche |
+| Brunei | 2,8 | 2,2 | 3,2 | **3,1** | 2,4 | 3,2 | 2,0 | 2,6 | 2,5 | 2,6710 | **2,7** | MASTER |
+| Cambodge | 4,0 | 2,7 | 2,6 | 2,0 | 2,6 | 3,0 | 1,8 | 1,7 | 2,5 | 2,5990 | 2,6 | calibrage |
+| Timor-Oriental | 2,7 | 1,3 | 2,2 | 2,4 | 2,0 | 2,6 | n.d. | 3,1 | 2,5 | 2,3665 | 2,4 | calibrage |
+| Laos | 1,9 | 2,0 | 2,2 | 1,7 | 3,0 | 2,6 | 1,6 | 1,8 | 2,4 | 2,1255 | 2,1 | calibrage |
+| Myanmar | 1,6 | 1,8 | 1,3 | 1,3 | 1,8 | 1,2 | 1,2 | 1,1 | 1,8 | 1,4535 | 1,5 | calibrage |
+
+En gras : notes qui diffèrent du calibrage du 25 septembre.
+
+- **Singapour** : huit piliers révisés à la baisse (seul le V est inchangé) ; score de 3,9 à 3,6, niveau inchangé (Résilient sous contrainte).
+- **Thaïlande** : sept piliers en baisse, IV et IX en hausse ; score de 3,2 à 3,0, niveau inchangé. Somme à 3,4 centièmes de la borne 3,0 : au-delà du seuil de deux centièmes, aucune mention obligatoire, mais c'est la fiche de la série la plus proche d'un changement de classe après Myanmar.
+- **Brunei** : pilier IV de 2,2 à 3,1, seul changement ; score de 2,6 à 2,7, niveau inchangé (Sous tension structurelle). Brunei passe devant le Cambodge (2,6, calibrage).
+
+Pour la Malaisie, le Vietnam, l'Indonésie et les Philippines, seul le score affiché a été vérifié dans la fiche ; les notes de pilier sont celles du calibrage et restent à relever dans leur MASTER.
+
+Classement provisoire : Singapour, Malaisie, Vietnam, Indonésie, Thaïlande, Philippines, Brunei, puis les pays à écrire. Ordre des deux pays à 3,2 : Vietnam (3,2405), Indonésie (3,2085). La page dit l'ordre, jamais l'écart.
+
+## 3. Règles tranchées pour la série
+
+1. **Dette** : définition du FMI (administrations publiques) pour tous les pays. La mesure nationale plus étroite se cite dans le dossier, sans changer la note.
+2. **Pilier I, profils mixtes** : quand un seul critère interdit le niveau haut, le pilier se note dans la bande 3,0 à 3,9, d'autant plus bas que l'écart est grand. Un pilier I n'est jamais laissé sans note pour un vide du barème.
+3. **Pilier I, dette adossée à des actifs** : la charge d'intérêts (v3) neutralise le seuil de 70 % quand elle est faible (Singapour).
+4. **Pilier V, coupures récurrentes** : seuil d'un quart des entreprises touchées (enquêtes Banque mondiale).
+5. **Pilier V, dépendance quasi totale** : Singapour à 2,4, comme Maurice.
+6. **Pilier VIII, États sans contre-pouvoir** : niveau 3 si l'administration délivre sans exclusion documentée des adversaires ; niveau 4 si l'exclusion est documentée ; niveau 5 réservé à l'effondrement ou aux autorités rivales.
+7. **Pilier IV** : un fait informationnel daté est exigé (média transfrontalier ou thème imposé à l'agenda régional) ; sans lui, les deux niveaux hauts sont interdits.
+8. **Pilier VII, Timor-Oriental** : non noté, score rapporté aux 91 % de poids documentés.
+9. **Pilier IX, sous-indicateur B** : produit ET destination ; une filière ou un débouché au-delà de la moitié interdit la note de 4.
+10. **Graphie** : Vietnam, sans accent ni espace. Police Inter, sans police de repli. Milliers à l'anglaise (89,446), décimales à la virgule, aucun cadratin.
+11. **Montants** : convertis en euros pour le lecteur (taux de référence BCE : moyenne annuelle pour les flux, cours de la date pour les stocks). Le dollar international de la PPA ne se convertit pas.
+12. **Briques** : demander la mise à jour de la base SQLite du pays avant tout travail ; lire toutes les briques ; nommer les écartées et leur motif.
+13. **Relectures extérieures** (DeepSeek, Perplexity, coach) : chaque fait nouveau se vérifie à la source avant d'entrer dans le MASTER ; toute correction se fait dans le générateur, puis MASTER et PUBLIC sont reconstruits.
+14. **Report des arbitrages (ajout du 26 septembre 2026)** : une note changée en séance se reporte dans ce cadre le jour même. Après chaque séance, `regrouper_asie_sud_est.py --simuler` compare le score de chaque fiche à ce cadre ; tout « ÉCART » signale un report oublié.
+
+### Points à confirmer (relevés le 26 septembre 2026, révision b)
+
+- **Singapour, pilier I à 2,9** : sous la bande 3,0 à 3,9 des règles 2 et 3, qui visaient 3,9. Si la règle 3 a été abandonnée ou si un critère nouveau s'applique, l'inscrire ici.
+- **Singapour, pilier IX à 3,6** (4,2 au calibrage, sous-indicateurs 5-4-4-4-4) : reporter les nouveaux sous-indicateurs A à E dans le fichier de calibrage.
+- **Thaïlande, pilier VI à 2,9 en baisse** et **Brunei, pilier IV à 3,1** : consigner le fait qui fonde chaque changement au § 7 du calibrage.
+
+## 4. Livrables par pays
+
+- `Claude-Sapere_[ISO3]_Master_[AAAA-MM-JJ].html` (dossier analytique) et `Claude-Sapere_[ISO3]_Public_[AAAA-MM-JJ].html` (page à deux volets, widget HTML d'Elementor) ; la date est celle de l'arrêt des données.
+- `Claude-Sapere_veille-seuils-bascule_[pays].md` (seuils internes, hors page publique).
+- Aperçu grand public autonome pour relecture.
+- Archive du chantier de fabrication (`build.py`, `content.py`, `pillars.py`, `sources.py`).
+- Livraison : dépôt dans le dossier SAPERE, puis MD5 vérifié sur la machine.
+- Contrôles : les 70 contrôles de `derive-public.py` passent ; rendu vérifié à 1180, 820 et 380 px.
+
+## 5. Où sont les fichiers
+
+- Calibrage et collectes : `dossiers/forces-et-failles/atelier-asie/2026/asie-du-sud-est/`
+- Fiches : `dossiers/forces-et-failles/[ISO3]/2026/` (sous-dossiers `actuel`, `travail`, `historique`). Dans `actuel`, les fichiers portent des noms courts : `MASTER.html`, `PUBLIC.html`, `SEUILS-INTERNES.md`, `Apercu-[Pays].html`, `INDEX.md`.
+- Regroupement de la série : `dossiers/forces-et-failles/asie-du-sud-est/regroupement_2026-09-26/` (31 fichiers, MD5 vérifiés, `INDEX.md`). Se refait par `python3 ~/regrouper_asie_sud_est.py ~`.
+- Carte du périmètre : `dossiers/forces-et-failles/SAPERE_asie-perimetre-retenu.html`
+
+## 6. État des fiches au 26 septembre 2026
+
+| Pays | État dans le dossier SAPERE |
+|---|---|
+| Singapour | MASTER, PUBLIC, seuils internes et aperçu en `actuel` |
+| Malaisie | MASTER, PUBLIC, seuils internes et aperçu en `actuel` |
+| Vietnam | MASTER et PUBLIC en `actuel` |
+| Indonésie | MASTER et PUBLIC en `actuel` |
+| Thaïlande | MASTER, PUBLIC, seuils internes et aperçu en `actuel` |
+| Philippines | MASTER, PUBLIC, seuils internes et aperçu en `actuel` |
+| Brunei | MASTER, PUBLIC, seuils internes et aperçu en `actuel` |
+| Cambodge, Timor-Oriental, Laos, Myanmar | À écrire |
+
+Sept fiches sur onze. Le classement régional (bandeau du verdict) s'affichera quand les onze fiches seront écrites.
