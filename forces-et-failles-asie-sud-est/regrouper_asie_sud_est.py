@@ -10,7 +10,8 @@ LA FICHE elle-même (le MASTER fait foi) et l'empreinte MD5 de chaque fichier.
 Le calibrage ci-dessous n'est qu'une référence : tout écart entre lui et la
 fiche est signalé, jamais corrigé en silence.
 
-Le dossier Téléchargements est aussi parcouru : une fiche téléchargée depuis
+Tout le répertoire donné (par exemple ~, soit /Users/sapere) est aussi
+inventorié, hors dossiers système et cachés, ainsi que Téléchargements : une fiche téléchargée depuis
 une discussion avec Claude et pas encore rangée y est souvent la plus récente.
 Pour chaque rôle (MASTER, PUBLIC), la version retenue est la plus récente,
 d'après la date du nom de fichier puis la date d'enregistrement ; l'index
@@ -25,6 +26,7 @@ Exemple :
 """
 import argparse
 import hashlib
+import os
 import re
 import shutil
 import sys
@@ -66,7 +68,7 @@ def trouver_racine_ff(sapere: Path) -> Path:
     for cand in sapere.rglob("forces-et-failles"):
         if cand.is_dir() and cand.parent.name == "dossiers":
             return cand
-    sys.exit(f"Introuvable : dossiers/forces-et-failles sous {sapere}")
+    return None
 
 
 def fichiers_du_pays(ff: Path, iso: str):
@@ -109,11 +111,27 @@ def dossiers_telechargements(explicite):
     return [d for d in (home / "Downloads", home / "Téléchargements") if d.is_dir()]
 
 
-def telecharges_du_pays(dossiers, iso):
-    trouves = []
-    for d in dossiers:
-        trouves += [p for p in d.rglob(f"Claude-Sapere_{iso}_*") if p.is_file() and p.suffix in EXTENSIONS]
+IGNORES = {"Library", "Applications", "node_modules", "_archives-millesimes-anterieurs"}
+
+
+def inventaire(racines, exclure):
+    """Tous les fichiers Claude-Sapere_* sous les racines, hors dossiers système et cachés."""
+    vus, trouves = set(), []
+    for r in racines:
+        for dirpath, dirnames, filenames in os.walk(r):
+            dirnames[:] = [d for d in dirnames if not d.startswith(".") and d not in IGNORES
+                           and not d.startswith("regroupement_")]
+            for n in filenames:
+                if n.startswith("Claude-Sapere_"):
+                    p = Path(dirpath, n).resolve()
+                    if p.suffix in EXTENSIONS and p not in vus and exclure not in p.parents:
+                        vus.add(p)
+                        trouves.append(p)
     return trouves
+
+
+def epars_du_pays(inv, iso):
+    return [p for p in inv if p.name.startswith(f"Claude-Sapere_{iso}_")]
 
 
 def fusionner(ranges, telecharges):
@@ -164,17 +182,24 @@ def main():
     ap.add_argument("--simuler", action="store_true", help="affiche ce qui serait copié, sans rien écrire")
     a = ap.parse_args()
 
-    ff = trouver_racine_ff(a.sapere.expanduser().resolve())
-    dest = a.dest or ff / "asie-du-sud-est" / f"regroupement_{date.today().isoformat()}"
+    racine = a.sapere.expanduser().resolve()
+    ff = trouver_racine_ff(racine)
+    dest = a.dest or (ff or racine) / "asie-du-sud-est" / f"regroupement_{date.today().isoformat()}"
     dl = dossiers_telechargements(a.telechargements)
-    print(f"Source : {ff}\nTéléchargements : {', '.join(map(str, dl)) or 'aucun'}\nDestination : {dest}{'  (simulation)' if a.simuler else ''}\n")
+    print(f"Répertoire parcouru : {racine}")
+    print(f"Rangement : {ff or 'aucun dossier dossiers/forces-et-failles, recherche dans tout le répertoire'}")
+    print("Inventaire des fichiers Claude-Sapere_* en cours...")
+    inv = inventaire([racine] + dl, dest.resolve())
+    print(f"{len(inv)} fichier(s) Claude-Sapere_* trouvés.\nTéléchargements : {', '.join(map(str, dl)) or 'aucun'}\nDestination : {dest}{'  (simulation)' if a.simuler else ''}\n")
 
     lignes, copies, ecarts, a_ranger = [], 0, [], []
     for rang, (iso, nom, calib, niveau) in enumerate(PAYS, 1):
-        source, fs = fichiers_du_pays(ff, iso)
-        fs, pris = fusionner(fs, telecharges_du_pays(dl, iso))
+        source, fs = fichiers_du_pays(ff, iso) if ff else (None, [])
+        ranges = {f.resolve() for f in fs}
+        ailleurs = [p for p in epars_du_pays(inv, iso) if p not in ranges]
+        fs, pris = fusionner([f.resolve() for f in fs], ailleurs)
         if pris:
-            source = (source + " + " if source else "") + "Téléchargements"
+            source = (source + " + " if source else "") + "hors rangement"
             a_ranger += [f"{nom} : {p}" for p in pris]
         st = etat(fs)
         lu, lu_dans = lire_score(fs)
@@ -207,7 +232,7 @@ def main():
         "|---|---|---|---|---|---|---|",
         *lignes,
         "",
-        "## Versions prises dans Téléchargements (plus récentes que le rangement, à verser en `actuel`)",
+        "## Versions prises hors rangement (Téléchargements ou ailleurs, plus récentes, à verser en `actuel`)",
         "",
         *([f"- {x}" for x in a_ranger] or ["Aucune."]),
         "",
@@ -218,7 +243,7 @@ def main():
         "Le classement se recalcule sur les scores lus : ne jamais le recopier du calibrage.",
     ])
     if a_ranger:
-        print("\nPLUS RÉCENT DANS TÉLÉCHARGEMENTS (à ranger en actuel) :")
+        print("\nPLUS RÉCENT HORS RANGEMENT (à verser en actuel) :")
         for x in a_ranger:
             print("  - " + x)
     if ecarts:
