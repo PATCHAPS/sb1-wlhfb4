@@ -1,0 +1,882 @@
+<!-- wp:html -->
+<div id="sapere2027-synthese-v1"><style>
+#sapere2027-synthese-v1{--ink:#111820;--paper:#fff;--line:#d8d5cc;--mute:#66717b;--red:#c91e35;--neuf:#fbf5ee;
+ --p1:#3e8f7c;--p2:#9fd0c1;--p3:#d9b75a;--p4:#efdfa9;--p5:#6e7b86;--px:#dfe3e6;
+ max-width:1180px;margin:0 auto;font-family:Inter,Arial,Helvetica,sans-serif!important;color:var(--ink);background:var(--paper);line-height:1.4}
+#sapere2027-synthese-v1 *{box-sizing:border-box}
+#sapere2027-synthese-v1 h2,#sapere2027-synthese-v1 h3,#sapere2027-synthese-v1 .ss-titre,#sapere2027-synthese-v1 .ss-theme,#sapere2027-synthese-v1 .ss-m,#sapere2027-synthese-v1 .ss-c,#sapere2027-synthese-v1 .ss-cand b,#sapere2027-synthese-v1 .ss-cand i,#sapere2027-synthese-v1 .ss-ligne b,#sapere2027-synthese-v1 .ss-chapo,#sapere2027-synthese-v1 .ss-foot,#sapere2027-synthese-v1 .ss-bouge,#sapere2027-synthese-v1 .ss-neuf-tag{text-transform:none!important;letter-spacing:normal}
+#sapere2027-synthese-v1 a,#sapere2027-synthese-v1 a *,#sapere2027-synthese-v1 button{font-family:inherit!important}
+#sapere2027-synthese-v1 h2.ss-titre{letter-spacing:-.02em!important}
+#sapere2027-synthese-v1 .ss-head{padding:0 0 18px;border-bottom:2px solid var(--ink);margin-bottom:18px}
+#sapere2027-synthese-v1 .ss-eyebrow{display:block;color:var(--red);font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
+#sapere2027-synthese-v1 h2.ss-titre{margin:0 0 12px;font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif!important;font-weight:700;font-size:clamp(30px,4vw,46px);line-height:1;letter-spacing:-.02em;color:var(--ink)!important;text-wrap:balance}
+#sapere2027-synthese-v1 .ss-chapo{max-width:70ch;margin:0;font-size:15px;color:#2a333b}
+#sapere2027-synthese-v1 .ss-chapo+.ss-chapo{margin-top:8px}
+#sapere2027-synthese-v1 ul.ss-legende{display:flex!important;flex-wrap:wrap;gap:8px 18px;margin:16px 0 0!important;padding:0!important;list-style:none!important;font-size:12px!important;line-height:1.3!important;color:var(--mute)}
+#sapere2027-synthese-v1 ul.ss-legende li{display:flex!important;align-items:center;gap:6px;margin:0!important;padding:0!important;font-size:12px!important;line-height:1.3!important;font-family:Inter,Arial,Helvetica,sans-serif!important;color:var(--mute)!important;list-style:none!important}
+#sapere2027-synthese-v1 ul.ss-legende li:before,#sapere2027-synthese-v1 ul.ss-legende li:after{content:none!important}
+#sapere2027-synthese-v1 .ss-chip{font-size:12px!important;line-height:16px!important;padding:1px 6px!important;margin:0!important}
+#sapere2027-synthese-v1 .ss-chip{display:inline-block;min-width:26px;padding:1px 6px;border-radius:2px;font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif!important;font-weight:700;font-size:12px;line-height:16px;text-align:center;letter-spacing:.02em}
+#sapere2027-synthese-v1 .ss-P1{background:var(--p1);color:#fff} #sapere2027-synthese-v1 .ss-P2{background:var(--p2);color:var(--ink)}
+#sapere2027-synthese-v1 .ss-P3{background:var(--p3);color:var(--ink)} #sapere2027-synthese-v1 .ss-P4{background:var(--p4);color:var(--ink)}
+#sapere2027-synthese-v1 .ss-P5{background:var(--p5);color:#fff} #sapere2027-synthese-v1 .ss-X{background:var(--px);color:var(--mute)}
+#sapere2027-synthese-v1 .ss-NEUF{background:var(--neuf);color:var(--red);box-shadow:inset 3px 0 0 var(--red)}
+#sapere2027-synthese-v1 .ss-bouge{margin:0 0 22px;padding:16px 18px 6px;background:var(--neuf);border-left:4px solid var(--red)}
+#sapere2027-synthese-v1 .ss-bouge h3{margin:0 0 10px!important;padding:0!important;font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif!important;font-weight:700;font-size:22px!important;line-height:1.1!important;color:var(--ink)!important}
+#sapere2027-synthese-v1 ol.ss-bouge-l{margin:0!important;padding:0!important;list-style:none!important;counter-reset:ssb}
+#sapere2027-synthese-v1 ol.ss-bouge-l li{position:relative;margin:0 0 10px!important;padding:0 0 0 28px!important;font-size:14px!important;line-height:1.45!important;color:#2a333b!important;list-style:none!important;max-width:95ch}
+#sapere2027-synthese-v1 ol.ss-bouge-l li:before{counter-increment:ssb;content:counter(ssb,decimal-leading-zero)!important;position:absolute;left:0;top:1px;font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif!important;font-weight:700;font-size:14px;color:var(--red)}
+#sapere2027-synthese-v1 ol.ss-bouge-l li:after{content:none!important}
+#sapere2027-synthese-v1 ol.ss-bouge-l b{color:var(--ink)}
+#sapere2027-synthese-v1 .ss-bouge a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:2px}
+#sapere2027-synthese-v1 .ss-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+#sapere2027-synthese-v1 table.ss-t{width:100%;min-width:1040px;border-collapse:separate;border-spacing:0;table-layout:fixed;font-size:13px}
+#sapere2027-synthese-v1 table.ss-t th,#sapere2027-synthese-v1 table.ss-t td{padding:0;vertical-align:top;font-family:inherit;font-size:inherit;text-align:left;border:0}
+#sapere2027-synthese-v1 table.ss-t thead th{position:sticky;top:0;z-index:2;background:var(--paper);border-bottom:1px solid var(--ink);padding:0 8px 10px}
+#sapere2027-synthese-v1 table.ss-t thead th:first-child{width:150px}
+#sapere2027-synthese-v1 .ss-cand{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+#sapere2027-synthese-v1 .ss-cand img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:top center;background:#eef1f5}
+#sapere2027-synthese-v1 .ss-cand b{display:block;font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif!important;font-weight:700;font-size:16px;line-height:1.05;letter-spacing:-.01em}
+#sapere2027-synthese-v1 .ss-cand i{display:block;font-style:italic;font-size:11px;color:var(--mute)}
+#sapere2027-synthese-v1 .ss-cand small{display:block;font-size:10px;color:var(--mute);letter-spacing:.04em;text-transform:uppercase}
+#sapere2027-synthese-v1 .ss-etat{display:block;font-size:10.5px;line-height:1.25;font-weight:600;color:var(--red)}
+#sapere2027-synthese-v1 .ss-barre{display:block;height:6px;width:100%;background:#eef0f2;margin-top:2px}
+#sapere2027-synthese-v1 .ss-barre i{display:block;height:100%;background:var(--ink)}
+#sapere2027-synthese-v1 table.ss-t tbody th{padding:12px 10px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+#sapere2027-synthese-v1 table.ss-t tbody td{padding:12px 8px;border-bottom:1px solid var(--line);border-left:1px solid #edebe4}
+#sapere2027-synthese-v1 .ss-num{display:block;font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif!important;font-weight:700;font-size:26px;line-height:.9;color:var(--red);letter-spacing:-.02em}
+#sapere2027-synthese-v1 .ss-theme{display:block;margin-top:6px;font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif!important;font-weight:700;font-size:15px;line-height:1.1;text-wrap:balance}
+#sapere2027-synthese-v1 .ss-tot{display:block;margin-top:6px;font-size:11px;color:var(--mute)}
+#sapere2027-synthese-v1 .ss-m{display:block;margin:0;font-weight:500;line-height:1.35;text-wrap:pretty}
+#sapere2027-synthese-v1 a.ss-lien{color:var(--ink);text-decoration:underline;text-decoration-color:#b9c2c9;text-decoration-thickness:1px;text-underline-offset:3px;transition:text-decoration-color .15s}
+#sapere2027-synthese-v1 a.ss-lien:hover,#sapere2027-synthese-v1 a.ss-lien:focus-visible{text-decoration-color:var(--red);color:var(--ink)}
+#sapere2027-synthese-v1 a.ss-lien:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+#sapere2027-synthese-v1 a.ss-lien:after{content:" ↗";font-size:.8em;color:var(--red)}
+#sapere2027-synthese-v1 .ss-o .ss-m{font-style:italic;color:#3d4750}
+#sapere2027-synthese-v1 .ss-c{display:block;margin-top:6px;font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif!important;font-weight:700;font-size:15px;line-height:1.1;color:var(--ink)}
+#sapere2027-synthese-v1 .ss-pied{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-top:10px;font-size:10.5px!important;line-height:1.3!important;color:var(--mute);white-space:nowrap}
+#sapere2027-synthese-v1 .ss-pied span{font-size:inherit!important}
+#sapere2027-synthese-v1 .ss-neuf{display:block;margin-top:10px;padding:8px 8px 7px 9px;background:var(--neuf);border-left:3px solid var(--red)}
+#sapere2027-synthese-v1 .ss-neuf-tag{display:block;margin-bottom:4px;font-size:9.5px!important;font-weight:800;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--red)}
+#sapere2027-synthese-v1 .ss-neuf .ss-m{font-weight:600;color:var(--ink)}
+#sapere2027-synthese-v1 .ss-neuf .ss-c{font-size:13.5px}
+#sapere2027-synthese-v1 .ss-neuf-src{display:flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:10.5px!important;line-height:1.3!important;color:var(--mute)}
+#sapere2027-synthese-v1 .ss-neuf-src .ss-chip{flex:none}
+#sapere2027-synthese-v1 td.ss-vide{background:#fafaf8} #sapere2027-synthese-v1 td.ss-vide .ss-m{color:var(--mute);font-style:italic}
+#sapere2027-synthese-v1 .ss-cartes{display:none}
+#sapere2027-synthese-v1 .ss-foot{margin-top:18px;padding-top:12px;border-top:1px solid var(--line);font-size:12px;color:var(--mute);max-width:80ch}
+#sapere2027-synthese-v1 .ss-foot p{margin:0 0 8px}
+#sapere2027-synthese-v1 .ss-foot a,#sapere2027-synthese-v1 .ss-chapo a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
+#sapere2027-synthese-v1 .ss-cta{display:inline-block;margin-top:10px;font-weight:700;color:var(--ink)}
+@media(max-width:900px){
+ #sapere2027-synthese-v1 .ss-scroll{display:none} #sapere2027-synthese-v1 .ss-cartes{display:block}
+ #sapere2027-synthese-v1 .ss-carte{padding:14px 0;border-bottom:1px solid var(--ink)}
+ #sapere2027-synthese-v1 .ss-carte header{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+ #sapere2027-synthese-v1 .ss-carte .ss-theme{margin:0;font-size:20px}
+ #sapere2027-synthese-v1 .ss-ligne{display:grid;grid-template-columns:40px 1fr;gap:10px;padding:8px 0;border-top:1px solid var(--line);align-items:start}
+ #sapere2027-synthese-v1 .ss-ligne img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:top center;background:#eef1f5}
+ #sapere2027-synthese-v1 .ss-ligne b{display:block;font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif!important;font-size:15px;line-height:1.1}
+ #sapere2027-synthese-v1 .ss-ligne .ss-c{font-size:14px}
+ #sapere2027-synthese-v1 .ss-bouge{padding:14px 14px 4px}
+}
+@media(prefers-reduced-motion:reduce){#sapere2027-synthese-v1 *{transition:none}}
+</style>
+<header class="ss-head"><span class="ss-eyebrow">SAPERE · Présidentielle 2027 · Synthèse du registre · Mise à jour du 26 septembre 2026</span>
+<h2 class="ss-titre">Que propose chacun, thème par thème ?</h2>
+<p class="ss-chapo">Seize thématiques, sept candidats, une mesure par case : ce tableau condense les 922 mesures du <a href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/">Registre SAPERE des engagements 2027</a>. Chaque case donne la proposition la mieux établie du candidat sur le thème, son chiffre lorsqu’il en a publié un, et son statut documentaire, de P1, engagement 2027 publié, à P5, source secondaire. Chaque mesure est cliquable et ouvre sa fiche complète dans le registre : arguments, objections, état du droit et sources.</p>
+<p class="ss-chapo">Une semaine de campagne a suffi à faire bouger dix cases. Les annonces du 18 au 25 septembre apparaissent dans des encadrés rouges marqués « Nouveau » : elles s’ajoutent à la mesure du registre sans la remplacer, tant qu’elles n’y ont pas été versées et argumentées.</p>
+<ul class="ss-legende">
+<li><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span> Engagement 2027 publié par le candidat ou son parti</li>
+<li><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span> Proposition personnelle récente, tribune, entretien ou discours</li>
+<li><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span> Corpus partisan pour l’échéance en cours</li>
+<li><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span> Corpus antérieur, le plus souvent le programme de 2022</li>
+<li><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span> Source secondaire seulement, presse ou agrégateur</li>
+<li><span class="ss-chip ss-X" title="Aucune mesure retrouvée dans le corpus dépouillé">X</span> Aucune mesure retrouvée dans le corpus dépouillé</li>
+<li><span class="ss-chip ss-NEUF" title="Annonce du 18 au 25 septembre, pas encore versée au registre">Nouveau</span> Annonce du 18 au 25 septembre, pas encore versée au registre</li>
+</ul>
+</header>
+<section class="ss-bouge" aria-labelledby="ss-bouge-titre"><h3 id="ss-bouge-titre">Ce qui a bougé du 18 au 25 septembre</h3><ol class="ss-bouge-l">
+<li><b>Trois chiffres ronds, aucune ventilation.</b> Gabriel Attal promet 150 Md€ d’économies en cinq ans, Bruno Retailleau chiffre sa réforme des retraites à 40 Md€ sur cinq ans, Marine Le Pen annonce un contre-budget pour début octobre. Aucun ne détaille encore ses économies poste par poste.</li>
+<li><b>La pompe fait campagne.</b> Le gazole bat son record le 22 septembre, à 2.41 € le litre, et chacun choisit son instrument : TVA à 5.5 % (Marine Le Pen), suppression des certificats d’économies d’énergie (Bruno Retailleau), aides ciblées doublées (Édouard Philippe), chèque énergie triplé (Raphaël Glucksmann), nucléaire plutôt qu’aides (Gabriel Attal).</li>
+<li><b>L’original et la copie.</b> Selon <a href="https://www.lemonde.fr/politique/article/2026/09/23/presidentielle-2027-comment-des-propositions-cles-du-rn-infusent-les-discours-de-la-campagne_6780885_823448.html">Le Monde</a> du 23 septembre, trois pistes d’économies longtemps portées par le seul RN (contribution européenne, aides aux étrangers, soutiens à l’énergie) gagnent le budget de Sébastien Lecornu et d’autres camps : droit du sol et asile suspendus à Mayotte chez Édouard Philippe, certificats d’économies d’énergie supprimés chez Bruno Retailleau. Leur rendement reste mince : sur la carence imposée aux étrangers, un député RN admet lui-même que « cela ne rapporte rien ».</li>
+<li><b>Le RN retouche sa ligne étrangère.</b> Marine Le Pen ne quitterait plus le commandement intégré de l’OTAN avant la fin de la guerre en Ukraine, et le Kremlin désavoue publiquement une mise en garde du parti contre les pressions russes, une première.</li>
+<li><b>À gauche, deux calendriers.</b> La primaire sociale-démocrate se tient en octobre, avec Raphaël Glucksmann pour favori ; les écologistes trancheront du 10 au 13 décembre entre la candidature de Marine Tondelier et un ralliement.</li>
+</ol></section>
+<div class="ss-scroll">
+<table class="ss-t">
+<thead>
+<tr>
+<th scope="col"><span class="ss-cand"><small>Thématique</small></span></th>
+<th scope="col"><span class="ss-cand"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="44" height="44" /><b>Gabriel Attal</b><i>Renaissance</i><small>65 mesures au registre</small><span class="ss-barre"><i style="width:25%"></i></span></span></th>
+<th scope="col"><span class="ss-cand"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="44" height="44" /><b>Raphaël Glucksmann</b><i>Place publique</i><small>134 mesures au registre</small><span class="ss-barre"><i style="width:52%"></i></span><span class="ss-etat">Primaire sociale-démocrate en octobre</span></span></th>
+<th scope="col"><span class="ss-cand"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="44" height="44" /><b>Marine Le Pen</b><i>Rassemblement national</i><small>111 mesures au registre</small><span class="ss-barre"><i style="width:43%"></i></span></span></th>
+<th scope="col"><span class="ss-cand"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="44" height="44" /><b>Jean-Luc Mélenchon</b><i>La France insoumise</i><small>157 mesures au registre</small><span class="ss-barre"><i style="width:61%"></i></span></span></th>
+<th scope="col"><span class="ss-cand"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="44" height="44" /><b>Édouard Philippe</b><i>Horizons</i><small>87 mesures au registre</small><span class="ss-barre"><i style="width:34%"></i></span></span></th>
+<th scope="col"><span class="ss-cand"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="44" height="44" /><b>Bruno Retailleau</b><i>Les Républicains</i><small>104 mesures au registre</small><span class="ss-barre"><i style="width:40%"></i></span></span></th>
+<th scope="col"><span class="ss-cand"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="44" height="44" /><b>Marine Tondelier</b><i>Les Écologistes</i><small>259 mesures au registre</small><span class="ss-barre"><i style="width:100%"></i></span><span class="ss-etat">Candidature soumise au vote interne du 10 au 13 décembre</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row"><span class="ss-num">01</span><span class="ss-theme">Économie et finances publiques</span><span class="ss-tot">114 mesures</span><span class="ss-barre"><i style="width:100%"></i></span></th>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-diminuer-massivement-les-impots-de-production-et-les-normes--p-gabriel-attal">Diminuer massivement les impôts de production et les normes</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>7 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Réaliser 150 Md€ d’économies en cinq ans et ramener le déficit sous 3 % en 2032</span><span class="ss-c">Deux tiers sur les dépenses sociales, 100,000 postes publics en moins</span><span class="ss-neuf-src"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span><span>Plan du 23 sept., Le Figaro du 24 sept.</span></span></span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-taxer-les-mega-heritages-pour-alleger-les-prelevements-sur-l--p-raphael-glucksmann">Taxer les méga-héritages pour alléger les prélèvements sur les salaires</a></span><span class="ss-c">15 Md€ attendus, à partir de 2 M€</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>10 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-inscrire-une-regle-d-or-budgetaire-dans-la-constitution--p-marine-le-pen">Inscrire une règle d’or budgétaire dans la Constitution</a></span><span class="ss-c">3 % du PIB</span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>18 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-geler-la-dette-francaise-detenue-par-la-banque-centrale-euro--p-jean-luc-melenchon">Geler la dette française détenue par la Banque centrale européenne</a></span><span class="ss-c">636 Md€, soit 18 % de la dette, selon le candidat</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>23 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reduire-les-impots-de-production--p-edouard-philippe">Réduire les impôts de production</a></span><span class="ss-c">50 Md€</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>6 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reduire-de-40-md-le-handicap-fiscal-et-social-des-entrepris--p-bruno-retailleau">Réduire de 40 Md€ le handicap fiscal et social des entreprises *</a></span><span class="ss-c">40 Md€, dont 25 Md€ sur le travail</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>16 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-une-taxe-de-2-sur-les-patrimoines-superieurs-a-1--p-marine-tondelier">Instaurer une taxe de 2 % sur les patrimoines supérieurs à 100 M€</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>34 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">02</span><span class="ss-theme">Travail, emploi, retraites et revenus</span><span class="ss-tot">86 mesures</span><span class="ss-barre"><i style="width:75%"></i></span></th>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-introduire-une-part-de-capitalisation-dans-le-systeme-par-re--p-gabriel-attal">Introduire une part de capitalisation dans le système par répartition</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>8 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Supprimer l’âge légal au profit de la seule durée de cotisation</span><span class="ss-neuf-src"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span><span>Le Figaro, 24 sept.</span></span></span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-revaloriser-le-smic-net--p-raphael-glucksmann">Porter le SMIC à 1,600 € net en deux ans *</a></span><span class="ss-c">1,600 € net par mois</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>11 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-abaisser-l-age-legal-de-depart--p-marine-le-pen">Abaisser l’âge légal de départ à la retraite *</a></span><span class="ss-c">62 ans, 60 ans pour les carrières longues</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>8 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-abaisser-l-age-legal-de-depart-en-deux-temps--p-jean-luc-melenchon">Abaisser l’âge légal de départ en deux temps</a></span><span class="ss-c">62 ans puis 60 ans, 40 annuités</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>16 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Augmenter le point d’indice de 10 % et titulariser les contractuels</span><span class="ss-c">+ 10 %</span><span class="ss-neuf-src"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span><span>Ouvrage collectif du 4 sept., Le Monde du 23 sept.</span></span></span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reduire-la-duree-d-indemnisation-du-chomage--p-edouard-philippe">Réduire la durée d’indemnisation du chômage</a></span><span class="ss-c">12 mois, contre 18</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>4 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-sortir-des-35-heures-en-renvoyant-le-temps-de-travail-a-la-n--p-bruno-retailleau">Sortir des 35 heures en renvoyant le temps de travail à la négociation collective</a></span><span class="ss-c">Seuil annuel de 1,623 heures</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>18 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Ouvrir les droits à 63 ans, taux plein à 65 ans, pilier de capitalisation obligatoire</span><span class="ss-c">Décote de 7 % par an ; 40 Md€ sur cinq ans selon le candidat</span><span class="ss-neuf-src"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span><span>LCI, 22 sept. ; Le Figaro et L’Opinion, 24 sept.</span></span></span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-porter-le-salaire-minimum-a-2-000-bruts-par-mois-des-2027--p-marine-tondelier">Porter le salaire minimum à 2,000 € bruts par mois dès 2027</a></span><span class="ss-c">2,000 € brut</span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>21 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">03</span><span class="ss-theme">Climat, énergie et environnement</span><span class="ss-tot">108 mesures</span><span class="ss-barre"><i style="width:95%"></i></span></th>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-doubler-les-investissements-dans-la-geothermie--p-gabriel-attal">Doubler les investissements dans la géothermie</a></span><span class="ss-c">160 M€ par an après doublement</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>5 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Construire quatre réacteurs par an et garantir aux industriels une électricité sous 50 €/MWh</span><span class="ss-c">Fossiles importés ramenés de 60 % à 40 % en 2030</span><span class="ss-neuf-src"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span><span>Plan énergie du 23 sept., La Tribune du 25 sept.</span></span></span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-faire-de-la-sortie-des-energies-fossiles-la-cle-de-voute-du--p-raphael-glucksmann">Faire de la sortie des énergies fossiles la clé de voûte du quinquennat</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>23 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Tripler le chèque énergie plutôt qu’une aide générale aux carburants</span><span class="ss-neuf-src"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span><span>Débat de la primaire, LCI, 23 sept.</span></span></span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reduire-la-tva-sur-l-energie--p-marine-le-pen">Réduire la TVA sur l’énergie</a></span><span class="ss-c">De 20 % à 5.5 %</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>10 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Affecter au budget de l’État le produit des certificats d’économies d’énergie</span><span class="ss-neuf-src"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span><span>Le Monde, 23 sept.</span></span></span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-atteindre-un-mix-entierement-renouvelable--p-jean-luc-melenchon">Atteindre un mix électrique entièrement renouvelable et sortir du nucléaire</a></span><span class="ss-c">100 % renouvelable</span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>18 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-fonds-unique-d-adaptation-fonds-vert-et-fonds-barnier-fusio--p-edouard-philippe">Créer un fonds unique d’adaptation, fusion du Fonds vert et du fonds Barnier *</a></span><span class="ss-c">2 Md€ par an</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>10 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Doubler les aides ciblées aux carburants, gagées par 7,000 non-recrutements de fonctionnaires</span><span class="ss-neuf-src"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span><span>L’Opinion, 25 sept.</span></span></span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-produire-a-minima-600-twh-d-electricite-en-2035--p-bruno-retailleau">Produire au moins 600 TWh d’électricité en 2035, avec le nucléaire pour socle *</a></span><span class="ss-c">600 TWh en 2035</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>12 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Supprimer les certificats d’économies d’énergie</span><span class="ss-c">15 à 19 centimes par litre selon l’industrie pétrolière</span><span class="ss-neuf-src"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span><span>Proposition LR depuis avril, Le Monde du 23 sept.</span></span></span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-planifier-la-sortie-du-nucleaire-et-mettre-fin-aux-programme--p-marine-tondelier">Planifier la sortie du nucléaire et mettre fin aux programmes EPR2 et petits réacteurs</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>30 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">04</span><span class="ss-theme">Agriculture, alimentation et ruralité</span><span class="ss-tot">63 mesures</span><span class="ss-barre"><i style="width:55%"></i></span></th>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-accompagner-les-exploitants-par-des-plans-et-contrats-d-aven--p-gabriel-attal">Accompagner les exploitants par des contrats d’avenir pour les nouvelles filières et l’adaptation climatique</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>2 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-plafonner-les-aides-a-l-hectare-et-redeployer-les-fonds-vers--p-raphael-glucksmann">Plafonner les aides à l’hectare et redéployer les fonds vers les petites fermes et les jeunes installés *</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>12 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-interdire-les-importations-de-produits-agricoles-ne-respecta--p-marine-le-pen">Interdire les importations de produits agricoles ne respectant pas les normes françaises *</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>7 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-fixer-des-prix-planchers-agricoles--p-jean-luc-melenchon">Fixer des prix planchers agricoles</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>9 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-des-territoires-de-souverainete-alimentaire--p-edouard-philippe">Créer des territoires de souveraineté alimentaire *</a></span><span class="ss-c">100 territoires</span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>3 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-relever-de-52-a-100-hectares-le-seuil-de-degressivite-des-ai--p-bruno-retailleau">Relever de 52 à 100 hectares le seuil de dégressivité des aides de la politique agricole commune</a></span><span class="ss-c">52 à 100 hectares</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>6 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-adopter-des-prix-planchers-agricoles-et-un-affichage-obligat--p-marine-tondelier">Adopter des prix planchers agricoles et un affichage obligatoire du partage de la valeur</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>24 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">05</span><span class="ss-theme">Institutions et démocratie</span><span class="ss-tot">46 mesures</span><span class="ss-barre"><i style="width:40%"></i></span></th>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-limiter-a-un-seul-recours-global-les-contestations-d-un-proj--p-gabriel-attal">Limiter à un seul recours global les contestations d’un projet industriel, par révision constitutionnelle</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>5 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-immediatement-le-scrutin-proportionnel-aux-legisla--p-raphael-glucksmann">Instaurer immédiatement le scrutin proportionnel aux élections législatives *</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>3 mesures</span></td>
+<td class="ss-o"><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-un-referendum-d-initiative-citoyenne--p-marine-le-pen">Orientation générale : Instaurer un référendum d’initiative citoyenne</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>1 mesure</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-passer-a-une-vie-republique--p-jean-luc-melenchon">Passer à une VIe République par une assemblée constituante</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>10 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-inscrire-une-regle-d-or-budgetaire-dans-la-constitution--p-edouard-philippe">Inscrire une règle d’or budgétaire dans la Constitution *</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>2 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-un-bouclier-constitutionnel-contre-les-interpretat--p-bruno-retailleau">Instaurer un bouclier constitutionnel contre les interprétations extensives des cours européennes</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>6 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-convoquer-un-processus-constituant-pour-passer-a-une-premier--p-marine-tondelier">Convoquer un processus constituant vers une République écologique et citoyenne</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>19 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">06</span><span class="ss-theme">Sécurité, justice, immigration et asile</span><span class="ss-tot">107 mesures</span><span class="ss-barre"><i style="width:94%"></i></span></th>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-une-selection-de-l-immigration-par-un-systeme-a-po--p-gabriel-attal">Instaurer une sélection de l’immigration par un système à points</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>3 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-organiser-une-convention-citoyenne-sur-l-immigration--p-raphael-glucksmann">Organiser une convention citoyenne sur l’immigration</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>6 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-des-postes-de-policiers-et-de-gendarmes--p-marine-le-pen">Créer des postes de policiers et de gendarmes *</a></span><span class="ss-c">7,000 postes</span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>16 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-retablir-la-police-de-proximite-et-demanteler-les-brigades-a--p-jean-luc-melenchon">Rétablir la police de proximité et démanteler les brigades anticriminalité</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>14 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-un-etat-d-urgence-contre-le-narcotrafic--p-edouard-philippe">Créer un état d’urgence contre le narcotrafic *</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>30 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-supprimer-le-droit-du-sol--p-bruno-retailleau">Supprimer le droit du sol</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>10 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-une-police-nationale-de-proximite--p-marine-tondelier">Créer une police nationale de proximité</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>28 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">07</span><span class="ss-theme">Défense et industrie d’armement</span><span class="ss-tot">33 mesures</span><span class="ss-barre"><i style="width:29%"></i></span></th>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-rediger-un-nouveau-livre-blanc-de-la-defense-nationale--p-gabriel-attal">Rédiger un nouveau Livre blanc de la défense nationale</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>7 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-augmenter-fortement-la-reserve-operationnelle--p-raphael-glucksmann">Augmenter fortement la réserve opérationnelle *</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>9 mesures</span></td>
+<td class="ss-o"><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-maintenir-une-dissuasion-nucleaire-nationale-independante--p-marine-le-pen">Orientation générale : Maintenir une dissuasion nucléaire nationale indépendante</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>1 mesure</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-une-conscription-citoyenne-de-neuf-mois-et-creer-u--p-jean-luc-melenchon">Instaurer une conscription citoyenne de neuf mois et créer une garde nationale</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>3 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-augmenter-le-nombre-de-reservistes--p-edouard-philippe">Augmenter le nombre de réservistes</a></span><span class="ss-c">De 45,000 à 250,000</span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>5 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-refuser-tout-partage-toute-concertation-et-tout-elargisseme--p-bruno-retailleau">Refuser tout partage, toute concertation et tout élargissement de la dissuasion nucléaire</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>3 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-preparer-l-armee-francaise-a-une-guerre-de-haute-intensite-e--p-marine-tondelier">Préparer l’armée française à une guerre de haute intensité en complémentarité européenne</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>5 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">08</span><span class="ss-theme">Europe, diplomatie et coopération</span><span class="ss-tot">58 mesures</span><span class="ss-barre"><i style="width:51%"></i></span></th>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-des-etats-unis-d-europe-autour-d-un-noyau-dur-de-pays--p-gabriel-attal">Créer des États-Unis d’Europe autour d’un noyau dur de pays, par un référendum européen</a></span><span class="ss-c">Noyau dur de 8 à 10 pays</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>6 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reserver-la-commande-publique-de-l-union-aux-productions-eur--p-raphael-glucksmann">Réserver la commande publique de l’Union aux productions européennes</a></span><span class="ss-c">2,000 Md€ concernés</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>17 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-maintenir-la-formation-des-soldats-ukrainiens-et-les-livrais--p-marine-le-pen">Maintenir la formation et le matériel pour l’Ukraine, mais cesser l’aide financière</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>3 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Ne quitter le commandement intégré de l’OTAN qu’après la fin de la guerre en Ukraine</span><span class="ss-c">En mai : sortie dès le premier mandat</span><span class="ss-neuf-src"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span><span>Entretien à Politico, 24 sept., connu par une compilation</span></span></span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-defendre-une-doctrine-de-non-alignement-militaire--p-jean-luc-melenchon">Défendre une doctrine de non-alignement militaire *</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>6 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-maintenir-le-soutien-a-l-ukraine-face-a-la-russie--p-edouard-philippe">Maintenir le soutien à l’Ukraine face à la Russie</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>3 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reserver-la-libre-circulation-dans-l-espace-schengen-aux-eur--p-bruno-retailleau">Réserver la libre circulation dans l’espace Schengen aux Européens</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>5 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-porter-le-budget-de-l-union-a-2-du-pib-europeen-en-2035-et--p-marine-tondelier">Porter le budget de l’Union à 2 % du PIB européen en 2035 et 5 % en 2050</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>18 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">09</span><span class="ss-theme">Éducation et jeunesse</span><span class="ss-tot">60 mesures</span><span class="ss-barre"><i style="width:53%"></i></span></th>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-fermer-les-100-colleges-concentrant-les-plus-fortes-difficul--p-gabriel-attal">Fermer les 100 collèges concentrant les plus fortes difficultés et répartir leurs élèves</a></span><span class="ss-c">100 collèges</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>9 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-revaloriser-la-remuneration-des-enseignants--p-raphael-glucksmann">Revaloriser la rémunération des enseignants</a></span><span class="ss-c">De 10 % à 25 %</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>9 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-sanctuariser-les-etablissements-scolaires-et-mettre-fin-a-la--p-marine-le-pen">Sanctuariser les établissements scolaires et mettre fin à la doctrine disciplinaire actuelle</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>3 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-un-service-public-de-la-petite-enfance--p-jean-luc-melenchon">Créer un service public de la petite enfance</a></span><span class="ss-c">500,000 places</span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>10 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-revaloriser-la-remuneration-moyenne-des-enseignants--p-edouard-philippe">Revaloriser la rémunération moyenne des enseignants</a></span><span class="ss-c">+ 20 %</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>7 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-ecarter-l-usage-de-l-intelligence-artificielle-par-l-eleve-a--p-bruno-retailleau">Écarter l’usage de l’intelligence artificielle par l’élève avant le lycée</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>4 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-abroger-le-choc-des-savoirs-et-les-groupes-de-niveaux-en-six--p-marine-tondelier">Abroger le choc des savoirs et les groupes de niveau en sixième et cinquième</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>18 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">10</span><span class="ss-theme">Enseignement supérieur et recherche</span><span class="ss-tot">28 mesures</span><span class="ss-barre"><i style="width:25%"></i></span></th>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-former-toute-la-population-a-l-ia-du-primaire-a-la-reconver--p-gabriel-attal">Former toute la population à l’intelligence artificielle, du primaire à la reconversion</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>2 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-doubler-le-budget-de-la-recherche-europeenne--p-raphael-glucksmann">Doubler le budget de la recherche européenne *</a></span><span class="ss-c">Budget doublé</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>7 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-augmenter-les-frais-de-scolarite-des-etudiants-etrangers-ho--p-marine-le-pen">Augmenter les frais de scolarité des étudiants étrangers, hors conventions</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>2 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-demanteler-parcoursup-et-garantir-l-acces-sans-selection-a-l--p-jean-luc-melenchon">Démanteler Parcoursup et garantir l’accès sans sélection à la formation choisie</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>8 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-augmenter-le-nombre-annuel-d-ingenieurs-formes--p-edouard-philippe">Augmenter le nombre annuel d’ingénieurs formés</a></span><span class="ss-c">De 40,000 à 100,000 par an</span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>2 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-revoir-la-carte-des-formations-universitaires-et-leurs-finan--p-bruno-retailleau">Revoir la carte des formations universitaires et leurs financements selon les débouchés</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>1 mesure</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-remplacer-parcoursup-et-monmaster-par-une-plateforme-d-orien--p-marine-tondelier">Remplacer Parcoursup et MonMaster par une plateforme d’orientation transparente</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>6 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">11</span><span class="ss-theme">Santé et protection sociale</span><span class="ss-tot">66 mesures</span><span class="ss-barre"><i style="width:58%"></i></span></th>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-defiscaliser-les-pensions-alimentaires-recues-pour-les-enfan--p-gabriel-attal">Défiscaliser les pensions alimentaires reçues pour les enfants</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>5 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-demarchandiser-les-creches--p-raphael-glucksmann">Démarchandiser les crèches et les EHPAD</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>2 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-transformer-l-aide-medicale-de-l-etat-en-dispositif-limite-a--p-marine-le-pen">Transformer l’aide médicale de l’État en dispositif limité aux soins urgents</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>15 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-une-securite-sociale-integrale-geree-par-ses-cotisants--p-jean-luc-melenchon">Créer une Sécurité sociale intégrale gérée par ses cotisants</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>12 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-mettre-fin-a-ce-qu-il-qualifie-d-open-bar-des-arrets-de--p-edouard-philippe">Mettre fin à ce qu’il qualifie d’« open bar » des arrêts de travail</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>6 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-un-revenu-familial-de-240-par-mois-et-par-enfant--p-bruno-retailleau">Instaurer un Revenu familial par enfant</a></span><span class="ss-c">240 € par mois et par enfant</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>5 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-autoriser-une-fin-de-vie-choisie-et-assistee--p-marine-tondelier">Autoriser une fin de vie choisie et assistée</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>21 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">12</span><span class="ss-theme">Collectivités et cohésion territoriale</span><span class="ss-tot">18 mesures</span><span class="ss-barre"><i style="width:16%"></i></span></th>
+<td class="ss-o"><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-faire-participer-les-collectivites-a-l-effort-budgetaire--p-gabriel-attal">Orientation générale : Faire participer les collectivités à l’effort budgétaire</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>1 mesure</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-un-contrat-de-souverainete-clarifiant-les-competences--p-raphael-glucksmann">Créer un contrat de souveraineté clarifiant les compétences entre l’Union, l’État et les collectivités *</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>2 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reduire-de-5-md-les-transferts-de-l-etat-aux-regions-et-aux--p-marine-le-pen">Réduire de 5 Md€ les transferts de l’État aux régions et aux intercommunalités</a></span><span class="ss-c">5 Md€</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>2 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-restructurer-les-regions-autour-des-grands-bassins-versants--p-jean-luc-melenchon">Restructurer les régions autour des grands bassins versants des fleuves</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>4 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-decentraliser-la-politique-d-adaptation-au-changement-climat--p-edouard-philippe">Décentraliser la politique d’adaptation au changement climatique</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>1 mesure</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reduire-les-transferts-de-l-etat-aux-collectivites--p-bruno-retailleau">Réduire les transferts de l’État aux collectivités</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>1 mesure</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-garantir-un-accueil-physique-des-services-publics-a-quinze-m--p-marine-tondelier">Garantir un accueil physique des services publics à quinze minutes partout en France</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>7 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">13</span><span class="ss-theme">Logement et urbanisme</span><span class="ss-tot">43 mesures</span><span class="ss-barre"><i style="width:38%"></i></span></th>
+<td class="ss-o"><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-engager-une-renovation-thermique-massive--p-gabriel-attal">Orientation générale : Engager une rénovation thermique massive</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>1 mesure</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-developper-les-logements-en-bail-reel-solidaire-pour-en-fair--p-raphael-glucksmann">Développer les logements en bail réel solidaire pour en faire une offre de masse</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>5 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-abroger-la-loi-relative-a-la-solidarite-et-au-renouvellement--p-marine-le-pen">Abroger la loi relative à la solidarité et au renouvellement urbains (SRU)</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>11 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-construire-des-logements-publics--p-jean-luc-melenchon">Construire des logements publics</a></span><span class="ss-c">200,000 par an</span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>8 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-adapter-les-batiments-aux-canicules--p-edouard-philippe">Adapter les bâtiments aux canicules : climatisation et réseaux de froid</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>2 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-faire-passer-les-travailleurs-en-premier-pour-l-attribution--p-bruno-retailleau">Faire passer les travailleurs en premier pour l’attribution des logements sociaux</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>9 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-utiliser-le-droit-de-requisition-contre-les-logements-vacant--p-marine-tondelier">Utiliser le droit de réquisition contre les logements vacants</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>7 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">14</span><span class="ss-theme">Outre-mer</span><span class="ss-tot">19 mesures</span><span class="ss-barre"><i style="width:17%"></i></span></th>
+<td class="ss-vide"><span class="ss-m">Aucune mesure retrouvée dans le corpus dépouillé.</span><span class="ss-pied"><span class="ss-chip ss-X" title="Aucune mesure retrouvée dans le corpus dépouillé">X</span>0 mesure</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-adapter-les-transports-aux-specificites-ultramarines--p-raphael-glucksmann">Adapter les transports aux spécificités ultramarines</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>1 mesure</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-augmenter-de-700-m-le-budget-de-la-mission-outre-mer-pour-l--p-marine-le-pen">Augmenter le budget de la mission Outre-mer pour les infrastructures</a></span><span class="ss-c">+ 700 M€</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>4 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-accompagner-la-nouvelle-caledonie-kanaky-vers-l-independance--p-jean-luc-melenchon">Accompagner la Nouvelle-Calédonie-Kanaky vers l’indépendance</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>6 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-supprimer-le-droit-du-sol-a-mayotte--p-edouard-philippe">Supprimer le droit du sol à Mayotte</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>3 mesures</span></td>
+<td class="ss-vide"><span class="ss-m">Aucune mesure retrouvée dans le corpus dépouillé.</span><span class="ss-pied"><span class="ss-chip ss-X" title="Aucune mesure retrouvée dans le corpus dépouillé">X</span>0 mesure</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-combattre-la-vie-chere-outre-mer-par-les-regles-anti-trust-e--p-marine-tondelier">Combattre la vie chère outre-mer par les règles anti-trust et le contrôle des marges</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>5 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">15</span><span class="ss-theme">Culture, médias et information</span><span class="ss-tot">30 mesures</span><span class="ss-barre"><i style="width:26%"></i></span></th>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-fixer-un-age-minimal-d-acces-aux-reseaux-sociaux--p-gabriel-attal">Fixer un âge minimal d’accès aux réseaux sociaux</a></span><span class="ss-c">15 ans</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>1 mesure</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-tenir-l-objectif-de-1-du-budget-de-l-etat-consacre-a-la-cu--p-raphael-glucksmann">Tenir l’objectif de 1 % du budget de l’État consacré à la culture *</a></span><span class="ss-c">1 % du budget de l’État</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>6 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-un-service-national-du-patrimoine--p-marine-le-pen">Créer un service national du patrimoine</a></span><span class="ss-c">6 mois, 18-24 ans</span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>5 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-demembrer-par-une-loi-de-debut-de-mandat-les-trusts-mediatiq--p-jean-luc-melenchon">Démembrer par une loi de début de mandat les trusts médiatiques et culturels</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>8 mesures</span></td>
+<td class="ss-vide"><span class="ss-m">Aucune mesure retrouvée dans le corpus dépouillé.</span><span class="ss-pied"><span class="ss-chip ss-X" title="Aucune mesure retrouvée dans le corpus dépouillé">X</span>0 mesure</span></td>
+<td class="ss-vide"><span class="ss-m">Aucune mesure retrouvée dans le corpus dépouillé.</span><span class="ss-pied"><span class="ss-chip ss-X" title="Aucune mesure retrouvée dans le corpus dépouillé">X</span>0 mesure</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-garantir-la-liberte-de-creation-et-limiter-la-concentration--p-marine-tondelier">Garantir la liberté de création et limiter la concentration des industries culturelles</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>10 mesures</span></td>
+</tr>
+<tr>
+<th scope="row"><span class="ss-num">16</span><span class="ss-theme">Numérique, données, IA et cybersécurité</span><span class="ss-tot">38 mesures</span><span class="ss-barre"><i style="width:33%"></i></span></th>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-introduire-une-preference-europeenne-dans-les-marches-public--p-gabriel-attal">Introduire une préférence européenne dans les marchés publics technologiques</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>3 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-appliquer-fermement-aux-grandes-plateformes-les-regles-europ--p-raphael-glucksmann">Appliquer fermement aux grandes plateformes les règles européennes existantes</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>11 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-taxer-l-utilisation-du-reseau-par-les-geants-du-numerique--p-marine-le-pen">Taxer l’utilisation du réseau par les géants du numérique</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>5 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-developper-les-logiciels-libres-dans-les-administrations--p-jean-luc-melenchon">Développer les logiciels libres dans les administrations</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>2 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-adopter-un-buy-european-tech-act--p-edouard-philippe">Adopter un Buy European Tech Act</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>3 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-porter-les-capacites-de-centres-de-donnees-a-1-gw-en-2030-p--p-bruno-retailleau">Porter les capacités de centres de données à 1 GW en 2030, puis à 4 GW en 2035</a></span><span class="ss-c">1 GW en 2030, 4 GW en 2035</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>8 mesures</span></td>
+<td><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-encadrer-l-implantation-des-centres-de-donnees-et-planifier--p-marine-tondelier">Encadrer l’implantation des centres de données et planifier leur consommation électrique</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>6 mesures</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ss-cartes">
+<section class="ss-carte"><header><span class="ss-num">01</span><span class="ss-theme">Économie et finances publiques</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-diminuer-massivement-les-impots-de-production-et-les-normes--p-gabriel-attal">Diminuer massivement les impôts de production et les normes</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>7 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Réaliser 150 Md€ d’économies en cinq ans et ramener le déficit sous 3 % en 2032</span><span class="ss-c">Deux tiers sur les dépenses sociales, 100,000 postes publics en moins</span><span class="ss-neuf-src"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span><span>Plan du 23 sept., Le Figaro du 24 sept.</span></span></span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-taxer-les-mega-heritages-pour-alleger-les-prelevements-sur-l--p-raphael-glucksmann">Taxer les méga-héritages pour alléger les prélèvements sur les salaires</a></span><span class="ss-c">15 Md€ attendus, à partir de 2 M€</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>10 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-inscrire-une-regle-d-or-budgetaire-dans-la-constitution--p-marine-le-pen">Inscrire une règle d’or budgétaire dans la Constitution</a></span><span class="ss-c">3 % du PIB</span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>18 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-geler-la-dette-francaise-detenue-par-la-banque-centrale-euro--p-jean-luc-melenchon">Geler la dette française détenue par la Banque centrale européenne</a></span><span class="ss-c">636 Md€, soit 18 % de la dette, selon le candidat</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>23 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reduire-les-impots-de-production--p-edouard-philippe">Réduire les impôts de production</a></span><span class="ss-c">50 Md€</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>6 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reduire-de-40-md-le-handicap-fiscal-et-social-des-entrepris--p-bruno-retailleau">Réduire de 40 Md€ le handicap fiscal et social des entreprises *</a></span><span class="ss-c">40 Md€, dont 25 Md€ sur le travail</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>16 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-une-taxe-de-2-sur-les-patrimoines-superieurs-a-1--p-marine-tondelier">Instaurer une taxe de 2 % sur les patrimoines supérieurs à 100 M€</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>34 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">02</span><span class="ss-theme">Travail, emploi, retraites et revenus</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-introduire-une-part-de-capitalisation-dans-le-systeme-par-re--p-gabriel-attal">Introduire une part de capitalisation dans le système par répartition</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>8 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Supprimer l’âge légal au profit de la seule durée de cotisation</span><span class="ss-neuf-src"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span><span>Le Figaro, 24 sept.</span></span></span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-revaloriser-le-smic-net--p-raphael-glucksmann">Porter le SMIC à 1,600 € net en deux ans *</a></span><span class="ss-c">1,600 € net par mois</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>11 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-abaisser-l-age-legal-de-depart--p-marine-le-pen">Abaisser l’âge légal de départ à la retraite *</a></span><span class="ss-c">62 ans, 60 ans pour les carrières longues</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>8 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-abaisser-l-age-legal-de-depart-en-deux-temps--p-jean-luc-melenchon">Abaisser l’âge légal de départ en deux temps</a></span><span class="ss-c">62 ans puis 60 ans, 40 annuités</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>16 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Augmenter le point d’indice de 10 % et titulariser les contractuels</span><span class="ss-c">+ 10 %</span><span class="ss-neuf-src"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span><span>Ouvrage collectif du 4 sept., Le Monde du 23 sept.</span></span></span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reduire-la-duree-d-indemnisation-du-chomage--p-edouard-philippe">Réduire la durée d’indemnisation du chômage</a></span><span class="ss-c">12 mois, contre 18</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>4 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-sortir-des-35-heures-en-renvoyant-le-temps-de-travail-a-la-n--p-bruno-retailleau">Sortir des 35 heures en renvoyant le temps de travail à la négociation collective</a></span><span class="ss-c">Seuil annuel de 1,623 heures</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>18 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Ouvrir les droits à 63 ans, taux plein à 65 ans, pilier de capitalisation obligatoire</span><span class="ss-c">Décote de 7 % par an ; 40 Md€ sur cinq ans selon le candidat</span><span class="ss-neuf-src"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span><span>LCI, 22 sept. ; Le Figaro et L’Opinion, 24 sept.</span></span></span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-porter-le-salaire-minimum-a-2-000-bruts-par-mois-des-2027--p-marine-tondelier">Porter le salaire minimum à 2,000 € bruts par mois dès 2027</a></span><span class="ss-c">2,000 € brut</span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>21 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">03</span><span class="ss-theme">Climat, énergie et environnement</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-doubler-les-investissements-dans-la-geothermie--p-gabriel-attal">Doubler les investissements dans la géothermie</a></span><span class="ss-c">160 M€ par an après doublement</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>5 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Construire quatre réacteurs par an et garantir aux industriels une électricité sous 50 €/MWh</span><span class="ss-c">Fossiles importés ramenés de 60 % à 40 % en 2030</span><span class="ss-neuf-src"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span><span>Plan énergie du 23 sept., La Tribune du 25 sept.</span></span></span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-faire-de-la-sortie-des-energies-fossiles-la-cle-de-voute-du--p-raphael-glucksmann">Faire de la sortie des énergies fossiles la clé de voûte du quinquennat</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>23 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Tripler le chèque énergie plutôt qu’une aide générale aux carburants</span><span class="ss-neuf-src"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span><span>Débat de la primaire, LCI, 23 sept.</span></span></span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reduire-la-tva-sur-l-energie--p-marine-le-pen">Réduire la TVA sur l’énergie</a></span><span class="ss-c">De 20 % à 5.5 %</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>10 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Affecter au budget de l’État le produit des certificats d’économies d’énergie</span><span class="ss-neuf-src"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span><span>Le Monde, 23 sept.</span></span></span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-atteindre-un-mix-entierement-renouvelable--p-jean-luc-melenchon">Atteindre un mix électrique entièrement renouvelable et sortir du nucléaire</a></span><span class="ss-c">100 % renouvelable</span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>18 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-fonds-unique-d-adaptation-fonds-vert-et-fonds-barnier-fusio--p-edouard-philippe">Créer un fonds unique d’adaptation, fusion du Fonds vert et du fonds Barnier *</a></span><span class="ss-c">2 Md€ par an</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>10 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Doubler les aides ciblées aux carburants, gagées par 7,000 non-recrutements de fonctionnaires</span><span class="ss-neuf-src"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span><span>L’Opinion, 25 sept.</span></span></span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-produire-a-minima-600-twh-d-electricite-en-2035--p-bruno-retailleau">Produire au moins 600 TWh d’électricité en 2035, avec le nucléaire pour socle *</a></span><span class="ss-c">600 TWh en 2035</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>12 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Supprimer les certificats d’économies d’énergie</span><span class="ss-c">15 à 19 centimes par litre selon l’industrie pétrolière</span><span class="ss-neuf-src"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span><span>Proposition LR depuis avril, Le Monde du 23 sept.</span></span></span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-planifier-la-sortie-du-nucleaire-et-mettre-fin-aux-programme--p-marine-tondelier">Planifier la sortie du nucléaire et mettre fin aux programmes EPR2 et petits réacteurs</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>30 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">04</span><span class="ss-theme">Agriculture, alimentation et ruralité</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-accompagner-les-exploitants-par-des-plans-et-contrats-d-aven--p-gabriel-attal">Accompagner les exploitants par des contrats d’avenir pour les nouvelles filières et l’adaptation climatique</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>2 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-plafonner-les-aides-a-l-hectare-et-redeployer-les-fonds-vers--p-raphael-glucksmann">Plafonner les aides à l’hectare et redéployer les fonds vers les petites fermes et les jeunes installés *</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>12 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-interdire-les-importations-de-produits-agricoles-ne-respecta--p-marine-le-pen">Interdire les importations de produits agricoles ne respectant pas les normes françaises *</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>7 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-fixer-des-prix-planchers-agricoles--p-jean-luc-melenchon">Fixer des prix planchers agricoles</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>9 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-des-territoires-de-souverainete-alimentaire--p-edouard-philippe">Créer des territoires de souveraineté alimentaire *</a></span><span class="ss-c">100 territoires</span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>3 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-relever-de-52-a-100-hectares-le-seuil-de-degressivite-des-ai--p-bruno-retailleau">Relever de 52 à 100 hectares le seuil de dégressivité des aides de la politique agricole commune</a></span><span class="ss-c">52 à 100 hectares</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>6 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-adopter-des-prix-planchers-agricoles-et-un-affichage-obligat--p-marine-tondelier">Adopter des prix planchers agricoles et un affichage obligatoire du partage de la valeur</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>24 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">05</span><span class="ss-theme">Institutions et démocratie</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-limiter-a-un-seul-recours-global-les-contestations-d-un-proj--p-gabriel-attal">Limiter à un seul recours global les contestations d’un projet industriel, par révision constitutionnelle</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>5 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-immediatement-le-scrutin-proportionnel-aux-legisla--p-raphael-glucksmann">Instaurer immédiatement le scrutin proportionnel aux élections législatives *</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>3 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div class="ss-o"><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-un-referendum-d-initiative-citoyenne--p-marine-le-pen">Orientation générale : Instaurer un référendum d’initiative citoyenne</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>1 mesure</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-passer-a-une-vie-republique--p-jean-luc-melenchon">Passer à une VIe République par une assemblée constituante</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>10 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-inscrire-une-regle-d-or-budgetaire-dans-la-constitution--p-edouard-philippe">Inscrire une règle d’or budgétaire dans la Constitution *</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>2 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-un-bouclier-constitutionnel-contre-les-interpretat--p-bruno-retailleau">Instaurer un bouclier constitutionnel contre les interprétations extensives des cours européennes</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>6 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-convoquer-un-processus-constituant-pour-passer-a-une-premier--p-marine-tondelier">Convoquer un processus constituant vers une République écologique et citoyenne</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>19 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">06</span><span class="ss-theme">Sécurité, justice, immigration et asile</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-une-selection-de-l-immigration-par-un-systeme-a-po--p-gabriel-attal">Instaurer une sélection de l’immigration par un système à points</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>3 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-organiser-une-convention-citoyenne-sur-l-immigration--p-raphael-glucksmann">Organiser une convention citoyenne sur l’immigration</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>6 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-des-postes-de-policiers-et-de-gendarmes--p-marine-le-pen">Créer des postes de policiers et de gendarmes *</a></span><span class="ss-c">7,000 postes</span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>16 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-retablir-la-police-de-proximite-et-demanteler-les-brigades-a--p-jean-luc-melenchon">Rétablir la police de proximité et démanteler les brigades anticriminalité</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>14 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-un-etat-d-urgence-contre-le-narcotrafic--p-edouard-philippe">Créer un état d’urgence contre le narcotrafic *</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>30 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-supprimer-le-droit-du-sol--p-bruno-retailleau">Supprimer le droit du sol</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>10 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-une-police-nationale-de-proximite--p-marine-tondelier">Créer une police nationale de proximité</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>28 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">07</span><span class="ss-theme">Défense et industrie d’armement</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-rediger-un-nouveau-livre-blanc-de-la-defense-nationale--p-gabriel-attal">Rédiger un nouveau Livre blanc de la défense nationale</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>7 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-augmenter-fortement-la-reserve-operationnelle--p-raphael-glucksmann">Augmenter fortement la réserve opérationnelle *</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>9 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div class="ss-o"><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-maintenir-une-dissuasion-nucleaire-nationale-independante--p-marine-le-pen">Orientation générale : Maintenir une dissuasion nucléaire nationale indépendante</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>1 mesure</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-une-conscription-citoyenne-de-neuf-mois-et-creer-u--p-jean-luc-melenchon">Instaurer une conscription citoyenne de neuf mois et créer une garde nationale</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>3 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-augmenter-le-nombre-de-reservistes--p-edouard-philippe">Augmenter le nombre de réservistes</a></span><span class="ss-c">De 45,000 à 250,000</span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>5 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-refuser-tout-partage-toute-concertation-et-tout-elargisseme--p-bruno-retailleau">Refuser tout partage, toute concertation et tout élargissement de la dissuasion nucléaire</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>3 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-preparer-l-armee-francaise-a-une-guerre-de-haute-intensite-e--p-marine-tondelier">Préparer l’armée française à une guerre de haute intensité en complémentarité européenne</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>5 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">08</span><span class="ss-theme">Europe, diplomatie et coopération</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-des-etats-unis-d-europe-autour-d-un-noyau-dur-de-pays--p-gabriel-attal">Créer des États-Unis d’Europe autour d’un noyau dur de pays, par un référendum européen</a></span><span class="ss-c">Noyau dur de 8 à 10 pays</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>6 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reserver-la-commande-publique-de-l-union-aux-productions-eur--p-raphael-glucksmann">Réserver la commande publique de l’Union aux productions européennes</a></span><span class="ss-c">2,000 Md€ concernés</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>17 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-maintenir-la-formation-des-soldats-ukrainiens-et-les-livrais--p-marine-le-pen">Maintenir la formation et le matériel pour l’Ukraine, mais cesser l’aide financière</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>3 mesures</span><span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span><span class="ss-m">Ne quitter le commandement intégré de l’OTAN qu’après la fin de la guerre en Ukraine</span><span class="ss-c">En mai : sortie dès le premier mandat</span><span class="ss-neuf-src"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span><span>Entretien à Politico, 24 sept., connu par une compilation</span></span></span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-defendre-une-doctrine-de-non-alignement-militaire--p-jean-luc-melenchon">Défendre une doctrine de non-alignement militaire *</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>6 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-maintenir-le-soutien-a-l-ukraine-face-a-la-russie--p-edouard-philippe">Maintenir le soutien à l’Ukraine face à la Russie</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>3 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reserver-la-libre-circulation-dans-l-espace-schengen-aux-eur--p-bruno-retailleau">Réserver la libre circulation dans l’espace Schengen aux Européens</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>5 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-porter-le-budget-de-l-union-a-2-du-pib-europeen-en-2035-et--p-marine-tondelier">Porter le budget de l’Union à 2 % du PIB européen en 2035 et 5 % en 2050</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>18 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">09</span><span class="ss-theme">Éducation et jeunesse</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-fermer-les-100-colleges-concentrant-les-plus-fortes-difficul--p-gabriel-attal">Fermer les 100 collèges concentrant les plus fortes difficultés et répartir leurs élèves</a></span><span class="ss-c">100 collèges</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>9 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-revaloriser-la-remuneration-des-enseignants--p-raphael-glucksmann">Revaloriser la rémunération des enseignants</a></span><span class="ss-c">De 10 % à 25 %</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>9 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-sanctuariser-les-etablissements-scolaires-et-mettre-fin-a-la--p-marine-le-pen">Sanctuariser les établissements scolaires et mettre fin à la doctrine disciplinaire actuelle</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>3 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-un-service-public-de-la-petite-enfance--p-jean-luc-melenchon">Créer un service public de la petite enfance</a></span><span class="ss-c">500,000 places</span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>10 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-revaloriser-la-remuneration-moyenne-des-enseignants--p-edouard-philippe">Revaloriser la rémunération moyenne des enseignants</a></span><span class="ss-c">+ 20 %</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>7 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-ecarter-l-usage-de-l-intelligence-artificielle-par-l-eleve-a--p-bruno-retailleau">Écarter l’usage de l’intelligence artificielle par l’élève avant le lycée</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>4 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-abroger-le-choc-des-savoirs-et-les-groupes-de-niveaux-en-six--p-marine-tondelier">Abroger le choc des savoirs et les groupes de niveau en sixième et cinquième</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>18 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">10</span><span class="ss-theme">Enseignement supérieur et recherche</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-former-toute-la-population-a-l-ia-du-primaire-a-la-reconver--p-gabriel-attal">Former toute la population à l’intelligence artificielle, du primaire à la reconversion</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>2 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-doubler-le-budget-de-la-recherche-europeenne--p-raphael-glucksmann">Doubler le budget de la recherche européenne *</a></span><span class="ss-c">Budget doublé</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>7 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-augmenter-les-frais-de-scolarite-des-etudiants-etrangers-ho--p-marine-le-pen">Augmenter les frais de scolarité des étudiants étrangers, hors conventions</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>2 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-demanteler-parcoursup-et-garantir-l-acces-sans-selection-a-l--p-jean-luc-melenchon">Démanteler Parcoursup et garantir l’accès sans sélection à la formation choisie</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>8 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-augmenter-le-nombre-annuel-d-ingenieurs-formes--p-edouard-philippe">Augmenter le nombre annuel d’ingénieurs formés</a></span><span class="ss-c">De 40,000 à 100,000 par an</span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>2 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-revoir-la-carte-des-formations-universitaires-et-leurs-finan--p-bruno-retailleau">Revoir la carte des formations universitaires et leurs financements selon les débouchés</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>1 mesure</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-remplacer-parcoursup-et-monmaster-par-une-plateforme-d-orien--p-marine-tondelier">Remplacer Parcoursup et MonMaster par une plateforme d’orientation transparente</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>6 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">11</span><span class="ss-theme">Santé et protection sociale</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-defiscaliser-les-pensions-alimentaires-recues-pour-les-enfan--p-gabriel-attal">Défiscaliser les pensions alimentaires reçues pour les enfants</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>5 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-demarchandiser-les-creches--p-raphael-glucksmann">Démarchandiser les crèches et les EHPAD</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>2 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-transformer-l-aide-medicale-de-l-etat-en-dispositif-limite-a--p-marine-le-pen">Transformer l’aide médicale de l’État en dispositif limité aux soins urgents</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>15 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-une-securite-sociale-integrale-geree-par-ses-cotisants--p-jean-luc-melenchon">Créer une Sécurité sociale intégrale gérée par ses cotisants</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>12 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-mettre-fin-a-ce-qu-il-qualifie-d-open-bar-des-arrets-de--p-edouard-philippe">Mettre fin à ce qu’il qualifie d’« open bar » des arrêts de travail</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>6 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-instaurer-un-revenu-familial-de-240-par-mois-et-par-enfant--p-bruno-retailleau">Instaurer un Revenu familial par enfant</a></span><span class="ss-c">240 € par mois et par enfant</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>5 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-autoriser-une-fin-de-vie-choisie-et-assistee--p-marine-tondelier">Autoriser une fin de vie choisie et assistée</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>21 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">12</span><span class="ss-theme">Collectivités et cohésion territoriale</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div class="ss-o"><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-faire-participer-les-collectivites-a-l-effort-budgetaire--p-gabriel-attal">Orientation générale : Faire participer les collectivités à l’effort budgétaire</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>1 mesure</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-un-contrat-de-souverainete-clarifiant-les-competences--p-raphael-glucksmann">Créer un contrat de souveraineté clarifiant les compétences entre l’Union, l’État et les collectivités *</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>2 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reduire-de-5-md-les-transferts-de-l-etat-aux-regions-et-aux--p-marine-le-pen">Réduire de 5 Md€ les transferts de l’État aux régions et aux intercommunalités</a></span><span class="ss-c">5 Md€</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>2 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-restructurer-les-regions-autour-des-grands-bassins-versants--p-jean-luc-melenchon">Restructurer les régions autour des grands bassins versants des fleuves</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>4 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-decentraliser-la-politique-d-adaptation-au-changement-climat--p-edouard-philippe">Décentraliser la politique d’adaptation au changement climatique</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>1 mesure</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-reduire-les-transferts-de-l-etat-aux-collectivites--p-bruno-retailleau">Réduire les transferts de l’État aux collectivités</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>1 mesure</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-garantir-un-accueil-physique-des-services-publics-a-quinze-m--p-marine-tondelier">Garantir un accueil physique des services publics à quinze minutes partout en France</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>7 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">13</span><span class="ss-theme">Logement et urbanisme</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div class="ss-o"><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-engager-une-renovation-thermique-massive--p-gabriel-attal">Orientation générale : Engager une rénovation thermique massive</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>1 mesure</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-developper-les-logements-en-bail-reel-solidaire-pour-en-fair--p-raphael-glucksmann">Développer les logements en bail réel solidaire pour en faire une offre de masse</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>5 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-abroger-la-loi-relative-a-la-solidarite-et-au-renouvellement--p-marine-le-pen">Abroger la loi relative à la solidarité et au renouvellement urbains (SRU)</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>11 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-construire-des-logements-publics--p-jean-luc-melenchon">Construire des logements publics</a></span><span class="ss-c">200,000 par an</span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>8 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-adapter-les-batiments-aux-canicules--p-edouard-philippe">Adapter les bâtiments aux canicules : climatisation et réseaux de froid</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>2 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-faire-passer-les-travailleurs-en-premier-pour-l-attribution--p-bruno-retailleau">Faire passer les travailleurs en premier pour l’attribution des logements sociaux</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>9 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-utiliser-le-droit-de-requisition-contre-les-logements-vacant--p-marine-tondelier">Utiliser le droit de réquisition contre les logements vacants</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>7 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">14</span><span class="ss-theme">Outre-mer</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div class="ss-vide"><span class="ss-m">Aucune mesure retrouvée dans le corpus dépouillé.</span><span class="ss-pied"><span class="ss-chip ss-X" title="Aucune mesure retrouvée dans le corpus dépouillé">X</span>0 mesure</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-adapter-les-transports-aux-specificites-ultramarines--p-raphael-glucksmann">Adapter les transports aux spécificités ultramarines</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>1 mesure</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-augmenter-de-700-m-le-budget-de-la-mission-outre-mer-pour-l--p-marine-le-pen">Augmenter le budget de la mission Outre-mer pour les infrastructures</a></span><span class="ss-c">+ 700 M€</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>4 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-accompagner-la-nouvelle-caledonie-kanaky-vers-l-independance--p-jean-luc-melenchon">Accompagner la Nouvelle-Calédonie-Kanaky vers l’indépendance</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>6 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-supprimer-le-droit-du-sol-a-mayotte--p-edouard-philippe">Supprimer le droit du sol à Mayotte</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>3 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div class="ss-vide"><span class="ss-m">Aucune mesure retrouvée dans le corpus dépouillé.</span><span class="ss-pied"><span class="ss-chip ss-X" title="Aucune mesure retrouvée dans le corpus dépouillé">X</span>0 mesure</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-combattre-la-vie-chere-outre-mer-par-les-regles-anti-trust-e--p-marine-tondelier">Combattre la vie chère outre-mer par les règles anti-trust et le contrôle des marges</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>5 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">15</span><span class="ss-theme">Culture, médias et information</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-fixer-un-age-minimal-d-acces-aux-reseaux-sociaux--p-gabriel-attal">Fixer un âge minimal d’accès aux réseaux sociaux</a></span><span class="ss-c">15 ans</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>1 mesure</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-tenir-l-objectif-de-1-du-budget-de-l-etat-consacre-a-la-cu--p-raphael-glucksmann">Tenir l’objectif de 1 % du budget de l’État consacré à la culture *</a></span><span class="ss-c">1 % du budget de l’État</span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>6 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-creer-un-service-national-du-patrimoine--p-marine-le-pen">Créer un service national du patrimoine</a></span><span class="ss-c">6 mois, 18-24 ans</span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>5 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-demembrer-par-une-loi-de-debut-de-mandat-les-trusts-mediatiq--p-jean-luc-melenchon">Démembrer par une loi de début de mandat les trusts médiatiques et culturels</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>8 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div class="ss-vide"><span class="ss-m">Aucune mesure retrouvée dans le corpus dépouillé.</span><span class="ss-pied"><span class="ss-chip ss-X" title="Aucune mesure retrouvée dans le corpus dépouillé">X</span>0 mesure</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div class="ss-vide"><span class="ss-m">Aucune mesure retrouvée dans le corpus dépouillé.</span><span class="ss-pied"><span class="ss-chip ss-X" title="Aucune mesure retrouvée dans le corpus dépouillé">X</span>0 mesure</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-garantir-la-liberte-de-creation-et-limiter-la-concentration--p-marine-tondelier">Garantir la liberté de création et limiter la concentration des industries culturelles</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>10 mesures</span></div>
+</div>
+</div>
+</section>
+<section class="ss-carte"><header><span class="ss-num">16</span><span class="ss-theme">Numérique, données, IA et cybersécurité</span></header>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/ATTALGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Gabriel Attal</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-introduire-une-preference-europeenne-dans-les-marches-public--p-gabriel-attal">Introduire une préférence européenne dans les marchés publics technologiques</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>3 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/GLUCKSMANGabrieldessin.webp" alt="" width="40" height="40" />
+<div><b>Raphaël Glucksmann</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-appliquer-fermement-aux-grandes-plateformes-les-regles-europ--p-raphael-glucksmann">Appliquer fermement aux grandes plateformes les règles européennes existantes</a></span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>11 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/LEPENMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Le Pen</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-taxer-l-utilisation-du-reseau-par-les-geants-du-numerique--p-marine-le-pen">Taxer l’utilisation du réseau par les géants du numérique</a></span><span class="ss-pied"><span class="ss-chip ss-P3" title="Corpus partisan pour l’échéance en cours">P3</span>5 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/MELENCHONJeanlucdessin.webp" alt="" width="40" height="40" />
+<div><b>Jean-Luc Mélenchon</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-developper-les-logiciels-libres-dans-les-administrations--p-jean-luc-melenchon">Développer les logiciels libres dans les administrations</a></span><span class="ss-pied"><span class="ss-chip ss-P4" title="Corpus antérieur, le plus souvent le programme de 2022">P4</span>2 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/PHILIPPEEdouarddessin.webp" alt="" width="40" height="40" />
+<div><b>Édouard Philippe</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-adopter-un-buy-european-tech-act--p-edouard-philippe">Adopter un Buy European Tech Act</a></span><span class="ss-pied"><span class="ss-chip ss-P5" title="Source secondaire seulement, presse ou agrégateur">P5</span>3 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/RETAILLEAUBrunodessin.webp" alt="" width="40" height="40" />
+<div><b>Bruno Retailleau</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-porter-les-capacites-de-centres-de-donnees-a-1-gw-en-2030-p--p-bruno-retailleau">Porter les capacités de centres de données à 1 GW en 2030, puis à 4 GW en 2035</a></span><span class="ss-c">1 GW en 2030, 4 GW en 2035</span><span class="ss-pied"><span class="ss-chip ss-P2" title="Proposition personnelle récente, tribune, entretien ou discours">P2</span>8 mesures</span></div>
+</div>
+</div>
+<div class="ss-ligne"><img src="https://sapere.page/wp-content/uploads/2026/09/TONDELIERMarinedessin.webp" alt="" width="40" height="40" />
+<div><b>Marine Tondelier</b>
+<div><span class="ss-m"><a class="ss-lien" title="Ouvrir la fiche de cette mesure dans le registre" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/#m-encadrer-l-implantation-des-centres-de-donnees-et-planifier--p-marine-tondelier">Encadrer l’implantation des centres de données et planifier leur consommation électrique</a></span><span class="ss-pied"><span class="ss-chip ss-P1" title="Engagement 2027 publié par le candidat ou son parti">P1</span>6 mesures</span></div>
+</div>
+</div>
+</section>
+</div>
+<footer class="ss-foot">
+<p><strong>Règle de sélection.</strong> Dans chaque case, la mesure au statut documentaire le plus fort ; à statut égal, la plus structurante du programme sur le thème. 17 cases, marquées d’un astérisque, retiennent une mesure à statut plus faible parce qu’elle est plus structurante dans son programme. Les cases en italique signalent une orientation générale sans mesure détaillée. Le nombre de mesures sous chaque case rappelle qu’une case ne résume pas un programme.</p>
+<p><strong>Annonces nouvelles.</strong> Les 10 encadrés « Nouveau » proviennent des briques SAPERE du 18 au 25 septembre 2026 et de l’analyse du Monde du 23 septembre (Clément Guillou). Leur statut documentaire est provisoire : il sera confirmé, et le choix de la case éventuellement revu, lorsqu’elles seront versées au registre. Une annonce connue par une seule compilation de presse est classée P5.</p>
+<p><strong>Source.</strong> Registre SAPERE des engagements 2027, clôture documentaire au 19 septembre 2026, complété par les annonces du 18 au 25 septembre. Chaque mesure du registre y est argumentée, sourcée et datée ; le tableau n’ajoute aucune information au registre, il en extrait une, et signale à part ce qui n’y figure pas encore. Synthèse version 1.9. Infographie SAPERE. <a class="ss-cta" href="https://sapere.page/campagne-presidentielle-france-2027-analyse-des-programmes/">Ouvrir le registre complet ↗</a></p>
+</footer></div>
+<!-- /wp:html -->
