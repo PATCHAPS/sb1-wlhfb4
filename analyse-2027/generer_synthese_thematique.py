@@ -186,10 +186,19 @@ THEMES = [
     ]),
 ]
 
-# Annonces du 18 au 25 septembre 2026, pas encore versées au registre (clôture au 19 septembre).
+# Annonces du 18 septembre au 4 octobre 2026, pas encore versées au registre (clôture au 19 septembre).
 # Clé : (numéro de thème, slug du candidat). Valeur : (intitulé, chiffre, statut, source et date).
-# Sources : briques SAPERE de la base du 25 septembre (numéros entre parenthèses) et Le Monde du 23 septembre.
+# Sources : briques SAPERE de la base du 25 septembre (numéros entre parenthèses), Le Monde du 23 septembre,
+# et presse du 26 septembre au 4 octobre consultée par moteur de recherche (à confirmer au document primaire).
 NOUVEAUTES = {
+    ("01", "marine-le-pen"): (
+        "Inscrire par référendum une règle d’or : un déficit toujours inférieur au seuil qui stabilise la dette",
+        "Plafond de 4.9 % du PIB en 2027, 4.4 % en 2028, 2.9 % en 2032", "P2",
+        "Tribune dans L’Opinion, 1er oct. ; LCP, Reuters, 2 oct."),
+    ("02", "edouard-philippe"): (
+        "Porter l’âge de départ à 65 ans et la durée de cotisation à 45 ans, avec un pilier de capitalisation obligatoire",
+        "En moins de dix ans ; 30 Md€ par an en année pleine selon son équipe", "P2",
+        "Vidéo du candidat, 29 sept. ; franceinfo et Public Sénat, 29-30 sept."),
     ("01", "gabriel-attal"): (
         "Réaliser 150 Md€ d’économies en cinq ans et ramener le déficit sous 3 % en 2032",
         "Deux tiers sur les dépenses sociales, 100,000 postes publics en moins", "P2",
@@ -201,9 +210,9 @@ NOUVEAUTES = {
         "Augmenter le point d’indice de 10 % et titulariser les contractuels", "+ 10 %", "P3",
         "Ouvrage collectif du 4 sept., Le Monde du 23 sept. (brique 41227)"),
     ("02", "bruno-retailleau"): (
-        "Ouvrir les droits à 63 ans, taux plein à 65 ans, pilier de capitalisation obligatoire",
+        "Ouvrir les droits à 63 ans, taux plein à 65 ans indexé ensuite sur l’espérance de vie, pilier de capitalisation obligatoire",
         "Décote de 7 % par an ; 40 Md€ sur cinq ans selon le candidat", "P2",
-        "LCI, 22 sept. ; Le Figaro et L’Opinion, 24 sept. (briques 41704, 41587)"),
+        "LCI, 22 sept. ; Le Figaro et L’Opinion, 24 sept. ; JDD et Europe 1 (briques 41704, 41587)"),
     ("03", "gabriel-attal"): (
         "Construire quatre réacteurs par an et garantir aux industriels une électricité sous 50 €/MWh",
         "Fossiles importés ramenés de 60 % à 40 % en 2030", "P2",
@@ -228,26 +237,26 @@ NOUVEAUTES = {
 }
 
 BOUGE = [
-    ("Trois chiffres ronds, aucune ventilation.",
-     "Gabriel Attal promet 150 Md€ d’économies en cinq ans, Bruno Retailleau chiffre sa réforme des retraites "
-     "à 40 Md€ sur cinq ans, Marine Le Pen annonce un contre-budget pour début octobre. Aucun ne détaille encore "
-     "ses économies poste par poste."),
-    ("La pompe fait campagne.",
-     "Le gazole bat son record le 22 septembre, à 2.41 € le litre, et chacun choisit son instrument : TVA à 5.5 % "
-     "(Marine Le Pen), suppression des certificats d’économies d’énergie (Bruno Retailleau), aides ciblées doublées "
-     "(Édouard Philippe), chèque énergie triplé (Raphaël Glucksmann), nucléaire plutôt qu’aides (Gabriel Attal)."),
-    ("L’original et la copie.",
-     "Selon <a href=\"" + LE_MONDE + "\">Le Monde</a> du 23 septembre, trois pistes d’économies longtemps portées "
-     "par le seul RN (contribution européenne, aides aux étrangers, soutiens à l’énergie) gagnent le budget de "
-     "Sébastien Lecornu et d’autres camps : droit du sol et asile suspendus à Mayotte chez Édouard Philippe, "
-     "certificats d’économies d’énergie supprimés chez Bruno Retailleau. Leur rendement reste mince : sur la carence "
-     "imposée aux étrangers, un député RN admet lui-même que « cela ne rapporte rien »."),
-    ("Le RN retouche sa ligne étrangère.",
-     "Marine Le Pen ne quitterait plus le commandement intégré de l’OTAN avant la fin de la guerre en Ukraine, et "
-     "le Kremlin désavoue publiquement une mise en garde du parti contre les pressions russes, une première."),
-    ("À gauche, deux calendriers.",
-     "La primaire sociale-démocrate se tient en octobre, avec Raphaël Glucksmann pour favori ; les écologistes "
-     "trancheront du 10 au 13 décembre entre la candidature de Marine Tondelier et un ralliement."),
+    ("Le budget plante le décor.",
+     "Le projet de loi de finances du 1er octobre ramène le déficit de 5.4 % à 5 % du PIB en 2027, avec une dette "
+     "record à 121.7 % et une charge d’intérêts de 91 Md€. L’effort de 54 Md€ demande 5.5 Md€ aux retraités et "
+     "gèle le point d’indice. Le PS le juge « pas acceptable », LFI promet la censure, le RN pose ses conditions."),
+    ("Le centre et la droite fixent un âge.",
+     "Édouard Philippe annonce le 29 septembre 65 ans et 45 annuités « en moins de dix ans », un pilier de "
+     "capitalisation obligatoire et 30 Md€ par an selon son équipe. Bruno Retailleau, lui, indexe le taux plein "
+     "sur l’espérance de vie. Aucun des deux n’a encore de chiffrage indépendant."),
+    ("Le RN se convertit à la règle d’or.",
+     "Marine Le Pen veut graver par référendum un déficit plafonné à 4.9 % en 2027 et 2.9 % en 2032, soit un "
+     "demi-point par an. Le marqueur historique du parti tombe ; le plan de 125 Md€ qui doit le financer reste "
+     "attendu « avant le débat budgétaire »."),
+    ("La rue entre en campagne.",
+     "Les blocages de lycées, partis de Créteil le 17 septembre, touchent 416 établissements le 29. Bruno Retailleau "
+     "pose « la question de l’interdiction » de LFI, Gabriel Attal et Marine Le Pen accusent le mouvement "
+     "insoumis, Jean-Luc Mélenchon dément et fait du 6 octobre « un point de départ »."),
+    ("Deux appels à l’union, un refus.",
+     "Gabriel Attal propose le 3 octobre une « grande coalition » des électeurs de Raphaël Glucksmann à la droite "
+     "républicaine, primaire comprise ; le camp Glucksmann répond « même pas en rêve ». La primaire "
+     "sociale-démocrate tient son dernier débat le 6 octobre et vote les 9 et 10."),
 ]
 
 CSS = r"""#sapere2027-synthese-v1{--ink:#111820;--paper:#fff;--line:#d8d5cc;--mute:#66717b;--red:#c91e35;--neuf:#fbf5ee;
@@ -378,25 +387,26 @@ def classe(case):
 def generer():
     o = ['<!-- wp:html -->', '<div id="sapere2027-synthese-v1"><style>', CSS, '</style>']
     o.append('<header class="ss-head"><span class="ss-eyebrow">SAPERE · Présidentielle 2027 · Synthèse du registre · '
-             'Mise à jour du 26 septembre 2026</span>')
+             'Mise à jour du 4 octobre 2026</span>')
     o.append('<h2 class="ss-titre">Que propose chacun, thème par thème ?</h2>')
     o.append(f'<p class="ss-chapo">Seize thématiques, sept candidats, une mesure par case : ce tableau condense les 922 '
              f'mesures du <a href="{REG}">Registre SAPERE des engagements 2027</a>. Chaque case donne la proposition la '
              'mieux établie du candidat sur le thème, son chiffre lorsqu’il en a publié un, et son statut documentaire, '
              'de P1, engagement 2027 publié, à P5, source secondaire. Chaque mesure est cliquable et ouvre sa fiche '
              'complète dans le registre : arguments, objections, état du droit et sources.</p>')
-    o.append('<p class="ss-chapo">Une semaine de campagne a suffi à faire bouger dix cases. Les annonces du 18 au 25 '
-             'septembre apparaissent dans des encadrés rouges marqués « Nouveau » : elles s’ajoutent à la mesure du '
-             'registre sans la remplacer, tant qu’elles n’y ont pas été versées et argumentées.</p>')
+    o.append(f'<p class="ss-chapo">Deux semaines de campagne ont suffi à faire bouger {len(NOUVEAUTES)} cases. Les '
+             'annonces du 18 septembre au 4 octobre apparaissent dans des encadrés rouges marqués « Nouveau » : elles '
+             's’ajoutent à la mesure du registre sans la remplacer, tant qu’elles n’y ont pas été versées et '
+             'argumentées.</p>')
     o.append('<ul class="ss-legende">')
     for st, lib in STATUTS.items():
         o.append(f'<li>{chip(st)} {lib}</li>')
-    o.append('<li><span class="ss-chip ss-NEUF" title="Annonce du 18 au 25 septembre, pas encore versée au registre">'
-             'Nouveau</span> Annonce du 18 au 25 septembre, pas encore versée au registre</li>')
+    o.append('<li><span class="ss-chip ss-NEUF" title="Annonce du 18 septembre au 4 octobre, pas encore versée au '
+             'registre">Nouveau</span> Annonce du 18 septembre au 4 octobre, pas encore versée au registre</li>')
     o.append('</ul>\n</header>')
 
     o.append('<section class="ss-bouge" aria-labelledby="ss-bouge-titre">'
-             '<h3 id="ss-bouge-titre">Ce qui a bougé du 18 au 25 septembre</h3><ol class="ss-bouge-l">')
+             '<h3 id="ss-bouge-titre">Ce qui a bougé du 26 septembre au 4 octobre</h3><ol class="ss-bouge-l">')
     for titre, texte in BOUGE:
         o.append(f'<li><b>{titre}</b> {texte}</li>')
     o.append('</ol></section>')
@@ -437,19 +447,20 @@ def generer():
              'en italique signalent une orientation générale sans mesure détaillée. Le nombre de mesures sous chaque case '
              'rappelle qu’une case ne résume pas un programme.</p>')
     o.append(f'<p><strong>Annonces nouvelles.</strong> Les {len(NOUVEAUTES)} encadrés « Nouveau » proviennent des briques '
-             'SAPERE du 18 au 25 septembre 2026 et de l’analyse du Monde du 23 septembre (Clément Guillou). Leur statut '
+             'SAPERE du 18 au 25 septembre 2026, de l’analyse du Monde du 23 septembre (Clément Guillou) et de la presse '
+             'du 26 septembre au 4 octobre. Leur statut '
              'documentaire est provisoire : il sera confirmé, et le choix de la case éventuellement revu, lorsqu’elles '
              'seront versées au registre. Une annonce connue par une seule compilation de presse est classée P5.</p>')
     o.append(f'<p><strong>Source.</strong> Registre SAPERE des engagements 2027, clôture documentaire au 19 septembre 2026, '
-             'complété par les annonces du 18 au 25 septembre. Chaque mesure du registre y est argumentée, sourcée et '
+             'complété par les annonces du 18 septembre au 4 octobre. Chaque mesure du registre y est argumentée, sourcée et '
              'datée ; le tableau n’ajoute aucune information au registre, il en extrait une, et signale à part ce qui '
-             f'n’y figure pas encore. Synthèse version 1.9. Infographie SAPERE. <a class="ss-cta" href="{REG}">'
+             f'n’y figure pas encore. Synthèse version 1.10. Infographie SAPERE. <a class="ss-cta" href="{REG}">'
              'Ouvrir le registre complet ↗</a></p>')
     o.append('</footer></div>\n<!-- /wp:html -->')
     return "\n".join(o) + "\n"
 
 
 if __name__ == "__main__":
-    sortie = Path(__file__).with_name("synthese-thematique-v1.9-2026-09-26.html")
+    sortie = Path(__file__).with_name("synthese-thematique-v1.10-2026-10-04.html")
     sortie.write_text(generer(), encoding="utf-8")
     print(sortie)
