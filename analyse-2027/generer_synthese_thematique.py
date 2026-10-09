@@ -186,19 +186,48 @@ THEMES = [
     ]),
 ]
 
-# Annonces du 18 septembre au 4 octobre 2026, pas encore versées au registre (clôture au 19 septembre).
-# Clé : (numéro de thème, slug du candidat). Valeur : (intitulé, chiffre, statut, source et date).
+# Annonces du 18 septembre au 8 octobre 2026, pas encore versées au registre (clôture au 19 septembre).
+# Clé : (numéro de thème, slug du candidat). Valeur : (intitulé, chiffre, statut, source et date),
+# ou liste de tels quadruplets quand une même case reçoit plusieurs annonces.
+# L'Heure de vérité du 8 octobre (Édouard Philippe) est traitée d'après la transcription horodatée
+# fournie par l'auteur ; les chiffres cités par le candidat ne sont pas vérifiés.
 # Sources : briques SAPERE de la base du 25 septembre (numéros entre parenthèses), Le Monde du 23 septembre,
 # et presse du 26 septembre au 4 octobre consultée par moteur de recherche (à confirmer au document primaire).
+HDV = "L’Heure de vérité, France Télévisions, 8 oct. (transcription)"
 NOUVEAUTES = {
+    ("01", "edouard-philippe"): (
+        "Ramener le déficit vers 2 % du PIB : la moitié de l’effort sur les dépenses sociales, un quart sur l’État "
+        "et les collectivités",
+        "Un départ en retraite de fonctionnaire sur trois non remplacé, environ 250,000 postes en cinq ans", "P2", HDV),
+    ("05", "edouard-philippe"): (
+        "Dissoudre dès l’élection, chercher une majorité absolue et faire examiner une vingtaine d’ordonnances "
+        "en juillet 2027",
+        "Suppose une loi d’habilitation préalable (article 38)", "P2", HDV),
+    ("06", "edouard-philippe"): (
+        "Ramener les premiers titres de séjour sous 200,000 par an, envisager un moratoire du regroupement familial "
+        "et dénoncer l’accord franco-algérien de 1968",
+        "Contre environ 380,000 en 2025, selon les chiffres cités dans l’émission", "P2", HDV),
+    ("09", "edouard-philippe"): (
+        "Refondre l’orientation des lycéens et renforcer l’accès à la santé mentale à l’école", "", "P2", HDV),
+    ("11", "edouard-philippe"): [
+        ("Verser une allocation familiale dès le premier enfant, dégressive selon le revenu",
+         "Jusqu’à 350 € par mois", "P2", HDV),
+        ("Accorder aux classes moyennes une réduction d’impôt à la naissance, sur trois ans",
+         "Environ 3,000 €, déciles 4 à 6", "P2", HDV),
+    ],
     ("01", "marine-le-pen"): (
         "Inscrire par référendum une règle d’or : un déficit toujours inférieur au seuil qui stabilise la dette",
         "Plafond de 4.9 % du PIB en 2027, 4.4 % en 2028, 2.9 % en 2032", "P2",
         "Tribune dans L’Opinion, 1er oct. ; LCP, Reuters, 2 oct."),
-    ("02", "edouard-philippe"): (
-        "Porter l’âge de départ à 65 ans et la durée de cotisation à 45 ans, avec un pilier de capitalisation obligatoire",
-        "En moins de dix ans ; 30 Md€ par an en année pleine selon son équipe", "P2",
-        "Vidéo du candidat, 29 sept. ; franceinfo et Public Sénat, 29-30 sept."),
+    ("02", "edouard-philippe"): [
+        ("Porter l’âge de départ à 65 ans et la durée de cotisation à 45 ans, avec un pilier de capitalisation "
+         "obligatoire ; exceptions fixées avec les partenaires sociaux",
+         "En moins de dix ans ; 30 Md€ par an en année pleine selon son équipe", "P2",
+         "Vidéo du candidat, 29 sept. ; franceinfo et Public Sénat, 29-30 sept. ; " + HDV),
+        ("Exonérer progressivement de cotisations et d’impôt sur le revenu le travail supplémentaire négocié "
+         "dans l’entreprise",
+         "Environ 1,000 € par an pour deux heures de plus par semaine au SMIC, selon le candidat", "P2", HDV),
+    ],
     ("01", "gabriel-attal"): (
         "Réaliser 150 Md€ d’économies en cinq ans et ramener le déficit sous 3 % en 2032",
         "Deux tiers sur les dépenses sociales, 100,000 postes publics en moins", "P2",
@@ -253,6 +282,12 @@ BOUGE = [
      "Les blocages de lycées, partis de Créteil le 17 septembre, touchent 416 établissements le 29. Bruno Retailleau "
      "pose « la question de l’interdiction » de LFI, Gabriel Attal et Marine Le Pen accusent le mouvement "
      "insoumis, Jean-Luc Mélenchon dément et fait du 6 octobre « un point de départ »."),
+    ("Philippe à L’Heure de vérité.",
+     "Le 8 octobre, Édouard Philippe ajoute des dépenses et des baisses d’impôts (heures supplémentaires "
+     "exonérées, allocation familiale jusqu’à 350 € dès le premier enfant, réduction d’impôt à la naissance) "
+     "et en dit le prix en emplois publics : un départ sur trois non remplacé, 250,000 postes en cinq ans. Il vise "
+     "moins de 200,000 premiers titres de séjour, promet une vingtaine d’ordonnances dès juillet 2027 et refuse "
+     "la primaire proposée par Gabriel Attal. Le déficit visé, vers 2 % du PIB, cesse d’être une cible absolue."),
     ("Deux appels à l’union, un refus.",
      "Gabriel Attal propose le 3 octobre une « grande coalition » des électeurs de Raphaël Glucksmann à la droite "
      "républicaine, primaire comprise ; le camp Glucksmann répond « même pas en rêve ». La primaire "
@@ -367,10 +402,18 @@ def contenu(case, cand_slug):
     return h + f'<span class="ss-pied">{chip(st)}{compte(n)}</span>'
 
 
-def neuf(num, cand_slug):
+def annonces(num, cand_slug):
     n = NOUVEAUTES.get((num, cand_slug))
     if not n:
-        return ""
+        return []
+    return n if isinstance(n, list) else [n]
+
+
+def neuf(num, cand_slug):
+    return "".join(encadre(n) for n in annonces(num, cand_slug))
+
+
+def encadre(n):
     titre, c, st, src = n
     src = re.sub(r" \(briques? [^)]*\)", "", src)  # numéros de briques : traçabilité interne, pas d'affichage public
     h = ('<span class="ss-neuf"><span class="ss-neuf-tag">Nouveau</span>'
@@ -387,26 +430,26 @@ def classe(case):
 def generer():
     o = ['<!-- wp:html -->', '<div id="sapere2027-synthese-v1"><style>', CSS, '</style>']
     o.append('<header class="ss-head"><span class="ss-eyebrow">SAPERE · Présidentielle 2027 · Synthèse du registre · '
-             'Mise à jour du 4 octobre 2026</span>')
+             'Mise à jour du 9 octobre 2026</span>')
     o.append('<h2 class="ss-titre">Que propose chacun, thème par thème ?</h2>')
     o.append(f'<p class="ss-chapo">Seize thématiques, sept candidats, une mesure par case : ce tableau condense les 922 '
              f'mesures du <a href="{REG}">Registre SAPERE des engagements 2027</a>. Chaque case donne la proposition la '
              'mieux établie du candidat sur le thème, son chiffre lorsqu’il en a publié un, et son statut documentaire, '
              'de P1, engagement 2027 publié, à P5, source secondaire. Chaque mesure est cliquable et ouvre sa fiche '
              'complète dans le registre : arguments, objections, état du droit et sources.</p>')
-    o.append(f'<p class="ss-chapo">Deux semaines de campagne ont suffi à faire bouger {len(NOUVEAUTES)} cases. Les '
-             'annonces du 18 septembre au 4 octobre apparaissent dans des encadrés rouges marqués « Nouveau » : elles '
+    o.append(f'<p class="ss-chapo">Trois semaines de campagne ont suffi à faire bouger {len(NOUVEAUTES)} cases. Les '
+             'annonces du 18 septembre au 8 octobre apparaissent dans des encadrés rouges marqués « Nouveau » : elles '
              's’ajoutent à la mesure du registre sans la remplacer, tant qu’elles n’y ont pas été versées et '
              'argumentées.</p>')
     o.append('<ul class="ss-legende">')
     for st, lib in STATUTS.items():
         o.append(f'<li>{chip(st)} {lib}</li>')
-    o.append('<li><span class="ss-chip ss-NEUF" title="Annonce du 18 septembre au 4 octobre, pas encore versée au '
-             'registre">Nouveau</span> Annonce du 18 septembre au 4 octobre, pas encore versée au registre</li>')
+    o.append('<li><span class="ss-chip ss-NEUF" title="Annonce du 18 septembre au 8 octobre, pas encore versée au '
+             'registre">Nouveau</span> Annonce du 18 septembre au 8 octobre, pas encore versée au registre</li>')
     o.append('</ul>\n</header>')
 
     o.append('<section class="ss-bouge" aria-labelledby="ss-bouge-titre">'
-             '<h3 id="ss-bouge-titre">Ce qui a bougé du 26 septembre au 4 octobre</h3><ol class="ss-bouge-l">')
+             '<h3 id="ss-bouge-titre">Ce qui a bougé du 26 septembre au 8 octobre</h3><ol class="ss-bouge-l">')
     for titre, texte in BOUGE:
         o.append(f'<li><b>{titre}</b> {texte}</li>')
     o.append('</ol></section>')
@@ -446,21 +489,23 @@ def generer():
              'retiennent une mesure à statut plus faible parce qu’elle est plus structurante dans son programme. Les cases '
              'en italique signalent une orientation générale sans mesure détaillée. Le nombre de mesures sous chaque case '
              'rappelle qu’une case ne résume pas un programme.</p>')
-    o.append(f'<p><strong>Annonces nouvelles.</strong> Les {len(NOUVEAUTES)} encadrés « Nouveau » proviennent des briques '
-             'SAPERE du 18 au 25 septembre 2026, de l’analyse du Monde du 23 septembre (Clément Guillou) et de la presse '
-             'du 26 septembre au 4 octobre. Leur statut '
+    nb = sum(len(annonces(*k)) for k in NOUVEAUTES)
+    o.append(f'<p><strong>Annonces nouvelles.</strong> Les {nb} encadrés « Nouveau » proviennent des briques '
+             'SAPERE du 18 au 25 septembre 2026, de l’analyse du Monde du 23 septembre (Clément Guillou), de la presse '
+             'du 26 septembre au 4 octobre et de la transcription de L’Heure de vérité du 8 octobre (Édouard '
+             'Philippe), dont les chiffres cités par le candidat ne sont pas vérifiés. Leur statut '
              'documentaire est provisoire : il sera confirmé, et le choix de la case éventuellement revu, lorsqu’elles '
              'seront versées au registre. Une annonce connue par une seule compilation de presse est classée P5.</p>')
     o.append(f'<p><strong>Source.</strong> Registre SAPERE des engagements 2027, clôture documentaire au 19 septembre 2026, '
-             'complété par les annonces du 18 septembre au 4 octobre. Chaque mesure du registre y est argumentée, sourcée et '
+             'complété par les annonces du 18 septembre au 8 octobre. Chaque mesure du registre y est argumentée, sourcée et '
              'datée ; le tableau n’ajoute aucune information au registre, il en extrait une, et signale à part ce qui '
-             f'n’y figure pas encore. Synthèse version 1.10. Infographie SAPERE. <a class="ss-cta" href="{REG}">'
+             f'n’y figure pas encore. Synthèse version 1.11. Infographie SAPERE. <a class="ss-cta" href="{REG}">'
              'Ouvrir le registre complet ↗</a></p>')
     o.append('</footer></div>\n<!-- /wp:html -->')
     return "\n".join(o) + "\n"
 
 
 if __name__ == "__main__":
-    sortie = Path(__file__).with_name("synthese-thematique-v1.10-2026-10-04.html")
+    sortie = Path(__file__).with_name("synthese-thematique-v1.11-2026-10-09.html")
     sortie.write_text(generer(), encoding="utf-8")
     print(sortie)
