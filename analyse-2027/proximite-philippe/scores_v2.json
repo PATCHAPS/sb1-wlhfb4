@@ -144,8 +144,8 @@
   }
  },
  "zemmour": {
-  "global": 75,
-  "n": 10,
+  "global": 73,
+  "n": 11,
   "identiques": 2,
   "opposes": 0,
   "themes": {
@@ -206,7 +206,7 @@
     "prox": null
    },
    "15": {
-    "n": 0,
+    "n": 1,
     "prox": null
    },
    "16": {
@@ -216,8 +216,8 @@
   }
  },
  "lepen": {
-  "global": 78,
-  "n": 26,
+  "global": 77,
+  "n": 27,
   "identiques": 11,
   "opposes": 3,
   "themes": {
@@ -278,7 +278,7 @@
     "prox": null
    },
    "15": {
-    "n": 0,
+    "n": 1,
     "prox": null
    },
    "16": {
@@ -289,7 +289,7 @@
  },
  "glucksmann": {
   "global": 68,
-  "n": 22,
+  "n": 23,
   "identiques": 9,
   "opposes": 5,
   "themes": {
@@ -350,7 +350,7 @@
     "prox": null
    },
    "15": {
-    "n": 0,
+    "n": 1,
     "prox": null
    },
    "16": {
@@ -432,8 +432,8 @@
   }
  },
  "melenchon": {
-  "global": 34,
-  "n": 28,
+  "global": 36,
+  "n": 30,
   "identiques": 2,
   "opposes": 19,
   "themes": {
@@ -490,11 +490,11 @@
     "prox": null
    },
    "14": {
-    "n": 1,
-    "prox": null
+    "n": 2,
+    "prox": 25
    },
    "15": {
-    "n": 0,
+    "n": 1,
     "prox": null
    },
    "16": {

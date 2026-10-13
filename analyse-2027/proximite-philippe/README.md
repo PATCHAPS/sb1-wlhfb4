@@ -1,12 +1,11 @@
 # Simulation de proximité avec Édouard Philippe (travail interne, non publié)
 
-État au 13 octobre 2026, registre v4.29.
+État au 13 octobre 2026, registre v4.30.
 
 - `grille.md` : 64 questions sur 16 thèmes, ancres −2 / 0 / +2 (version validée).
 - `codes_<candidat>.json` : position de chaque candidat par question, avec la ou les mesures du registre qui la fondent (`null` = non comparable).
 - `codes_philippe.json` : codes actuellement utilisés pour Philippe.
-- `codes_philippe_registre.json` : 38 codes fondés sur le registre v4.29 (dont nucléaire, renouvelables, taxe Zucman).
-- `codes_philippe_simul.json` : variante avec 2 positions Horizons en attente d'entrée au registre (Bougival, audiovisuel public).
+- `codes_philippe_registre.json` : 40 codes fondés sur le registre v4.30 (dont nucléaire, renouvelables, taxe Zucman, Bougival et audiovisuel public, ces deux derniers étant des positions d’Horizons).
 - `score2.py` : calcul. Proximité = 1 − moyenne des |C − P| / 4 sur toutes les questions codées chez les deux candidats, sans pondération ; détail par thème affiché si au moins deux questions sont comparables.
 - `scores_v2.json` : derniers résultats.
 
