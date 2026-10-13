@@ -257,5 +257,26 @@
   "mesures": [
    "Doubler la capacité européenne de calcul en cinq ans"
   ]
+ },
+ {
+  "q": "01.3",
+  "code": 0,
+  "mesures": [
+   "Refuser la taxe Zucman et le rétablissement de l’ISF"
+  ]
+ },
+ {
+  "q": "03.1",
+  "code": 1,
+  "mesures": [
+   "Relancer le nucléaire"
+  ]
+ },
+ {
+  "q": "03.2",
+  "code": 1,
+  "mesures": [
+   "Développer les énergies renouvelables et électrifier massivement les usages"
+  ]
  }
 ]

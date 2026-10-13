@@ -1,21 +1,21 @@
 {
  "retailleau": {
-  "global": 89,
-  "n": 29,
-  "identiques": 18,
+  "global": 87,
+  "n": 32,
+  "identiques": 19,
   "opposes": 0,
   "themes": {
    "01": {
-    "n": 3,
-    "prox": 92
+    "n": 4,
+    "prox": 81
    },
    "02": {
     "n": 4,
     "prox": 94
    },
    "03": {
-    "n": 2,
-    "prox": 62
+    "n": 4,
+    "prox": 69
    },
    "04": {
     "n": 2,
@@ -72,22 +72,22 @@
   }
  },
  "attal": {
-  "global": 88,
-  "n": 21,
+  "global": 87,
+  "n": 23,
   "identiques": 11,
   "opposes": 0,
   "themes": {
    "01": {
-    "n": 3,
-    "prox": 100
+    "n": 4,
+    "prox": 94
    },
    "02": {
     "n": 3,
     "prox": 83
    },
    "03": {
-    "n": 2,
-    "prox": 100
+    "n": 3,
+    "prox": 92
    },
    "04": {
     "n": 0,
@@ -144,22 +144,22 @@
   }
  },
  "zemmour": {
-  "global": 78,
-  "n": 8,
+  "global": 75,
+  "n": 10,
   "identiques": 2,
   "opposes": 0,
   "themes": {
    "01": {
-    "n": 1,
-    "prox": null
+    "n": 2,
+    "prox": 62
    },
    "02": {
     "n": 2,
     "prox": 88
    },
    "03": {
-    "n": 1,
-    "prox": null
+    "n": 2,
+    "prox": 62
    },
    "04": {
     "n": 0,
@@ -216,22 +216,22 @@
   }
  },
  "lepen": {
-  "global": 77,
-  "n": 23,
-  "identiques": 9,
+  "global": 78,
+  "n": 26,
+  "identiques": 11,
   "opposes": 3,
   "themes": {
    "01": {
-    "n": 3,
-    "prox": 92
+    "n": 4,
+    "prox": 94
    },
    "02": {
     "n": 2,
     "prox": 50
    },
    "03": {
-    "n": 2,
-    "prox": 88
+    "n": 4,
+    "prox": 81
    },
    "04": {
     "n": 1,
@@ -288,22 +288,22 @@
   }
  },
  "glucksmann": {
-  "global": 66,
-  "n": 19,
-  "identiques": 7,
+  "global": 68,
+  "n": 22,
+  "identiques": 9,
   "opposes": 5,
   "themes": {
    "01": {
-    "n": 2,
-    "prox": 38
+    "n": 3,
+    "prox": 42
    },
    "02": {
     "n": 2,
     "prox": 12
    },
    "03": {
-    "n": 2,
-    "prox": 62
+    "n": 4,
+    "prox": 81
    },
    "04": {
     "n": 1,
@@ -360,21 +360,21 @@
   }
  },
  "tondelier": {
-  "global": 38,
-  "n": 28,
+  "global": 40,
+  "n": 31,
   "identiques": 2,
-  "opposes": 17,
+  "opposes": 18,
   "themes": {
    "01": {
-    "n": 3,
-    "prox": 33
+    "n": 4,
+    "prox": 38
    },
    "02": {
     "n": 3,
     "prox": 25
    },
    "03": {
-    "n": 2,
+    "n": 4,
     "prox": 50
    },
    "04": {
@@ -432,21 +432,21 @@
   }
  },
  "melenchon": {
-  "global": 32,
-  "n": 25,
+  "global": 34,
+  "n": 28,
   "identiques": 2,
-  "opposes": 18,
+  "opposes": 19,
   "themes": {
    "01": {
-    "n": 3,
-    "prox": 17
+    "n": 4,
+    "prox": 25
    },
    "02": {
     "n": 3,
     "prox": 25
    },
    "03": {
-    "n": 2,
+    "n": 4,
     "prox": 50
    },
    "04": {

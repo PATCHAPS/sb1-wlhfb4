@@ -70,7 +70,7 @@
 - 11.2 Arrêts maladie. −2 assouplissement ; 0 statu quo ; +2 durcissement.
 - 11.3 Politique familiale. −2 aides ciblées sous condition de ressources ; 0 statu quo ; +2 universalité, quotient familial renforcé.
 - 11.4 Financement de la protection sociale. −2 cotisations patronales accrues ; 0 statu quo ; +2 bascule vers l'impôt (CSG, TVA).
-- 11.5 Fin de vie. −2 opposition à toute aide à mourir ; 0 attente, renvoi à un vote ou à un référendum ; +2 légalisation.
+- 11.5 Fin de vie (depuis la loi n° 2026-794 du 18 août 2026). −2 abroger la loi ; 0 appliquer la loi en l'état ; +2 étendre ses conditions d'accès.
 
 ## 12 Collectivités
 - 12.1 Effort financier demandé aux collectivités. −2 hausse des dotations ; 0 stabilité ; +2 forte baisse.
