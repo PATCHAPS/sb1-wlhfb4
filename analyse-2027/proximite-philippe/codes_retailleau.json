@@ -1,0 +1,569 @@
+[
+ {
+  "q": "01.1",
+  "code": 1,
+  "mesures": [
+   "Excédent primaire en 2030, déficit sous 3 % en 2031 et à 2.2 % en 2032, par la dépense et non par l’impôt"
+  ],
+  "justif": "Déficit visé à 2.2 % en 2032 et excédent primaire en 2030 : cible nettement sous 3 %, sans équilibre.",
+  "doute": "Ligne rangée sous le thème [16] du fichier, alors qu'elle porte sur les finances publiques."
+ },
+ {
+  "q": "01.2",
+  "code": 2,
+  "mesures": [
+   "Réduire la dépense publique",
+   "Ne réduire aucune niche fiscale"
+  ],
+  "justif": "Redressement par la seule dépense, 197 Md€ d'économies, sans hausse d'impôt ni réduction de niches.",
+  "doute": ""
+ },
+ {
+  "q": "01.3",
+  "code": 2,
+  "mesures": [
+   "Baisser les droits de succession",
+   "Exonérer la transmission d’entreprise familiale tant que les héritiers ne vendent pas",
+   "Ouvrir un choc de transmission de 150,000 € par parent et par enfant"
+  ],
+  "justif": "Baisse des droits de succession et transmission fortement allégée.",
+  "doute": ""
+ },
+ {
+  "q": "01.4",
+  "code": 2,
+  "mesures": [
+   "Supprimer quatre impôts de production",
+   "Réduire de 40 Md€ le handicap fiscal et social des entreprises"
+  ],
+  "justif": "Suppression de quatre impôts de production et baisse générale de 40 Md€ des prélèvements sur les entreprises.",
+  "doute": "Trois annonces de 40 Md€ se recoupent sans s'additionner ; ventilation variable selon les sources."
+ },
+ {
+  "q": "02.1",
+  "code": 1,
+  "mesures": [
+   "Fixer l’âge minimal de départ à 63 ans et le taux plein à 65 ans, avec une décote de 7 % par année manquante",
+   "Indexer l’âge légal de départ sur l’espérance de vie"
+  ],
+  "justif": "Âge minimal 63 ans, taux plein 65 ans indexé sur l'espérance de vie, décote de 7 % : entre 64 et 65 ans.",
+  "doute": "Hésitation +1/+2 (taux plein 65 ans indexé, mais âge minimal 63 ans) ; le 16 septembre il réclamait encore 64 ans, version du 22 septembre retenue."
+ },
+ {
+  "q": "02.2",
+  "code": 2,
+  "mesures": [
+   "Créer un étage de capitalisation couvrant 25 à 30 % de la pension des nouveaux entrants",
+   "Introduire une part de capitalisation dans le système par répartition"
+  ],
+  "justif": "Étage de capitalisation obligatoire, 1 % du salaire brut, 25 à 30 % de la pension des nouveaux entrants.",
+  "doute": ""
+ },
+ {
+  "q": "02.3",
+  "code": 1,
+  "mesures": [
+   "Sortir des 35 heures",
+   "Sortir des 35 heures en renvoyant le temps de travail à la négociation collective",
+   "Instaurer un seuil « zéro cotisation » au-delà de 1,623 heures par an",
+   "Exonérer de cotisations salariales et patronales les heures travaillées au-delà de la trente-sixième"
+  ],
+  "justif": "« Sortie des 35 heures » par négociation d'entreprise et exonération des heures au-delà, sans allongement de la durée légale tranché.",
+  "doute": "Hésitation +1/+2 : « je sors des 35 heures », mais sort de la durée légale non tranché ; levier documenté = exonération."
+ },
+ {
+  "q": "02.4",
+  "code": 2,
+  "mesures": [
+   "Appliquer et durcir la réforme de l’assurance chômage de juin 2024"
+  ],
+  "justif": "Durée maximale ramenée de 18 à 15 mois, modulation, obligations renforcées : durcissement.",
+  "doute": ""
+ },
+ {
+  "q": "02.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "03.1",
+  "code": 1,
+  "mesures": [
+   "Faire du nucléaire le socle de la production électrique",
+   "Inscrire le parc nucléaire dans une trajectoire d’exploitation de 80 ans",
+   "Maîtriser les coûts et les délais des nouveaux EPR2",
+   "Relancer les études sur un prototype de réacteur à neutrons rapides de quatrième génération"
+  ],
+  "justif": "Nucléaire socle, prolongation à 80 ans, EPR2 programmés maintenus, recherche quatrième génération ; pas de nouveaux réacteurs au-delà du programme.",
+  "doute": "Hésitation +1/+2 : aucun nombre de réacteurs supplémentaires annoncé."
+ },
+ {
+  "q": "03.2",
+  "code": -1,
+  "mesures": [
+   "Stopper le subventionnement de nouvelles capacités éoliennes et photovoltaïques",
+   "Abroger la troisième programmation pluriannuelle de l’énergie"
+  ],
+  "justif": "Fin des subventions aux nouvelles capacités et abrogation de la PPE3, explicitement « non un moratoire ».",
+  "doute": ""
+ },
+ {
+  "q": "03.3",
+  "code": 2,
+  "mesures": [
+   "Supprimer le principe de précaution au profit d’un principe de responsabilité",
+   "Supprimer l’objectif de zéro artificialisation nette",
+   "Alléger les normes environnementales jugées surtransposées"
+  ],
+  "justif": "Abrogations : principe de précaution, objectif ZAN, normes surtransposées.",
+  "doute": ""
+ },
+ {
+  "q": "03.4",
+  "code": -1,
+  "mesures": [
+   "Réduire ou supprimer des politiques publiques pour 23 Md€, dont l’aide au développement et MaPrimeRénov’",
+   "Supprimer les subventions aux associations qui s’opposent aux projets industriels et agricoles",
+   "Équiper les écoles, crèches, hôpitaux et Ehpad contre les fortes chaleurs"
+  ],
+  "justif": "Coupes dans MaPrimeRénov' et le soutien aux renouvelables ; adaptation non chiffrée : désengagement partiel.",
+  "doute": "Hésitation 0/−1 : plan d'adaptation annoncé mais non chiffré ; ventilation des 23 Md€ absente."
+ },
+ {
+  "q": "03.5",
+  "code": 1,
+  "mesures": [
+   "Supprimer les certificats d’économies d’énergie pour baisser de 15 à 17 centimes le litre de carburant",
+   "Restituer 21 Md€ aux ménages par la baisse des cotisations salariales et de la facture d’électricité"
+  ],
+  "justif": "Baisse des charges pesant sur carburant et électricité, mais les CEE ne sont pas une taxe.",
+  "doute": "Hésitation +1/+2 : levier hors fiscalité stricte (CEE), part électricité des 21 Md€ non ventilée."
+ },
+ {
+  "q": "04.1",
+  "code": -1,
+  "mesures": [
+   "S’opposer à l’accord commercial avec le Mercosur",
+   "Refuser l’accord entre l’Union européenne et le Mercosur"
+  ],
+  "justif": "Refus du Mercosur ; aucune position sur les autres accords (CETA).",
+  "doute": "Hésitation −1/−2 : refus limité au Mercosur, pas de « tout accord »."
+ },
+ {
+  "q": "04.2",
+  "code": 2,
+  "mesures": [
+   "Mettre fin aux surtranspositions de normes agricoles",
+   "Interdire toute surtransposition par une loi organique"
+  ],
+  "justif": "Fin des surtranspositions, interdites par loi organique : alignement sur le minimum européen.",
+  "doute": ""
+ },
+ {
+  "q": "04.3",
+  "code": 1,
+  "mesures": [
+   "Déclarer les retenues d’eau projets d’intérêt public majeur",
+   "Faire de l’eau une ressource agricole stratégique"
+  ],
+  "justif": "Retenues d'eau déclarées d'intérêt public majeur ; nombre et financement non précisés.",
+  "doute": "Hésitation +1/+2 : volonté nette mais aucun volume chiffré."
+ },
+ {
+  "q": "04.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur les prix agricoles.",
+  "doute": ""
+ },
+ {
+  "q": "05.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "05.2",
+  "code": 0,
+  "mesures": [
+   "Étendre le champ du référendum de l’article 11 à toute question législative",
+   "Abaisser à 2.5 millions de signatures le seuil du référendum d’initiative partagée"
+  ],
+  "justif": "Référendum élargi à toute question législative, RIP assoupli avec filtre parlementaire maintenu ; pas de RIC.",
+  "doute": "Hésitation 0/+1 : abaissement du seuil du RIP va au-delà du simple élargissement."
+ },
+ {
+  "q": "05.3",
+  "code": 1,
+  "mesures": [
+   "Supprimer une centaine de normes par ordonnance dans les premières semaines du mandat"
+  ],
+  "justif": "Recours assumé aux ordonnances dès le début du mandat ; rien sur 49.3 ou dissolution.",
+  "doute": "Hésitation +1/+2 : un seul outil documenté."
+ },
+ {
+  "q": "05.4",
+  "code": 2,
+  "mesures": [
+   "Inscrire une règle d’or dans la Constitution en soumettant à référendum le projet adopté en juillet 2011"
+  ],
+  "justif": "Règle d'or constitutionnelle par référendum.",
+  "doute": ""
+ },
+ {
+  "q": "05.5",
+  "code": 2,
+  "mesures": [
+   "Instaurer un bouclier constitutionnel contre les interprétations extensives des cours européennes et internationales",
+   "Clarifier à l’article 88 la hiérarchie entre droit européen, loi et Constitution"
+  ],
+  "justif": "Bouclier constitutionnel ; droit européen sous la Constitution.",
+  "doute": ""
+ },
+ {
+  "q": "06.1",
+  "code": 1,
+  "mesures": [
+   "Économiser 10 Md€ sur la politique migratoire",
+   "Organiser un référendum sur l’immigration"
+  ],
+  "justif": "Réduction du regroupement familial et des étudiants étrangers, référendum ; baisse non chiffrée en volume.",
+  "doute": "Hésitation 0/+1 : le cran +1 suppose une baisse chiffrée, absente ; restriction nette toutefois."
+ },
+ {
+  "q": "06.2",
+  "code": 1,
+  "mesures": [
+   "Conditionner l’accès des étrangers aux aides sociales à cinq ans d’activité",
+   "Supprimer le droit au mariage pour les déboutés du droit d’asile"
+  ],
+  "justif": "Prestations non contributives conditionnées à cinq ans de séjour et de travail : restriction sans préférence nationale.",
+  "doute": "Reformulée le 12 octobre 2026 (cinq ans de séjour régulier et de travail) : version récente retenue."
+ },
+ {
+  "q": "06.3",
+  "code": 2,
+  "mesures": [
+   "Instaurer des peines planchers s’imposant au juge",
+   "Renforcer la fermeté pénale contre la délinquance et le narcotrafic"
+  ],
+  "justif": "Peines planchers s'imposant au juge, inscrites dans une charte constitutionnelle.",
+  "doute": ""
+ },
+ {
+  "q": "06.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "06.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "07.1",
+  "code": 1,
+  "mesures": [
+   "Combler les lacunes capacitaires des armées et engager une réflexion sur le modèle d’armée",
+   "Quintupler le budget de l’intelligence artificielle de défense"
+  ],
+  "justif": "Comblement capacitaire et IA de défense quintuplée ; aucune trajectoire budgétaire globale.",
+  "doute": "Hésitation 0/+1 : hausse globale au-delà de la LPM non chiffrée."
+ },
+ {
+  "q": "07.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "07.3",
+  "code": 1,
+  "mesures": [
+   "Renforcer les coopérations militaires européennes hors du champ de la dissuasion"
+  ],
+  "justif": "Pilier européen de l'OTAN renforcé, coopération bilatérale plutôt qu'intégration.",
+  "doute": "Hésitation 0/+1 : renforcement de l'OTAN mentionné seulement dans les précisions."
+ },
+ {
+  "q": "07.4",
+  "code": -2,
+  "mesures": [
+   "Refuser tout partage, toute concertation et tout élargissement de la dissuasion nucléaire"
+  ],
+  "justif": "Refus de tout partage ou élargissement : dissuasion strictement nationale.",
+  "doute": ""
+ },
+ {
+  "q": "08.1",
+  "code": -1,
+  "mesures": [
+   "Refuser toute hausse de la contribution française au budget européen, en usant du veto comme levier de négociation",
+   "Réserver la libre circulation dans l’espace Schengen aux Européens"
+  ],
+  "justif": "Candidat non fédéraliste : veto budgétaire, Schengen restreint ; pas de retrait ni renégociation générale.",
+  "doute": ""
+ },
+ {
+  "q": "08.2",
+  "code": 0,
+  "mesures": [
+   "Maintenir le soutien à l’Ukraine pour convaincre Moscou que la guerre coûtera plus cher que la paix"
+  ],
+  "justif": "Maintien du soutien sans escalade ; ni adhésion ni troupes.",
+  "doute": ""
+ },
+ {
+  "q": "08.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur la Chine.",
+  "doute": ""
+ },
+ {
+  "q": "08.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "09.1",
+  "code": 1,
+  "mesures": [
+   "Créer 1,000 établissements publics libres, maîtres de leurs programmes, de leurs rythmes et de leurs recrutements"
+  ],
+  "justif": "Forte autonomie, mais limitée à 1,000 établissements volontaires.",
+  "doute": "Hésitation +1/+2 : autonomie forte mais non généralisée."
+ },
+ {
+  "q": "09.2",
+  "code": 1,
+  "mesures": [
+   "Augmenter les enseignants de 135 € nets par mois en début de carrière et de 300 € en milieu de carrière"
+  ],
+  "justif": "Hausse large (près de 2 Md€) en début et milieu de carrière, non générale.",
+  "doute": "Hésitation 0/+1/+2 : lien au mérite évoqué par le parti, pas par le plan."
+ },
+ {
+  "q": "09.3",
+  "code": 2,
+  "mesures": [
+   "Rétablir un examen d’entrée en sixième et mettre fin au collège unique"
+  ],
+  "justif": "Fin du collège unique, examen d'entrée en sixième.",
+  "doute": ""
+ },
+ {
+  "q": "09.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "10.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur la sélection.",
+  "doute": "« Revoir la carte des formations universitaires » porte sur l'offre, non sur la sélection : non retenue."
+ },
+ {
+  "q": "10.2",
+  "code": 1,
+  "mesures": [
+   "Tripler l’effort de formation des actifs à l’intelligence artificielle"
+  ],
+  "justif": "Formation IA triplée, financée par redéploiement ; aucun chiffre sur la recherche.",
+  "doute": "Hésitation 0/+1 : effort ciblé, financé par économies sur l'apprentissage."
+ },
+ {
+  "q": "10.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": "La réduction du nombre d'étudiants étrangers (plan migratoire) ne porte pas sur les frais."
+ },
+ {
+  "q": "11.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur la dépense globale de santé.",
+  "doute": ""
+ },
+ {
+  "q": "11.2",
+  "code": 2,
+  "mesures": [
+   "Réduire de 4 Md€ la dépense d’arrêts maladie"
+  ],
+  "justif": "Jour de carence d'ordre public, trois jours dans la fonction publique, contrôles renforcés.",
+  "doute": ""
+ },
+ {
+  "q": "11.3",
+  "code": 1,
+  "mesures": [
+   "Instaurer un Revenu familial de 240 € par mois et par enfant",
+   "Doubler le Revenu familial pour le troisième enfant mineur à charge"
+  ],
+  "justif": "Allocation universelle dès le premier enfant, mais quotient familial supprimé.",
+  "doute": "Hésitation +1/+2 : universalité oui, quotient familial supprimé et condition de cinq ans d'activité."
+ },
+ {
+  "q": "11.4",
+  "code": 1,
+  "mesures": [
+   "Réformer le financement de la protection sociale en baissant les cotisations patronales"
+  ],
+  "justif": "Baisse de 15 Md€ des cotisations patronales ; ressource de remplacement non précisée.",
+  "doute": "Hésitation 0/+1 : bascule vers l'impôt non explicitée."
+ },
+ {
+  "q": "11.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "12.1",
+  "code": 1,
+  "mesures": [
+   "Réduire les transferts de l’État aux collectivités"
+  ],
+  "justif": "Effort de 10 Md€ sur 335 Md€ de dépense locale : baisse modérée.",
+  "doute": ""
+ },
+ {
+  "q": "12.2",
+  "code": 2,
+  "mesures": [
+   "Transférer aux régions la formation professionnelle relevant de l’État",
+   "Réunir l’apprentissage et les lycées professionnels dans une filière unique confiée aux Régions"
+  ],
+  "justif": "Transferts de compétences aux Régions (formation professionnelle, filière professionnelle).",
+  "doute": ""
+ },
+ {
+  "q": "12.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "13.1",
+  "code": 2,
+  "mesures": [
+   "Adapter la loi SRU et supprimer les quotas de logement social imposés aux maires"
+  ],
+  "justif": "Suppression des quotas SRU imposés aux maires.",
+  "doute": ""
+ },
+ {
+  "q": "13.2",
+  "code": 2,
+  "mesures": [
+   "Supprimer l’encadrement des loyers issu de la loi ELAN"
+  ],
+  "justif": "Fin de l'encadrement des loyers.",
+  "doute": ""
+ },
+ {
+  "q": "13.3",
+  "code": 2,
+  "mesures": [
+   "Supprimer les interdictions de louer fondées sur le diagnostic de performance énergétique"
+  ],
+  "justif": "Suppression des interdictions de louer liées au DPE.",
+  "doute": ""
+ },
+ {
+  "q": "13.4",
+  "code": 1,
+  "mesures": [
+   "Simplifier le prêt à taux zéro et l’étendre à tout le territoire, dans le neuf comme dans l’ancien"
+  ],
+  "justif": "PTZ étendu à tout le territoire, neuf et ancien ; plafonds et coût absents.",
+  "doute": "Hésitation +1/+2 : ampleur de l'extension non chiffrée."
+ },
+ {
+  "q": "14.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "14.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "14.3",
+  "code": 2,
+  "mesures": [
+   "Supprimer le droit du sol"
+  ],
+  "justif": "Suppression générale du droit du sol, Mayotte comprise par construction.",
+  "doute": "Mesure nationale, non spécifique à Mayotte ; le registre ne contient aucune mesure outre-mer."
+ },
+ {
+  "q": "15.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure dédiée.",
+  "doute": "L'audiovisuel public figure dans les 23 Md€ de coupes, mesure déjà affectée à 03.4."
+ },
+ {
+  "q": "15.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure dédiée.",
+  "doute": "Culture citée dans les 23 Md€ de coupes, mesure affectée à 03.4."
+ },
+ {
+  "q": "15.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "16.1",
+  "code": 2,
+  "mesures": [
+   "Appliquer un « Buy European First » à la commande publique",
+   "Reconquérir les données souveraines de l’État et des entreprises"
+  ],
+  "justif": "Préférence européenne appliquée à la commande publique.",
+  "doute": "Mécanisme juridique non publié."
+ },
+ {
+  "q": "16.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur plateformes ou réseaux.",
+  "doute": "« Écarter l'usage de l'IA par l'élève » relève de l'école, non retenue."
+ },
+ {
+  "q": "16.3",
+  "code": 2,
+  "mesures": [
+   "Porter les capacités de centres de données à 1 GW en 2030, puis à 4 GW en 2035"
+  ],
+  "justif": "Centres de données portés à 4 GW en 2035 : accélération.",
+  "doute": ""
+ }
+]

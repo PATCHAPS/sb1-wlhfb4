@@ -1,0 +1,554 @@
+[
+ {
+  "q": "01.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune trajectoire publiée par le candidat ; la dégradation du solde est un calcul SAPERE, pas une position : n.c. à la consolidation.",
+  "doute": "Dégradation calculée par SAPERE, pas énoncée par le candidat ; réduction non prioritaire non assumée explicitement."
+ },
+ {
+  "q": "01.2",
+  "code": -1,
+  "mesures": [
+   "Mettre les plus hautes retraites à contribution, à l’exclusion des retraités pauvres",
+   "Défendre le travail plutôt que la rente"
+  ],
+  "justif": "Recettes nouvelles sur hautes retraites et plus aisés, aucune économie de dépense annoncée.",
+  "doute": "Aucun objectif de redressement explicite ; rendements non chiffrés."
+ },
+ {
+  "q": "01.3",
+  "code": -2,
+  "mesures": [
+   "Reprendre l’objectif de la taxe Zucman sur les plus hauts patrimoines",
+   "Financer une baisse des prélèvements sociaux sur les salaires par un barème progressif sur les méga-héritages",
+   "Conditionner le pacte Dutreil à une contribution accrue au bien collectif"
+  ],
+  "justif": "Taxe Zucman, barème progressif sur héritages au-delà de 2 M€, Dutreil conditionné : forte hausse.",
+  "doute": "Taxe Zucman issue du corpus 2025, mais position maintenue pendant la primaire."
+ },
+ {
+  "q": "01.4",
+  "code": -1,
+  "mesures": [
+   "Refonder le crédit d’impôt recherche en le plafonnant pour les grands groupes"
+  ],
+  "justif": "Plafonnement du CIR pour les grands groupes : hausse ciblée limitée.",
+  "doute": "Une seule mesure, seuil absent ; -2 possible (aides conditionnées)."
+ },
+ {
+  "q": "02.1",
+  "code": -1,
+  "mesures": [
+   "Abroger la réforme Macron de 2023 sur les retraites",
+   "Fonder une nouvelle réforme des retraites sur la pénibilité comme premier critère"
+  ],
+  "justif": "Abrogation de la réforme 2023 sans retour annoncé à 60 ans ; pénibilité premier critère.",
+  "doute": "Corpus 2025 à confirmer pour 2027 ; âge de départ absent de la réforme pénibilité."
+ },
+ {
+  "q": "02.2",
+  "code": -2,
+  "mesures": [
+   "Écarter toute introduction de capitalisation et sauver le système par répartition"
+  ],
+  "justif": "Refus explicite de toute capitalisation.",
+  "doute": ""
+ },
+ {
+  "q": "02.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "02.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "02.5",
+  "code": -1,
+  "mesures": [
+   "Porter le SMIC à 1,600 € net en deux ans",
+   "Créer un choc salarial"
+  ],
+  "justif": "Hausse administrée du SMIC à 1,600 € net en deux ans, choc salarial.",
+  "doute": "Ampleur de la hausse non mesurable depuis le fichier ; corpus 2025 à confirmer ; -2 possible."
+ },
+ {
+  "q": "03.1",
+  "code": 1,
+  "mesures": [
+   "Construire de nouveaux réacteurs nucléaires de type EPR",
+   "Maintenir le nucléaire et construire de nouvelles unités"
+  ],
+  "justif": "Maintien du parc et nouveaux EPR, nombre non précisé.",
+  "doute": "Nombre de réacteurs absent : caractère massif (+2) non établi."
+ },
+ {
+  "q": "03.2",
+  "code": 1,
+  "mesures": [
+   "Lancer un plan pluriannuel d’investissement dans les énergies renouvelables",
+   "Faire de la sortie des énergies fossiles la clé de voûte du quinquennat"
+  ],
+  "justif": "Plan pluriannuel renouvelables et sortie des fossiles : accélération non chiffrée.",
+  "doute": "Capacités et calendrier absents ; +2 non établi."
+ },
+ {
+  "q": "03.3",
+  "code": -2,
+  "mesures": [
+   "Lancer une grande loi climat engageant tous les ministères",
+   "Instaurer un état d’urgence écologique"
+  ],
+  "justif": "Loi climat (−90 % en 2040, neutralité 2050) et état d’urgence écologique : renforcement.",
+  "doute": ""
+ },
+ {
+  "q": "03.4",
+  "code": 1,
+  "mesures": [
+   "Instaurer un leasing social pour les voitures électriques",
+   "Lancer un plan rail national avec les régions",
+   "Relancer et simplifier MaPrimeRénov’",
+   "Planifier la transformation écologique"
+  ],
+  "justif": "Hausse de l’effort : leasing social chiffré à 6 Md€, plan rail, MaPrimeRénov’ relancée.",
+  "doute": "Seul le leasing est chiffré, et son volume a varié (100,000 puis un million de véhicules) ; version du 2 octobre retenue."
+ },
+ {
+  "q": "03.5",
+  "code": 1,
+  "mesures": [
+   "Annuler la hausse de la taxe sur l’électricité adoptée en 2024",
+   "Porter le chèque énergie de 150 à 500 € par an et l’étendre aux classes moyennes"
+  ],
+  "justif": "Baisse ciblée sur l’électricité, mais refus explicite de baisser les taxes sur les carburants.",
+  "doute": "Signal mixte ; annulation de taxe électricité issue du corpus 2025."
+ },
+ {
+  "q": "04.1",
+  "code": -1,
+  "mesures": [
+   "S’opposer aux traités de commerce du type Mercosur",
+   "Imposer des mesures miroirs aux produits importés"
+  ],
+  "justif": "Opposition aux traités type Mercosur, mesures miroirs : refus non généralisé.",
+  "doute": ""
+ },
+ {
+  "q": "04.2",
+  "code": -1,
+  "mesures": [
+   "Réduire les intrants chimiques et financer les alternatives",
+   "Protéger les sols, les eaux, les forêts et les océans"
+  ],
+  "justif": "Réduction des intrants chimiques, sans interdiction précise annoncée.",
+  "doute": ""
+ },
+ {
+  "q": "04.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "04.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "05.1",
+  "code": 2,
+  "mesures": [
+   "Instaurer immédiatement le scrutin proportionnel aux législatives, de préférence par circonscriptions régionales"
+  ],
+  "justif": "Scrutin proportionnel par listes régionales aux législatives, pas une simple dose.",
+  "doute": "Existence d’une prime et seuil non précisés."
+ },
+ {
+  "q": "05.2",
+  "code": 0,
+  "mesures": [
+   "Créer une assemblée citoyenne du futur composée de citoyens tirés au sort",
+   "Lancer une convention citoyenne préparant les bases d’une assemblée constituante"
+  ],
+  "justif": "Dispositifs délibératifs tirés au sort, ni référendum élargi ni RIC.",
+  "doute": "Instruments hors de l’échelle référendaire ; placement intermédiaire incertain."
+ },
+ {
+  "q": "05.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "05.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "05.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "06.1",
+  "code": -1,
+  "mesures": [
+   "Créer des voies légales et sécurisées d’immigration de travail",
+   "Abroger la loi immigration de 2024"
+  ],
+  "justif": "Ouverture de voies légales d’immigration de travail et abrogation de la loi 2024, sans régularisation large.",
+  "doute": "Dispositions visées par l’abrogation absentes ; corpus 2025 à confirmer."
+ },
+ {
+  "q": "06.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur les droits ou prestations des étrangers.",
+  "doute": ""
+ },
+ {
+  "q": "06.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure tranchant le sens de la réponse pénale.",
+  "doute": ""
+ },
+ {
+  "q": "06.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "06.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "07.1",
+  "code": 1,
+  "mesures": [
+   "Accélérer la production industrielle pour la guerre de haute intensité",
+   "Lancer de grands programmes de production de drones",
+   "Moderniser les capacités spatiales militaires",
+   "Signer des contrats militaires de moyen et long terme avec les industriels"
+  ],
+  "justif": "Effort capacitaire accru (haute intensité, drones, spatial), sans montant national chiffré.",
+  "doute": "Aucun budget national chiffré ; dépassement de la LPM non établi."
+ },
+ {
+  "q": "07.2",
+  "code": 1,
+  "mesures": [
+   "Augmenter fortement la réserve opérationnelle",
+   "Instaurer un service civique obligatoire de dix mois"
+  ],
+  "justif": "Forte hausse de la réserve ; service obligatoire de nature civique, non militaire.",
+  "doute": "Service civique obligatoire pourrait tirer vers +2, mais non militaire."
+ },
+ {
+  "q": "07.3",
+  "code": 0,
+  "mesures": [
+   "Maintenir l’alliance avec les États-Unis tout en renforçant l’autonomie européenne"
+  ],
+  "justif": "Maintien de l’alliance américaine avec autonomie européenne : statu quo.",
+  "doute": "Orientation attribuée à confirmer ; articulation avec l’OTAN absente."
+ },
+ {
+  "q": "07.4",
+  "code": 2,
+  "mesures": [
+   "Proposer l’extension de la dissuasion française aux autres pays de l’Union"
+  ],
+  "justif": "Extension de la dissuasion française aux pays de l’Union.",
+  "doute": ""
+ },
+ {
+  "q": "08.1",
+  "code": 2,
+  "mesures": [
+   "Porter d’ici 2030 un traité de réunification et de refondation institutionnelle de l’Union",
+   "Étendre le vote à la majorité qualifiée au Conseil de l’Union",
+   "Donner un droit d’initiative législative au Parlement européen",
+   "Augmenter le budget de l’Union et créer de nouvelles ressources propres"
+  ],
+  "justif": "Nouveau traité, majorité qualifiée, initiative du Parlement, ressources propres : approfondissement fédéral.",
+  "doute": ""
+ },
+ {
+  "q": "08.2",
+  "code": 1,
+  "mesures": [
+   "Augmenter fortement l’aide militaire à l’Ukraine",
+   "Accueillir l’Ukraine dans l’Union en réformant la politique agricole commune",
+   "Saisir les avoirs publics russes gelés pour financer l’aide à l’Ukraine",
+   "Soutenir fermement l’Ukraine et renforcer la réponse européenne à la Russie"
+  ],
+  "justif": "Aide accrue, saisie des avoirs, adhésion à l’UE ; ni OTAN ni troupes.",
+  "doute": "Adhésion UE exprimée en janvier 2024, à reconfirmer ; +2 incomplet."
+ },
+ {
+  "q": "08.3",
+  "code": 2,
+  "mesures": [
+   "Réserver aux productions européennes les 2,000 Md€ de commande publique de l’Union",
+   "Porter un Buy European Act dans les marchés publics",
+   "Renforcer la défense commerciale contre le dumping et les investissements étrangers stratégiques",
+   "Interdire en Europe les produits issus du travail forcé, à commencer par celui imposé aux Ouïghours en Chine"
+  ],
+  "justif": "Préférence européenne dans la commande publique, défense commerciale, interdiction du travail forcé ouïghour.",
+  "doute": ""
+ },
+ {
+  "q": "08.4",
+  "code": -2,
+  "mesures": [
+   "Demander la suspension de l’accord d’association entre l’Union européenne et Israël",
+   "Sanctionner le gouvernement de Benyamin Netanyahou et les colons extrémistes"
+  ],
+  "justif": "Suspension de l’accord d’association et sanctions contre le gouvernement Netanyahou.",
+  "doute": "Suspension rapportée par des sources tierces, à confirmer ; sanctions déclarées par le candidat."
+ },
+ {
+  "q": "09.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "09.2",
+  "code": 2,
+  "mesures": [
+   "Augmenter tous les enseignants de 10 %, jusqu’à 25 % selon l’avancement de carrière"
+  ],
+  "justif": "Hausse générale de 10 % à 25 % pour tous les enseignants.",
+  "doute": "Coût de 6 Md€, périodicité à confirmer."
+ },
+ {
+  "q": "09.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur la structure du collège.",
+  "doute": ""
+ },
+ {
+  "q": "09.4",
+  "code": -2,
+  "mesures": [
+   "Conditionner les subventions à l’enseignement privé à des critères de mixité sociale"
+  ],
+  "justif": "Subventions au privé conditionnées à la mixité sociale.",
+  "doute": ""
+ },
+ {
+  "q": "10.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Concertation sur Parcoursup sans orientation : ne permet pas de trancher.",
+  "doute": ""
+ },
+ {
+  "q": "10.2",
+  "code": 1,
+  "mesures": [
+   "Doubler le budget du programme européen Horizon Europe",
+   "Mieux rémunérer les chercheurs, ingénieurs et techniciens de la recherche publique",
+   "Financer durablement les laboratoires plutôt que par appels à projets courts"
+  ],
+  "justif": "Hausse de l’effort de recherche, doublement d’Horizon Europe ; montants nationaux absents.",
+  "doute": "Doublement européen fort, mais effort national non chiffré ; +2 possible."
+ },
+ {
+  "q": "10.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "11.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "11.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "11.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "11.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Baisse de CSG compensée par un impôt sur les héritages : ni cotisations ni bascule vers l’impôt.",
+  "doute": ""
+ },
+ {
+  "q": "11.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "12.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "12.2",
+  "code": 1,
+  "mesures": [
+   "Créer des fonds régionaux permettant aux régions d’entrer au capital d’entreprises clés"
+  ],
+  "justif": "Nouvel outil d’intervention économique confié aux régions.",
+  "doute": "Transfert limité ; contrat de souveraineté sans orientation."
+ },
+ {
+  "q": "12.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "13.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Mesure retenue (fonds foncier) sans lien direct avec la loi SRU : n.c. à la consolidation.",
+  "doute": "Loi SRU non citée ; renforcement indirect."
+ },
+ {
+  "q": "13.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "13.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "13.4",
+  "code": 1,
+  "mesures": [
+   "Développer les logements en bail réel solidaire pour en faire une offre de masse d’accession à la propriété"
+  ],
+  "justif": "Bail réel solidaire visé comme offre de masse d’accession.",
+  "doute": "Volume visé absent ; +2 possible."
+ },
+ {
+  "q": "14.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "14.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "14.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "15.1",
+  "code": -1,
+  "mesures": [
+   "Renforcer le service public de l’audiovisuel et l’indépendance des médias"
+  ],
+  "justif": "Renforcement du service public de l’audiovisuel.",
+  "doute": "Niveau de financement absent ; -2 possible."
+ },
+ {
+  "q": "15.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "15.3",
+  "code": -2,
+  "mesures": [
+   "Réformer la loi de 1986 pour limiter la concentration des médias"
+  ],
+  "justif": "Réforme de la loi de 1986 pour limiter la concentration.",
+  "doute": ""
+ },
+ {
+  "q": "16.1",
+  "code": 1,
+  "mesures": [
+   "Sortir de la dépendance aux GAFAM en cinq ans par un fonds souverain européen",
+   "Construire une souveraineté technologique européenne"
+  ],
+  "justif": "Fonds souverain européen contre la dépendance aux GAFAM, sans préférence contraignante.",
+  "doute": "Instrument incitatif plutôt que contraignant."
+ },
+ {
+  "q": "16.2",
+  "code": 2,
+  "mesures": [
+   "Interdire les réseaux sociaux aux moins de 15 ans",
+   "Créer une autorité indépendante de protection des mineurs en ligne"
+  ],
+  "justif": "Interdiction des réseaux sociaux aux moins de 15 ans.",
+  "doute": ""
+ },
+ {
+  "q": "16.3",
+  "code": 1,
+  "mesures": [
+   "Lancer un accélérateur de soutien aux projets d’intelligence artificielle innovants",
+   "Créer une agence industrielle du numérique et de l’intelligence artificielle",
+   "Ouvrir un campus international de l’intelligence artificielle"
+  ],
+  "justif": "Accélérateur, agence et campus IA : accélération, tempérée par un projet de traité international.",
+  "doute": "Traité international de l’IA tire vers l’encadrement."
+ }
+]

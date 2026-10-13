@@ -1,0 +1,527 @@
+[
+ {
+  "q": "01.1",
+  "code": 1,
+  "mesures": [
+   "Ramener le déficit public sous 3 % du PIB avant 2032, puis à l’équilibre en 2037"
+  ],
+  "justif": "Passage sous 3 % avant la fin du mandat, équilibre des comptes sociaux en 2032 et des finances publiques en 2037, donc hors mandat.",
+  "doute": "Version reformulée du 23 septembre 2026 retenue ; équilibre global après le mandat, 0 défendable."
+ },
+ {
+  "q": "01.2",
+  "code": 1,
+  "mesures": [
+   "Réaliser entre 120 et 150 Md€ d’économies publiques",
+   "Supprimer des emplois dans la fonction publique",
+   "Geler temporairement les prestations sociales en 2028"
+  ],
+  "justif": "Redressement par la dépense : 150 Md€ d'économies, 100,000 postes supprimés, gel des prestations ; aucune hausse d'impôt annoncée.",
+  "doute": "Pas d'engagement explicite de non-hausse des prélèvements ; +2 possible."
+ },
+ {
+  "q": "01.3",
+  "code": 1,
+  "mesures": [
+   "Rétablir la réduction d’impôt pour investissement dans les PME dans sa version initiale",
+   "Ne pas modifier la fiscalité de l’assurance-vie"
+  ],
+  "justif": "Rétablissement d'une réduction d'impôt pour investissement dans les PME, assurance-vie inchangée : légère baisse ciblée.",
+  "doute": ""
+ },
+ {
+  "q": "01.4",
+  "code": 2,
+  "mesures": [
+   "Diminuer massivement les impôts de production et les normes"
+  ],
+  "justif": "Diminution massive des impôts de production annoncée.",
+  "doute": "Montant et impôts visés absents."
+ },
+ {
+  "q": "02.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure tranchante : système sans âge légal, durée de cotisation non précisée.",
+  "doute": "Mesure de système universel affectée à 02.2 ; durée exigée absente."
+ },
+ {
+  "q": "02.2",
+  "code": 1,
+  "mesures": [
+   "Introduire une part de capitalisation dans le système par répartition",
+   "Remplacer le système de retraite par un système universel fondé sur la durée de cotisation",
+   "Orienter vers l’épargne retraite la moitié des sommes versées au titre de l’intéressement et de la participation"
+  ],
+  "justif": "Part et pilier de capitalisation dans le système, moitié de l'intéressement vers l'épargne retraite.",
+  "doute": "Caractère obligatoire non répété (juin 2026) ; part et véhicule absents ; +2 possible."
+ },
+ {
+  "q": "02.3",
+  "code": 1,
+  "mesures": [
+   "Supprimer le plafond supplétif des heures supplémentaires"
+  ],
+  "justif": "Suppression du plafond supplétif de 220 heures supplémentaires, sans fin des 35 heures.",
+  "doute": ""
+ },
+ {
+  "q": "02.4",
+  "code": 1,
+  "mesures": [
+   "Reprendre la réforme de l’assurance-chômage"
+  ],
+  "justif": "Reprise de la réforme de l'assurance chômage, 5 Md€ d'économies : durcissement.",
+  "doute": "Paramètres non publiés ; +2 possible."
+ },
+ {
+  "q": "02.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "03.1",
+  "code": 2,
+  "mesures": [
+   "Sécuriser la construction de 14 réacteurs EPR et atteindre une cadence d’un réacteur par an"
+  ],
+  "justif": "Construction de 14 EPR, cadence d'un réacteur par an.",
+  "doute": ""
+ },
+ {
+  "q": "03.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "03.3",
+  "code": 1,
+  "mesures": [
+   "Généraliser aux projets industriels la procédure dérogatoire employée pour la reconstruction de Notre-Dame",
+   "Exempter d’études environnementales les extensions industrielles sur des friches déjà détenues par l’entreprise",
+   "Limiter à un seul recours global les contestations d’un projet industriel, par révision constitutionnelle"
+  ],
+  "justif": "Procédures dérogatoires, exemption d'études environnementales sur friches, recours unique : allègements ciblés, sans abrogation générale.",
+  "doute": "Entre +1 et +2 ; dérogations limitées aux projets industriels."
+ },
+ {
+  "q": "03.4",
+  "code": 1,
+  "mesures": [
+   "Financer la moitié du coût d’installation d’un boîtier de conversion au superéthanol",
+   "Étendre le bonus écologique et le leasing social aux véhicules électriques d’occasion",
+   "Engager une rénovation thermique massive"
+  ],
+  "justif": "Aides superéthanol, bonus étendu à l'occasion, rénovation thermique massive, sans montant global chiffré.",
+  "doute": "Aucun chiffrage ; géothermie financée par redéploiement."
+ },
+ {
+  "q": "03.5",
+  "code": 0,
+  "mesures": [
+   "Porter à 1,000 € par an la prime carburant que l’employeur peut verser sans charges ni impôt"
+  ],
+  "justif": "Écarte toute baisse générale des taxes sur les carburants ; soutien à une prime employeur facultative.",
+  "doute": ""
+ },
+ {
+  "q": "04.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "04.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "04.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "04.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "05.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "05.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": "Référendums ponctuels (règle d'or, réseaux sociaux) sans extension du référendum."
+ },
+ {
+  "q": "05.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": "Spoil system et démission du gouvernement hors ordonnances, 49.3, dissolution."
+ },
+ {
+  "q": "05.4",
+  "code": 2,
+  "mesures": [
+   "Inscrire une règle d’or budgétaire dans la Constitution par référendum",
+   "Interdire que les dépenses de fonctionnement excèdent les dépenses d’investissement pour l’avenir"
+  ],
+  "justif": "Règle d'or budgétaire inscrite dans la Constitution par référendum, complétée par une double règle d'or.",
+  "doute": ""
+ },
+ {
+  "q": "05.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "06.1",
+  "code": 0,
+  "mesures": [
+   "Instaurer une sélection de l’immigration par un système à points"
+  ],
+  "justif": "Système à points : sélection de l'immigration, volume annuel absent.",
+  "doute": "Pas de baisse chiffrée exigée par le cran +1 ; orientation restrictive possible."
+ },
+ {
+  "q": "06.2",
+  "code": 1,
+  "mesures": [
+   "Réduire le regroupement familial"
+  ],
+  "justif": "Réduction du regroupement familial, sans préférence nationale.",
+  "doute": ""
+ },
+ {
+  "q": "06.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Sanction des dégradations hors du champ peines planchers / courtes peines : n.c. à la consolidation.",
+  "doute": "Mesure ponctuelle, sans peines planchers ; 0 défendable."
+ },
+ {
+  "q": "06.4",
+  "code": 1,
+  "mesures": [
+   "Instaurer la comparution immédiate pour les mineurs et rendre les parents financièrement responsables des dégradations"
+  ],
+  "justif": "Comparution immédiate des mineurs, responsabilité financière des parents, évolution de l'excuse de minorité.",
+  "doute": "Contenu de l'évolution de l'excuse de minorité absent."
+ },
+ {
+  "q": "06.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "07.1",
+  "code": 1,
+  "mesures": [
+   "Poursuivre et amplifier le réarmement"
+  ],
+  "justif": "Poursuivre et amplifier le réarmement, trajectoire budgétaire absente.",
+  "doute": "Sans chiffrage ; +2 possible."
+ },
+ {
+  "q": "07.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "07.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": "Autonomie européenne, articulation avec l'OTAN à préciser."
+ },
+ {
+  "q": "07.4",
+  "code": 1,
+  "mesures": [
+   "Étendre la protection nucléaire française au continent européen"
+  ],
+  "justif": "Extension de la protection nucléaire au continent européen, puis ralliement à la doctrine de dissuasion avancée du président.",
+  "doute": "Version récente renvoie à une doctrine non détaillée dans le fichier ; +2 initialement."
+ },
+ {
+  "q": "08.1",
+  "code": 2,
+  "mesures": [
+   "Créer des États-Unis d’Europe autour d’un noyau dur de pays, par un référendum européen"
+  ],
+  "justif": "États-Unis d'Europe autour d'un noyau dur, président élu au suffrage universel, référendum européen.",
+  "doute": ""
+ },
+ {
+  "q": "08.2",
+  "code": 1,
+  "mesures": [
+   "Soutenir durablement l’Ukraine",
+   "Saisir les avoirs russes gelés pour financer la reconstruction de l’Ukraine"
+  ],
+  "justif": "Soutien durable et saisie des avoirs russes gelés, sans adhésion ni troupes.",
+  "doute": ""
+ },
+ {
+  "q": "08.3",
+  "code": 1,
+  "mesures": [
+   "Taxer certains produits chinois vendus à perte",
+   "Étendre à toute l’Union l’exclusion des marchés publics prononcée par un État contre une entreprise trop subventionnée",
+   "Contrôler les investissements chinois dans les infrastructures sensibles"
+  ],
+  "justif": "Taxes sur produits chinois vendus à perte, exclusions des marchés étendues, contrôle des investissements.",
+  "doute": "Pas de transferts de technologie imposés."
+ },
+ {
+  "q": "08.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "09.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure disponible.",
+  "doute": "Autonomie accrue citée comme contrepartie de la mesure salariale, affectée à 09.2."
+ },
+ {
+  "q": "09.2",
+  "code": 1,
+  "mesures": [
+   "Augmenter la rémunération des enseignants de 200 € net par mois, et jusqu’à 500 € en milieu de carrière"
+  ],
+  "justif": "Hausse de 200 € net par mois, jusqu'à 500 € en milieu de carrière, avec contreparties.",
+  "doute": "Hausse générale mais ampleur relative non mesurable ; +2 possible."
+ },
+ {
+  "q": "09.3",
+  "code": 1,
+  "mesures": [
+   "Rétablir un certificat d’études à l’entrée en sixième, avec une année de rattrapage des fondamentaux",
+   "Rendre le brevet obligatoire pour entrer en seconde"
+  ],
+  "justif": "Certificat d'études à l'entrée en sixième avec année de rattrapage, brevet obligatoire pour la seconde.",
+  "doute": "Pas de groupes de niveau explicites ; « choc des savoirs » non détaillé, non utilisé."
+ },
+ {
+  "q": "09.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "10.1",
+  "code": 0,
+  "mesures": [
+   "Faire évoluer Parcoursup et fermer les formations au décrochage élevé et à l’insertion trop faible"
+  ],
+  "justif": "Parcoursup conservé et « évolué », fermeture des formations à fort décrochage, sans sélection renforcée explicite.",
+  "doute": "Entre 0 et +1."
+ },
+ {
+  "q": "10.2",
+  "code": 1,
+  "mesures": [
+   "Former toute la population à l’IA, du primaire à la reconversion",
+   "Attirer davantage de chercheurs en IA"
+  ],
+  "justif": "Formation de toute la population à l'IA, attraction de chercheurs, sans budget.",
+  "doute": "Aucun chiffrage."
+ },
+ {
+  "q": "10.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "11.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure propre.",
+  "doute": "Économies sociales (deux tiers de 150 Md€) affectées à 01.2."
+ },
+ {
+  "q": "11.2",
+  "code": 1,
+  "mesures": [
+   "Engager un plan d’action contre la dérive des arrêts maladie"
+  ],
+  "justif": "Plan d'action contre la dérive des arrêts maladie, instruments non publiés.",
+  "doute": "+2 possible."
+ },
+ {
+  "q": "11.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure tranchant l'axe universalité ou conditions de ressources.",
+  "doute": "Mesures monoparentales (pension alimentaire, répit, carte) hors axe."
+ },
+ {
+  "q": "11.4",
+  "code": 1,
+  "mesures": [
+   "Réduire les cotisations salariales pour augmenter le salaire net",
+   "Revenir sur les hausses du coût du travail intervenues depuis 2024"
+  ],
+  "justif": "Baisse des cotisations salariales et retour sur les hausses du coût du travail, financement alternatif non précisé.",
+  "doute": "Bascule vers l'impôt non explicite."
+ },
+ {
+  "q": "11.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "12.1",
+  "code": 1,
+  "mesures": [
+   "Faire participer les collectivités à l’effort budgétaire"
+  ],
+  "justif": "Participation des collectivités à l'effort budgétaire, montant absent.",
+  "doute": ""
+ },
+ {
+  "q": "12.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "12.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "13.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "13.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "13.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": "Simplification des certifications environnementales du bâtiment, pas du DPE."
+ },
+ {
+  "q": "13.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "14.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "14.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "14.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "15.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "15.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "15.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "16.1",
+  "code": 2,
+  "mesures": [
+   "Introduire une préférence européenne dans les marchés publics technologiques"
+  ],
+  "justif": "Préférence européenne dans les marchés publics technologiques.",
+  "doute": ""
+ },
+ {
+  "q": "16.2",
+  "code": 2,
+  "mesures": [
+   "Interdire les réseaux sociaux aux moins de 15 ans"
+  ],
+  "justif": "Interdiction des réseaux sociaux aux moins de 15 ans, par référendum.",
+  "doute": ""
+ },
+ {
+  "q": "16.3",
+  "code": 1,
+  "mesures": [
+   "Maîtriser l’ensemble de la chaîne technologique de l’IA",
+   "Financer l’intelligence artificielle souveraine par la commande publique plutôt que par la subvention"
+  ],
+  "justif": "Maîtrise de la chaîne de l'IA et commande publique, investissements absents.",
+  "doute": "Sort du plan de 200 Md€ absent ; +2 possible."
+ }
+]

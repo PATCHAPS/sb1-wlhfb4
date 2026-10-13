@@ -1,0 +1,556 @@
+[
+ {
+  "q": "01.1",
+  "code": 1,
+  "mesures": [
+   "Équilibre primaire dès 2028 ; déficit sous 2 % en 2030 à l’oral, 2.3 % en 2031 et 2.2 % en 2032 dans le dossier du parti"
+  ],
+  "justif": "Déficit visé sous 2 % en 2030, 2.3 % en 2031, 2.2 % en 2032 : cible nettement sous 3 % sans équilibre total.",
+  "doute": "Ligne atypique classée [16] ; la trajectoire de la règle d’or publiée le 1er octobre donne 2.9 % en 2032, moins exigeante."
+ },
+ {
+  "q": "01.2",
+  "code": 1,
+  "mesures": [
+   "Réaliser 140 Md€ d’économies nettes en 2032 par rapport à 2026",
+   "Ne pas renouveler 85,000 postes dans les agences et organismes de l’État d’ici 2031"
+  ],
+  "justif": "Effort 2027 porté surtout par la dépense (64 Md€) avec baisse nette de fiscalité (27 Md€), mais 34 Md€ de recettes.",
+  "doute": "Recettes nouvelles réelles (34 Md€) : entre 0 et +2, cran prudent +1."
+ },
+ {
+  "q": "01.3",
+  "code": 0,
+  "mesures": [
+   "Transformer l’impôt sur la fortune immobilière en impôt sur la fortune financière",
+   "Ramener le prélèvement forfaitaire unique à 30 %",
+   "Baisser les impôts sur les donations et les successions",
+   "Conditionner le pacte Dutreil à dix ans de production sur le territoire national"
+  ],
+  "justif": "Mesures opposées : impôt sur la fortune financière (4 Md€) et Dutreil durci, contre PFU abaissé et transmission allégée.",
+  "doute": "Bilan net non chiffré, sens indéterminé ; 0 retenu par prudence."
+ },
+ {
+  "q": "01.4",
+  "code": 1,
+  "mesures": [
+   "Supprimer trois impôts de production : la CFE, la CVAE et la C3S",
+   "Baisser le poids des impôts de production",
+   "Imposer les multinationales sur la part de leur chiffre d’affaires réalisée en France, multipliée par leur taux de marge moyen"
+  ],
+  "justif": "Suppression CFE, CVAE, C3S (17 à 20 Md€) mais taxe nouvelle sur les multinationales (7.5 Md€).",
+  "doute": "Hésitation entre +1 et +2 : baisse générale des impôts de production assortie d’une hausse ciblée."
+ },
+ {
+  "q": "02.1",
+  "code": -1,
+  "mesures": [
+   "Ramener l’âge légal de départ à 62 ans, avec 60 ans pour ceux qui ont commencé avant 20 ans"
+  ],
+  "justif": "62 ans, 60 ans pour carrières commencées avant 20 ans : cran −1 défini (62 ans environ).",
+  "doute": ""
+ },
+ {
+  "q": "02.2",
+  "code": 1,
+  "mesures": [
+   "Créer un véritable pilier de retraite par capitalisation, individuelle et collective"
+  ],
+  "justif": "Pilier de capitalisation annoncé, caractère obligatoire ou facultatif non précisé.",
+  "doute": "Entre 0 et +2 faute de savoir si le pilier est obligatoire."
+ },
+ {
+  "q": "02.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "02.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "02.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "03.1",
+  "code": 1,
+  "mesures": [
+   "Investir massivement dans la filière nucléaire"
+  ],
+  "justif": "Investissement massif annoncé, nombre de réacteurs absent.",
+  "doute": "Relance massive sans nouveaux réacteurs explicités : +1 plutôt que +2."
+ },
+ {
+  "q": "03.2",
+  "code": -1,
+  "mesures": [
+   "Instaurer un moratoire sur l’éolien et le solaire, puis démanteler progressivement les parcs éoliens"
+  ],
+  "justif": "Moratoire et démantèlement éolien (2022), remplacé en 2026 par la fin du subventionnement à perte des intermittentes.",
+  "doute": "Mesure de 2022 absente en 2024 et requalifiée en 2026 ; version récente moins radicale, d’où −1."
+ },
+ {
+  "q": "03.3",
+  "code": 2,
+  "mesures": [
+   "Sortir du pacte vert européen",
+   "Renoncer à l’interdiction de la vente des voitures neuves à moteur thermique en 2035"
+  ],
+  "justif": "Sortie du pacte vert et abandon de la fin du thermique 2035 : abrogations.",
+  "doute": "Sources de 2022 et 2024, non reconfirmées en 2026."
+ },
+ {
+  "q": "03.4",
+  "code": 1,
+  "mesures": [
+   "Transformer le Fonds vert en fonds de prévention des catastrophes naturelles doté de 25 % de plus",
+   "Financer l’adaptation aux fortes chaleurs des bâtiments publics accueillant des publics vulnérables",
+   "Consacrer 1.2 Md€ sur le mandat aux pompiers et à la prévention des incendies"
+  ],
+  "justif": "Hausse chiffrée de l’adaptation (Fonds vert +25 %, 20 Md€ bâtiments publics, 1.2 Md€ incendies).",
+  "doute": "Volet transition en recul (pacte vert, intermittentes) : +1 plutôt que +2."
+ },
+ {
+  "q": "03.5",
+  "code": 2,
+  "mesures": [
+   "Réduire la TVA sur l’énergie de 20 % à 5.5 %"
+  ],
+  "justif": "TVA sur l’énergie de 20 % à 5.5 %, 10.96 Md€.",
+  "doute": ""
+ },
+ {
+  "q": "04.1",
+  "code": -1,
+  "mesures": [
+   "Interdire les importations de produits agricoles ne respectant pas les normes de production françaises"
+  ],
+  "justif": "Interdiction des importations hors normes françaises, au-delà des clauses miroirs, sans refus explicite des accords.",
+  "doute": "Aucune mention de Mercosur ou CETA ; entre 0 et −2."
+ },
+ {
+  "q": "04.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "04.3",
+  "code": 1,
+  "mesures": [
+   "Faciliter le stockage de l’eau"
+  ],
+  "justif": "Stockage facilité, volumes et ouvrages absents : pas de développement massif chiffré.",
+  "doute": ""
+ },
+ {
+  "q": "04.4",
+  "code": 1,
+  "mesures": [
+   "Garantir aux paysans des prix respectueux de leur travail et mettre fin aux marges abusives de la grande distribution"
+  ],
+  "justif": "Prix garantis « respectueux », mécanisme absent : au-delà d’EGalim sans prix plancher explicite.",
+  "doute": "Mécanisme absent."
+ },
+ {
+  "q": "05.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "05.2",
+  "code": 2,
+  "mesures": [
+   "Instaurer un référendum d’initiative citoyenne"
+  ],
+  "justif": "RIC annoncé.",
+  "doute": ""
+ },
+ {
+  "q": "05.3",
+  "code": 1,
+  "mesures": [
+   "Préparer une ordonnance de simplification économique"
+  ],
+  "justif": "Recours à une ordonnance de simplification préparé.",
+  "doute": "Une seule ordonnance, aucune mention du 49.3 ni de la dissolution : +1 prudent."
+ },
+ {
+  "q": "05.4",
+  "code": 2,
+  "mesures": [
+   "Inscrire une règle d’or budgétaire dans la Constitution et la faire adopter par référendum",
+   "Imposer un budget d’équilibre sur le fonctionnement de l’État"
+  ],
+  "justif": "Règle d’or constitutionnelle par référendum, équilibre du fonctionnement de l’État.",
+  "doute": "Budget d’équilibre : projet rapporté, non publié."
+ },
+ {
+  "q": "05.5",
+  "code": 2,
+  "mesures": [
+   "Inscrire dans la Constitution la primauté du droit national sur le droit européen, par référendum"
+  ],
+  "justif": "Primauté constitutionnelle du droit national sur le droit européen, par référendum.",
+  "doute": "Proposition de 2024 « à reconfirmer pour 2027 »."
+ },
+ {
+  "q": "06.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure ne fixe un niveau d’immigration légale.",
+  "doute": "Taxe sur salariés extracommunautaires et référendum sans contenu ne chiffrent aucun niveau."
+ },
+ {
+  "q": "06.2",
+  "code": 2,
+  "mesures": [
+   "Instaurer la priorité nationale",
+   "Réserver les prestations de solidarité aux étrangers ayant travaillé cinq ans à temps plein en France",
+   "Réserver les aides personnelles au logement aux Français",
+   "Transformer l’aide médicale de l’État en dispositif limité aux soins urgents pour les adultes"
+  ],
+  "justif": "Priorité nationale, prestations et APL réservées, AME limitée aux soins urgents.",
+  "doute": "Priorité nationale de source « corpus antérieur »."
+ },
+ {
+  "q": "06.3",
+  "code": 1,
+  "mesures": [
+   "Limiter les aménagements de peine, aujourd’hui obligatoires pour les peines inférieures à six mois",
+   "Créer 30,000 nouvelles places de prison"
+  ],
+  "justif": "Aménagements des courtes peines limités, 30,000 places de prison ; pas de peines planchers.",
+  "doute": "Entre +1 et +2 : courtes peines exécutées mais pas de peines planchers."
+ },
+ {
+  "q": "06.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "06.5",
+  "code": 1,
+  "mesures": [
+   "Renforcer l’appareil de renseignement national"
+  ],
+  "justif": "Renseignement renforcé, sans reconnaissance faciale ni régime d’exception.",
+  "doute": "Mesure vague, garanties absentes ; +1 prudent."
+ },
+ {
+  "q": "07.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure budgétaire de défense.",
+  "doute": ""
+ },
+ {
+  "q": "07.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "07.3",
+  "code": -1,
+  "mesures": [
+   "Reporter la sortie du commandement intégré de l’OTAN tant que dure la guerre en Ukraine"
+  ],
+  "justif": "Sortie du commandement intégré toujours voulue mais reportée tant que dure la guerre.",
+  "doute": "Changement de position récent : volonté maintenue, mise en oeuvre suspendue ; −1 plutôt que −2."
+ },
+ {
+  "q": "07.4",
+  "code": -2,
+  "mesures": [
+   "Maintenir une dissuasion nucléaire nationale indépendante"
+  ],
+  "justif": "Dissuasion nationale indépendante, refus de la dissuasion avancée européenne.",
+  "doute": ""
+ },
+ {
+  "q": "08.1",
+  "code": -1,
+  "mesures": [
+   "Réduire la contribution française au budget européen"
+  ],
+  "justif": "Contribution nette ramenée à 5 Md€ par renégociation du cadre financier, pas des traités.",
+  "doute": ""
+ },
+ {
+  "q": "08.2",
+  "code": -1,
+  "mesures": [
+   "Maintenir la formation des soldats ukrainiens et les livraisons de matériel, mais cesser l’aide financière à l’Ukraine",
+   "S’opposer à l’adhésion de l’Ukraine à l’Union européenne",
+   "Refuser le prêt européen de 90 Md€ à l’Ukraine et la saisie des avoirs russes gelés"
+  ],
+  "justif": "Fin de l’aide financière, refus du prêt et de l’adhésion, formation et matériel maintenus.",
+  "doute": ""
+ },
+ {
+  "q": "08.3",
+  "code": 1,
+  "mesures": [
+   "Faire du nickel calédonien une source d’approvisionnement européenne face à la Chine et à l’Indonésie"
+  ],
+  "justif": "Approvisionnement européen en nickel face à la Chine.",
+  "doute": "Mesure d’approvisionnement plutôt que de protection commerciale ; +1 prudent."
+ },
+ {
+  "q": "08.4",
+  "code": 0,
+  "mesures": [
+   "Refuser la reconnaissance de l’État de Palestine tant que le Hamas n’est pas écarté"
+  ],
+  "justif": "Refus de reconnaître la Palestine ; rien sur l’accord d’association ni les restrictions visant Israël.",
+  "doute": "Hésitation 0 / +1 ; position de 2025 « à reconfirmer pour 2027 »."
+ },
+ {
+  "q": "09.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "09.2",
+  "code": 1,
+  "mesures": [
+   "Revaloriser le métier d’enseignant, du recrutement à la fin de la carrière, de 3 % par an pendant cinq ans"
+  ],
+  "justif": "Trajectoire de hausse des salaires annoncée en 2026, taux de 3 % par an non repris.",
+  "doute": "Objectif 2022 de 3 % par an non reconfirmé ; version 2026 sans chiffre."
+ },
+ {
+  "q": "09.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "09.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "10.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "10.2",
+  "code": 1,
+  "mesures": [
+   "Augmenter l’effort de recherche publique de 0.3 point de PIB avant 2032"
+  ],
+  "justif": "Recherche publique +0.3 point de PIB avant 2032.",
+  "doute": "Ampleur « forte » non qualifiable sans référence extérieure : +1 prudent."
+ },
+ {
+  "q": "10.3",
+  "code": 2,
+  "mesures": [
+   "Augmenter les frais de scolarité des étudiants étrangers, hors conventions entre États"
+  ],
+  "justif": "Hausse des frais des étudiants étrangers, 1.1 Md€ attendu.",
+  "doute": ""
+ },
+ {
+  "q": "11.1",
+  "code": -1,
+  "mesures": [
+   "Recruter massivement des soignants et ouvrir au moins 10,000 places de formation supplémentaires",
+   "Instaurer un moratoire sur la suppression des lits à l’hôpital public",
+   "Rembourser intégralement certains soins dentaires"
+  ],
+  "justif": "Dépenses nouvelles (soignants, lits, dentaire), sans chiffrage d’ensemble.",
+  "doute": "Le plan affiche aussi 19 à 20 Md€ d’économies sur la Sécurité sociale ; sens net incertain."
+ },
+ {
+  "q": "11.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "11.3",
+  "code": 2,
+  "mesures": [
+   "Instaurer une pleine part fiscale dès le deuxième enfant",
+   "Rétablir une demi-part fiscale pour les veufs et les veuves"
+  ],
+  "justif": "Quotient familial renforcé : part pleine dès le deuxième enfant, demi-part veufs.",
+  "doute": ""
+ },
+ {
+  "q": "11.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure de bascule du financement.",
+  "doute": ""
+ },
+ {
+  "q": "11.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "12.1",
+  "code": 1,
+  "mesures": [
+   "Ne pas renouveler 116,000 postes dans les collectivités territoriales d’ici 2032"
+  ],
+  "justif": "Non-renouvellement de 116,000 postes locaux d’ici 2032 ; dotations non chiffrées.",
+  "doute": "Effort imposé sans montant de dotation : +1 prudent."
+ },
+ {
+  "q": "12.2",
+  "code": -1,
+  "mesures": [
+   "Lever le carcan administratif des agences régionales de santé et réaffirmer l’autorité de l’État"
+  ],
+  "justif": "Réaffirmation de l’autorité de l’État sur la santé territoriale.",
+  "doute": "Mesure indirecte, devenir des ARS absent ; signal faible de recentralisation."
+ },
+ {
+  "q": "12.3",
+  "code": -2,
+  "mesures": [
+   "Recentraliser l’intégralité des recettes de TVA et faire voter chaque année les transferts aux collectivités et à la Sécurité sociale"
+  ],
+  "justif": "Recettes de TVA recentralisées, transferts aux collectivités votés chaque année : autonomie réduite.",
+  "doute": "Garanties de ressources absentes."
+ },
+ {
+  "q": "13.1",
+  "code": 2,
+  "mesures": [
+   "Abroger la loi relative à la solidarité et au renouvellement urbains (SRU) et supprimer les amendes des communes"
+  ],
+  "justif": "Abrogation de la loi SRU et suppression des amendes.",
+  "doute": ""
+ },
+ {
+  "q": "13.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "13.3",
+  "code": 2,
+  "mesures": [
+   "Supprimer les contraintes liées au diagnostic de performance énergétique"
+  ],
+  "justif": "Suppression des contraintes du DPE.",
+  "doute": "Portée exacte non précisée."
+ },
+ {
+  "q": "13.4",
+  "code": 1,
+  "mesures": [
+   "Octroyer aux jeunes couples un prêt public transformé en don dès le troisième enfant",
+   "Vendre un certain nombre de HLM aux Français"
+  ],
+  "justif": "Prêt public transformé en don, vente de HLM aux occupants français ; volumes absents.",
+  "doute": "Extension réelle mais non chiffrée : +1 plutôt que +2."
+ },
+ {
+  "q": "14.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure institutionnelle.",
+  "doute": ""
+ },
+ {
+  "q": "14.2",
+  "code": 2,
+  "mesures": [
+   "Supprimer l’octroi de mer en compensant intégralement les collectivités ultramarines"
+  ],
+  "justif": "Suppression de l’octroi de mer, compensée aux collectivités.",
+  "doute": ""
+ },
+ {
+  "q": "14.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "15.1",
+  "code": 2,
+  "mesures": [
+   "Ouvrir le chantier de la privatisation de l’audiovisuel public"
+  ],
+  "justif": "Privatisation de l’audiovisuel public, baisse de dotation.",
+  "doute": ""
+ },
+ {
+  "q": "15.2",
+  "code": 0,
+  "mesures": [
+   "Maintenir les aides à la création et le régime des intermittents du spectacle"
+  ],
+  "justif": "Aides à la création et régime des intermittents maintenus.",
+  "doute": ""
+ },
+ {
+  "q": "15.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "16.1",
+  "code": 1,
+  "mesures": [
+   "Rendre obligatoire l’hébergement en France des données des Français, des entreprises et des services publics"
+  ],
+  "justif": "Hébergement des données obligatoire en France : contrainte nationale, non européenne.",
+  "doute": "Préférence contraignante mais nationale et non européenne : +1 prudent."
+ },
+ {
+  "q": "16.2",
+  "code": 1,
+  "mesures": [
+   "Imposer le respect de la loi française aux acteurs du numérique"
+  ],
+  "justif": "Obligations nationales accrues pour les plateformes ; rien sur les mineurs.",
+  "doute": "Mesure vague."
+ },
+ {
+  "q": "16.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ }
+]

@@ -1,0 +1,261 @@
+[
+ {
+  "q": "01.1",
+  "code": 1,
+  "mesures": [
+   "Ramener le déficit public à 2 % du PIB"
+  ]
+ },
+ {
+  "q": "01.2",
+  "code": 1,
+  "mesures": [
+   "Supprimer des emplois dans la fonction publique en ne remplaçant que deux départs à la retraite sur trois",
+   "Réaliser des économies en regroupant des opérateurs publics, dont l’ANRU, l’ADEME, le Cerema et l’ANCT"
+  ]
+ },
+ {
+  "q": "01.4",
+  "code": 2,
+  "mesures": [
+   "Réduire les impôts de production",
+   "Mettre fin à la surtaxe sur les bénéfices des grandes entreprises"
+  ]
+ },
+ {
+  "q": "02.1",
+  "code": 2,
+  "mesures": [
+   "Porter l’âge de départ à 65 ans et la durée de cotisation à 45 annuités en moins de dix ans"
+  ]
+ },
+ {
+  "q": "02.2",
+  "code": 2,
+  "mesures": [
+   "Créer un pilier de retraite par capitalisation",
+   "Généraliser le plan d’épargne retraite dès le premier contrat de travail, avec 500 € versés par l’État à l’ouverture"
+  ]
+ },
+ {
+  "q": "02.3",
+  "code": 1,
+  "mesures": [
+   "Exonérer progressivement de cotisations sociales et d’impôt sur le revenu les heures supplémentaires négociées dans l’entreprise"
+  ]
+ },
+ {
+  "q": "02.4",
+  "code": 2,
+  "mesures": [
+   "Ramener à douze mois la durée d’indemnisation des chômeurs de moins de 50 ans"
+  ]
+ },
+ {
+  "q": "03.3",
+  "code": 1,
+  "mesures": [
+   "Instaurer un moratoire normatif en matière fiscale, sociale et environnementale"
+  ]
+ },
+ {
+  "q": "03.4",
+  "code": 1,
+  "mesures": [
+   "Doubler le Fonds vert et le recentrer sur l’adaptation",
+   "Engager un grand plan de fret ferroviaire pour retirer des millions de camions des routes"
+  ]
+ },
+ {
+  "q": "04.2",
+  "code": 2,
+  "mesures": [
+   "Mettre fin aux surtranspositions agricoles"
+  ]
+ },
+ {
+  "q": "04.3",
+  "code": 1,
+  "mesures": [
+   "Améliorer le stockage de l’eau pour l’agriculture"
+  ]
+ },
+ {
+  "q": "05.3",
+  "code": 2,
+  "mesures": [
+   "Dissoudre l’Assemblée nationale dès l’élection pour rechercher une majorité absolue",
+   "Faire examiner une vingtaine d’ordonnances dès la session extraordinaire de juillet 2027"
+  ]
+ },
+ {
+  "q": "05.4",
+  "code": 2,
+  "mesures": [
+   "Inscrire une règle d’or budgétaire dans la Constitution"
+  ]
+ },
+ {
+  "q": "06.1",
+  "code": 1,
+  "mesures": [
+   "Ramener l’immigration légale à largement moins de 200,000 premiers titres de séjour par an",
+   "Instituer des quotas d’immigration économique"
+  ]
+ },
+ {
+  "q": "06.2",
+  "code": 1,
+  "mesures": [
+   "Restreindre l’immigration familiale",
+   "Expulser immédiatement les étrangers délinquants et supprimer leurs aides sociales"
+  ]
+ },
+ {
+  "q": "06.3",
+  "code": 2,
+  "mesures": [
+   "Instaurer des peines planchers pour les infractions les plus graves",
+   "Instaurer des peines courtes dès la première infraction"
+  ]
+ },
+ {
+  "q": "06.4",
+  "code": 1,
+  "mesures": [
+   "Lever l’excuse de minorité pour les faits liés au narcotrafic"
+  ]
+ },
+ {
+  "q": "06.5",
+  "code": 1,
+  "mesures": [
+   "Autoriser un usage ciblé de la reconnaissance faciale contre le narcotrafic",
+   "Créer un état d’urgence contre le narcotrafic"
+  ]
+ },
+ {
+  "q": "07.1",
+  "code": 2,
+  "mesures": [
+   "Lancer une nouvelle loi de programmation militaire de massification"
+  ]
+ },
+ {
+  "q": "07.2",
+  "code": 1,
+  "mesures": [
+   "Porter le nombre de réservistes de 45,000 à 250,000",
+   "Porter le service militaire volontaire de 3,000 à 50,000 places par an"
+  ]
+ },
+ {
+  "q": "08.2",
+  "code": 2,
+  "mesures": [
+   "Soutenir l’adhésion de l’Ukraine à l’Union européenne",
+   "Militer pour l’entrée de l’Ukraine dans l’OTAN",
+   "Déployer des troupes européennes en Ukraine une fois la paix revenue"
+  ]
+ },
+ {
+  "q": "08.3",
+  "code": 2,
+  "mesures": [
+   "Exiger des implantations chinoises en Europe des transferts de technologie, des quotas de production et des coentreprises dans les secteurs stratégiques"
+  ]
+ },
+ {
+  "q": "08.4",
+  "code": 0,
+  "mesures": [
+   "Maintenir les restrictions européennes sur les produits des colonies israéliennes, sans suspendre l’accord d’association avec Israël"
+  ]
+ },
+ {
+  "q": "09.1",
+  "code": 2,
+  "mesures": [
+   "Accroître l’autonomie des chefs d’établissement"
+  ]
+ },
+ {
+  "q": "09.2",
+  "code": 2,
+  "mesures": [
+   "Augmenter de 20 % la rémunération moyenne des enseignants sur le quinquennat"
+  ]
+ },
+ {
+  "q": "10.2",
+  "code": 1,
+  "mesures": [
+   "Porter le nombre d’ingénieurs formés de 40,000 à 100,000 par an"
+  ]
+ },
+ {
+  "q": "11.1",
+  "code": 2,
+  "mesures": [
+   "Stabiliser les dépenses de santé par la prévention et la technologie"
+  ]
+ },
+ {
+  "q": "11.2",
+  "code": 2,
+  "mesures": [
+   "Mettre fin à ce qu’il qualifie d’« open bar » des arrêts de travail"
+  ]
+ },
+ {
+  "q": "11.3",
+  "code": 1,
+  "mesures": [
+   "Créer une aide familiale unique et universelle par fusion des dispositifs existants",
+   "Accorder une part fiscale dès le deuxième enfant"
+  ]
+ },
+ {
+  "q": "11.4",
+  "code": 2,
+  "mesures": [
+   "Élargir à toute la population le financement de la protection sociale"
+  ]
+ },
+ {
+  "q": "12.2",
+  "code": 1,
+  "mesures": [
+   "Décentraliser la politique d’adaptation au changement climatique"
+  ]
+ },
+ {
+  "q": "13.4",
+  "code": 1,
+  "mesures": [
+   "Créer un prêt à taux zéro à chaque naissance pour faciliter un déménagement"
+  ]
+ },
+ {
+  "q": "14.3",
+  "code": 2,
+  "mesures": [
+   "Suspendre les demandes d’asile à Mayotte pendant le quinquennat",
+   "Suspendre le droit du sol à Mayotte pendant plusieurs années"
+  ]
+ },
+ {
+  "q": "16.1",
+  "code": 2,
+  "mesures": [
+   "Adopter un Buy European Tech Act"
+  ]
+ },
+ {
+  "q": "16.3",
+  "code": 2,
+  "mesures": [
+   "Doubler la capacité européenne de calcul en cinq ans"
+  ]
+ }
+]

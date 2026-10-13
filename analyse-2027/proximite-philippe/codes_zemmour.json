@@ -1,0 +1,484 @@
+[
+ {
+  "q": "01.1",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure : la ligne du registre indique « Aucune trajectoire publiée »",
+  "doute": "Trajectoire de déficit non communiquée, plan de 140 Md€ non porté par le candidat."
+ },
+ {
+  "q": "01.2",
+  "code": 2,
+  "mesures": [
+   "Réaliser 140 Md€ d’économies publiques pour financer la suppression de la CSG sur les revenus d’activité",
+   "Supprimer plusieurs agences et opérateurs de l’État, dont les agences régionales de santé, l’Ademe et l’Arcom"
+  ],
+  "justif": "Levier exclusivement par la dépense (agences supprimées, 140 Md€ d’économies), aucune hausse de prélèvement dans le registre.",
+  "doute": "Part des économies affectée au déficit absente ; elles financent d’abord une baisse de CSG. +1 défendable."
+ },
+ {
+  "q": "01.3",
+  "code": 2,
+  "mesures": [
+   "Supprimer les droits de succession"
+  ],
+  "justif": "Suppression totale des droits de succession : transmission allégée.",
+  "doute": ""
+ },
+ {
+  "q": "01.4",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "02.1",
+  "code": 1,
+  "mesures": [
+   "Reporter l’âge légal de départ à la retraite à 64 voire 65 ans"
+  ],
+  "justif": "Âge cible entre 64 et 65 ans, valeur non tranchée.",
+  "doute": "Entre +1 et +2 (« 64 voire 65 ») : cran prudent retenu."
+ },
+ {
+  "q": "02.2",
+  "code": 2,
+  "mesures": [
+   "Sortir progressivement de la retraite par répartition au profit de la capitalisation"
+  ],
+  "justif": "Sortie progressive de la répartition au profit de la capitalisation : capitalisation généralisée.",
+  "doute": "Part cible et caractère obligatoire non précisés."
+ },
+ {
+  "q": "02.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": "« Il faut travailler plus » cité dans la mesure retraite utilisée en 02.1, sans mesure sur la durée légale."
+ },
+ {
+  "q": "02.4",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "02.5",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "03.1",
+  "code": 2,
+  "mesures": [
+   "Construire six réacteurs EPR d’ici 2035 et quatorze d’ici 2045"
+  ],
+  "justif": "Quatorze nouveaux réacteurs EPR d’ici 2045 : relance massive.",
+  "doute": ""
+ },
+ {
+  "q": "03.2",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "03.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "03.4",
+  "code": -1,
+  "mesures": [
+   "Supprimer les certificats d’économie d’énergie"
+  ],
+  "justif": "Suppression des CEE sans dispositif de remplacement annoncé : retrait partiel du financement de la transition.",
+  "doute": "Dispositif hors comptes publics ; désengagement partiel, entre 0 et −2."
+ },
+ {
+  "q": "03.5",
+  "code": 2,
+  "mesures": [
+   "Baisser d’un tiers l’accise sur les carburants"
+  ],
+  "justif": "Baisse d’un tiers de l’accise sur les carburants, 12 Md€ de moindres recettes.",
+  "doute": ""
+ },
+ {
+  "q": "04.1",
+  "code": -1,
+  "mesures": [
+   "Refuser l’accord entre l’Union européenne et le Mercosur"
+  ],
+  "justif": "Refus de l’accord Mercosur, sans position générale sur les autres accords.",
+  "doute": "Refus d’un seul accord : entre −1 et −2, cran prudent retenu."
+ },
+ {
+  "q": "04.2",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "04.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "04.4",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "05.1",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "05.2",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "05.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "05.4",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "05.5",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": "Primauté du droit national mentionnée pour 2022 seulement ; registre : aucune position institutionnelle 2027."
+ },
+ {
+  "q": "06.1",
+  "code": 2,
+  "mesures": [
+   "Engager une politique de remigration par le renvoi des clandestins, des déboutés et des étrangers sans emploi",
+   "Supprimer le droit du sol et mettre fin au regroupement familial",
+   "Expulser les étrangers détenus et les délinquants étrangers non incarcérés"
+  ],
+  "justif": "« Immigration négative », remigration, fin du regroupement familial : au delà de l’immigration quasi nulle.",
+  "doute": "Droit du sol et regroupement familial : corpus 2022 non réactualisé."
+ },
+ {
+  "q": "06.2",
+  "code": 2,
+  "mesures": [
+   "Réserver les prestations sociales non contributives aux Français et limiter l’aide médicale de l’État aux soins urgents",
+   "Appliquer la préférence nationale à l’attribution du logement social",
+   "Expulser les étrangers en situation régulière après un an de chômage"
+  ],
+  "justif": "Préférence nationale sur les prestations non contributives et le logement social, AME restreinte.",
+  "doute": ""
+ },
+ {
+  "q": "06.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "06.4",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "06.5",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "07.1",
+  "code": 1,
+  "mesures": [
+   "Porter le budget de la défense à 70 Md€ par an en 2030"
+  ],
+  "justif": "Cible de 70 Md€ en 2030, environ 3 % de la richesse produite : hausse.",
+  "doute": "Corpus 2022 non réactualisé ; écart à la LPM non mesurable dans le registre, +2 non établi."
+ },
+ {
+  "q": "07.2",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "07.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure propre",
+  "doute": "La sortie du commandement intégré figure dans les précisions de la mesure défense 2022, déjà utilisée en 07.1."
+ },
+ {
+  "q": "07.4",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "08.1",
+  "code": 0,
+  "mesures": [
+   "Ne pas sortir de l’Union européenne"
+  ],
+  "justif": "Abandon déclaré de toute sortie de l’Union, sans autre position européenne connue.",
+  "doute": "Changement de position de mai 2026, document non consulté ; entre 0 et −1, cran prudent."
+ },
+ {
+  "q": "08.2",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "08.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "08.4",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "09.1",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "09.2",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "09.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "09.4",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "10.1",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "10.2",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": "Hausse de la recherche au programme 2022 seulement ; registre : aucune mesure 2027."
+ },
+ {
+  "q": "10.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "11.1",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "11.2",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "11.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "11.4",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": "Suppression de la CSG d’activité sans financement de remplacement connu ; mesure utilisée en 01.2."
+ },
+ {
+  "q": "11.5",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "12.1",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": "La suppression de la politique de la ville ne porte pas sur les dotations aux collectivités."
+ },
+ {
+  "q": "12.2",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "12.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "13.1",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": "Suppression de la loi SRU citée pour 2022 dans les précisions d’une mesure utilisée en 06.2."
+ },
+ {
+  "q": "13.2",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "13.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "13.4",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "14.1",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": "Fin des référendums calédoniens au programme 2022 seulement ; aucune position 2026."
+ },
+ {
+  "q": "14.2",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "14.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": "Contrôles frontaliers à Mayotte au programme 2022 seulement."
+ },
+ {
+  "q": "15.1",
+  "code": 2,
+  "mesures": [
+   "Privatiser l’audiovisuel public"
+  ],
+  "justif": "Privatisation de l’audiovisuel public, reprise et chiffrée dans le contre-budget d’octobre 2025.",
+  "doute": "Corpus 2022, reconfirmé par le chiffrage d’octobre 2025."
+ },
+ {
+  "q": "15.2",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": "Suppression des aides au cinéma citée dans les précisions d’une mesure utilisée en 15.1."
+ },
+ {
+  "q": "15.3",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "16.1",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "16.2",
+  "code": null,
+  "mesures": [],
+  "justif": "aucune mesure",
+  "doute": ""
+ },
+ {
+  "q": "16.3",
+  "code": 2,
+  "mesures": [
+   "Faire de la France le pays européen où il est le plus facile de créer une entreprise d’intelligence artificielle",
+   "Remplacer par l’intelligence artificielle les fonctionnaires partant à la retraite"
+  ],
+  "justif": "Dérégulation massive pour l’IA et déploiement de l’IA dans l’administration : accélération.",
+  "doute": ""
+ }
+]

@@ -1,0 +1,574 @@
+[
+ {
+  "q": "01.1",
+  "code": 0,
+  "mesures": [
+   "Adopter un pacte fiscal vert 2027-2032 sous forme de loi de programmation des finances publiques"
+  ],
+  "justif": "Trajectoire unique conciliant engagements européens, mais aucune cible de solde ni calendrier publiés.",
+  "doute": "Hésitation entre −1 (aucune priorité au déficit) et 0 ; cran prudent retenu."
+ },
+ {
+  "q": "01.2",
+  "code": -2,
+  "mesures": [
+   "Stabiliser la dette publique par la progressivité de l’impôt plutôt que par la baisse de la dépense"
+  ],
+  "justif": "Redressement explicitement par les recettes fiscales, refus de la baisse de dépense.",
+  "doute": ""
+ },
+ {
+  "q": "01.3",
+  "code": -2,
+  "mesures": [
+   "Instaurer une taxe de 2 % sur les patrimoines supérieurs à 100 M€ et durcir l’exit tax",
+   "Augmenter de trois points le prélèvement forfaitaire unique et la CSG sur les revenus du capital",
+   "Créer une contribution supplémentaire de 10 % sur les successions au-delà de 4 M€"
+  ],
+  "justif": "Taxe Zucman, flat tax relevée de trois points, surtaxe successorale : forte hausse.",
+  "doute": ""
+ },
+ {
+  "q": "01.4",
+  "code": -2,
+  "mesures": [
+   "Adopter un impôt minimal sur les bénéfices des sociétés dépassant un milliard d’euros de chiffre d’affaires",
+   "Porter la taxe sur les services numériques de 3 à 5 % et abaisser son seuil à 5 milliards d’euros de chiffre d’affaires",
+   "Conditionner les aides publiques aux entreprises à des critères environnementaux et sociaux"
+  ],
+  "justif": "Hausse ciblée sur les grandes entreprises et aides conditionnées ; baisse du taux réduit d’IS réservée aux PME.",
+  "doute": ""
+ },
+ {
+  "q": "02.1",
+  "code": -1,
+  "mesures": [
+   "Abroger la retraite à 64 ans pour revenir à 62 ans et viser 60 ans"
+  ],
+  "justif": "Retour à 62 ans ; 60 ans seulement visé, sans calendrier, prioritairement pour carrières longues.",
+  "doute": "Entre −1 et −2 : 60 ans affiché comme cible sans calendrier ; cran prudent."
+ },
+ {
+  "q": "02.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur la capitalisation.",
+  "doute": ""
+ },
+ {
+  "q": "02.3",
+  "code": -1,
+  "mesures": [
+   "Passer aux 32 heures sans perte de salaire dans les métiers pénibles ou de nuit"
+  ],
+  "justif": "Réduction à 32 heures limitée aux métiers pénibles ou de nuit, non générale.",
+  "doute": ""
+ },
+ {
+  "q": "02.4",
+  "code": -2,
+  "mesures": [
+   "Refonder l’assurance chômage en abrogeant les réformes des deux derniers quinquennats",
+   "Instaurer une garantie d’emploi pour les chômeurs de 55 ans et plus"
+  ],
+  "justif": "Abrogation des durcissements récents et garantie d’emploi : droits étendus.",
+  "doute": ""
+ },
+ {
+  "q": "02.5",
+  "code": -2,
+  "mesures": [
+   "Porter le salaire minimum à 2,000 € bruts par mois dès 2027",
+   "Porter le SMIC à 2,000 € brut"
+  ],
+  "justif": "Forte hausse administrée du SMIC à 2,000 € bruts dès 2027.",
+  "doute": ""
+ },
+ {
+  "q": "03.1",
+  "code": -2,
+  "mesures": [
+   "Planifier la sortie du nucléaire et mettre fin aux programmes EPR2 et petits réacteurs modulaires"
+  ],
+  "justif": "Sortie planifiée du nucléaire, arrêt d’EPR2 et des petits réacteurs.",
+  "doute": ""
+ },
+ {
+  "q": "03.2",
+  "code": 2,
+  "mesures": [
+   "Créer un prêt à taux zéro de la Caisse des dépôts couvrant 60 % des devis pour les projets d’énergie renouvelable",
+   "Soutenir le déploiement de 10,000 communautés énergétiques renouvelables"
+  ],
+  "justif": "Prêt à taux zéro sur 60 % des devis et 10,000 communautés renouvelables : accélération forte.",
+  "doute": ""
+ },
+ {
+  "q": "03.3",
+  "code": -2,
+  "mesures": [
+   "Porter à 500,000 euros l’amende maximale applicable aux installations classées",
+   "Interdire les coupes rases dans les vieilles forêts et les limiter à un hectare dans les plantations"
+  ],
+  "justif": "Durcissement des sanctions et nouvelles interdictions : renforcement des normes.",
+  "doute": ""
+ },
+ {
+  "q": "03.4",
+  "code": 2,
+  "mesures": [
+   "Doter le plan national d’adaptation au changement climatique de 7 Md€ par an d’ici 2032"
+  ],
+  "justif": "Forte hausse chiffrée de l’effort d’adaptation (7 Md€ par an).",
+  "doute": ""
+ },
+ {
+  "q": "03.5",
+  "code": -1,
+  "mesures": [
+   "Instaurer une taxe exceptionnelle sur les superprofits pétrogaziers et maritimes et déclencher le malus poids à 1,300 kilogrammes"
+  ],
+  "justif": "Fin des taux réduits sur les fossiles et malus poids abaissé, sans taxe carbone explicite.",
+  "doute": "Entre −1 et −2 : pas de taxe carbone générale, et kWh gratuits prévus ailleurs ; cran prudent."
+ },
+ {
+  "q": "04.1",
+  "code": 0,
+  "mesures": [
+   "Appliquer aux produits importés les mêmes exigences qu’aux productions françaises"
+  ],
+  "justif": "Logique de clauses miroirs ; aucune position sur le Mercosur ou le CETA.",
+  "doute": ""
+ },
+ {
+  "q": "04.2",
+  "code": -2,
+  "mesures": [
+   "Adopter une loi d’orientation agricole fixant une trajectoire de réduction des intrants et abroger la loi Duplomb",
+   "Planifier la sortie des pesticides de synthèse et des engrais azotés à l’horizon 2050"
+  ],
+  "justif": "Abrogation de la loi Duplomb et sortie des pesticides de synthèse : renforcement.",
+  "doute": ""
+ },
+ {
+  "q": "04.3",
+  "code": -2,
+  "mesures": [
+   "Décréter un moratoire sur les projets de méga-bassines"
+  ],
+  "justif": "Moratoire sur les méga-bassines.",
+  "doute": ""
+ },
+ {
+  "q": "04.4",
+  "code": 1,
+  "mesures": [
+   "Encadrer les prix d’un panier de biens essentiels",
+   "Exclure des centrales d’achat européennes les entreprises dont les produits intègrent au moins 80 % de matière première agricole française"
+  ],
+  "justif": "Encadrement des prix alimentaires et des centrales d’achat, sans prix plancher garanti.",
+  "doute": ""
+ },
+ {
+  "q": "05.1",
+  "code": 2,
+  "mesures": [
+   "Instaurer la proportionnelle intégrale sans prime majoritaire aux élections législatives"
+  ],
+  "justif": "Proportionnelle intégrale sans prime majoritaire.",
+  "doute": ""
+ },
+ {
+  "q": "05.2",
+  "code": 2,
+  "mesures": [
+   "Instaurer un référendum d’initiative citoyenne propositionnel et abrogatif, sous contrôle de constitutionnalité préalable"
+  ],
+  "justif": "RIC propositionnel et abrogatif.",
+  "doute": ""
+ },
+ {
+  "q": "05.3",
+  "code": -2,
+  "mesures": [
+   "Supprimer l’article 49.3 et assouplir la recevabilité financière de l’article 40"
+  ],
+  "justif": "Suppression du 49.3.",
+  "doute": ""
+ },
+ {
+  "q": "05.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "05.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "06.1",
+  "code": -2,
+  "mesures": [
+   "Régulariser les travailleurs, étudiants et parents d’enfants scolarisés sur critères objectifs",
+   "Abroger les lois asile et immigration du quinquennat et garantir les droits fondamentaux des personnes exilées"
+  ],
+  "justif": "Régularisations par catégories larges et abrogation des lois restrictives.",
+  "doute": ""
+ },
+ {
+  "q": "06.2",
+  "code": -2,
+  "mesures": [
+   "Étendre le droit de vote local aux étrangers extracommunautaires après cinq années de résidence"
+  ],
+  "justif": "Droit de vote local des étrangers extracommunautaires.",
+  "doute": ""
+ },
+ {
+  "q": "06.3",
+  "code": -2,
+  "mesures": [
+   "Instaurer un numerus clausus carcéral plafonnant l’occupation à 100 % des capacités",
+   "Développer la probation, le placement extérieur et la semi-liberté"
+  ],
+  "justif": "Plafonnement carcéral et alternatives à la prison.",
+  "doute": ""
+ },
+ {
+  "q": "06.4",
+  "code": -2,
+  "mesures": [
+   "Suspendre les 20 nouveaux centres éducatifs fermés et transformer les 51 centres existants en centres d’insertion"
+  ],
+  "justif": "Primauté de l’éducatif réaffirmée, abrogation de la loi de 2025, centres fermés transformés.",
+  "doute": ""
+ },
+ {
+  "q": "06.5",
+  "code": -2,
+  "mesures": [
+   "Interdire la reconnaissance faciale et évaluer indépendamment la vidéosurveillance",
+   "Abroger les dispositions liberticides des lois Sécurité globale, Séparatisme et de l’état d’urgence permanent"
+  ],
+  "justif": "Interdiction de la reconnaissance faciale et abrogation des régimes d’exception.",
+  "doute": ""
+ },
+ {
+  "q": "07.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Nouvelle LPM annoncée sans aucun montant : sens de l’effort budgétaire indéterminable.",
+  "doute": "Mesure « Actualiser le livre blanc » existante mais non chiffrée."
+ },
+ {
+  "q": "07.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "07.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "07.4",
+  "code": 2,
+  "mesures": [
+   "Étendre la dissuasion française à des partenaires européens, en conservant la décision d’emploi"
+  ],
+  "justif": "Extension de la dissuasion aux partenaires européens, décision restant française.",
+  "doute": ""
+ },
+ {
+  "q": "08.1",
+  "code": 2,
+  "mesures": [
+   "Remplacer les droits de veto nationaux par la majorité qualifiée et faire un saut fédéral",
+   "Élire le Parlement européen sur des listes transnationales et lui donner un droit d’initiative législative"
+  ],
+  "justif": "Saut fédéral, fin des vetos, listes transnationales.",
+  "doute": ""
+ },
+ {
+  "q": "08.2",
+  "code": 1,
+  "mesures": [
+   "Appuyer la négociation ukrainienne sur les frontières internationalement reconnues de 1991"
+  ],
+  "justif": "Soutien politique et ouverture des négociations d’adhésion à l’UE, rien sur l’OTAN ni les troupes.",
+  "doute": ""
+ },
+ {
+  "q": "08.3",
+  "code": 2,
+  "mesures": [
+   "Réserver la commande publique européenne aux productions du continent",
+   "Créer une offre de location sociale d’un million de véhicules électriques sur le quinquennat"
+  ],
+  "justif": "Préférence européenne dans la commande publique et aides conditionnées à 75 % de composants européens.",
+  "doute": ""
+ },
+ {
+  "q": "08.4",
+  "code": -1,
+  "mesures": [
+   "Garantir la souveraineté palestinienne et engager un rapport de force avec le gouvernement israélien"
+  ],
+  "justif": "Rapport de force sans sanction précisée ; suspension de l’accord demandée en 2025 seulement.",
+  "doute": "Entre −1 et −2 : demande de suspension antérieure au programme ; cran prudent."
+ },
+ {
+  "q": "09.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "09.2",
+  "code": 1,
+  "mesures": [
+   "Indexer le point d’indice des fonctionnaires sur l’inflation et revaloriser de 10 % les catégories C et B"
+  ],
+  "justif": "Indexation générale ; enseignants (catégorie A) seulement visés, sans taux chiffré.",
+  "doute": "Entre +1 et +2 : revalorisation de 10 % limitée aux catégories C et B ; cran prudent."
+ },
+ {
+  "q": "09.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "09.4",
+  "code": -1,
+  "mesures": [
+   "Recentrer et verdir le crédit d’impôt recherche et conditionner les subventions à l’enseignement privé"
+  ],
+  "justif": "Subventions au privé conditionnées, au titre des dépenses jugées inutiles.",
+  "doute": "Entre −1 et −2 : critères et ampleur de réduction absents ; cran prudent."
+ },
+ {
+  "q": "10.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "10.2",
+  "code": 2,
+  "mesures": [
+   "Augmenter de 10 % dès la première année les salaires des personnels de la recherche publique",
+   "Cofinancer à 50 % les projets de recherche menés avec un laboratoire public et mille chaires sur la transition"
+  ],
+  "justif": "Hausse de 10 % des salaires, budgets des laboratoires accrus, mille chaires : forte hausse.",
+  "doute": ""
+ },
+ {
+  "q": "10.3",
+  "code": -2,
+  "mesures": [
+   "Supprimer la contribution de vie étudiante et de campus et refonder les bourses"
+  ],
+  "justif": "Abolition de la majoration des droits pour les étudiants extracommunautaires.",
+  "doute": ""
+ },
+ {
+  "q": "11.1",
+  "code": -2,
+  "mesures": [
+   "Rembourser à 100 % les soins essentiels et supprimer les franchises médicales",
+   "Créer 2,000 centres de santé d’ici 2030"
+  ],
+  "justif": "Remboursement intégral, fin des franchises, 2,000 centres : forte hausse.",
+  "doute": ""
+ },
+ {
+  "q": "11.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "11.3",
+  "code": 1,
+  "mesures": [
+   "Verser les allocations familiales d’un même montant dès le premier enfant"
+  ],
+  "justif": "Allocations familiales uniformes dès le premier enfant, tendance universelle.",
+  "doute": "Sort de la modulation selon les ressources non précisé, quotient conjugal en révision ; cran prudent."
+ },
+ {
+  "q": "11.4",
+  "code": -2,
+  "mesures": [
+   "Supprimer les exonérations de cotisations sociales au-delà de 1.6 SMIC et celles portant sur les heures supplémentaires",
+   "Augmenter les cotisations vieillesse de 0.2 point par an pendant le quinquennat"
+  ],
+  "justif": "Suppression d’exonérations patronales et hausse des cotisations.",
+  "doute": ""
+ },
+ {
+  "q": "11.5",
+  "code": 2,
+  "mesures": [
+   "Autoriser une fin de vie choisie et assistée"
+  ],
+  "justif": "Légalisation de l’aide à mourir.",
+  "doute": ""
+ },
+ {
+  "q": "12.1",
+  "code": -2,
+  "mesures": [
+   "Nationaliser le versement du revenu de solidarité active et supprimer le prélèvement sur les ressources des collectivités",
+   "Garantir par loi organique la compensation intégrale des transferts de compétences aux collectivités"
+  ],
+  "justif": "Fin des prélèvements, RSA repris par l’État, nouvelle dotation : effort allégé.",
+  "doute": ""
+ },
+ {
+  "q": "12.2",
+  "code": 2,
+  "mesures": [
+   "Faire de la France une République fortement décentralisée fondée sur un fédéralisme différencié"
+  ],
+  "justif": "Fédéralisme différencié, pouvoir réglementaire propre des collectivités.",
+  "doute": ""
+ },
+ {
+  "q": "12.3",
+  "code": 1,
+  "mesures": [
+   "Majorer jusqu’à 25 % la taxe d’habitation sur les résidences secondaires au profit des établissements publics fonciers locaux",
+   "Découpler la taxe foncière de la taxe d’habitation sur les résidences secondaires"
+  ],
+  "justif": "Taxe additionnelle locale et découplage des taux : autonomie accrue, de portée limitée.",
+  "doute": "Entre +1 et +2 : nouvelle taxe additionnelle mais ciblée ; cran prudent."
+ },
+ {
+  "q": "13.1",
+  "code": -2,
+  "mesures": [
+   "Imposer aux communes aux marchés immobiliers les plus tendus un objectif de 30 % de logements sociaux d’ici 2035",
+   "Renforcer les sanctions financières et préfectorales contre les communes ne respectant pas la loi SRU"
+  ],
+  "justif": "Taux relevé à 30 % et sanctions renforcées.",
+  "doute": ""
+ },
+ {
+  "q": "13.2",
+  "code": -2,
+  "mesures": [
+   "Généraliser et pérenniser l’encadrement des loyers et remplacer la garantie Visale par une garantie universelle des loyers"
+  ],
+  "justif": "Généralisation et pérennisation de l’encadrement.",
+  "doute": ""
+ },
+ {
+  "q": "13.3",
+  "code": -2,
+  "mesures": [
+   "Maintenir l’interdiction de louer les logements classés F en 2028 et E en 2034, avec dérogation contre une baisse de loyer de 30 %"
+  ],
+  "justif": "Calendrier maintenu, dérogation conditionnée, DPE complété d’un confort d’été.",
+  "doute": ""
+ },
+ {
+  "q": "13.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "14.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "14.2",
+  "code": 0,
+  "mesures": [
+   "Combattre la vie chère outre-mer par les règles anti-trust et le contrôle des marges"
+  ],
+  "justif": "Réforme du prélèvement et de l’affectation de l’octroi de mer, sans suppression.",
+  "doute": ""
+ },
+ {
+  "q": "14.3",
+  "code": -2,
+  "mesures": [
+   "Supprimer le titre de séjour territorialisé à Mayotte avant 2030 et aligner le revenu de solidarité active et le SMIC"
+  ],
+  "justif": "Fin des exceptions mahoraises, droit du sol garanti : alignement sur le droit commun.",
+  "doute": ""
+ },
+ {
+  "q": "15.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "15.2",
+  "code": -1,
+  "mesures": [
+   "Abonder un fonds pour le petit patrimoine et faire du matrimoine un bien commun"
+  ],
+  "justif": "Abondement non chiffré d’un fonds patrimonial.",
+  "doute": "Hausse non chiffrée, aucun budget global ; cran prudent."
+ },
+ {
+  "q": "15.3",
+  "code": -2,
+  "mesures": [
+   "Adopter une loi anti-concentration des médias sur le modèle norvégien"
+  ],
+  "justif": "Loi anticoncentration stricte.",
+  "doute": ""
+ },
+ {
+  "q": "16.1",
+  "code": 1,
+  "mesures": [
+   "Généraliser le logiciel libre dans les administrations selon le principe open source first"
+  ],
+  "justif": "Souveraineté par le logiciel libre, sans préférence européenne explicite.",
+  "doute": "Pas de préférence européenne nommée dans le numérique ; cran prudent."
+ },
+ {
+  "q": "16.2",
+  "code": 1,
+  "mesures": [
+   "Imposer la neutralité des algorithmes des réseaux sociaux au-delà d’un million d’utilisateurs en France",
+   "Interdire les écrans à l’école avant six ans et les déconseiller avant trois ans"
+  ],
+  "justif": "Régulation au-delà du DSA, sans interdiction des réseaux aux moins de 15 ans.",
+  "doute": ""
+ },
+ {
+  "q": "16.3",
+  "code": -1,
+  "mesures": [
+   "Encadrer l’implantation des centres de données et planifier leur consommation électrique"
+  ],
+  "justif": "Encadrement des centres de données, fin du label projet d’intérêt national majeur.",
+  "doute": "Entre −1 et −2 : encadrement sans moratoire ; cran prudent."
+ }
+]

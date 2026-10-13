@@ -1,0 +1,559 @@
+[
+ {
+  "q": "01.1",
+  "code": -2,
+  "mesures": [
+   "Recettes nouvelles, investissement, gel négocié de la dette détenue par la BCE"
+  ],
+  "justif": "Le programme ne cherche pas à stabiliser la dette par des économies ; dépense en hausse, relance assumée.",
+  "doute": ""
+ },
+ {
+  "q": "01.2",
+  "code": -2,
+  "mesures": [
+   "Mettre en œuvre une révolution fiscale progressive",
+   "Rendre l’impôt sur le revenu progressif avec un barème à 14 tranches"
+  ],
+  "justif": "Redressement par recettes nouvelles : révolution fiscale, impôt sur le revenu à 14 tranches.",
+  "doute": ""
+ },
+ {
+  "q": "01.3",
+  "code": -2,
+  "mesures": [
+   "Rétablir et renforcer l’impôt de solidarité sur la fortune, avec un volet climatique",
+   "Supprimer le prélèvement forfaitaire unique et imposer les revenus du capital comme ceux du travail",
+   "Instaurer un héritage maximal de 12 M€",
+   "Rétablir l’exit tax"
+  ],
+  "justif": "ISF rétabli, PFU supprimé, héritage plafonné à 12 M€, exit tax : forte hausse.",
+  "doute": ""
+ },
+ {
+  "q": "01.4",
+  "code": -2,
+  "mesures": [
+   "Rendre l’impôt sur les sociétés progressif",
+   "Établir une taxe permanente sur les superprofits étendue à tous les secteurs",
+   "Taxer davantage les bénéfices distribués en dividendes que ceux réinvestis dans l’outil de production"
+  ],
+  "justif": "IS progressif, taxe permanente sur les superprofits, surtaxe des dividendes.",
+  "doute": ""
+ },
+ {
+  "q": "02.1",
+  "code": -2,
+  "mesures": [
+   "Rétablir la retraite à 62 ans, puis à 60 ans avec 40 annuités"
+  ],
+  "justif": "Cible finale 60 ans « le plus vite possible », étape intermédiaire à 62 ans (position Medef août 2026).",
+  "doute": ""
+ },
+ {
+  "q": "02.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur la capitalisation.",
+  "doute": ""
+ },
+ {
+  "q": "02.3",
+  "code": -1,
+  "mesures": [
+   "Rétablir la durée légale hebdomadaire à 35 heures en majorant les heures supplémentaires",
+   "Généraliser une sixième semaine de congés payés"
+  ],
+  "justif": "35 heures rétablies, sixième semaine de congés : réduction annuelle, sans 32 heures.",
+  "doute": "Pas de 32 heures dans le registre ; entre 0 et −2, cran prudent −1."
+ },
+ {
+  "q": "02.4",
+  "code": -1,
+  "mesures": [
+   "Indemniser les chômeurs dès le premier jour suivant la fin du contrat"
+  ],
+  "justif": "Extension des droits : indemnisation sans différé.",
+  "doute": "Une seule extension d’ampleur limitée ; −2 possible, cran prudent retenu."
+ },
+ {
+  "q": "02.5",
+  "code": -2,
+  "mesures": [
+   "Porter le SMIC à 1,700 € net"
+  ],
+  "justif": "Forte hausse administrée du SMIC à 1,700 € net.",
+  "doute": "Montant du 7 juin 2026 remplace les 1,600 € de 2025 ; version récente retenue."
+ },
+ {
+  "q": "03.1",
+  "code": -2,
+  "mesures": [
+   "Sortir du nucléaire en abandonnant les projets d’EPR et en planifiant le démantèlement"
+  ],
+  "justif": "Sortie du nucléaire, abandon des EPR.",
+  "doute": "Calendrier de fermeture retiré de l’édition 2025, à trancher le 6 novembre 2026 ; principe de sortie maintenu."
+ },
+ {
+  "q": "03.2",
+  "code": 2,
+  "mesures": [
+   "Atteindre 100 % d’énergies renouvelables en 2050"
+  ],
+  "justif": "100 % renouvelables en 2050 : accélération forte.",
+  "doute": "Source édition 2022, présence 2025 non vérifiée, à reconfirmer."
+ },
+ {
+  "q": "03.3",
+  "code": -2,
+  "mesures": [
+   "Instaurer une planification écologique fondée sur la règle verte",
+   "Interdire la publicité pour les produits et services les plus émetteurs de gaz à effet de serre",
+   "Limiter la taille, le poids et les dimensions des véhicules de type SUV autorisés à la vente",
+   "Interdire les coupes rases en forêt sauf impasse sanitaire avérée"
+  ],
+  "justif": "Règle verte, interdictions de publicité, limites aux SUV, coupes rases : renforcement.",
+  "doute": ""
+ },
+ {
+  "q": "03.4",
+  "code": 2,
+  "mesures": [
+   "Lancer un plan de 200 Md€ d’investissements écologiquement et socialement utiles",
+   "Isoler au moins 700,000 logements par an"
+  ],
+  "justif": "Plan chiffré de 200 Md€ et 700,000 rénovations par an : forte hausse.",
+  "doute": ""
+ },
+ {
+  "q": "03.5",
+  "code": 0,
+  "mesures": [
+   "Bloquer le prix des carburants à 1.70 € le litre et plafonner les marges de raffinage"
+  ],
+  "justif": "Blocage des prix hors fiscalité ; baisse de TVA explicitement écartée, aucune hausse de taxe.",
+  "doute": "Mesure de prix et non de fiscalité ; n.c. défendable."
+ },
+ {
+  "q": "04.1",
+  "code": -1,
+  "mesures": [
+   "Instaurer un protectionnisme écologique fondé sur les conditions de production",
+   "Instaurer des droits de douane fondés sur des critères écologiques"
+  ],
+  "justif": "Protectionnisme écologique au-delà des clauses miroirs, sans refus nommé des accords.",
+  "doute": "Aucun accord (Mercosur, CETA) nommé ; entre −1 et −2, cran prudent."
+ },
+ {
+  "q": "04.2",
+  "code": -2,
+  "mesures": [
+   "Planifier la réduction des engrais et pesticides et interdire immédiatement les plus dangereux",
+   "Interdire les fermes-usines"
+  ],
+  "justif": "Interdiction des pesticides les plus dangereux et des fermes-usines : renforcement.",
+  "doute": ""
+ },
+ {
+  "q": "04.3",
+  "code": -2,
+  "mesures": [
+   "Instaurer un moratoire sur le déploiement des méga-bassines"
+  ],
+  "justif": "Moratoire sur les méga-bassines.",
+  "doute": ""
+ },
+ {
+  "q": "04.4",
+  "code": 1,
+  "mesures": [
+   "Fixer des prix planchers agricoles"
+  ],
+  "justif": "Prix planchers agricoles.",
+  "doute": "Mesure non retrouvée dans les sources, à confirmer ; +1 au lieu de +2."
+ },
+ {
+  "q": "05.1",
+  "code": 2,
+  "mesures": [
+   "Élire l’Assemblée nationale au scrutin proportionnel"
+  ],
+  "justif": "Assemblée élue au scrutin proportionnel, non une simple dose.",
+  "doute": "Type de proportionnelle non précisé."
+ },
+ {
+  "q": "05.2",
+  "code": 2,
+  "mesures": [
+   "Instaurer un référendum d’initiative citoyenne permettant notamment de révoquer des élus"
+  ],
+  "justif": "RIC, y compris révocatoire.",
+  "doute": ""
+ },
+ {
+  "q": "05.3",
+  "code": -2,
+  "mesures": [
+   "Abolir les procédures de vote forcé du Parlement, dont l’article 49 alinéa 3"
+  ],
+  "justif": "Suppression du 49.3 et des votes forcés.",
+  "doute": ""
+ },
+ {
+  "q": "05.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "05.5",
+  "code": 1,
+  "mesures": [
+   "Désobéir aux règles européennes empêchant le programme"
+  ],
+  "justif": "Désobéissance aux règles européennes : primauté nationale de fait, sans bouclier constitutionnel.",
+  "doute": "Entre +1 et +2 ; pas de dispositif constitutionnel, cran prudent."
+ },
+ {
+  "q": "06.1",
+  "code": -1,
+  "mesures": [
+   "Développer des voies légales et sûres d’immigration"
+  ],
+  "justif": "Voies légales d’immigration développées, sans régularisation large ni volume.",
+  "doute": "Volumes absents."
+ },
+ {
+  "q": "06.2",
+  "code": -2,
+  "mesures": [
+   "Instituer le droit de vote des étrangers aux élections locales"
+  ],
+  "justif": "Droit de vote des étrangers aux élections locales.",
+  "doute": ""
+ },
+ {
+  "q": "06.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur les peines.",
+  "doute": ""
+ },
+ {
+  "q": "06.4",
+  "code": -2,
+  "mesures": [
+   "Abroger le code de justice pénale des mineurs et revenir aux principes de l’ordonnance de 1945"
+  ],
+  "justif": "Retour à l’ordonnance de 1945 : primauté de l’éducatif.",
+  "doute": ""
+ },
+ {
+  "q": "06.5",
+  "code": -2,
+  "mesures": [
+   "Interdire tout usage de la reconnaissance faciale dans les espaces et établissements publics",
+   "Sortir de l’état d’urgence permanent"
+  ],
+  "justif": "Interdiction de la reconnaissance faciale, sortie des régimes d’exception.",
+  "doute": ""
+ },
+ {
+  "q": "07.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure budgétaire.",
+  "doute": ""
+ },
+ {
+  "q": "07.2",
+  "code": 2,
+  "mesures": [
+   "Instaurer une conscription citoyenne de neuf mois et créer une garde nationale sous commandement civil"
+  ],
+  "justif": "Conscription de neuf mois : service obligatoire.",
+  "doute": ""
+ },
+ {
+  "q": "07.3",
+  "code": -2,
+  "mesures": [
+   "Sortir du commandement intégré de l’OTAN, puis de l’Alliance"
+  ],
+  "justif": "Sortie du commandement intégré puis de l’OTAN.",
+  "doute": ""
+ },
+ {
+  "q": "07.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur la dissuasion.",
+  "doute": ""
+ },
+ {
+  "q": "08.1",
+  "code": -1,
+  "mesures": [
+   "Refuser tout nouvel élargissement de l’Union, faute d’harmonisation sociale et fiscale"
+  ],
+  "justif": "Refus de tout nouvel élargissement, sans retrait ni renégociation explicite.",
+  "doute": "Position du parti de 2022, à reconfirmer par le candidat."
+ },
+ {
+  "q": "08.2",
+  "code": -1,
+  "mesures": [
+   "Rechercher une issue négociée à la guerre en Ukraine et mettre en cause les frappes ukrainiennes en profondeur"
+  ],
+  "justif": "Priorité à la négociation, critique des frappes ukrainiennes ; sort de l’aide non précisé.",
+  "doute": "Arrêt de l’aide non annoncé ; entre −1 et −2, cran prudent."
+ },
+ {
+  "q": "08.3",
+  "code": -1,
+  "mesures": [
+   "Engager une coopération renforcée avec la Chine"
+  ],
+  "justif": "Coopération renforcée avec la Chine, sans instrument de protection nouveau.",
+  "doute": "Droits de douane écologiques généraux tirent en sens inverse ; cran modéré."
+ },
+ {
+  "q": "08.4",
+  "code": -2,
+  "mesures": [
+   "Faire suspendre l’accord d’association entre l’Union européenne et Israël et bâtir avec l’Espagne un « front du refus »",
+   "Déclarer un embargo total sur les armes et le matériel militaire à destination d’Israël"
+  ],
+  "justif": "Suspension de l’accord d’association et embargo sur les armes.",
+  "doute": ""
+ },
+ {
+  "q": "09.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "09.2",
+  "code": 2,
+  "mesures": [
+   "Rattraper le gel du point d’indice depuis 2010 et revaloriser les grilles salariales"
+  ],
+  "justif": "Rattrapage du point d’indice depuis 2010 : hausse générale.",
+  "doute": ""
+ },
+ {
+  "q": "09.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "09.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur le privé sous contrat.",
+  "doute": ""
+ },
+ {
+  "q": "10.1",
+  "code": -2,
+  "mesures": [
+   "Démanteler Parcoursup et garantir l’accès sans sélection à la formation choisie"
+  ],
+  "justif": "Suppression de Parcoursup, accès sans sélection.",
+  "doute": "Communiqué du groupe parlementaire, non du candidat."
+ },
+ {
+  "q": "10.2",
+  "code": 1,
+  "mesures": [
+   "Augmenter les moyens de la recherche publique"
+  ],
+  "justif": "Hausse des moyens de la recherche publique, non chiffrée.",
+  "doute": "Montant absent ; +1 plutôt que +2."
+ },
+ {
+  "q": "10.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "11.1",
+  "code": -2,
+  "mesures": [
+   "Créer une Sécurité sociale intégrale gérée par ses cotisants",
+   "Remplacer l’objectif national des dépenses d’assurance maladie par un objectif de santé publique",
+   "Abroger la hausse des franchises médicales de 2024"
+  ],
+  "justif": "Sécurité sociale intégrale, fin de l’ONDAM, franchises abrogées : forte hausse.",
+  "doute": "Non chiffré."
+ },
+ {
+  "q": "11.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur les arrêts maladie.",
+  "doute": ""
+ },
+ {
+  "q": "11.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "11.4",
+  "code": -1,
+  "mesures": [
+   "Augmenter la cotisation vieillesse de 0.25 point par an",
+   "Écarter toute hausse de la taxe sur la valeur ajoutée destinée à financer la protection sociale"
+  ],
+  "justif": "Cotisations relevées, TVA sociale écartée.",
+  "doute": "Part patronale non précisée ; −1 plutôt que −2."
+ },
+ {
+  "q": "11.5",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "12.1",
+  "code": -1,
+  "mesures": [
+   "Créer un fonds de soutien communal pour les communes rurales"
+  ],
+  "justif": "Fonds de soutien nouveau aux communes rurales, non chiffré.",
+  "doute": "Dotation non chiffrée."
+ },
+ {
+  "q": "12.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure tranchant le sens.",
+  "doute": "Suppression des métropoles et éco-régions : réorganisation sans sens clair."
+ },
+ {
+  "q": "12.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "13.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure sur la loi SRU.",
+  "doute": ""
+ },
+ {
+  "q": "13.2",
+  "code": -1,
+  "mesures": [
+   "Encadrer davantage les loyers"
+  ],
+  "justif": "Encadrement renforcé, généralisation non affirmée.",
+  "doute": "Source 2022, à reconfirmer ; périmètre absent."
+ },
+ {
+  "q": "13.3",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "13.4",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "14.1",
+  "code": -2,
+  "mesures": [
+   "Accompagner la Nouvelle-Calédonie-Kanaky vers l’indépendance"
+  ],
+  "justif": "Accompagnement vers l’indépendance.",
+  "doute": ""
+ },
+ {
+  "q": "14.2",
+  "code": -1,
+  "mesures": [
+   "Instaurer un bouclier douanier par une taxe kilométrique en faveur des productions locales"
+  ],
+  "justif": "Nouvelle protection douanière locale, logique opposée à la suppression de l’octroi.",
+  "doute": "Octroi de mer non nommé."
+ },
+ {
+  "q": "14.3",
+  "code": -2,
+  "mesures": [
+   "Garantir le droit du sol intégral à tous les enfants nés en France"
+  ],
+  "justif": "Droit du sol intégral pour tous les enfants nés en France, donc alignement de Mayotte.",
+  "doute": "Mayotte non nommée."
+ },
+ {
+  "q": "15.1",
+  "code": -1,
+  "mesures": [
+   "Instaurer une contribution audiovisuelle universelle dédiée au service public"
+  ],
+  "justif": "Ressource dédiée et universelle pour l’audiovisuel public.",
+  "doute": "Montant absent ; −1 plutôt que −2."
+ },
+ {
+  "q": "15.2",
+  "code": -2,
+  "mesures": [
+   "Porter le budget de l’art, de la culture et de la création à 1 % du PIB"
+  ],
+  "justif": "Culture portée à 1 % du PIB : forte hausse.",
+  "doute": ""
+ },
+ {
+  "q": "15.3",
+  "code": -2,
+  "mesures": [
+   "Démembrer par une loi de début de mandat les trusts médiatiques et culturels au profit d’une propriété collective",
+   "Élargir les règles anti-concentration à tous les supports de presse"
+  ],
+  "justif": "Démembrement des trusts, anticoncentration étendue.",
+  "doute": ""
+ },
+ {
+  "q": "16.1",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure de préférence européenne.",
+  "doute": "Logiciels libres : souveraineté sans préférence européenne, non retenu."
+ },
+ {
+  "q": "16.2",
+  "code": null,
+  "mesures": [],
+  "justif": "Aucune mesure.",
+  "doute": ""
+ },
+ {
+  "q": "16.3",
+  "code": -1,
+  "mesures": [
+   "Encadrer les biais discriminatoires des systèmes d’IA"
+  ],
+  "justif": "Encadrement ciblé de l’IA, sans moratoire.",
+  "doute": "Mesure non retrouvée dans les sources, à confirmer."
+ }
+]
