@@ -1,0 +1,421 @@
+<div id="sapere-marges">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+#sapere-marges{font-family:'Inter',system-ui,sans-serif;color:#1a1a1a;background:#ffffff;width:100%;max-width:100%;margin:0 auto;box-sizing:border-box;}
+#sapere-marges *{box-sizing:border-box;}
+
+/* HEADER */
+#sapere-marges .sm-header{background:#ffffff;border-bottom:4px solid #8b0000;padding:30px 24px 26px;}
+#sapere-marges .sm-serie{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;font-weight:700;margin:0 0 10px;}
+#sapere-marges .sm-header h1{color:#1a1a1a;font-weight:800;font-size:clamp(26px,5vw,44px);line-height:1.15;margin:0 0 14px;}
+#sapere-marges .sm-header .sm-sub{color:#555;font-style:italic;font-size:18px;line-height:1.5;margin:0;}
+
+/* IMAGE */
+#sapere-marges .sm-hero{margin:26px 0;}
+#sapere-marges .sm-hero img{width:100%;max-width:100%;display:block;border:1px solid #e0e0e0;}
+#sapere-marges .sm-hero figcaption{font-size:13px;color:#777;padding:8px 0;font-style:italic;}
+#sapere-marges .sm-carte-fig{margin:26px 0;}
+#sapere-marges .sm-carte-fig .sm-map-svg{width:100%;max-width:100%;display:block;border:1px solid #c5d2e0;background:#eef3f8;}
+#sapere-marges .sm-carte-fig figcaption{font-size:13px;color:#777;padding:8px 0;font-style:italic;}
+#sapere-marges .sm-carte-fig .sm-credit{font-style:normal;color:#999;font-size:12px;}
+#sapere-marges .sm-hero.sm-hero-red{max-width:55%;margin-left:auto;margin-right:auto;}
+#sapere-marges .sm-hero.sm-hero-carte{max-width:67%;margin-left:auto;margin-right:auto;}
+@media(max-width:640px){#sapere-marges .sm-hero.sm-hero-red{max-width:85%;}#sapere-marges .sm-hero.sm-hero-carte{max-width:90%;}}
+#sapere-marges .sm-hero .sm-credit{font-style:normal;color:#999;font-size:12px;}
+
+/* BLOC TEXTE + IMAGE */
+#sapere-marges .sm-duo{display:grid;grid-template-columns:1fr 1.35fr;gap:26px;align-items:center;margin:26px 0;}
+#sapere-marges .sm-duo.sm-duo-right{grid-template-columns:1.35fr 1fr;}
+#sapere-marges .sm-duo p{margin:0;}
+#sapere-marges .sm-duo figure{margin:0;}
+#sapere-marges .sm-duo img{width:100%;max-width:100%;display:block;border:1px solid #e0e0e0;}
+#sapere-marges .sm-duo figcaption{font-size:13px;color:#777;padding:8px 0 0;font-style:italic;}
+
+/* BANDEAU DE SERIE */
+#sapere-marges .sm-bandeau{background:#e6ecf2;border:1px solid #c5d2e0;border-left:4px solid #8b0000;padding:16px 22px 18px;margin:0 24px 0;}
+#sapere-marges .sm-bandeau-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+#sapere-marges .sm-bandeau-serie{font-size:13px;font-weight:700;color:#1a1a1a;}
+#sapere-marges .sm-bandeau-serie span{color:#8b0000;}
+#sapere-marges .sm-bandeau-compte{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#8b0000;font-weight:700;}
+#sapere-marges .sm-progress{display:flex;gap:6px;}
+#sapere-marges .sm-step{flex:1 1 0;text-align:center;}
+#sapere-marges .sm-step-bar{height:6px;border-radius:3px;background:#e0d0bb;margin-bottom:6px;}
+#sapere-marges .sm-step.done .sm-step-bar{background:#c9a84f;}
+#sapere-marges .sm-step.current .sm-step-bar{background:#8b0000;}
+#sapere-marges .sm-step-lbl{display:block;font-size:10px;line-height:1.3;color:#999;}
+#sapere-marges .sm-step.current .sm-step-lbl{color:#8b0000;font-weight:700;}
+#sapere-marges .sm-step.done .sm-step-lbl{color:#7a6a3a;}
+
+/* ONGLETS */
+#sapere-marges input[type=radio]{position:absolute;opacity:0;width:1px;height:1px;}
+#sapere-marges .sapere-tabs{display:flex;flex-wrap:wrap;gap:0;border-bottom:2px solid #8b0000;margin:0 24px;padding-top:20px;}
+#sapere-marges .sapere-tabs label{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#999;padding:12px 18px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .15s;}
+#sapere-marges .sapere-tabs label:hover{color:#8b0000;}
+#sapere-marges .sapere-tab-content{display:none !important;padding:28px 24px 36px;}
+
+#sapere-marges #mtab1:checked ~ .sapere-tabs label[for=mtab1],
+#sapere-marges #mtab2:checked ~ .sapere-tabs label[for=mtab2],
+#sapere-marges #mtab3:checked ~ .sapere-tabs label[for=mtab3],
+#sapere-marges #mtab4:checked ~ .sapere-tabs label[for=mtab4]{color:#8b0000;border-bottom-color:#8b0000;}
+
+#sapere-marges #mtab1:checked ~ .sapere-tab-content#mcontent1,
+#sapere-marges #mtab2:checked ~ .sapere-tab-content#mcontent2,
+#sapere-marges #mtab3:checked ~ .sapere-tab-content#mcontent3,
+#sapere-marges #mtab4:checked ~ .sapere-tab-content#mcontent4{display:block !important;}
+
+/* CORPS */
+#sapere-marges #mcontent1 p{font-size:20px;line-height:1.8;color:#1a1a1a;margin:0 0 22px;}
+#sapere-marges #mcontent1 h2{font-weight:700;font-size:26px;color:#1a1a1a;margin:38px 0 18px;line-height:1.25;}
+#sapere-marges .sh-formule{color:#5a0000;font-weight:700;}
+#sapere-marges a{color:#8b0000;text-decoration:underline;text-underline-offset:2px;}
+
+/* TOOLTIP */
+#sapere-marges .sapere-tooltip{border-bottom:1px dotted #8b0000;cursor:help;position:relative;}
+#sapere-marges .sapere-tooltip:focus::after,#sapere-marges .sapere-tooltip:hover::after{content:attr(data-tooltip);position:absolute;left:50%;transform:translateX(-50%);top:140%;z-index:20;background:#1a1a1a;color:#fff;font-size:14px;font-style:normal;font-weight:400;line-height:1.45;padding:10px 14px;border-radius:4px;width:min(280px,80vw);box-shadow:0 4px 14px rgba(0,0,0,.25);text-align:left;}
+
+/* ENCADRE */
+#sapere-marges .sm-box{background:#e6ecf2;border-left:4px solid #8b0000;padding:18px 22px;margin:30px 0;}
+#sapere-marges .sm-box p{font-size:18px;line-height:1.65;margin:0;}
+
+/* DIPTYQUE */
+#sapere-marges .sm-dip{margin:34px 0;border:1px solid #c5d2e0;background:#e6ecf2;}
+#sapere-marges .sm-dip-titre{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;padding:16px 20px 14px;border-bottom:1px solid #c5d2e0;}
+#sapere-marges .sm-dip-grid{display:grid;grid-template-columns:1fr 1fr;}
+#sapere-marges .sm-dip-col{padding:18px 20px 22px;}
+#sapere-marges .sm-dip-col.mythe{border-right:1px solid #c5d2e0;background:#f6f9fc;}
+#sapere-marges .sm-dip-head{display:block;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+#sapere-marges .sm-dip-col.mythe .sm-dip-head{color:#3a5a78;}
+#sapere-marges .sm-dip-col.reel .sm-dip-head{color:#8b0000;}
+#sapere-marges .sm-dip-li{display:block;font-size:16px;line-height:1.5;color:#1a1a1a;padding:7px 0 7px 18px;position:relative;}
+#sapere-marges .sm-dip-li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;}
+#sapere-marges .sm-dip-col.mythe .sm-dip-li::before{background:#3a5a78;}
+#sapere-marges .sm-dip-col.reel .sm-dip-li::before{background:#8b0000;}
+
+/* INFOGRAPHIE FOYERS DES MARGES */
+#sapere-marges .sm-foyers{margin:34px 0;border:1px solid #c5d2e0;background:#e6ecf2;border-top:4px solid #8b0000;padding:22px 22px 22px;}
+#sapere-marges .sm-foyers-titre{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-bottom:6px;}
+#sapere-marges .sm-foyers-sub{font-size:14px;color:#555;font-style:italic;margin-bottom:20px;line-height:1.5;}
+#sapere-marges .sm-foyer-row{display:flex;align-items:stretch;gap:0;margin-bottom:10px;border:1px solid #c5d2e0;background:#fff;overflow:hidden;border-radius:3px;}
+#sapere-marges .sm-foyer-icon{flex:0 0 66px;display:flex;align-items:center;justify-content:center;color:#fff;}
+#sapere-marges .sm-foyer-icon svg{width:30px;height:30px;}
+#sapere-marges .sm-foyer-body{flex:1 1 auto;padding:13px 18px;}
+#sapere-marges .sm-foyer-nom{display:block;font-weight:700;font-size:17px;color:#1a1a1a;margin-bottom:3px;}
+#sapere-marges .sm-foyer-nom span{font-weight:400;font-style:italic;color:#777;font-size:15px;}
+#sapere-marges .sm-foyer-desc{display:block;font-size:14px;line-height:1.45;color:#555;}
+#sapere-marges .sm-foyer-lieu{flex:0 0 130px;display:flex;align-items:center;padding:0 16px;border-left:1px solid #eee;font-size:13px;color:#8b0000;font-weight:700;line-height:1.3;}
+#sapere-marges .sm-f1 .sm-foyer-icon{background:#8b0000;}
+#sapere-marges .sm-f2 .sm-foyer-icon{background:#a84040;}
+#sapere-marges .sm-f3 .sm-foyer-icon{background:#7a6a3a;}
+#sapere-marges .sm-f4 .sm-foyer-icon{background:#5a5a5a;}
+#sapere-marges .sm-foyers-note{font-size:13px;font-style:italic;color:#777;margin-top:14px;}
+@media(max-width:640px){
+  #sapere-marges .sm-foyer-row{flex-wrap:wrap;}
+  #sapere-marges .sm-foyer-icon{flex:0 0 100%;padding:8px 0;}
+  #sapere-marges .sm-foyer-lieu{flex:1 1 100%;border-left:none;border-top:1px solid #eee;padding:8px 18px;}
+}
+
+/* ESSENTIELS */
+#sapere-marges .sm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+#sapere-marges .sm-card{background:#e6ecf2;border:1px solid #c5d2e0;border-top:3px solid #8b0000;padding:20px;}
+#sapere-marges .sm-card h3{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;margin:0 0 10px;font-weight:700;}
+#sapere-marges .sm-card p{font-size:17px;line-height:1.6;margin:0;color:#1a1a1a;}
+
+/* COULISSES */
+#sapere-marges #mcontent3 p{font-size:19px;line-height:1.75;margin:0 0 20px;color:#1a1a1a;}
+
+/* CHRONO / BILAN SERIE */
+#sapere-marges .sm-bilan{margin-top:10px;}
+#sapere-marges .sm-bilan-row{display:flex;align-items:stretch;border:1px solid #c5d2e0;background:#fff;margin-bottom:8px;border-radius:3px;overflow:hidden;}
+#sapere-marges .sm-bilan-foyer{flex:0 0 130px;display:flex;align-items:center;justify-content:center;background:#e6ecf2;font-weight:700;font-size:15px;color:#8b0000;text-align:center;padding:12px 10px;border-right:1px solid #c5d2e0;}
+#sapere-marges .sm-bilan-txt{flex:1 1 auto;padding:12px 18px;font-size:16px;line-height:1.5;color:#1a1a1a;}
+#sapere-marges .sm-bilan-txt b{color:#5a0000;}
+@media(max-width:640px){#sapere-marges .sm-bilan-row{flex-direction:column;}#sapere-marges .sm-bilan-foyer{flex:1 1 100%;border-right:none;border-bottom:1px solid #c5d2e0;justify-content:flex-start;}}
+
+@media(max-width:640px){#sapere-marges .sm-grid{grid-template-columns:1fr;}
+#sapere-marges .sm-dip-grid{grid-template-columns:1fr;}
+#sapere-marges .sm-dip-col.mythe{border-right:none;border-bottom:1px solid #c5d2e0;}
+#sapere-marges .sm-progress{gap:3px;}
+#sapere-marges .sm-step-lbl{font-size:8px;line-height:1.15;letter-spacing:-0.2px;word-break:break-word;}
+#sapere-marges .sm-duo{grid-template-columns:1fr;}}
+
+@media print{
+  #sapere-marges .sapere-tab-content{display:block !important;padding:24px 0 30px;}
+  #sapere-marges .sapere-tabs{display:none !important;}
+  #sapere-marges .sapere-tab-content::before{content:attr(data-print-title);display:block;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#8b0000;border-bottom:2px solid #8b0000;padding-bottom:8px;margin-bottom:20px;}
+  #sapere-marges .sh-formule{color:#5a0000 !important;}
+}
+</style>
+
+<!-- HEADER -->
+<div class="sm-header">
+  <p class="sm-serie">Une même fièvre, six foyers · Épisode 6</p>
+  <h1>Les mondes des marges, inventer sans écrire</h1>
+  <p class="sm-sub">En marge des grands récits, des peuples dont aucune parole continue ne nous parvient directement ont bâti des villes, fondu l'or, dressé des dieux. L'histoire les a longtemps effacés, faute de récit écrit qui leur soit propre.</p>
+</div>
+
+<!-- BANDEAU DE SERIE -->
+<div class="sm-bandeau">
+  <div class="sm-bandeau-top">
+    <span class="sm-bandeau-serie">Série <span>Une même fièvre : six foyers du Ve siècle avant notre ère</span></span>
+    <span class="sm-bandeau-compte">Épisode 6 sur 6</span>
+  </div>
+  <div class="sm-progress">
+    <div class="sm-step done"><div class="sm-step-bar"></div><span class="sm-step-lbl">1. Perse</span></div>
+    <div class="sm-step done"><div class="sm-step-bar"></div><span class="sm-step-lbl">2. Grèce</span></div>
+    <div class="sm-step done"><div class="sm-step-bar"></div><span class="sm-step-lbl">3. Inde</span></div>
+    <div class="sm-step done"><div class="sm-step-bar"></div><span class="sm-step-lbl">4. Chine</span></div>
+    <div class="sm-step done"><div class="sm-step-bar"></div><span class="sm-step-lbl">5. Nubie</span></div>
+    <div class="sm-step current"><div class="sm-step-bar"></div><span class="sm-step-lbl">6. Marges</span></div>
+  </div>
+</div>
+
+<input type="radio" name="sm-tabs" id="mtab1" checked>
+<input type="radio" name="sm-tabs" id="mtab2">
+<input type="radio" name="sm-tabs" id="mtab3">
+<input type="radio" name="sm-tabs" id="mtab4">
+
+<div class="sapere-tabs">
+  <label for="mtab1">Article</label>
+  <label for="mtab2">Les Essentiels</label>
+  <label for="mtab3">Les Coulisses</label>
+  <label for="mtab4">Bilan de la série</label>
+</div>
+
+<!-- ===== ARTICLE ===== -->
+<div class="sapere-tab-content" id="mcontent1" data-print-title="Article">
+
+  <p>Cinq épisodes durant, nous avons suivi des mondes que des traditions textuelles, contemporaines ou plus tardives, nous permettent d'entendre : inscriptions royales perses gravées dans la pierre, lois grecques, traditions indiennes d'abord transmises oralement puis fixées, textes chinois constitués au fil des générations, inscriptions égyptiennes du royaume de Koush. Or <strong>l'écrit</strong> est un filtre. Il a longtemps déterminé qui recevait une voix directe dans nos récits historiques. Ce dernier épisode est pour ceux dont la voix nous parvient mal, par fragments ou <strong>pas du tout</strong>.</p>
+
+  <p>Car pendant que ces grands foyers transmettaient ou consignaient leurs traditions, d'autres peuples, tout aussi vivants, inventaient sans laisser de récit écrit qui leur soit propre. Nous les appelons des marges, mais le mot trompe : ils ne l'étaient que depuis nos cartes, dessinées bien plus tard à partir des archives. Pour eux-mêmes, ils étaient des centres. Le titre de cet épisode simplifie d'ailleurs volontairement : certains de ces mondes ne sont pas totalement sans écriture, mais aucun ne nous a laissé un récit historique continu qui permette de les entendre de l'intérieur. Nous ne les connaissons que par ce qu'ils ont façonné, des tombes, des bijoux, des cités, des statues, ou par le regard de leurs voisins qui, eux, écrivaient. <span class="sh-formule">Ils n'ont pas écrit leur histoire, mais ils l'ont bel et bien faite.</span> Leur silence n'est pas un vide : c'est le nôtre, celui de notre ignorance.</p>
+
+  <h2>Le piège de l'écriture</h2>
+
+  <p>Il faut d'abord nommer un préjugé qui a longtemps organisé notre vision du passé. On a confondu deux choses très différentes : avoir une histoire, et l'avoir écrite. De la « préhistoire », catégorie utile pour désigner les sociétés sans sources écrites directes, on a fait une hiérarchie implicite, comme si ne pas écrire revenait à rester en deçà de l'histoire. Le mot « barbare » raconte le même glissement. Il ne désignait pas d'abord un peuple sans écriture, mais celui dont la langue paraissait étrangère aux Grecs, réduite à un bredouillement, un « bla-bla ». La preuve : les Perses, qui écrivaient et administraient un empire, étaient pour les Grecs des barbares. Le mépris linguistique a ensuite nourri le mépris historique.</p>
+
+  <p>Cette confusion a des conséquences immenses. Elle a rendu invisibles des sociétés entières, qui avaient pourtant des rois, des dieux, des techniques, des routes, un art. <span class="sh-formule">L'absence de textes conservés n'est pas l'absence d'histoire : elle nous prive d'une parole directe, pas de toute archive.</span> Le Ve siècle ne se réduit donc pas aux foyers lettrés que nous avons suivis, à condition de savoir lire autre chose que des mots.</p>
+
+  <p>Ne nous méprenons pas pour autant. Il ne s'agit pas de nier la puissance de l'écriture. Elle transforme l'État, la loi, <strong>la mémoire</strong>, la religion. Elle permet de commander à distance, de fixer les dettes, de transmettre des doctrines par-delà les siècles. Un empire qui écrit n'administre pas comme un royaume qui ne le fait pas. Mais l'écriture n'est pas la condition de toute invention humaine : elle est une forme de mémoire parmi d'autres, non le brevet d'entrée dans l'histoire.</p>
+
+  <figure class="sm-dip">
+    <figcaption class="sm-dip-titre">Deux façons de regarder <strong>les mondes</strong> sans récit propre conservé</figcaption>
+    <div class="sm-dip-grid">
+      <div class="sm-dip-col mythe">
+        <span class="sm-dip-head">Le préjugé ancien</span>
+        <span class="sm-dip-li">Des « barbares » restés en deçà de <strong>la civilisation</strong>.</span>
+        <span class="sm-dip-li">Une « préhistoire » attardée, sans histoire véritable.</span>
+        <span class="sm-dip-li">Des peuples figés, sans art ni pensée dignes de ce nom.</span>
+        <span class="sm-dip-li">Le silence pris pour un vide.</span>
+      </div>
+      <div class="sm-dip-col reel">
+        <span class="sm-dip-head">Ce que révèle <strong>l'archéologie</strong></span>
+        <span class="sm-dip-li">Des sociétés organisées, avec croyances, techniques et réseaux d'échange.</span>
+        <span class="sm-dip-li">Un art parfois d'une finesse extrême, or et terre cuite.</span>
+        <span class="sm-dip-li">Des habitats organisés, parfois de grands centres urbains, des réseaux d'échange à longue distance.</span>
+        <span class="sm-dip-li">Le silence pris pour ce qu'il est : notre ignorance.</span>
+      </div>
+    </div>
+  </figure>
+
+  <h2>Ceux qui parlaient par <strong>l'or</strong> et <strong>le fer</strong></h2>
+
+  <p>Une précision s'impose avant de partir à leur rencontre. Aucun de ces mondes ne tient dans une date exacte : l'archéologie travaille par horizons, par couches, par fourchettes. Ce que nous appelons ici le Ve siècle est moins un instant qu'un voisinage chronologique. Et ces peuples ne sont pas muets au sens strict : beaucoup nous sont connus par les textes de leurs voisins, grecs ou romains. Leur histoire existe donc, mais filtrée par un regard étranger, tantôt hostile, tantôt fasciné.</p>
+
+  <figure class="sm-carte-fig">
+    <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" class="sm-map-svg" role="img" aria-label="Carte du monde situant les quatre foyers au Ve siecle avant notre ere : Scythes des steppes pontiques, Celtes et La Tene en Europe, culture Nok au Nigeria, Monte Alban au Mexique">
+<defs><style>
+.sm-map-land{fill:#d9e2ec;stroke:#b6c4d6;stroke-width:0.5;}
+.sm-map-nom{font-family:Georgia,serif;font-size:19px;font-weight:700;fill:#1a1a1a;}
+.sm-map-sub{font-family:Georgia,serif;font-size:13.5px;font-style:italic;fill:#666;}
+</style></defs>
+<rect x="0" y="0" width="1000" height="500" fill="#eef3f8"/>
+<g class="sm-map-land"><path d="M670,151L675,152L679,149L682,146L688,147L693,146L697,143L698,147L704,146L709,147L703,148L698,150L697,156L694,158L691,162L686,163L684,167L679,168L674,169L669,167L671,163L668,158L670,151Z"/><path d="M545,266L547,271L553,272L556,269L560,272L562,277L565,280L566,285L561,286L561,295L564,299L559,300L553,299L539,298L534,298L534,291L535,286L538,281L536,277L536,271L534,267L545,266Z"/><path d="M557,134L556,140L554,135L557,134Z"/><path d="M643,183L650,183L654,179L654,185L644,186L643,183Z"/><path d="M318,403L312,402L309,396L312,400L319,402L318,403Z"/><path d="M320,311L325,311L331,316L337,319L340,321L337,325L343,327L348,324L344,330L340,334L338,339L338,344L341,348L342,353L340,356L335,358L330,358L327,362L323,364L320,367L324,368L319,371L315,375L312,379L318,381L313,385L309,390L311,395L300,394L297,391L298,386L300,380L301,375L300,367L301,361L303,357L302,352L304,348L306,342L304,337L306,332L308,326L310,318L314,314L320,311Z"/><path d="M621,136L627,137L629,140L623,139L621,136Z"/><path d="M335,472L327,475L321,475L316,473L322,473L328,473L332,471L335,472Z"/><path d="M58,471L52,471L47,469L52,468L57,470L58,471Z"/><path d="M375,467L379,470L375,473L366,475L360,475L353,475L356,472L360,470L365,467L370,466L375,467Z"/><path d="M225,450L231,450L224,451L217,451L225,450Z"/><path d="M310,447L306,451L299,451L292,450L297,448L301,445L305,441L308,445L310,447Z"/><path d="M337,428L332,429L326,431L323,435L318,438L322,441L326,444L329,447L331,452L328,457L323,458L317,460L310,461L304,463L295,463L285,463L291,465L295,466L288,467L283,469L287,472L297,473L302,474L311,476L317,476L324,477L334,479L338,481L346,479L351,478L357,478L362,477L369,477L375,477L381,478L387,476L394,476L399,475L404,475L410,474L416,474L412,470L406,471L400,470L406,466L414,465L420,463L427,462L434,462L441,461L447,460L454,458L457,453L463,452L468,450L475,448L479,449L484,447L492,448L498,448L505,448L511,447L517,446L522,444L528,446L534,445L541,445L547,444L553,444L560,445L566,446L572,446L578,445L583,444L589,443L593,441L598,442L603,442L607,444L611,442L617,441L623,440L627,438L634,437L641,436L646,433L651,433L659,434L663,437L668,438L673,439L678,437L683,438L689,439L694,442L691,444L689,450L694,451L699,449L703,446L707,444L713,443L717,442L722,439L728,437L735,437L741,437L744,434L749,437L757,437L764,437L772,437L779,436L786,432L791,434L798,436L803,436L808,435L814,434L819,434L824,435L829,437L836,437L840,435L848,435L855,435L863,435L869,434L875,433L879,435L885,436L891,436L897,436L904,436L907,439L913,440L921,441L927,441L933,442L939,443L944,444L949,446L955,446L961,447L968,447L974,448L972,453L967,455L961,457L956,460L954,464L958,467L964,469L955,470L947,471L944,475L949,477L955,479L963,481L969,481L979,483L989,484L995,485L0,485L8,485L16,485L28,483L36,485L44,486L50,486L61,487L69,486L81,487L87,488L95,487L102,486L92,485L83,484L73,482L76,479L71,477L64,475L71,475L78,475L86,475L91,474L85,470L79,470L69,470L63,468L60,464L69,464L75,465L83,464L90,463L94,459L99,460L107,459L114,458L121,457L127,457L133,456L140,457L148,457L156,457L164,457L170,456L177,456L183,455L188,458L194,458L201,459L209,458L217,459L222,458L215,456L212,452L218,452L225,453L229,454L236,454L243,453L250,454L258,453L263,454L270,455L276,454L284,454L288,455L295,455L301,454L309,453L313,451L311,447L310,443L313,439L315,435L318,433L323,430L329,429L336,427L341,426L337,428Z"/><path d="M904,363L910,363L911,370L906,371L904,367L904,363Z"/><path d="M899,288L902,291L904,295L906,299L910,304L913,307L916,312L919,315L922,318L925,322L927,328L925,334L923,340L920,344L918,349L917,354L912,355L908,357L902,357L897,357L891,356L888,352L884,349L882,345L878,347L874,342L869,339L865,337L856,339L850,339L845,342L841,344L835,344L831,346L826,347L821,346L822,339L820,335L818,330L817,326L815,321L816,315L817,310L822,309L828,307L836,305L840,301L842,296L845,293L849,290L853,288L857,291L861,288L865,284L868,281L873,283L879,283L878,288L879,293L884,297L889,299L892,296L893,290L894,285L896,280L898,284L899,288Z"/><path d="M547,116L545,120L538,121L534,119L528,120L532,118L536,116L541,114L547,115L547,116Z"/><path d="M632,136L638,137L636,142L629,142L627,139L629,136L632,136Z"/><path d="M509,107L516,108L512,111L509,109L509,107Z"/><path d="M507,233L505,225L502,221L505,218L511,220L508,225L507,233Z"/><path d="M492,223L487,223L485,217L488,213L494,210L499,208L501,211L506,215L503,219L498,220L492,220L492,223Z"/><path d="M757,189L751,187L747,189L746,184L747,180L752,180L755,183L757,189Z"/><path d="M563,127L571,129L576,127L577,132L573,134L566,135L562,132L563,127Z"/><path d="M553,125L552,132L548,129L544,126L550,125L553,125Z"/><path d="M565,100L571,99L574,96L578,94L583,95L587,100L591,102L588,105L585,107L579,107L573,106L567,107L565,101L565,100Z"/><path d="M325,311L321,313L316,311L312,314L309,307L308,301L307,294L309,288L307,280L313,279L319,277L321,285L326,286L330,287L333,292L338,295L340,300L339,305L333,304L328,305L326,312L325,311Z"/><path d="M340,334L344,330L347,327L351,325L348,321L349,317L346,313L339,311L338,306L340,300L338,297L333,295L332,290L329,287L324,285L318,282L315,278L311,280L305,281L304,276L299,278L296,273L297,268L301,263L306,262L307,254L306,248L311,245L316,248L321,246L324,244L321,239L328,238L332,236L335,239L334,245L340,245L345,244L351,243L355,241L360,245L360,250L365,253L371,253L375,254L379,257L385,258L393,260L397,263L402,265L404,270L402,275L397,281L393,286L392,294L391,300L390,304L387,308L384,312L376,315L371,317L365,322L365,328L359,336L355,340L352,344L351,339L346,336L342,334L340,334Z"/><path d="M755,173L751,175L749,172L755,173Z"/><path d="M571,301L576,307L580,310L575,315L572,319L567,321L561,323L556,319L555,311L558,301L564,300L570,299L571,301Z"/><path d="M542,229L550,228L553,225L558,224L562,220L565,222L568,227L572,231L576,235L570,236L565,237L560,238L554,236L551,240L546,241L542,239L540,235L542,229Z"/><path d="M157,115L151,114L147,112L143,110L151,110L156,114L157,115Z"/><path d="M344,109L347,113L353,115L353,120L349,117L346,120L341,118L335,117L338,114L341,109L345,107L344,109Z"/><path d="M131,100L136,105L132,102L131,100Z"/><path d="M263,68L270,70L273,72L266,73L258,73L260,70L263,68Z"/><path d="M234,58L229,58L223,57L227,55L232,56L234,58Z"/><path d="M248,57L256,59L257,63L262,59L266,56L274,58L274,64L268,66L262,65L258,69L254,72L248,73L245,75L241,78L238,81L237,86L242,89L248,91L253,92L257,94L264,96L271,97L272,102L278,108L282,104L280,100L286,95L285,89L284,81L285,76L293,77L301,79L307,80L308,86L312,88L316,87L319,84L326,88L329,92L332,95L339,97L342,101L345,105L341,107L337,108L333,110L323,110L316,110L310,114L306,117L302,120L309,116L315,114L322,115L320,119L325,123L332,119L330,124L324,126L318,129L321,124L314,125L312,119L306,120L303,124L296,125L291,126L287,129L280,129L277,132L271,134L272,129L271,124L267,122L262,119L257,117L251,117L245,116L240,115L236,113L230,114L220,114L211,114L203,114L194,114L186,114L178,114L167,114L159,114L153,111L146,109L141,103L137,99L139,95L134,93L131,90L127,86L124,84L118,86L114,83L108,82L108,67L108,56L114,57L118,58L123,57L131,57L139,55L146,55L151,57L154,55L159,56L167,57L173,58L180,59L185,62L192,62L198,63L203,59L210,61L218,62L227,62L233,60L238,58L232,55L236,50L242,52L246,55L248,57Z"/><path d="M183,47L192,49L197,48L201,47L207,48L210,53L214,54L219,55L215,57L210,59L202,58L197,59L190,59L184,58L177,58L174,56L180,55L188,55L182,54L176,54L171,53L177,52L168,51L173,48L180,46L183,47Z"/><path d="M288,47L282,48L275,46L283,45L288,47Z"/><path d="M260,47L271,45L276,48L281,49L290,49L294,52L299,51L309,54L314,58L309,59L315,61L324,64L327,66L322,69L315,66L311,68L317,70L320,74L316,75L309,73L313,75L316,78L309,77L303,75L296,72L284,72L289,69L295,68L298,63L292,60L286,59L283,56L274,56L264,56L258,55L251,53L249,49L254,46L262,45L260,47Z"/><path d="M221,45L230,45L232,48L227,52L222,51L215,49L221,48L221,45Z"/><path d="M241,48L235,50L237,44L243,44L249,45L244,47L241,48Z"/><path d="M165,52L158,53L150,50L153,47L162,43L173,44L179,46L169,49L165,52Z"/><path d="M226,37L227,42L220,42L215,40L222,37L226,37Z"/><path d="M199,38L206,39L195,42L188,43L177,42L179,38L187,38L192,40L196,37L199,38Z"/><path d="M237,36L246,37L250,39L256,40L264,40L270,39L278,41L272,43L261,43L255,43L243,42L239,38L233,38L237,36Z"/><path d="M177,34L175,37L167,39L159,39L163,36L169,35L177,34Z"/><path d="M222,32L214,32L208,32L212,30L220,31L222,32Z"/><path d="M258,29L253,33L242,32L236,30L231,27L235,25L243,24L252,26L258,29Z"/><path d="M310,19L317,19L323,20L328,20L321,22L315,23L307,26L302,28L297,29L286,30L291,32L284,34L278,36L284,36L276,38L269,38L261,38L251,38L256,36L264,35L260,33L264,30L259,27L266,27L273,26L266,26L257,26L252,25L246,23L253,22L258,21L266,21L271,20L280,19L288,19L298,19L304,19L310,19Z"/><path d="M527,118L525,122L519,122L521,118L527,118Z"/><path d="M309,396L309,402L303,403L296,400L293,397L299,399L305,397L309,396Z"/><path d="M311,310L314,313L310,318L309,324L307,329L306,334L305,342L304,348L302,352L303,357L301,361L301,367L301,372L300,380L298,386L296,390L299,393L307,395L303,397L298,399L292,395L290,390L291,383L293,377L293,373L298,368L294,370L295,361L296,353L298,349L300,344L301,336L301,330L304,321L304,316L305,309L305,301L308,303L311,310Z"/><path d="M806,198L802,196L806,194L806,198Z"/><path d="M855,112L859,113L864,117L870,116L872,122L866,124L864,131L860,132L856,135L851,136L845,139L839,141L838,136L832,139L828,141L830,145L838,146L835,150L831,153L835,157L839,162L839,167L838,172L834,175L832,178L830,182L826,184L822,187L817,188L811,190L807,193L801,190L796,188L793,185L788,187L782,188L778,190L775,186L771,184L774,178L773,173L767,171L763,169L757,173L750,171L747,174L742,172L736,170L731,168L726,165L721,164L718,159L719,155L716,151L712,150L709,147L706,143L708,138L714,136L718,134L723,133L722,125L728,124L731,119L737,119L738,115L743,113L747,116L753,120L756,125L763,127L766,130L771,131L776,132L783,132L787,134L795,133L803,132L809,129L811,125L818,124L824,121L830,120L828,116L822,117L824,111L831,111L834,107L836,102L843,102L850,103L853,107L855,112Z"/><path d="M492,236L484,236L479,238L478,233L477,229L478,224L481,221L487,223L492,223L492,230L492,235L492,236Z"/><path d="M536,244L527,244L525,239L526,232L531,232L534,228L536,224L540,218L543,222L543,229L540,233L542,238L544,242L540,244L536,244Z"/><path d="M586,240L585,246L583,251L581,256L581,262L582,268L585,273L580,274L579,280L582,284L576,284L571,281L565,280L562,277L560,272L557,269L553,271L549,272L546,268L537,266L539,263L544,261L546,255L549,252L550,245L551,240L554,236L558,238L563,237L568,236L573,236L578,238L583,238L586,240Z"/><path d="M536,263L531,261L533,257L539,257L540,252L539,246L544,245L546,241L551,240L550,245L549,250L546,255L544,260L541,264L536,263Z"/><path d="M291,250L285,249L281,246L284,243L285,237L285,231L285,226L290,224L292,219L298,217L297,223L299,228L304,230L307,233L313,233L312,237L313,243L306,245L305,251L306,262L303,256L297,256L294,253L291,250Z"/><path d="M270,227L267,224L262,222L265,219L269,222L270,227Z"/><path d="M271,186L279,187L283,188L287,191L292,193L288,195L283,192L277,189L272,188L267,189L271,186L271,186Z"/><path d="M547,115L542,114L536,113L539,109L545,109L549,111L547,115Z"/><path d="M528,97L533,99L539,101L541,105L537,109L535,112L536,118L529,118L524,117L518,113L517,109L519,105L522,101L526,98L528,97Z"/><path d="M530,93L527,96L522,93L527,90L530,93Z"/><path d="M301,195L306,196L310,198L305,199L301,201L301,195Z"/><path d="M533,185L524,190L516,196L509,197L506,194L496,187L486,181L476,174L480,168L485,167L490,164L493,161L497,159L495,154L500,150L504,148L513,148L520,147L523,151L521,155L523,159L526,166L527,172L526,178L529,182L533,185Z"/><path d="M277,259L275,253L278,249L281,246L285,249L291,250L287,257L282,261L278,262L277,259Z"/><path d="M597,168L595,173L590,167L593,173L595,177L599,184L602,188L591,189L581,189L569,189L569,179L569,169L569,164L574,162L579,164L584,163L589,164L595,163L597,168Z"/><path d="M618,215L614,212L609,210L604,211L602,205L605,202L609,206L614,210L617,213L618,215Z"/><path d="M475,134L478,128L485,129L490,129L496,130L501,132L508,132L506,135L500,139L499,144L494,148L488,148L484,150L479,147L480,142L481,136L477,133L475,134Z"/><path d="M568,89L565,86L572,84L578,85L576,90L571,89L568,89Z"/><path d="M605,208L611,210L616,213L616,218L619,222L630,228L625,236L619,238L613,238L610,240L602,238L598,235L595,231L592,228L594,223L596,220L600,215L601,210L605,208Z"/><path d="M579,58L583,62L584,67L583,73L588,75L584,78L578,82L568,83L562,82L560,79L562,73L569,70L565,66L561,59L569,59L573,56L581,56L579,58Z"/><path d="M330,394L336,393L331,395L330,394Z"/><path d="M354,243L349,244L349,238L351,234L356,237L354,243Z"/><path d="M510,110L516,112L522,114L521,118L517,120L520,124L518,130L513,129L508,132L502,131L496,130L497,122L494,119L488,117L491,114L495,112L504,111L507,108L510,110Z"/><path d="M531,261L528,258L524,253L526,247L531,244L536,245L538,250L540,256L535,257L531,261Z"/><path d="M492,87L489,90L495,90L491,95L497,98L501,102L505,104L502,109L493,110L487,110L491,107L485,106L487,101L492,100L487,98L484,94L486,87L492,87Z"/><path d="M615,135L614,131L622,131L627,133L621,136L615,135Z"/><path d="M503,234L499,235L495,237L491,233L493,227L492,221L497,219L501,222L502,227L502,233L503,234Z"/><path d="M477,229L473,226L470,223L465,224L460,222L461,218L465,216L471,217L477,218L478,224L477,229Z"/><path d="M458,219L455,217L462,215L459,218L458,219Z"/><path d="M574,135L569,136L566,139L567,145L564,149L559,145L556,141L558,137L563,136L568,134L574,135Z"/><path d="M370,20L379,19L389,19L403,18L425,18L442,20L437,21L426,21L411,22L423,22L431,23L436,22L443,24L456,22L465,23L455,26L444,27L451,27L445,31L449,36L440,37L445,39L446,44L440,44L435,46L438,49L433,48L439,51L435,54L429,52L427,55L434,55L430,58L423,60L415,61L409,62L405,65L399,67L393,68L387,70L381,76L380,83L371,81L366,81L361,77L357,73L355,69L351,66L353,60L358,58L352,58L348,55L357,54L352,52L347,52L344,45L341,42L337,40L330,39L324,38L316,39L310,39L302,36L309,35L315,35L303,34L296,33L307,31L317,29L311,27L323,24L333,22L341,22L350,22L360,21L367,22L376,23L370,22L370,20Z"/><path d="M250,212L244,210L245,205L247,201L252,203L255,206L252,210L250,212Z"/><path d="M334,227L338,230L341,233L339,237L341,242L339,246L334,244L334,238L329,233L333,230L334,227Z"/><path d="M257,214L254,212L255,206L261,206L266,207L264,210L260,212L257,214Z"/><path d="M552,122L547,124L548,129L552,132L547,130L542,127L538,125L543,123L546,121L551,123L552,122Z"/><path d="M297,195L301,197L298,200L293,198L299,198L296,195L297,195Z"/><path d="M545,120L547,116L553,116L558,115L563,116L560,119L556,122L551,123L547,121L545,120Z"/><path d="M802,269L807,269L813,269L818,272L813,273L807,273L802,271L796,270L798,267L802,269Z"/><path d="M873,253L876,259L882,255L887,256L892,257L892,266L892,275L886,272L884,267L878,263L871,260L867,258L872,257L866,254L872,252L873,253Z"/><path d="M848,246L844,249L836,249L843,252L838,255L840,259L842,263L838,262L836,257L834,261L833,266L832,260L831,254L833,250L836,246L841,248L847,245L848,246Z"/><path d="M827,245L831,247L826,250L824,254L823,261L818,260L811,260L806,258L804,254L803,249L805,244L807,248L812,246L818,246L821,241L825,238L828,244L827,245Z"/><path d="M794,266L789,264L785,262L782,258L778,252L775,247L771,243L768,239L765,236L771,235L775,240L780,244L785,246L788,250L790,255L795,259L794,266Z"/><path d="M716,151L719,155L720,160L721,164L725,166L722,170L728,172L735,174L742,177L745,173L749,176L756,175L759,170L765,169L770,171L764,176L763,181L759,186L753,185L757,181L750,180L746,177L745,182L747,186L742,190L736,196L733,199L728,203L724,206L723,212L722,217L720,221L717,225L711,221L709,217L707,211L704,206L703,200L702,193L696,192L692,189L689,184L697,182L695,179L696,172L702,170L707,164L709,160L706,157L710,154L716,151Z"/><path d="M483,100L481,105L476,106L473,100L477,98L483,100Z"/><path d="M650,147L654,145L662,146L668,149L669,154L669,161L672,165L672,170L674,174L672,177L666,179L659,179L657,175L652,176L646,173L641,170L639,166L633,165L631,160L626,156L628,151L624,147L623,140L628,142L632,140L635,144L639,146L645,148L650,147Z"/><path d="M626,150L626,156L631,160L633,164L629,169L616,163L612,161L608,157L614,154L615,149L619,146L624,147L626,150Z"/><path d="M460,65L462,69L459,71L451,73L445,73L437,72L433,70L438,68L432,68L439,66L443,67L447,66L455,65L460,65Z"/><path d="M599,159L597,163L599,158L599,159Z"/><path d="M543,144L542,148L535,146L541,144L543,144Z"/><path d="M534,120L538,122L534,124L538,129L542,133L547,136L551,138L546,139L545,144L543,139L539,137L534,134L529,131L525,127L521,129L519,125L523,122L529,121L534,119L534,120Z"/><path d="M599,160L608,157L603,162L604,167L600,169L598,164L599,160Z"/><path d="M892,147L890,152L881,154L877,157L870,155L864,156L865,163L861,159L864,155L868,152L874,151L880,146L886,145L889,140L890,136L894,139L892,144L892,147Z"/><path d="M900,127L904,130L898,133L893,131L889,135L890,130L894,126L900,127Z"/><path d="M697,133L692,135L685,136L684,131L676,129L670,127L663,124L655,125L655,135L650,132L646,134L643,130L640,127L645,124L647,120L642,119L636,121L633,117L629,116L632,110L641,106L651,108L658,108L666,110L671,108L667,106L671,103L681,99L689,97L697,97L701,99L704,101L714,99L722,109L732,108L736,111L741,112L738,115L737,119L731,119L729,124L722,125L725,130L720,131L711,131L706,130L700,131L697,133Z"/><path d="M614,252L612,257L610,262L605,260L595,253L596,247L596,240L598,235L602,238L606,240L613,238L614,252Z"/><path d="M697,133L704,132L710,131L716,131L721,132L718,134L714,136L708,138L705,140L699,141L693,140L697,138L703,136L698,136L697,133Z"/><path d="M787,220L785,216L786,210L792,210L798,211L794,218L790,221L787,220Z"/><path d="M857,143L859,146L860,151L856,153L851,154L850,148L853,144L857,143Z"/><path d="M792,210L791,204L789,199L781,201L781,196L778,193L781,190L784,188L787,192L791,195L794,201L798,206L796,210L792,210Z"/><path d="M479,238L472,234L468,231L472,227L474,230L477,233L479,238Z"/><path d="M541,186L533,185L530,182L526,178L527,173L526,166L530,162L532,158L539,159L544,163L550,165L556,164L558,159L564,159L569,161L569,167L569,179L569,189L566,194L555,190L544,185L541,186Z"/><path d="M727,229L723,233L721,227L723,223L726,226L727,229Z"/><path d="M580,330L578,335L579,330L580,330Z"/><path d="M563,99L559,97L562,94L569,93L574,96L571,99L565,100L563,99Z"/><path d="M558,94L563,90L567,92L571,89L576,90L578,94L574,96L569,94L562,94L558,94Z"/><path d="M486,151L493,152L495,156L496,160L491,162L487,165L480,168L476,170L474,175L468,175L465,181L461,184L459,189L453,190L455,186L457,182L460,177L464,173L470,170L473,167L474,161L479,156L483,152L486,151Z"/><path d="M574,116L580,116L582,120L579,123L577,118L574,116Z"/><path d="M638,285L639,291L639,296L636,303L633,312L631,319L626,321L622,318L620,313L622,309L624,304L622,298L625,295L630,292L633,289L636,285L638,285Z"/><path d="M230,178L229,183L229,189L232,195L237,198L242,199L248,196L249,192L254,190L259,192L257,197L253,200L247,201L249,205L244,208L239,206L233,206L228,205L223,204L218,201L212,199L208,196L207,192L205,187L200,182L196,179L193,175L190,171L187,167L184,162L181,166L184,169L187,173L190,176L192,181L196,185L192,183L188,179L185,176L180,173L179,168L177,164L175,160L181,159L185,161L192,163L199,163L204,162L208,165L211,169L218,167L221,170L224,174L227,178L230,178Z"/><path d="M466,209L470,208L485,207L483,193L482,181L496,187L505,193L509,195L512,203L508,207L503,208L497,208L492,212L488,215L485,220L481,222L477,220L475,216L469,216L467,213L466,209Z"/><path d="M777,194L772,198L774,203L773,208L775,212L777,217L774,222L773,217L772,209L770,203L765,206L763,202L760,196L757,193L759,188L761,184L764,178L768,174L772,171L774,176L771,180L775,186L778,190L777,194Z"/><path d="M744,113L752,110L759,110L763,111L770,112L775,105L780,107L784,110L791,110L797,110L801,113L807,114L814,112L818,110L824,111L821,116L826,118L833,119L826,120L822,123L815,126L809,127L807,131L799,132L792,134L783,132L776,132L771,131L766,130L763,127L756,125L752,123L751,118L744,115L744,113Z"/><path d="M596,282L601,283L607,281L612,279L613,285L613,291L611,295L607,298L601,302L597,305L598,311L599,316L595,319L590,321L589,318L587,312L590,309L591,304L591,296L587,294L584,291L592,289L596,292L597,297L599,291L596,288L596,282Z"/><path d="M466,209L463,205L458,204L455,200L455,194L464,191L464,185L467,178L476,178L486,181L483,193L485,205L473,207L468,207L466,209Z"/><path d="M596,282L596,288L599,291L597,297L595,293L592,289L592,282L592,277L596,282Z"/><path d="M781,233L786,235L787,240L790,245L785,245L781,241L779,237L778,232L781,233Z"/><path d="M829,238L822,238L820,242L816,247L811,247L805,246L809,243L814,241L817,237L821,235L824,231L829,234L829,238Z"/><path d="M545,329L542,325L541,321L540,313L537,308L535,303L533,298L537,297L551,298L559,300L564,299L570,299L565,301L558,301L558,311L555,319L555,329L551,331L547,328L545,329Z"/><path d="M960,309L964,312L960,310L956,307L960,309Z"/><path d="M506,217L503,214L501,210L508,207L512,203L512,197L524,190L533,185L538,186L542,191L543,200L539,206L539,213L532,213L526,214L522,213L515,211L511,214L507,216L506,217Z"/><path d="M524,237L519,238L514,234L510,233L508,228L509,224L510,219L511,214L515,211L519,214L525,214L530,213L536,212L539,215L538,220L535,226L533,229L528,230L524,235L524,237Z"/><path d="M262,219L259,216L260,212L264,210L268,208L268,214L267,219L262,219Z"/><path d="M517,101L519,105L517,109L511,108L513,103L517,101Z"/><path d="M578,52L587,54L582,58L577,55L571,58L566,59L559,57L555,60L550,60L545,63L542,66L538,70L533,75L535,80L532,85L523,88L516,87L514,78L524,74L529,71L534,67L541,62L546,60L553,56L559,55L568,53L578,52Z"/><path d="M569,34L562,35L558,33L564,32L569,34Z"/><path d="M551,29L560,31L553,32L549,34L544,37L538,35L531,31L537,28L542,29L547,28L551,29Z"/><path d="M571,27L576,28L572,29L564,29L556,29L548,27L557,26L564,26L571,27Z"/><path d="M745,173L742,177L737,176L731,174L725,171L726,165L731,168L736,170L742,172L745,173Z"/><path d="M981,364L984,366L981,369L976,373L974,378L970,380L963,378L968,373L974,370L977,366L980,362L981,364Z"/><path d="M985,350L989,354L994,354L992,359L990,363L987,366L986,361L985,356L983,350L980,346L984,348L985,350Z"/><path d="M664,191L660,195L657,198L654,201L649,204L644,197L653,194L655,189L654,184L661,184L665,187L664,191Z"/><path d="M709,147L712,150L716,151L710,154L705,155L707,159L704,167L699,172L693,175L697,180L691,182L687,181L679,180L671,180L676,176L674,172L670,169L677,168L684,167L686,163L690,162L694,158L697,156L699,151L703,148L709,147Z"/><path d="M284,230L282,226L277,227L271,227L275,225L279,223L284,225L284,230Z"/><path d="M307,299L301,298L296,295L291,292L288,288L286,284L283,279L280,273L276,268L274,263L277,259L280,264L284,258L290,254L293,251L297,256L303,256L306,262L301,263L297,266L295,270L297,275L302,278L305,281L309,285L308,290L308,296L307,299Z"/><path d="M851,227L851,233L845,233L843,228L839,231L842,227L847,225L851,227Z"/><path d="M829,224L825,227L829,223L832,218L829,224Z"/><path d="M837,199L840,203L838,206L840,211L844,212L836,212L834,208L834,201L837,199Z"/><path d="M922,265L917,268L912,266L917,264L921,262L922,265Z"/><path d="M909,271L913,275L919,279L911,278L907,275L902,271L898,273L895,275L892,266L892,257L896,259L902,261L905,264L910,267L909,271Z"/><path d="M925,262L922,260L919,258L923,259L925,262Z"/><path d="M542,108L540,104L545,99L552,98L558,99L565,99L566,104L567,109L563,113L557,113L551,111L547,110L542,108Z"/><path d="M863,132L860,136L855,139L853,144L849,145L848,140L851,136L856,135L860,132L863,132Z"/><path d="M475,134L481,134L480,138L480,143L478,148L475,144L475,138L475,134Z"/><path d="M326,312L327,307L333,304L338,305L339,311L345,312L347,317L348,321L345,326L337,325L340,321L337,319L331,316L326,312Z"/><path d="M563,117L569,117L574,116L578,120L580,124L578,128L572,128L567,128L562,127L558,124L560,119L563,117Z"/><path d="M899,109L902,114L896,117L899,122L894,120L894,114L895,108L894,102L896,99L898,103L899,109Z"/><path d="M14,65L23,64L28,67L21,68L17,71L11,70L5,68L0,67L0,58L7,61L14,63L14,65Z"/><path d="M903,40L891,42L880,41L886,39L893,39L903,40Z"/><path d="M660,54L649,53L643,51L646,48L651,45L655,43L661,40L670,38L679,38L684,37L689,36L680,40L671,41L662,44L658,46L654,49L660,54Z"/><path d="M797,36L809,37L815,38L806,43L811,45L817,46L830,46L842,47L848,46L857,47L860,52L867,50L872,52L882,52L889,51L915,49L925,53L936,53L942,53L947,57L956,56L961,57L966,57L971,59L973,55L982,56L988,56L996,57L1000,70L993,71L997,74L993,76L985,78L978,81L974,82L969,82L962,84L954,84L950,88L953,94L949,96L945,99L940,103L936,108L933,102L932,96L935,91L940,89L945,85L950,82L955,80L957,76L952,79L945,82L943,78L935,79L928,84L924,86L920,85L913,86L904,85L895,86L886,91L875,98L881,100L889,99L893,103L891,108L889,115L885,119L880,125L876,128L871,131L864,132L864,125L870,125L873,119L875,115L868,117L863,115L855,112L853,107L850,103L843,102L836,102L834,107L831,111L827,112L821,112L814,112L807,114L801,113L797,110L791,110L784,110L780,107L775,105L772,108L766,111L762,110L756,109L747,113L741,112L736,111L732,108L724,107L716,102L713,100L707,101L701,99L697,97L692,96L682,98L671,100L669,104L670,109L662,108L655,109L645,106L635,109L630,113L631,117L635,119L632,123L630,126L632,131L635,134L629,134L624,131L618,130L611,129L607,127L602,124L606,122L608,117L611,113L607,111L602,110L597,108L594,105L588,105L591,102L587,100L583,95L578,94L576,90L578,85L584,78L588,75L583,73L584,67L581,64L579,60L586,57L594,57L601,58L612,61L607,67L594,65L597,68L601,72L610,71L617,65L622,66L623,61L628,60L633,64L640,61L649,59L654,60L663,59L670,58L676,57L690,61L686,57L690,50L694,47L702,48L700,52L702,58L698,66L705,64L708,62L705,58L707,54L703,52L708,50L712,52L715,49L721,49L726,51L724,45L735,45L741,45L745,41L751,40L758,40L766,38L775,38L781,36L790,34L795,35L797,36Z"/><path d="M792,32L776,34L781,30L793,31L792,32Z"/><path d="M642,26L636,27L629,27L634,26L643,26L642,26Z"/><path d="M778,31L772,31L764,30L759,29L753,27L760,25L767,24L772,26L778,28L778,31Z"/><path d="M476,175L467,178L467,185L464,191L453,191L459,190L461,184L465,181L467,177L471,175L476,175Z"/><path d="M619,205L616,200L614,196L609,191L607,184L603,181L601,176L598,172L600,169L604,167L603,162L608,161L616,163L624,169L632,169L636,173L639,176L641,181L644,186L653,188L653,194L644,197L636,198L632,202L626,202L621,201L619,205Z"/><path d="M594,224L592,220L589,217L587,223L582,222L578,224L572,222L568,225L565,222L563,218L562,212L564,206L566,196L569,189L581,189L591,189L602,189L603,195L605,199L602,203L601,209L600,215L597,219L594,223L594,224Z"/><path d="M594,224L592,228L595,231L598,235L594,238L589,240L583,238L578,238L574,233L570,229L566,226L569,223L574,224L580,224L586,223L590,219L594,221L594,224Z"/><path d="M454,212L451,209L454,205L460,204L464,207L466,211L468,215L462,215L456,215L460,213L454,212Z"/><path d="M468,231L464,228L465,223L470,224L469,229L468,231Z"/><path d="M636,224L633,228L621,224L618,221L624,221L630,220L634,218L636,224Z"/><path d="M638,218L642,220L639,228L635,235L629,242L622,247L617,253L614,242L616,239L621,236L633,228L636,224L637,218L638,218Z"/><path d="M558,124L562,126L564,130L560,133L555,130L553,127L554,122L558,124Z"/><path d="M341,233L347,233L349,238L349,244L343,245L341,241L339,237L341,233Z"/><path d="M552,113L558,113L561,115L555,116L550,117L551,113L552,113Z"/><path d="M538,121L544,120L541,124L538,121Z"/><path d="M562,67L559,71L555,73L550,76L548,80L552,83L550,86L546,92L541,94L536,96L533,90L531,87L534,83L533,75L538,72L542,66L545,63L549,61L555,60L561,59L565,61L566,67L562,67Z"/><path d="M608,157L602,160L600,156L600,150L606,147L613,147L615,151L608,157Z"/><path d="M540,214L538,210L542,204L544,195L541,186L555,190L566,196L566,207L562,210L561,215L564,218L558,224L553,225L550,228L545,229L542,226L539,222L542,218L540,214Z"/><path d="M505,233L502,231L501,224L502,219L504,224L504,231L505,233Z"/><path d="M785,216L780,215L776,220L777,224L779,229L784,233L778,232L775,228L774,222L777,217L775,212L773,208L774,203L770,199L773,195L778,193L781,196L781,201L786,200L791,202L793,207L790,210L784,213L785,216Z"/><path d="M697,138L693,140L699,141L705,140L708,143L704,146L700,148L698,144L693,146L688,147L689,142L692,139L696,136L697,138Z"/><path d="M670,151L665,146L659,144L652,146L650,142L646,139L652,136L649,133L654,135L658,134L663,131L667,135L672,136L676,141L681,143L685,146L680,147L676,150L670,151Z"/><path d="M526,166L525,161L521,157L523,151L526,146L531,148L530,153L532,158L530,162L526,166Z"/><path d="M603,135L610,136L615,135L621,136L624,140L623,145L619,146L613,147L607,148L602,148L596,148L590,150L585,148L577,148L573,144L576,138L581,136L587,136L593,133L603,135Z"/><path d="M576,137L573,134L578,133L576,137Z"/><path d="M838,182L837,187L835,182L838,182Z"/><path d="M594,253L605,259L609,263L608,268L609,274L611,278L607,281L601,283L596,282L594,277L589,275L585,273L582,268L581,262L585,260L586,255L594,253Z"/><path d="M589,253L583,254L583,248L586,245L587,239L593,239L597,245L595,249L589,253Z"/><path d="M588,105L594,105L597,108L602,110L607,111L611,113L608,117L604,119L597,121L601,124L594,127L590,124L588,120L582,124L582,118L576,115L572,117L566,117L561,115L565,110L568,106L576,107L581,107L586,105L588,105Z"/><path d="M340,334L345,336L348,337L352,341L351,346L345,347L339,346L338,339L340,334Z"/><path d="M237,113L243,115L251,117L257,117L262,119L266,121L271,124L272,129L269,133L277,132L281,130L287,129L291,126L296,125L302,124L306,120L310,118L312,123L308,128L304,130L306,134L300,135L295,136L292,142L289,147L288,141L288,147L288,153L283,156L277,160L274,163L275,169L278,175L276,180L272,176L270,171L267,167L262,166L254,166L252,169L245,168L239,167L234,170L230,173L229,178L225,177L222,172L220,168L214,170L209,166L205,163L199,162L192,163L185,161L181,159L175,160L171,156L166,154L162,150L160,146L156,142L154,138L154,131L155,126L155,120L154,116L159,119L159,114L167,114L175,114L186,114L194,114L203,114L211,114L220,114L230,114L236,114L237,113Z"/><path d="M69,52L77,53L84,54L90,55L95,55L101,55L108,56L108,67L108,82L114,83L118,86L124,84L127,86L131,90L134,93L139,95L133,96L129,91L125,88L117,88L111,85L104,83L95,82L88,81L84,84L79,86L82,80L76,83L72,85L69,90L61,93L57,96L49,97L42,99L48,96L54,94L59,92L62,88L56,86L50,87L45,84L41,82L42,76L47,75L53,73L49,71L42,71L37,69L43,65L51,66L45,64L41,61L47,57L50,55L58,53L65,52L69,52Z"/><path d="M685,146L681,143L676,141L672,136L667,135L663,131L658,134L655,125L663,123L667,126L672,129L680,129L683,133L689,136L696,133L700,135L697,138L693,137L688,140L690,144L686,146L685,146Z"/><path d="M302,217L300,223L305,218L310,220L316,220L321,221L328,220L331,224L334,227L332,231L331,237L326,239L320,239L321,243L318,247L313,244L312,239L313,233L307,233L304,230L299,229L298,225L299,219L302,217Z"/><path d="M800,190L796,193L794,197L798,204L802,208L804,213L801,219L796,224L792,226L790,221L795,220L799,216L799,208L796,204L792,198L790,192L785,190L790,187L796,187L800,190Z"/><path d="M648,204L642,208L638,209L634,211L630,213L625,214L620,213L618,208L620,204L626,202L631,203L634,200L644,197L647,202L648,204Z"/><path d="M588,331L585,335L580,339L576,342L572,344L566,344L560,345L556,347L551,344L551,338L547,333L545,329L551,331L555,329L555,319L557,324L563,322L570,321L574,318L578,313L582,311L588,316L588,322L585,324L591,324L589,330L588,331Z"/><path d="M580,330L575,333L580,334L580,330Z"/><path d="M591,276L593,279L593,285L584,291L580,295L577,298L570,299L564,299L561,295L561,286L567,286L566,280L572,283L578,284L582,287L580,283L580,277L584,273L589,275L591,276Z"/><path d="M587,312L580,310L577,307L573,304L570,299L577,298L580,296L584,293L588,295L591,300L591,306L587,312Z"/></g>
+<circle cx="603" cy="117" r="6" fill="#8b0000" stroke="#fff" stroke-width="2"/><text x="617" y="113" text-anchor="start" class="sm-map-nom">Les Scythes</text><text x="617" y="128" text-anchor="start" class="sm-map-sub">steppes pontiques</text><circle cx="510" cy="112" r="6" fill="#8b0000" stroke="#fff" stroke-width="2"/><text x="496" y="100" text-anchor="end" class="sm-map-nom">Les Celtes</text><text x="496" y="116" text-anchor="end" class="sm-map-sub">Champagne, Marne-Moselle</text><circle cx="519" cy="119" r="6" fill="#8b0000" stroke="#fff" stroke-width="2"/><text x="533" y="151" text-anchor="start" class="sm-map-nom">La Tène</text><text x="533" y="166" text-anchor="start" class="sm-map-sub">lac de Neuchâtel</text><circle cx="525" cy="224" r="6" fill="#b8860b" stroke="#fff" stroke-width="2"/><text x="539" y="228" text-anchor="start" class="sm-map-nom">Culture Nok</text><text x="539" y="243" text-anchor="start" class="sm-map-sub">terres cuites et fer, Nigeria</text><circle cx="231" cy="203" r="6" fill="#555" stroke="#fff" stroke-width="2"/><text x="217" y="207" text-anchor="end" class="sm-map-nom">Monte Albán</text><text x="217" y="222" text-anchor="end" class="sm-map-sub">cité zapotèque, Mexique</text>
+</svg>
+    <figcaption>Quatre foyers au Ve siècle avant notre ère, dispersés des steppes eurasiennes à la Mésoamérique : les Scythes au nord de la mer Noire, les Celtes et le site de La Tène en Europe, la culture Nok au Nigeria, Monte Albán dans la vallée d'Oaxaca. <span class="sm-credit">Carte : SAPERE.</span></figcaption>
+  </figure>
+
+  <p>Partons vers <strong>les steppes</strong>, au nord de la mer Noire. Là galopent les <span class="sapere-tooltip" tabindex="0" data-tooltip="Peuples nomades des steppes eurasiennes, redoutables cavaliers, actifs au premier millénaire av. J.-C. Sans écriture propre, ils sont connus par l'archéologie et par les Grecs, notamment Hérodote.">Scythes</span>, des cavaliers nomades que les Grecs redoutent et méprisent à la fois. Ils n'ont pas d'écriture propre, pas de villes de pierre, et ce que nous savons d'eux, c'est en partie <strong>Hérodote</strong>, un Grec, qui nous le raconte. Et pourtant, quand on ouvre leurs tombes, on découvre un art de l'or d'une finesse stupéfiante : cerfs bondissants, panthères lovées, scènes de chasse ciselées dans le métal précieux. Les élites des steppes faisaient produire et circuler un art animalier d'une grande sophistication, nourri de traditions locales et d'échanges avec les mondes grec et perse voisins.</p>
+
+  <p>Poussons plus à l'ouest, vers l'Europe celtique. Au moment même où commence notre siècle s'épanouit la culture dite de <span class="sapere-tooltip" tabindex="0" data-tooltip="Second âge du fer européen (vers 450-25 av. J.-C.), associé aux cultures celtiques. Connue surtout par l'archéologie : art, métallurgie, échanges. Certaines langues celtiques ont pourtant été notées par écrit, comme le lépontique en Italie du Nord.">La Tène</span>. Une grande partie de ces sociétés, au nord du monde méditerranéen, ne produit pas de tradition écrite durable et autonome comparable à celle des cités grecques. Mais elles développent une métallurgie élaborée, dessinent un art fait de spirales et d'entrelacs, échangent d'un bout à l'autre du continent. Une grande part de leur transmission semble avoir reposé sur l'oralité, non sur le parchemin. Elle n'en constitue pas moins une mémoire.</p>
+
+  <p>Descendons enfin vers l'Afrique de l'Ouest, sur les hauts plateaux de l'actuel Nigeria. Là, ce que les archéologues regroupent sous le nom de culture <span class="sapere-tooltip" tabindex="0" data-tooltip="Ensemble archéologique d'Afrique de l'Ouest (actuel Nigeria), défini par des sites et des objets du milieu du premier millénaire av. J.-C. Connu pour sa statuaire en terre cuite et une maîtrise précoce du fer. On ignore comment ces populations se nommaient.">Nok</span>, à partir de sites dispersés, a produit dès avant notre siècle des statues de terre cuite au visage saisissant, et connu tôt la réduction du fer. Sans un mot écrit, ces artisans nous ont laissé quelques-unes des plus anciennes représentations humaines en terre cuite d'Afrique subsaharienne. <span class="sh-formule">Le génie technique et artistique n'a jamais eu besoin de l'alphabet pour laisser trace.</span></p>
+
+  <h2>Ceux qui bâtissaient des villes</h2>
+
+  <p>Traversons maintenant l'océan, vers la Mésoamérique, là où aucune rumeur du monde grec, perse ou chinois n'est jamais parvenue. Dans la vallée d'<strong>Oaxaca</strong>, au sud de l'actuel Mexique, une cité s'élève sur les hauteurs : <span class="sapere-tooltip" tabindex="0" data-tooltip="Capitale de la civilisation zapotèque, fondée vers 500 av. J.-C. sur un promontoire de la vallée d'Oaxaca (Mexique). Elle deviendra l'un des grands centres urbains de Mésoamérique.">Monte Albán</span>. Fondée autour de 500, en plein dans notre siècle, elle amorce alors un développement qui en fera, au fil des siècles suivants, l'un des principaux centres urbains de Mésoamérique, avec ses places, ses temples et sa population nombreuse.</p>
+
+  <figure class="sm-hero sm-hero-red">
+    <img src="https://sapere.page/wp-content/uploads/2026/07/Monte_Alban_West_Side_Platform.jpg" alt="Plateforme du côté ouest de la grande place de Monte Albán, dans la vallée d'Oaxaca au Mexique">
+    <figcaption>La plateforme ouest de la grande place de Monte Albán, dans la vallée d'Oaxaca, au sud de l'actuel Mexique. Fondée vers 500 avant notre ère, la cité zapotèque deviendra l'un des grands centres urbains de Mésoamérique. <span class="sm-credit">Photo : domaine public.</span></figcaption>
+  </figure>
+
+  <p>Le cas est troublant, et c'est pour cela qu'il conclut notre parcours. Car ce dernier exemple en révèle la limite : « sans écrire » ne désigne pas une frontière nette, mais des degrés très inégaux d'accès à une parole propre. Les <span class="sapere-tooltip" tabindex="0" data-tooltip="Peuple de Mésoamérique, bâtisseur de Monte Albán. Il développe très tôt un système de signes glyphiques, parmi les plus anciens des Amériques.">Zapotèques</span> ne sont pas « sans écriture » : ils gravent déjà des signes, un système glyphique parmi les plus anciens du continent américain, associé au pouvoir et à la guerre. Ils se tiennent exactement sur la frontière, entre les mondes dont la voix ne nous parvient pas et ceux qui commencent à écrire. Ils montrent que cette frontière que nous croyions nette n'est pas une porte, mais une zone grise. <span class="sh-formule">L'écriture n'est pas un seuil qu'on franchit d'un coup, mais un horizon vers lequel on chemine.</span></p>
+
+  <figure class="sm-foyers">
+    <figcaption class="sm-foyers-titre">Quatre foyers dont la voix propre nous est peu ou mal conservée, au Ve siècle</figcaption>
+    <p class="sm-foyers-sub">Sans récit écrit qui leur soit propre, ces peuples nous ont laissé de l'or, du fer, des statues, des villes. Nous les connaissons par ce qu'ils ont façonné, ou par le regard de leurs voisins lettrés, non par leur propre parole.</p>
+    <div class="sm-foyer-row sm-f1">
+      <div class="sm-foyer-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17l3-9 4 4 4-6 3 11"/><path d="M4 20h16"/></svg>
+      </div>
+      <div class="sm-foyer-body">
+        <span class="sm-foyer-nom">Les Scythes <span>(steppes)</span></span>
+        <span class="sm-foyer-desc">Cavaliers nomades, orfèvres de génie. Leur or ciselé, retrouvé dans <strong>les tombes</strong>, égale les plus belles cités lettrées.</span>
+      </div>
+      <div class="sm-foyer-lieu">Nord de la mer Noire</div>
+    </div>
+    <div class="sm-foyer-row sm-f2">
+      <div class="sm-foyer-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 3-3 6 0 9s3 6 0 9"/><path d="M12 12c3-2 6-2 8 0"/><path d="M12 12c-3-2-6-2-8 0"/></svg>
+      </div>
+      <div class="sm-foyer-body">
+        <span class="sm-foyer-nom">Les Celtes <span>(La Tène)</span></span>
+        <span class="sm-foyer-desc">Métallurgie élaborée et art d'entrelacs. Traditions largement <strong>orales</strong> et échanges à longue distance, d'un bout à l'autre de l'Europe.</span>
+      </div>
+      <div class="sm-foyer-lieu">Europe continentale</div>
+    </div>
+    <div class="sm-foyer-row sm-f3">
+      <div class="sm-foyer-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21c0-4 2.5-6 6-6s6 2 6 6"/></svg>
+      </div>
+      <div class="sm-foyer-body">
+        <span class="sm-foyer-nom">La culture Nok <span>(Afrique de l'Ouest)</span></span>
+        <span class="sm-foyer-desc">Statues de terre cuite au visage saisissant, maîtrise précoce du fer. Parmi les plus anciennes représentations humaines en terre cuite d'Afrique subsaharienne.</span>
+      </div>
+      <div class="sm-foyer-lieu">Actuel Nigeria</div>
+    </div>
+    <div class="sm-foyer-row sm-f4">
+      <div class="sm-foyer-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9 21v-5h6v5"/></svg>
+      </div>
+      <div class="sm-foyer-body">
+        <span class="sm-foyer-nom">Monte Albán <span>(Zapotèques)</span></span>
+        <span class="sm-foyer-desc">Cité fondée <strong>vers 500</strong>, appelée à devenir l'un des grands centres urbains de Mésoamérique. Cas-limite : ses glyphes précoces brouillent la frontière de l'écriture.</span>
+      </div>
+      <div class="sm-foyer-lieu">Vallée d'Oaxaca, Mexique</div>
+    </div>
+    <p class="sm-foyers-note">Attention : ces cultures se datent par l'archéologie, en fourchettes larges. Les bornes indiquées sont des ordres de grandeur, non des dates précises.</p>
+  </figure>
+
+  <h2>Rendre la parole aux silencieux</h2>
+
+  <p>Que nous disent, ensemble, ces foyers dont la parole directe nous manque ? Qu'au Ve siècle, l'invention ne s'est pas concentrée en quatre ou cinq points lumineux du globe, laissant le reste dans les ténèbres. Elle fut plus dispersée que nos récits ne l'ont admis. Sur les steppes, dans les forêts d'Europe, sur les plateaux d'Afrique, dans les vallées d'Amérique, des sociétés inventaient leurs formes propres du beau, du sacré, du pouvoir. Nous ne les entendons pas, parce que nous avons longtemps privilégié <strong>les archives écrites</strong>.</p>
+
+  <p>C'est là le dernier renversement de notre série, et le plus important. Nous avons commencé par déplacer le centre du monde, en refusant que la Grèce en soit le seul berceau. Nous finissons par comprendre d'où venait l'illusion du centre lui-même. <span class="sh-formule">Ce que nous appelons « centre » n'est souvent que l'endroit où les sources ont survécu.</span> Les textes ont donné une voix immense à certains mondes ; l'archéologie nous oblige à entendre les autres.</p>
+
+  <p>Alors tendons l'oreille autrement. Derrière les grands textes que nous savons lire, il y a tous ceux dont les mots ne nous sont pas parvenus, ou seulement par fragments, et qui pourtant ont pensé, prié, gouverné, créé. Leur histoire n'est pas perdue : elle dort dans la terre, dans l'or des tombes et l'argile des statues, en attendant que nous apprenions à la lire. Rien ne prouve que toutes ces transformations relèvent d'une même dynamique mondiale : leur coexistence suffit néanmoins à démentir l'image d'un siècle éclairé en quelques centres isolés. <span class="sh-formule">Ce que nous prenons pour la carte du monde n'est souvent que la carte de nos archives.</span></p>
+
+</div>
+
+<!-- ===== ESSENTIELS ===== -->
+<div class="sapere-tab-content" id="mcontent2" data-print-title="Les Essentiels">
+  <div class="sm-grid">
+    <div class="sm-card">
+      <h3>Le fait majeur</h3>
+      <p>Au Ve siècle, loin des foyers lettrés, des mondes dont la voix propre nous parvient mal bâtissent des villes, fondent l'or et le fer, dressent des statues et des dieux : mondes scythes, sociétés de La Tène, ensembles archéologiques nok, premiers centres zapotèques. L'invention fut plus dispersée que nos récits ne l'admettent.</p>
+    </div>
+    <div class="sm-card">
+      <h3>Le contre-récit</h3>
+      <p>L'absence de récit écrit propre n'est pas l'absence de civilisation : elle nous prive d'une parole directe, pas de toute archive. Faire de la « préhistoire », catégorie utile, une hiérarchie implicite a rendu invisibles des sociétés entières, qui avaient rois, art, techniques et croyances.</p>
+    </div>
+    <div class="sm-card">
+      <h3>Le mécanisme central</h3>
+      <p>Nous connaissons ces mondes par ce qu'ils ont façonné, non par ce qu'ils ont dit : tombes scythes, sites celtes, terres cuites nok, cité zapotèque de Monte Albán. L'archéologie restitue des dimensions de leur histoire que les textes extérieurs ignorent ou déforment.</p>
+    </div>
+    <div class="sm-card">
+      <h3>Le verrouillage</h3>
+      <p>Le cas zapotèque, aux glyphes naissants, montre que la frontière entre écriture et non-écriture est floue. Ce que nous appelons « centre » n'est souvent que l'endroit où les sources ont survécu : nos cartes de l'histoire sont dessinées par nos archives.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== COULISSES ===== -->
+<div class="sapere-tab-content" id="mcontent3" data-print-title="Les Coulisses">
+  <p>Cet épisode repose sur un paradoxe méthodologique qu'il faut regarder en face. Nous prétendons rendre la parole à des peuples sans écriture, mais nous ne pouvons le faire qu'avec les outils des autres : l'archéologie, et le témoignage de leurs voisins lettrés. Les Scythes, par exemple, nous sont largement connus par Hérodote, un Grec qui les observe de l'extérieur, avec sa curiosité et ses préjugés. Nous ne les entendons jamais en leur propre nom. La prudence commande de ne pas prendre ce regard étranger pour la vérité de ces peuples.</p>
+
+  <p>Il faut aussi éviter deux écueils symétriques. Le premier serait de mépriser ces mondes, comme on l'a fait longtemps, en les réduisant à une « préhistoire » attardée. Le second, inverse et tout aussi faux, serait de les idéaliser, d'en faire des paradis perdus de sagesse et d'harmonie. Les Scythes étaient de redoutables guerriers, les sociétés celtes connaissaient la hiérarchie et la violence. Leur rendre justice, ce n'est pas les parer de vertus imaginaires : c'est les regarder comme des sociétés humaines complètes, avec leur grandeur et leurs ombres, à égalité avec les foyers lettrés.</p>
+
+  <p>Un mot sur les datations, car elles sont plus floues ici qu'ailleurs. Faute de textes, on date ces cultures par l'archéologie, avec des fourchettes larges. La culture de La Tène s'ouvre vers 450, la cité de Monte Albán se fonde autour de 500, la culture nok s'étend sur plusieurs siècles autour du milieu du premier millénaire. Ces bornes ne sont pas des dates de bataille, précises au jour près : ce sont des ordres de grandeur, que de nouvelles fouilles peuvent toujours déplacer.</p>
+
+  <p>Reste la question qui referme toute la série. Notre carte du Ve siècle, même élargie à six épisodes, demeure le produit de ce que le temps a bien voulu nous conserver, et de ce que les chercheurs ont bien voulu explorer. Combien de foyers dorment encore, non fouillés, non lus, non racontés ? L'histoire que nous écrivons n'est pas le passé lui-même : c'est ce que nous parvenons à en sauver. Le reste attend, patient, sous la terre et sous le silence.</p>
+</div>
+
+<!-- ===== BILAN DE LA SERIE ===== -->
+<div class="sapere-tab-content" id="mcontent4" data-print-title="Bilan de la série">
+  <div class="sm-bilan">
+    <div class="sm-bilan-row">
+      <div class="sm-bilan-foyer">Perse</div>
+      <div class="sm-bilan-txt">Comment <b>gouverner un empire immense</b>. Un empire fait de la tolérance une méthode de domination, tenant ensemble cent peuples sans les uniformiser.</div>
+    </div>
+    <div class="sm-bilan-row">
+      <div class="sm-bilan-foyer">Athènes</div>
+      <div class="sm-bilan-txt">Comment <b>se gouverner entre citoyens</b>. Une cité invente la démocratie directe, et avec elle ses deux ombres, l'exclusion au-dedans, l'empire au-dehors.</div>
+    </div>
+    <div class="sm-bilan-row">
+      <div class="sm-bilan-foyer">Inde</div>
+      <div class="sm-bilan-txt">Comment <b>sortir du monde</b>. Sur les routes du Gange, des voies de salut s'ouvrent hors de la médiation des prêtres et font de la délivrance une affaire de discipline intérieure.</div>
+    </div>
+    <div class="sm-bilan-row">
+      <div class="sm-bilan-foyer">Chine</div>
+      <div class="sm-bilan-txt">Comment <b>bâtir un ordre juste</b>. À partir du temps de Confucius, puis surtout durant les Royaumes combattants, plusieurs courants rivalisent pour repenser l'ordre politique.</div>
+    </div>
+    <div class="sm-bilan-row">
+      <div class="sm-bilan-foyer">Nubie</div>
+      <div class="sm-bilan-txt">Comment <b>être soi face à un géant</b>. Vaincue et chassée d'Égypte, la Nubie de Napata ne s'effondre pas : elle se recompose sur sa terre et fait de l'héritage pharaonique une souveraineté ancrée en Nubie.</div>
+    </div>
+    <div class="sm-bilan-row">
+      <div class="sm-bilan-foyer">Les marges</div>
+      <div class="sm-bilan-txt">Comment <b>exister sans laisser de récit</b>. Partout ailleurs, des peuples dont la voix directe ne nous est pas parvenue bâtissent, fondent, sculptent. Ce sont nos sources, non le génie humain, qui se concentrent en quelques points.</div>
+    </div>
+    <div class="sm-bilan-row" style="border-top:3px solid #8b0000;background:#f6f9fc;">
+      <div class="sm-bilan-foyer" style="background:#8b0000;color:#fff;">La leçon</div>
+      <div class="sm-bilan-txt">Ce que nous appelons l'histoire du Ve siècle est d'abord l'histoire des traces qui nous restent. <b>Nos centres sont fabriqués par nos sources.</b> Les textes ont donné une voix immense à certains mondes ; l'archéologie nous oblige à entendre les autres.</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- POUR ALLER PLUS LOIN -->
+<div id="sapere-marges-pal" style="max-width:100%;margin:0 auto;">
+<style>
+#sapere-marges-pal{font-family:'Inter',system-ui,sans-serif;padding:0 24px 40px;}
+#sapere-marges-pal h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;border-bottom:2px solid #8b0000;padding-bottom:8px;margin:30px 0 16px;font-weight:700;}
+#sapere-marges-pal .sm-pal-sub{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;margin:28px 0 12px;font-weight:700;}
+#sapere-marges-pal .sm-somm{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:28px;}
+#sapere-marges-pal .sm-somm li{font-size:15px;line-height:1.45;padding:9px 0 9px 16px;border-bottom:1px solid #eee;position:relative;}
+#sapere-marges-pal .sm-somm li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;border-radius:50%;background:#e0d0bb;}
+#sapere-marges-pal .sm-somm li.fait::before{background:#c9a84f;}
+#sapere-marges-pal .sm-somm li.actuel::before{background:#8b0000;}
+#sapere-marges-pal .sm-somm li.actuel{font-weight:700;color:#8b0000;}
+#sapere-marges-pal .sm-somm .sm-somm-tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-left:6px;}
+#sapere-marges-pal .sm-biblio{list-style:none;padding:0;margin:0;}
+#sapere-marges-pal .sm-biblio li{font-size:18px;line-height:1.6;padding:10px 0;border-bottom:1px solid #eee;}
+#sapere-marges-pal .sm-bib-auteur{font-weight:700;color:#1a1a1a;}
+#sapere-marges-pal .sm-bib-titre{font-style:italic;}
+#sapere-marges-pal .sm-bib-note{display:block;font-size:15px;color:#555;line-height:1.5;margin-top:3px;}
+@media(max-width:640px){#sapere-marges-pal .sm-somm{grid-template-columns:1fr;}}
+</style>
+  <h2>Les six épisodes de la série</h2>
+  <ul class="sm-somm">
+    <li class="fait"><a href="https://sapere.page/six-foyers-une-meme-fievre/" target="_blank" rel="noopener">Introduction · Une même fièvre, six foyers</a></li>
+    <li class="fait"><a href="https://sapere.page/la-perse-ou-la-tolerance-comme-arme/" target="_blank" rel="noopener">Épisode 1 · La Perse, ou la tolérance comme arme</a></li>
+    <li class="fait"><a href="https://sapere.page/athenes-le-cercle-etroit-de-la-democratie/" target="_blank" rel="noopener">Épisode 2 · Athènes, le cercle étroit de la démocratie</a></li>
+    <li class="fait"><a href="https://sapere.page/linde-du-gange-quand-le-salut-echappe-aux-pretres/" target="_blank" rel="noopener">Épisode 3 · L'Inde du Gange, quand le salut échappe aux prêtres</a></li>
+    <li class="fait"><a href="https://sapere.page/la-chine-ou-lart-de-gouverner-le-chaos/" target="_blank" rel="noopener">Épisode 4 · La Chine, ou l'art de gouverner le chaos</a></li>
+    <li class="fait"><a href="https://sapere.page/napata-le-royaume-qui-survecut-aux-pharaons/" target="_blank" rel="noopener">Épisode 5 · Napata, le royaume qui survécut aux pharaons</a></li>
+    <li class="actuel">Épisode 6 · Les mondes des marges, inventer sans écrire<span class="sm-somm-tag">vous êtes ici</span></li>
+  </ul>
+
+  <p class="sm-pal-sub">Pour aller plus loin</p>
+  <ul class="sm-biblio">
+    <li><span class="sm-bib-titre">Avant l'histoire. L'évolution des sociétés, de Lascaux à Carnac</span>, <span class="sm-bib-auteur">Alain Testart</span> (Gallimard).
+      <span class="sm-bib-note">Une réflexion magistrale sur les sociétés sans écriture et sur les préjugés qui les entourent. Pour repenser la frontière entre « préhistoire » et « histoire ».</span></li>
+    <li><span class="sm-bib-titre">On a retrouvé l'histoire de France</span>, <span class="sm-bib-auteur">Jean-Paul Demoule</span> (et ses travaux sur l'archéologie).
+      <span class="sm-bib-note">Comment l'archéologie fait parler les peuples sans écrit conservé. Un plaidoyer accessible pour une histoire qui ne se réduise pas aux textes.</span></li>
+    <li><span class="sm-bib-titre">Les Celtes. Histoire et dictionnaire</span>, <span class="sm-bib-auteur">Barry Cunliffe</span> (et ses travaux sur l'Europe protohistorique).
+      <span class="sm-bib-note">La référence sur les sociétés celtiques : leur complexité, leurs échanges, leur art, loin de l'image du peuple sans histoire. Utile pour mesurer ce que l'archéologie restitue quand les textes manquent.</span></li>
+  </ul>
+</div>
+

@@ -1,0 +1,423 @@
+<div id="sapere-perse">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+#sapere-perse{font-family:'Inter',system-ui,sans-serif;color:#1a1a1a;background:#ffffff;width:100%;max-width:100%;margin:0 auto;box-sizing:border-box;}
+#sapere-perse *{box-sizing:border-box;}
+
+/* HEADER */
+#sapere-perse .sp-header{background:#ffffff;border-bottom:4px solid #8b0000;padding:30px 24px 26px;}
+#sapere-perse .sp-serie{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;font-weight:700;margin:0 0 10px;}
+#sapere-perse .sp-header h1{color:#1a1a1a;font-weight:800;font-size:clamp(26px,5vw,44px);line-height:1.15;margin:0 0 14px;}
+#sapere-perse .sp-header .sp-sub{color:#555;font-style:italic;font-size:18px;line-height:1.5;margin:0;}
+
+/* IMAGE */
+#sapere-perse .sp-hero{margin:26px 0;}
+#sapere-perse .sp-hero img{width:100%;max-width:100%;display:block;border:1px solid #e0e0e0;}
+#sapere-perse .sp-hero figcaption{font-size:13px;color:#777;padding:8px 0;font-style:italic;}
+#sapere-perse .sp-hero .sp-credit{font-style:normal;color:#999;font-size:12px;}
+
+/* BLOC TEXTE + IMAGE (2 colonnes) */
+#sapere-perse .sp-duo{display:grid;grid-template-columns:1fr 1.35fr;gap:26px;align-items:center;margin:26px 0;}
+#sapere-perse .sp-duo.sp-duo-right{grid-template-columns:1.35fr 1fr;}
+#sapere-perse .sp-duo p{margin:0;}
+#sapere-perse .sp-duo figure{margin:0;}
+#sapere-perse .sp-duo img{width:100%;max-width:100%;display:block;border:1px solid #e0e0e0;}
+#sapere-perse .sp-duo figcaption{font-size:13px;color:#777;padding:8px 0 0;font-style:italic;}
+
+/* BANDEAU DE SERIE */
+#sapere-perse .sp-bandeau{background:#e6ecf2;border:1px solid #c5d2e0;border-left:4px solid #8b0000;padding:16px 22px 18px;margin:0 24px 0;}
+#sapere-perse .sp-bandeau-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+#sapere-perse .sp-bandeau-serie{font-size:13px;font-weight:700;color:#1a1a1a;}
+#sapere-perse .sp-bandeau-serie span{color:#8b0000;}
+#sapere-perse .sp-bandeau-compte{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#8b0000;font-weight:700;}
+#sapere-perse .sp-progress{display:flex;gap:6px;}
+#sapere-perse .sp-step{flex:1 1 0;text-align:center;}
+#sapere-perse .sp-step-bar{height:6px;border-radius:3px;background:#e0d0bb;margin-bottom:6px;}
+#sapere-perse .sp-step.done .sp-step-bar{background:#c9a84f;}
+#sapere-perse .sp-step.current .sp-step-bar{background:#8b0000;}
+#sapere-perse .sp-step-lbl{display:block;font-size:10px;line-height:1.3;color:#999;}
+#sapere-perse .sp-step.current .sp-step-lbl{color:#8b0000;font-weight:700;}
+#sapere-perse .sp-step.done .sp-step-lbl{color:#7a6a3a;}
+
+/* ONGLETS */
+#sapere-perse input[type=radio]{position:absolute;opacity:0;width:1px;height:1px;}
+#sapere-perse .sapere-tabs{display:flex;flex-wrap:wrap;gap:0;border-bottom:2px solid #8b0000;margin:0 24px;padding-top:20px;}
+#sapere-perse .sapere-tabs label{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#999;padding:12px 18px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .15s;}
+#sapere-perse .sapere-tabs label:hover{color:#8b0000;}
+#sapere-perse .sapere-tab-content{display:none !important;padding:28px 24px 36px;}
+
+#sapere-perse #ptab1:checked ~ .sapere-tabs label[for=ptab1],
+#sapere-perse #ptab2:checked ~ .sapere-tabs label[for=ptab2],
+#sapere-perse #ptab3:checked ~ .sapere-tabs label[for=ptab3],
+#sapere-perse #ptab4:checked ~ .sapere-tabs label[for=ptab4]{color:#8b0000;border-bottom-color:#8b0000;}
+
+#sapere-perse #ptab1:checked ~ .sapere-tab-content#pcontent1,
+#sapere-perse #ptab2:checked ~ .sapere-tab-content#pcontent2,
+#sapere-perse #ptab3:checked ~ .sapere-tab-content#pcontent3,
+#sapere-perse #ptab4:checked ~ .sapere-tab-content#pcontent4{display:block !important;}
+
+/* CORPS */
+#sapere-perse #pcontent1 p{font-size:20px;line-height:1.8;color:#1a1a1a;margin:0 0 22px;}
+#sapere-perse #pcontent1 h2{font-weight:700;font-size:26px;color:#1a1a1a;margin:38px 0 18px;line-height:1.25;}
+#sapere-perse .sh-formule{color:#5a0000;font-weight:700;}
+#sapere-perse a{color:#8b0000;text-decoration:underline;text-underline-offset:2px;}
+
+/* TOOLTIP */
+#sapere-perse .sapere-tooltip{border-bottom:1px dotted #8b0000;cursor:help;position:relative;}
+#sapere-perse .sapere-tooltip:focus::after,#sapere-perse .sapere-tooltip:hover::after{content:attr(data-tooltip);position:absolute;left:50%;transform:translateX(-50%);top:140%;z-index:20;background:#1a1a1a;color:#fff;font-size:14px;font-style:normal;font-weight:400;line-height:1.45;padding:10px 14px;border-radius:4px;width:min(280px,80vw);box-shadow:0 4px 14px rgba(0,0,0,.25);text-align:left;}
+
+/* ENCADRE */
+#sapere-perse .sp-box{background:#e6ecf2;border-left:4px solid #8b0000;padding:18px 22px;margin:30px 0;}
+#sapere-perse .sp-box p{font-size:18px;line-height:1.65;margin:0;}
+
+/* DIPTYQUE RECIT/REALITE */
+#sapere-perse .sp-dip{margin:34px 0;border:1px solid #c5d2e0;background:#e6ecf2;}
+#sapere-perse .sp-dip-titre{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;padding:16px 20px 14px;border-bottom:1px solid #c5d2e0;}
+#sapere-perse .sp-dip-grid{display:grid;grid-template-columns:1fr 1fr;}
+#sapere-perse .sp-dip-col{padding:18px 20px 22px;}
+#sapere-perse .sp-dip-col.recit{border-right:1px solid #c5d2e0;background:#f6f9fc;}
+#sapere-perse .sp-dip-head{display:block;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+#sapere-perse .sp-dip-col.recit .sp-dip-head{color:#3a5a78;}
+#sapere-perse .sp-dip-col.reel .sp-dip-head{color:#8b0000;}
+#sapere-perse .sp-dip-li{display:block;font-size:16px;line-height:1.5;color:#1a1a1a;padding:7px 0 7px 18px;position:relative;}
+#sapere-perse .sp-dip-li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;}
+#sapere-perse .sp-dip-col.recit .sp-dip-li::before{background:#3a5a78;}
+#sapere-perse .sp-dip-col.reel .sp-dip-li::before{background:#8b0000;}
+
+/* FRISE DES HERITIERS */
+#sapere-perse .sp-frise{margin:34px 0;border-top:4px solid #8b0000;background:#e6ecf2;border:1px solid #c5d2e0;border-top-width:4px;padding:18px 20px 22px;}
+#sapere-perse .sp-frise-titre{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-bottom:16px;}
+#sapere-perse .sp-frise-flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;}
+#sapere-perse .sp-frise-item{flex:1 1 0;min-width:120px;padding:4px 10px;border-left:2px solid #c5d2e0;}
+#sapere-perse .sp-frise-item:first-child{border-left:3px solid #8b0000;}
+#sapere-perse .sp-frise-ep{display:block;font-family:'Georgia',serif;font-weight:700;font-size:16px;color:#1a1a1a;margin-bottom:3px;}
+#sapere-perse .sp-frise-dt{display:block;font-size:12px;color:#8b0000;font-weight:700;margin-bottom:5px;}
+#sapere-perse .sp-frise-nt{display:block;font-size:13px;line-height:1.45;color:#555;}
+#sapere-perse .sp-frise-src{font-size:13px;font-style:italic;color:#777;margin-top:14px;}
+
+/* ESSENTIELS */
+#sapere-perse .sp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+#sapere-perse .sp-card{background:#e6ecf2;border:1px solid #c5d2e0;border-top:3px solid #8b0000;padding:20px;}
+#sapere-perse .sp-card h3{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;margin:0 0 10px;font-weight:700;}
+#sapere-perse .sp-card p{font-size:17px;line-height:1.6;margin:0;color:#1a1a1a;}
+
+/* COULISSES */
+#sapere-perse #pcontent3 p{font-size:19px;line-height:1.75;margin:0 0 20px;color:#1a1a1a;}
+
+/* CHRONO */
+#sapere-perse .sp-timeline{position:relative;padding-left:30px;border-left:1px solid #000000;margin-top:10px;}
+#sapere-perse .sp-jalon{position:relative;margin-bottom:38px;}
+#sapere-perse .sp-jalon:last-child{margin-bottom:0;}
+#sapere-perse .sp-dot{position:absolute;left:-36px;top:6px;width:11px;height:11px;background:#ffffff;border:2px solid #000000;border-radius:50%;box-sizing:border-box;}
+#sapere-perse .sp-dot.pivot{background:#8b0000;border-color:#8b0000;width:13px;height:13px;left:-37px;}
+#sapere-perse .sp-dot.final{background:#000;border-color:#000;width:13px;height:13px;left:-37px;}
+#sapere-perse .sp-plabel{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-bottom:2px;}
+#sapere-perse .sp-date{display:block;font-family:'Georgia',serif;font-weight:700;font-size:22px;color:#1a1a1a;margin-bottom:6px;}
+#sapere-perse .sp-jalon p{font-size:18px;line-height:1.6;color:#1a1a1a;margin:0;text-align:justify;}
+
+@media(max-width:640px){#sapere-perse .sp-grid{grid-template-columns:1fr;}
+#sapere-perse .sp-dip-grid{grid-template-columns:1fr;}
+#sapere-perse .sp-dip-col.recit{border-right:none;border-bottom:1px solid #c5d2e0;}
+#sapere-perse .sp-frise-item{flex:1 1 100%;border-left:3px solid #c5d2e0;border-top:1px solid #d4dfe9;padding:8px 10px;}
+#sapere-perse .sp-frise-item:first-child{border-left:3px solid #8b0000;}
+#sapere-perse .sp-progress{gap:3px;}
+#sapere-perse .sp-step-lbl{font-size:8px;line-height:1.15;letter-spacing:-0.2px;word-break:break-word;}
+#sapere-perse .sp-duo{grid-template-columns:1fr;}}
+
+@media print{
+  #sapere-perse .sapere-tab-content{display:block !important;padding:24px 0 30px;}
+  #sapere-perse .sapere-tabs{display:none !important;}
+  #sapere-perse .sapere-tab-content::before{content:attr(data-print-title);display:block;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#8b0000;border-bottom:2px solid #8b0000;padding-bottom:8px;margin-bottom:20px;}
+  #sapere-perse .sh-formule{color:#5a0000 !important;}
+}
+</style>
+
+<!-- HEADER -->
+<div class="sp-header">
+  <p class="sp-serie">Une même fièvre, six foyers · Épisode 1</p>
+  <h1>La Perse, ou la tolérance comme arme</h1>
+  <p class="sp-sub">Le souverain perse se faisait appeler « Roi des peuples ». Tout l'art de l'empire tient dans ce pluriel.</p>
+</div>
+
+<!-- BANDEAU DE SERIE -->
+<div class="sp-bandeau">
+  <div class="sp-bandeau-top">
+    <span class="sp-bandeau-serie">Série <span>Une même fièvre : six foyers du Ve siècle avant notre ère</span></span>
+    <span class="sp-bandeau-compte">Épisode 1 sur 6</span>
+  </div>
+  <div class="sp-progress">
+    <div class="sp-step current"><div class="sp-step-bar"></div><span class="sp-step-lbl">1. Perse</span></div>
+    <div class="sp-step"><div class="sp-step-bar"></div><span class="sp-step-lbl">2. Grèce</span></div>
+    <div class="sp-step"><div class="sp-step-bar"></div><span class="sp-step-lbl">3. Inde</span></div>
+    <div class="sp-step"><div class="sp-step-bar"></div><span class="sp-step-lbl">4. Chine</span></div>
+    <div class="sp-step"><div class="sp-step-bar"></div><span class="sp-step-lbl">5. Nubie</span></div>
+    <div class="sp-step"><div class="sp-step-bar"></div><span class="sp-step-lbl">6. Marges</span></div>
+  </div>
+</div>
+
+<figure class="sp-hero">
+  <img src="https://sapere.page/wp-content/uploads/2026/07/SAPERE-BLOG-ILLUSTRATION-Bas-relief-des-delegations-de-lescalier-de-lApadana-a-Persepolis.png" alt="Bas-relief des délégations de l'escalier de l'Apadana à Persépolis, représentant les peuples de l'empire perse apportant leur tribut">
+  <figcaption>Sur l'escalier de l'Apadana, à Persépolis, les peuples de l'empire défilent en file, chacun dans son costume, pour apporter le tribut. L'image même de la différence administrée. <span class="sp-credit">Bas-relief achéménide, Persépolis (Iran).</span></figcaption>
+</figure>
+
+<input type="radio" name="sp-tabs" id="ptab1" checked>
+<input type="radio" name="sp-tabs" id="ptab2">
+<input type="radio" name="sp-tabs" id="ptab3">
+<input type="radio" name="sp-tabs" id="ptab4">
+
+<div class="sapere-tabs">
+  <label for="ptab1">Article</label>
+  <label for="ptab2">Les Essentiels</label>
+  <label for="ptab3">Les Coulisses</label>
+  <label for="ptab4">Chronologie</label>
+</div>
+
+<!-- ===== ARTICLE ===== -->
+<div class="sapere-tab-content" id="pcontent1" data-print-title="Article">
+
+  <p>En octobre 1971, dans les ruines de <strong>Persépolis</strong>, le dernier chah d'Iran fit dresser des tentes de soie pour des centaines de souverains et de chefs d'État, et célébra en grande pompe les deux mille cinq cents ans de <strong>l'empire</strong> perse. Au cœur de la fête, un objet minuscule tenait lieu de relique : un cylindre d'argile de vingt-deux centimètres, exhumé jadis des ruines de <strong>Babylone</strong>. Le chah le présenta au monde comme la première déclaration des droits de l'homme, et en offrit une réplique aux Nations unies. Vingt-cinq siècles plus tôt, proclamait-il, un roi perse avait inventé la liberté.</p>
+
+  <p>L'objet existe. Le roi aussi. Mais la belle histoire est fausse, et ce qu'elle cache vaut mieux que ce qu'elle raconte. <span class="sh-formule">Car ce que la postérité a pris pour de la bonté n'était, au départ, qu'une manière supérieure de régner.</span> Et c'est ce malentendu, vieux de vingt-cinq siècles et ravivé pour les besoins d'un trône moderne, qu'il faut défaire pour comprendre ce que la Perse a vraiment légué au monde.</p>
+
+  <h2>Le malentendu fondateur</h2>
+
+  <figure class="sp-hero">
+    <img src="https://sapere.page/wp-content/uploads/2026/07/Carte_empire_achemenide.png" alt="Carte de l'empire perse achéménide à son apogée, de l'Indus au Danube et de la mer d'Aral à l'Égypte">
+    <figcaption>L'empire achéménide à son apogée, de l'Indus au Danube. Près de cinq millions de kilomètres carrés, l'équivalent de l'Union européenne actuelle : un espace que rien, avant lui, n'avait réuni sous un seul pouvoir.</figcaption>
+  </figure>
+
+  <p>Reprenons depuis le début. Au VIe siècle avant notre ère, en quelques décennies à peine, un peuple de cavaliers du plateau iranien bâtit le plus vaste empire que la Terre ait jamais porté. Cyrus prend la Médie, puis la Lydie de Crésus, puis Babylone <strong>en 539</strong> : la plus grande cité du monde s'ouvre devant lui presque sans combat, et il y entre en libérateur, rendant aux temples leurs statues et aux exilés leur patrie. Son fils <strong>Cambyse</strong> ajoute l'Égypte. Darius étend l'ensemble de l'Indus au Danube. Au début du Ve siècle, l'empire achéménide réunit sous un seul sceptre des dizaines de peuples qui ne partagent ni langue, ni dieu, ni loi : un État aussi vaste que le sera, plus tard, l'Empire romain.</p>
+
+  <p>Le récit dominant tient en un mot : tolérance. Cyrus libère les Juifs déportés à Babylone et les laisse rebâtir leur Temple. Les Perses respectent les cultes locaux, préservent les coutumes, n'imposent ni leur langue ni leur foi. Face à la brutalité assyrienne qui les précédait, ce serait l'aube d'un humanisme impérial. <span class="sh-formule">C'est ce récit, précisément, qu'il faut démonter pour comprendre ce que la Perse a réellement inventé.</span></p>
+
+  <p>Car <strong>la tolérance</strong> perse n'est pas une vertu. C'est un calcul. Et c'est en cela, justement, qu'elle est géniale.</p>
+
+  <h2>Darius, l'architecte de la différence</h2>
+
+  <div class="sp-duo">
+    <figure>
+      <img src="https://sapere.page/wp-content/uploads/2026/07/SAPERE-BLOG-ILLUSTRATION-DARIUS-by-ChatGPT.png" alt="Portrait de Darius Ier, roi de l'empire perse achéménide, architecte de l'organisation en satrapies">
+      <figcaption>Darius Ier, l'architecte de la machine impériale.</figcaption>
+    </figure>
+    <p>Posez-vous la question d'un conquérant du VIe siècle. Vous venez de prendre des dizaines de provinces, où l'on parle des langues sans nombre et où l'on prie des dieux que vous ne connaissez pas. Deux options. Soit vous imposez partout votre loi, votre culte, vos hommes : il vous faudra une armée d'occupation dans chaque vallée, et chaque vallée se révoltera. Soit vous laissez chaque peuple à ses dieux et ses coutumes, vous gardez les élites locales en place, et vous leur demandez une seule chose en retour : <strong>le tribut</strong>, et l'obéissance.</p>
+  </div>
+
+  <p>Les Achéménides ont choisi la seconde voie, non par bonté mais par lucidité. Ils ont compris que <span class="sh-formule"><strong>la diversité</strong> d'un empire n'est pas un problème à résoudre, mais une ressource à administrer.</span> Darius découpe l'ensemble en une vingtaine de <span class="sapere-tooltip" tabindex="0" data-tooltip="Provinces de l'empire perse, dirigées par un gouverneur (le satrape) qui levait l'impôt et les troupes au nom du Grand Roi.">satrapies</span>, confie chacune à un gouverneur, le double d'un secrétaire et d'un général qui ne dépendent pas de lui, fait sillonner le tout par des inspecteurs royaux qui surgissent sans prévenir. Une route de deux mille kilomètres relie Sardes à <strong>Suse</strong>. L'araméen, langue déjà répandue, devient l'outil commun de l'administration. La machine n'a rien de moderne au sens où nous l'entendrions ; elle est seulement d'une intelligence administrative rarement atteinte jusque-là.</p>
+
+  <p>Et il ne faut pas s'y tromper sur ce que cette souplesse exige en retour. <span class="sh-formule">La Perse ne demandait pas aux peuples de devenir perses ; elle leur demandait quelque chose de plus simple et de plus lourd : rester eux-mêmes, mais pour le roi.</span> Derrière la différence conservée, il y a le tribut qui ne se discute pas, l'or, le blé, les chevaux, parfois les enfants envoyés servir à la cour ; il y a les soldats à fournir, les corvées à accomplir, les terres cédées aux garnisons. Et pour qui refuse, la main se fait lourde : les populations rebelles sont déportées, les Ioniens révoltés expédiés aux confins de l'empire. La diversité est tolérée tant qu'elle produit de l'obéissance. Le jour où elle en produit moins, elle est brisée. La paix achéménide était réelle, mais c'était <strong>la paix</strong> d'un maître, pas celle d'un ami.</p>
+
+  <p>Cette route royale représente une prouesse. De Sardes, sur les rivages de la mer Égée, jusqu'à Suse, au cœur du plateau iranien, court un itinéraire royal jalonné de relais espacés d'une journée de cheval, avec à chaque étape des montures fraîches et des courriers prêts à repartir ; et tandis qu'une armée mettrait trois mois à franchir cette distance, un message la traverse en une semaine. Hérodote, admiratif malgré lui, dira de ces messagers que ni la neige, ni la pluie, ni la nuit ne les arrêtent. Ce n'est pas un détail pittoresque. C'est le système nerveux de <strong>la domination</strong>. La Perse donne à l'empire une <span class="sapere-tooltip" tabindex="0" data-tooltip="En forme de réseau, de filet (du latin reticulum, petit filet) : un maillage de points reliés entre eux, non une simple masse de territoires.">forme réticulaire</span> d'une ampleur inédite : routes, relais, courriers, satrapies, inspections. Non plus seulement une addition de terres conquises, mais un espace tenu par la circulation de <strong>l'ordre</strong> et de l'information.</p>
+
+  <p>Laisser un peuple à son dieu, ce n'est donc pas l'aimer. C'est s'épargner le coût de le convertir. Reconstruire le Temple de Jérusalem, ce n'est pas un geste de piété envers les Juifs : c'est s'attacher une population utile, postée à la frontière de l'Égypte. La fameuse clémence de Cyrus envers Babylone obéit à la même logique : il s'y présente en libérateur mandaté par <span class="sapere-tooltip" tabindex="0" data-tooltip="Dieu principal de Babylone. Cyrus se présente sur le cylindre comme choisi par Marduk pour libérer la ville, reprenant l'idéologie religieuse babylonienne.">Marduk</span>, le dieu de la cité, contre un roi babylonien qu'il dépeint en tyran impie. Habile. Le conquérant se déguise en sauveur.</p>
+
+  <p>Le souverain perse ne se proclamait d'ailleurs pas roi d'un peuple, mais <span class="sapere-tooltip" tabindex="0" data-tooltip="En vieux-perse : xšāyaθiya dahyūnām, « roi des peuples » ou « roi des pays ». Titre revendiqué par les souverains achéménides dans leurs inscriptions.">« Roi des peuples »</span>, au pluriel. Sur les escaliers de Persépolis, des files de délégations sculptées, chacune dans son costume et sa coiffe, montent vers le trône pour apporter le tribut : le Mède et l'Égyptien, le Lydien et le Bactrien, l'Ionien et l'homme de l'Indus. L'empire a gravé dans la pierre l'image exacte de sa formule de gouvernement, la différence ordonnée, défilant en bon ordre vers le maître.</p>
+
+  <h2>Le cylindre qu'on a fait mentir</h2>
+
+  <div class="sp-duo sp-duo-right">
+    <p>Reste à régler son compte à cet objet, devenu malgré lui le symbole de toute la légende. Le <a href="https://fr.wikipedia.org/wiki/Cylindre_de_Cyrus" target="_blank" rel="noopener"><strong>cylindre de Cyrus</strong></a>, ce petit rouleau d'argile que le chah brandissait à Persépolis, n'a rien d'une déclaration universelle. C'est un texte de propagande royale, rédigé en babylonien, dans le pur style des inscriptions mésopotamiennes qui le précèdent de deux mille ans. Le roi y vante ses bienfaits, noircit son prédécesseur, remercie les dieux. La proclamation de mesures justes n'en occupe qu'une part, et s'inscrit dans une longue tradition du « roi juste » qui remonte aux cités sumériennes.</p>
+    <figure>
+      <img src="https://sapere.page/wp-content/uploads/2026/07/SAPERE-BLO-ILLUSTRATION-CYLINDRE-DE-CYRUS.png" alt="Le cylindre de Cyrus, rouleau d'argile babylonien couvert d'écriture cunéiforme, exhumé des ruines de Babylone">
+      <figcaption>Le cylindre de Cyrus, texte de propagande royale babylonienne, longtemps pris pour une charte des libertés.</figcaption>
+    </figure>
+  </div>
+
+  <p>L'idée d'en faire l'ancêtre des droits de l'homme est récente, et née d'un besoin politique précis : la traduction offerte à l'ONU en 1971 était tronquée, embellie, par endroits inventée. <span class="sh-formule">Le passé ne ment jamais tout seul ; on le fait mentir pour le présent.</span> Vingt-cinq siècles après Cyrus, sa pierre servait encore à fabriquer du pouvoir.</p>
+
+  <p>Le plus ironique, c'est que le cylindre n'invente rien, même dans son genre. Mille ans avant Cyrus, le roi sumérien <span class="sapere-tooltip" tabindex="0" data-tooltip="Souverain de la cité-État de Lagash (Mésopotamie) au XXIVe siècle av. J.-C., dernier roi de la Ire dynastie de Lagash. On lui attribue l'un des plus anciens textes de réformes connus.">Urukagina de Lagash</span> se vantait déjà de protéger la veuve et l'orphelin ; le <a href="https://fr.wikipedia.org/wiki/Hammurabi" target="_blank" rel="noopener">code d'Hammurabi</a> de Babylone, au XVIIIe siècle av. J.-C., mettait en scène le même idéal du souverain juste. Cyrus ne fait que reprendre un répertoire vieux de deux millénaires, dans la langue et le style de ceux qu'il vient de conquérir. Loin d'être une rupture humaniste, son cylindre est un exercice de continuité : pour <strong>gouverner</strong> Babylone, il fallait parler babylonien, au sens propre comme au figuré.</p>
+
+  <figure class="sp-dip">
+    <figcaption class="sp-dip-titre">Les deux visages de la tolérance perse</figcaption>
+    <div class="sp-dip-grid">
+      <div class="sp-dip-col recit">
+        <span class="sp-dip-head">Le récit reçu</span>
+        <span class="sp-dip-li">Cyrus libère les Juifs déportés et finance la reconstruction du Temple.</span>
+        <span class="sp-dip-li">Les cultes locaux sont respectés, aucune religion n'est imposée.</span>
+        <span class="sp-dip-li">Les coutumes et les élites des peuples conquis sont préservées.</span>
+        <span class="sp-dip-li">Un cylindre proclame la justice du roi : la « première charte des libertés ».</span>
+      </div>
+      <div class="sp-dip-col reel">
+        <span class="sp-dip-head">Ce que cela servait</span>
+        <span class="sp-dip-li">S'attacher une population utile, postée à la frontière de l'Égypte.</span>
+        <span class="sp-dip-li">S'épargner le coût d'armées d'occupation et de conversions forcées.</span>
+        <span class="sp-dip-li">Gouverner par les élites locales, moins cher et plus stable que de les briser.</span>
+        <span class="sp-dip-li">Un texte de propagande royale, dans la tradition mésopotamienne du roi juste.</span>
+      </div>
+    </div>
+  </figure>
+
+  <h2>Ce que la Perse a verrouillé</h2>
+
+  <p>Pourquoi alors lui consacrer le premier volet de cette série ? Parce que, mythe écarté, l'invention demeure, et qu'elle est immense. Encore a-t-il fallu attendre longtemps pour la voir. L'historien Pierre Briant, qui a consacré sa vie aux Achéménides, rappelle que leur histoire fut longtemps reléguée dans l'ombre, écrasée par le prestige conjugué de l'« Orient millénaire » et de la « Grèce éternelle », rangée au rayon de la « décadence orientale ». Il aura fallu un siècle de fouilles et de relectures pour rendre à cet empire sa juste place : non un despotisme exotique, mais un laboratoire politique de premier ordre.</p>
+
+  <p>Car la Perse achéménide n'a pas inventé l'empire, et il serait faux de le prétendre. Les Assyriens, les Babyloniens avaient déjà bâti leurs machines à gouverner des peuples soumis, et <strong>les Achéménides</strong> leur ont emprunté beaucoup. Ce qu'ils ont fait, c'est porter ce modèle à une échelle inédite et lui donner sa forme classique : <span class="sh-formule">un pouvoir unique, des peuples multiples, des différences conservées parce qu'elles étaient plus utiles gouvernées qu'effacées.</span> Rome s'en souviendra. Byzance aussi. Les empires ottoman, moghol, austro-hongrois, et jusqu'aux États multinationaux d'aujourd'hui, bricolent encore avec ce problème que la Perse a systématisé mieux que quiconque avant elle : comment faire tenir ensemble des gens qui n'ont rien en commun. Briant a un mot pour cela, le « polycentrisme » d'un pouvoir central qui laisse vivre les périphéries tout en les tenant fermement.</p>
+
+  <figure class="sp-frise">
+    <figcaption class="sp-frise-titre">Le modèle de l'empire-mosaïque, de Cyrus à nos jours</figcaption>
+    <div class="sp-frise-flow">
+      <div class="sp-frise-item">
+        <span class="sp-frise-ep">Perse achéménide</span>
+        <span class="sp-frise-dt">VIe-IVe s. av. J.-C.</span>
+        <span class="sp-frise-nt">Satrapies, tribut, cultes laissés en place. La matrice.</span>
+      </div>
+      <div class="sp-frise-item">
+        <span class="sp-frise-ep">Rome</span>
+        <span class="sp-frise-dt">Ier s. av.-Ve s.</span>
+        <span class="sp-frise-nt">Provinces, droit local toléré, citoyenneté graduée.</span>
+      </div>
+      <div class="sp-frise-item">
+        <span class="sp-frise-ep">Empire ottoman</span>
+        <span class="sp-frise-dt">XIVe-XXe s.</span>
+        <span class="sp-frise-nt">Le système des millet : chaque communauté gère ses affaires.</span>
+      </div>
+      <div class="sp-frise-item">
+        <span class="sp-frise-ep">États multinationaux</span>
+        <span class="sp-frise-dt">aujourd'hui</span>
+        <span class="sp-frise-nt">Fédéralisme, autonomies régionales : la question reste ouverte.</span>
+      </div>
+    </div>
+    <p class="sp-frise-src">Filiations de modèle, non de copie : chaque empire réinvente, à sa manière, la réponse perse au problème de la diversité.</p>
+  </figure>
+
+  <p>La réponse perse n'était ni douce ni cruelle. Elle était efficace. Elle disait que l'unité d'un pouvoir ne suppose pas l'uniformité de ses sujets, et qu'on peut commander à des peuples sans les effacer. C'est une idée de gouvernement, pas une idée morale, et c'est pour cela qu'elle a traversé les siècles : les vertus passent, les techniques restent.</p>
+
+  <p>On mesure mieux sa portée en regardant ce qui se joue, au même moment, à l'autre bout du monde décrit dans cette série. Là où la Grèce invente une cité minuscule où les citoyens se gouvernent eux-mêmes, la Perse résout le problème exactement inverse : comment gouverner l'immense, le divers, l'inassimilable. Deux génies politiques opposés, contemporains et ignorants l'un de l'autre. Et c'est la solution perse, non la grecque, que reprendront la plupart des grands États de l'histoire, parce que la plupart des États sont des empires avant d'être des nations.</p>
+
+  <p>La Perse n'a pas inventé la tolérance. Elle a porté à une intensité inédite quelque chose de plus durable et de plus froid : <span class="sh-formule">l'art de transformer la diversité en obéissance.</span> Nous vivons encore sous ce verrou.</p>
+
+</div>
+
+<!-- ===== ESSENTIELS ===== -->
+<div class="sapere-tab-content" id="pcontent2" data-print-title="Les Essentiels">
+  <div class="sp-grid">
+    <div class="sp-card">
+      <h3>Le fait majeur</h3>
+      <p>Au VIe-Ve siècle av. J.-C., l'empire perse achéménide gouverne des dizaines de peuples de l'Indus au Danube, sans imposer ni sa langue ni sa religion. Il porte à une échelle inédite l'art de gouverner un empire multiethnique.</p>
+    </div>
+    <div class="sp-card">
+      <h3>Le mécanisme central</h3>
+      <p>La « tolérance » perse n'est pas une vertu morale mais une méthode de domination : laisser les peuples à leurs cultes coûte moins cher que de les convertir, à condition qu'ils paient le tribut et obéissent.</p>
+    </div>
+    <div class="sp-card">
+      <h3>Le contre-récit</h3>
+      <p>Le cylindre de Cyrus, présenté depuis 1971 comme la « première déclaration des droits de l'homme », est en réalité un texte de propagande royale babylonienne, instrumentalisé par le chah d'Iran.</p>
+    </div>
+    <div class="sp-card">
+      <h3>Le verrouillage</h3>
+      <p>La Perse porte à une échelle inédite le modèle de l'empire qui tient sans uniformiser. De Rome aux États multinationaux actuels, gouverner la différence reste le problème qu'elle a systématisé mieux que quiconque avant elle.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== COULISSES ===== -->
+<div class="sapere-tab-content" id="pcontent3" data-print-title="Les Coulisses">
+  <p>Nous venons de le voir : la Perse ne fut ni douce ni cruelle, mais efficace. Reste alors une énigme. Si la tolérance perse était d'abord un calcul, d'où vient qu'on l'ait si longtemps prise pour une vertu ? D'où vient le mythe de la douceur perse ? D'un croisement curieux entre deux sources qui auraient dû se contredire et qui, au contraire, se sont renforcées.</p>
+
+  <p>La première est grecque. Hérodote et <span class="sapere-tooltip" tabindex="0" data-tooltip="Écrivain et soldat grec (vers 430-355 av. J.-C.). Son grand récit sur Cyrus en brosse un portrait largement idéalisé, moins une biographie qu'un miroir des vertus du bon souverain.">Xénophon</span>, qui écrivent après Cyrus, en font tantôt un sage bienveillant, tantôt l'incarnation du despotisme oriental, selon les besoins de leur récit. C'est un comble : nous tenons l'image d'un empire surtout par la plume de ses ennemis, qui l'idéalisent ou le diabolisent tour à tour, jamais ne le décrivent de l'intérieur.</p>
+
+  <p>La seconde source est plus tardive encore. Les textes zoroastriens qui décrivent une morale perse exigeante, fondée sur la vérité et le rejet du mensonge, ont en réalité été rédigés bien après l'époque achéménide, entre le premier et le septième siècle de notre ère. Projeter cette spiritualité sur Cyrus et Darius, c'est lire le passé à travers un verre fabriqué mille ans plus tard.</p>
+
+  <p>Reste une question que ce volet laisse ouverte, et qu'il faut poser honnêtement. En démontant le mythe de la tolérance-vertu, ne risque-t-on pas de tomber dans l'excès inverse, celui qui ne verrait dans la Perse qu'un froid calcul de domination ? Les deux lectures sont sans doute trop simples. Un empire n'est ni un saint ni une machine ; il est un assemblage de pratiques héritées, d'intérêts et d'improvisations, où la clémence et la brutalité cohabitent selon les circonstances. Ce que l'on peut dire avec certitude, c'est que la « tolérance » des Achéménides fut d'abord un fait de gouvernement, et que la morale n'y vint qu'après, dans le regard de ceux qui la racontèrent.</p>
+
+  <p>Une dernière prudence, enfin, sur le mot « empire-monde ». Dire que la Perse gouvernait un habitant sur deux de la planète relève de l'estimation fragile, fondée sur des chiffres de population antiques très incertains. Retenons l'ordre de grandeur, pas la précision : un empire d'une ampleur sans précédent, jamais égalé jusqu'alors.</p>
+</div>
+
+<!-- ===== CHRONOLOGIE ===== -->
+<div class="sapere-tab-content" id="pcontent4" data-print-title="Chronologie">
+  <div class="sp-timeline">
+    <div class="sp-jalon">
+      <span class="sp-dot"></span>
+      <span class="sp-date">vers 550 av. J.-C.</span>
+      <p>Cyrus II renverse le roi mède Astyage et unifie Perses et Mèdes. C'est l'acte de naissance de la dynastie achéménide, qui régnera deux siècles durant, de cette date jusqu'à 330.</p>
+    </div>
+    <div class="sp-jalon">
+      <span class="sp-dot"></span>
+      <span class="sp-date">546 av. J.-C.</span>
+      <p>Cyrus annexe la Lydie de Crésus et atteint la mer Égée, entrant en contact avec les cités grecques d'Asie Mineure.</p>
+    </div>
+    <div class="sp-jalon">
+      <span class="sp-dot pivot"></span>
+      <span class="sp-plabel">Pivot</span>
+      <span class="sp-date">539 av. J.-C.</span>
+      <p>Prise de Babylone. Cyrus s'y présente en libérateur mandaté par Marduk. Le cylindre de Cyrus est gravé : pièce maîtresse de sa propagande, plus tard prise pour une charte des libertés.</p>
+    </div>
+    <div class="sp-jalon">
+      <span class="sp-dot"></span>
+      <span class="sp-date">vers 538 av. J.-C.</span>
+      <p>Cyrus autorise les Juifs déportés à Babylone à rentrer en Judée et à rebâtir le Temple. Geste politique autant que religieux.</p>
+    </div>
+    <div class="sp-jalon">
+      <span class="sp-dot"></span>
+      <span class="sp-date">525 av. J.-C.</span>
+      <p>Cambyse II conquiert l'Égypte. L'empire s'étend désormais de l'Indus au Nil.</p>
+    </div>
+    <div class="sp-jalon">
+      <span class="sp-dot"></span>
+      <span class="sp-date">522-486 av. J.-C.</span>
+      <p>Règne de Darius Ier. Il systématise l'organisation en satrapies, fixe le tribut, construit la route royale. L'empire trouve sa forme durable.</p>
+    </div>
+    <div class="sp-jalon">
+      <span class="sp-dot"></span>
+      <span class="sp-date">490 et 480 av. J.-C.</span>
+      <p>Guerres médiques. L'empire échoue à soumettre les cités grecques. C'est par la plume des vainqueurs grecs que nous lirons désormais la Perse.</p>
+    </div>
+    <div class="sp-jalon">
+      <span class="sp-dot pivot"></span>
+      <span class="sp-plabel">Fin de la dynastie</span>
+      <span class="sp-date">330 av. J.-C.</span>
+      <p>Alexandre le Grand défait Darius III et brûle Persépolis. Après deux siècles, la dynastie achéménide s'éteint. Mais son modèle d'empire, lui, passera à ses vainqueurs.</p>
+    </div>
+    <div class="sp-jalon">
+      <span class="sp-dot final"></span>
+      <span class="sp-date">1971 apr. J.-C.</span>
+      <p>Le chah d'Iran célèbre les 2,500 ans de l'empire à Persépolis et offre à l'ONU une réplique du cylindre de Cyrus, présenté comme la première déclaration des droits de l'homme. Le mythe atteint son sommet.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- POUR ALLER PLUS LOIN -->
+<div id="sapere-perse-pal" style="max-width:100%;margin:0 auto;">
+<style>
+#sapere-perse-pal{font-family:'Inter',system-ui,sans-serif;padding:0 24px 40px;}
+#sapere-perse-pal h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;border-bottom:2px solid #8b0000;padding-bottom:8px;margin:30px 0 16px;font-weight:700;}
+#sapere-perse-pal ul{list-style:none;padding:0;margin:0;}
+#sapere-perse-pal li{font-size:18px;line-height:1.6;padding:8px 0;border-bottom:1px solid #eee;}
+#sapere-perse-pal a{color:#8b0000;text-decoration:none;font-weight:600;}
+#sapere-perse-pal a:hover{text-decoration:underline;}
+#sapere-perse-pal .sp-pal-sub{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;margin:28px 0 12px;font-weight:700;}
+#sapere-perse-pal .sp-biblio li{padding:10px 0;}
+#sapere-perse-pal .sp-bib-auteur{font-weight:700;color:#1a1a1a;}
+#sapere-perse-pal .sp-bib-titre{font-style:italic;}
+#sapere-perse-pal .sp-bib-note{display:block;font-size:15px;color:#555;line-height:1.5;margin-top:3px;}
+#sapere-perse-pal .sp-somm{list-style:none;padding:0;margin:0;}
+#sapere-perse-pal .sp-somm li{font-size:17px;line-height:1.5;padding:11px 0 11px 16px;border-bottom:1px solid #eee;position:relative;}
+#sapere-perse-pal .sp-somm li::before{content:"";position:absolute;left:0;top:18px;width:7px;height:7px;border-radius:50%;background:#e0d0bb;}
+#sapere-perse-pal .sp-somm li.seuil::before{background:#1a1a1a;}
+#sapere-perse-pal .sp-somm li.actuel::before{background:#8b0000;}
+#sapere-perse-pal .sp-somm li.actuel{font-weight:700;color:#8b0000;}
+#sapere-perse-pal .sp-somm .sp-somm-tag{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-left:6px;}
+#sapere-perse-pal .sp-somm .sp-somm-ven{color:#999;}
+</style>
+  <h2>Les six épisodes de la série</h2>
+  <ul class="sp-somm">
+    <li class="seuil"><a href="https://sapere.page/six-foyers-une-meme-fievre/" target="_blank" rel="noopener">Une même fièvre : l'introduction de la série</a></li>
+    <li class="actuel">Épisode 1 · La Perse, ou la tolérance comme arme<span class="sp-somm-tag">vous êtes ici</span></li>
+    <li><a href="https://sapere.page/athenes-le-cercle-etroit-de-la-democratie/" target="_blank" rel="noopener">Épisode 2 · Athènes, le cercle étroit de la démocratie</a></li>
+    <li><a href="https://sapere.page/linde-du-gange-quand-le-salut-echappe-aux-pretres/" target="_blank" rel="noopener">Épisode 3 · L'Inde du Gange, quand le salut échappe aux prêtres</a></li>
+    <li class="fait"><a href="https://sapere.page/la-chine-ou-lart-de-gouverner-le-chaos/" target="_blank" rel="noopener">Épisode 4 · La Chine, ou l'art de gouverner le chaos</a></li>
+    <li class="fait"><a href="https://sapere.page/napata-le-royaume-qui-survecut-aux-pharaons/" target="_blank" rel="noopener">Épisode 5 · Napata, le royaume qui survécut aux pharaons</a></li>
+    <li class="fait"><a href="https://sapere.page/les-mondes-des-marges-inventer-sans-ecrire/" target="_blank" rel="noopener">Épisode 6 · Les mondes des marges, inventer sans écrire</a></li>
+  </ul>
+
+  <p class="sp-pal-sub">Pour aller plus loin</p>
+  <ul class="sp-biblio">
+    <li><span class="sp-bib-titre">Histoire de l'Empire perse. De Cyrus à Alexandre</span>, <span class="sp-bib-auteur">Pierre Briant</span> (Fayard, 1996).
+      <span class="sp-bib-note">La somme de référence, par le plus grand spécialiste français des Achéménides. Dense, mais sans équivalent.</span></li>
+    <li><span class="sp-bib-titre">Politique du Paradis. Religion et empire en Perse achéménide</span>, <span class="sp-bib-auteur">Bruce Lincoln</span> (Les Belles Lettres, 2021).
+      <span class="sp-bib-note">Sur la manière dont les Achéménides ont mis la religion au service du pouvoir impérial.</span></li>
+  </ul>
+</div>
+

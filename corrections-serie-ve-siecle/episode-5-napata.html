@@ -1,0 +1,434 @@
+<div id="sapere-nubie">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+#sapere-nubie{font-family:'Inter',system-ui,sans-serif;color:#1a1a1a;background:#ffffff;width:100%;max-width:100%;margin:0 auto;box-sizing:border-box;}
+#sapere-nubie *{box-sizing:border-box;}
+
+/* HEADER */
+#sapere-nubie .sn-header{background:#ffffff;border-bottom:4px solid #8b0000;padding:30px 24px 26px;}
+#sapere-nubie .sn-serie{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;font-weight:700;margin:0 0 10px;}
+#sapere-nubie .sn-header h1{color:#1a1a1a;font-weight:800;font-size:clamp(26px,5vw,44px);line-height:1.15;margin:0 0 14px;}
+#sapere-nubie .sn-header .sn-sub{color:#555;font-style:italic;font-size:18px;line-height:1.5;margin:0;}
+
+/* IMAGE */
+#sapere-nubie .sn-hero{margin:26px 0;}
+#sapere-nubie .sn-hero img{width:100%;max-width:100%;display:block;border:1px solid #e0e0e0;}
+#sapere-nubie .sn-hero figcaption{font-size:13px;color:#777;padding:8px 0;font-style:italic;}
+#sapere-nubie .sn-hero.sn-hero-carte{max-width:55%;margin-left:auto;margin-right:auto;}
+@media(max-width:640px){#sapere-nubie .sn-hero.sn-hero-carte{max-width:85%;}}
+#sapere-nubie .sn-hero .sn-credit{font-style:normal;color:#999;font-size:12px;}
+
+/* BLOC TEXTE + IMAGE */
+#sapere-nubie .sn-duo{display:grid;grid-template-columns:1fr 1.35fr;gap:26px;align-items:center;margin:26px 0;}
+#sapere-nubie .sn-duo.sn-duo-right{grid-template-columns:1.35fr 1fr;}
+#sapere-nubie .sn-duo p{margin:0;}
+#sapere-nubie .sn-duo figure{margin:0;}
+#sapere-nubie .sn-duo img{width:100%;max-width:100%;display:block;border:1px solid #e0e0e0;}
+#sapere-nubie .sn-duo figcaption{font-size:13px;color:#777;padding:8px 0 0;font-style:italic;}
+
+/* BANDEAU DE SERIE */
+#sapere-nubie .sn-bandeau{background:#e6ecf2;border:1px solid #c5d2e0;border-left:4px solid #8b0000;padding:16px 22px 18px;margin:0 24px 0;}
+#sapere-nubie .sn-bandeau-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+#sapere-nubie .sn-bandeau-serie{font-size:13px;font-weight:700;color:#1a1a1a;}
+#sapere-nubie .sn-bandeau-serie span{color:#8b0000;}
+#sapere-nubie .sn-bandeau-compte{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#8b0000;font-weight:700;}
+#sapere-nubie .sn-progress{display:flex;gap:6px;}
+#sapere-nubie .sn-step{flex:1 1 0;text-align:center;}
+#sapere-nubie .sn-step-bar{height:6px;border-radius:3px;background:#e0d0bb;margin-bottom:6px;}
+#sapere-nubie .sn-step.done .sn-step-bar{background:#c9a84f;}
+#sapere-nubie .sn-step.current .sn-step-bar{background:#8b0000;}
+#sapere-nubie .sn-step-lbl{display:block;font-size:10px;line-height:1.3;color:#999;}
+#sapere-nubie .sn-step.current .sn-step-lbl{color:#8b0000;font-weight:700;}
+#sapere-nubie .sn-step.done .sn-step-lbl{color:#7a6a3a;}
+
+/* ONGLETS */
+#sapere-nubie input[type=radio]{position:absolute;opacity:0;width:1px;height:1px;}
+#sapere-nubie .sapere-tabs{display:flex;flex-wrap:wrap;gap:0;border-bottom:2px solid #8b0000;margin:0 24px;padding-top:20px;}
+#sapere-nubie .sapere-tabs label{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#999;padding:12px 18px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .15s;}
+#sapere-nubie .sapere-tabs label:hover{color:#8b0000;}
+#sapere-nubie .sapere-tab-content{display:none !important;padding:28px 24px 36px;}
+
+#sapere-nubie #ntab1:checked ~ .sapere-tabs label[for=ntab1],
+#sapere-nubie #ntab2:checked ~ .sapere-tabs label[for=ntab2],
+#sapere-nubie #ntab3:checked ~ .sapere-tabs label[for=ntab3],
+#sapere-nubie #ntab4:checked ~ .sapere-tabs label[for=ntab4]{color:#8b0000;border-bottom-color:#8b0000;}
+
+#sapere-nubie #ntab1:checked ~ .sapere-tab-content#ncontent1,
+#sapere-nubie #ntab2:checked ~ .sapere-tab-content#ncontent2,
+#sapere-nubie #ntab3:checked ~ .sapere-tab-content#ncontent3,
+#sapere-nubie #ntab4:checked ~ .sapere-tab-content#ncontent4{display:block !important;}
+
+/* CORPS */
+#sapere-nubie #ncontent1 p{font-size:20px;line-height:1.8;color:#1a1a1a;margin:0 0 22px;}
+#sapere-nubie #ncontent1 h2{font-weight:700;font-size:26px;color:#1a1a1a;margin:38px 0 18px;line-height:1.25;}
+#sapere-nubie .sh-formule{color:#5a0000;font-weight:700;}
+#sapere-nubie a{color:#8b0000;text-decoration:underline;text-underline-offset:2px;}
+
+/* TOOLTIP */
+#sapere-nubie .sapere-tooltip{border-bottom:1px dotted #8b0000;cursor:help;position:relative;}
+#sapere-nubie .sapere-tooltip:focus::after,#sapere-nubie .sapere-tooltip:hover::after{content:attr(data-tooltip);position:absolute;left:50%;transform:translateX(-50%);top:140%;z-index:20;background:#1a1a1a;color:#fff;font-size:14px;font-style:normal;font-weight:400;line-height:1.45;padding:10px 14px;border-radius:4px;width:min(280px,80vw);box-shadow:0 4px 14px rgba(0,0,0,.25);text-align:left;}
+
+/* ENCADRE */
+#sapere-nubie .sn-box{background:#e6ecf2;border-left:4px solid #8b0000;padding:18px 22px;margin:30px 0;}
+#sapere-nubie .sn-box p{font-size:18px;line-height:1.65;margin:0;}
+
+/* DIPTYQUE */
+#sapere-nubie .sn-dip{margin:34px 0;border:1px solid #c5d2e0;background:#e6ecf2;}
+#sapere-nubie .sn-dip-titre{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;padding:16px 20px 14px;border-bottom:1px solid #c5d2e0;}
+#sapere-nubie .sn-dip-grid{display:grid;grid-template-columns:1fr 1fr;}
+#sapere-nubie .sn-dip-col{padding:18px 20px 22px;}
+#sapere-nubie .sn-dip-col.heritage{border-right:1px solid #c5d2e0;background:#f6f9fc;}
+#sapere-nubie .sn-dip-head{display:block;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+#sapere-nubie .sn-dip-col.heritage .sn-dip-head{color:#3a5a78;}
+#sapere-nubie .sn-dip-col.propre .sn-dip-head{color:#8b0000;}
+#sapere-nubie .sn-dip-li{display:block;font-size:16px;line-height:1.5;color:#1a1a1a;padding:7px 0 7px 18px;position:relative;}
+#sapere-nubie .sn-dip-li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;}
+#sapere-nubie .sn-dip-col.heritage .sn-dip-li::before{background:#3a5a78;}
+#sapere-nubie .sn-dip-col.propre .sn-dip-li::before{background:#8b0000;}
+
+/* INFOGRAPHIE TRAITS PROPRES */
+#sapere-nubie .sn-traits{margin:34px 0;border:1px solid #c5d2e0;background:#e6ecf2;border-top:4px solid #8b0000;padding:22px 22px 22px;}
+#sapere-nubie .sn-traits-titre{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-bottom:6px;}
+#sapere-nubie .sn-traits-sub{font-size:14px;color:#555;font-style:italic;margin-bottom:20px;line-height:1.5;}
+#sapere-nubie .sn-trait-row{display:flex;align-items:stretch;gap:0;margin-bottom:10px;border:1px solid #c5d2e0;background:#fff;overflow:hidden;border-radius:3px;}
+#sapere-nubie .sn-trait-icon{flex:0 0 66px;display:flex;align-items:center;justify-content:center;color:#fff;}
+#sapere-nubie .sn-trait-icon svg{width:30px;height:30px;}
+#sapere-nubie .sn-trait-body{flex:1 1 auto;padding:13px 18px;}
+#sapere-nubie .sn-trait-nom{display:block;font-weight:700;font-size:17px;color:#1a1a1a;margin-bottom:3px;}
+#sapere-nubie .sn-trait-desc{display:block;font-size:14px;line-height:1.45;color:#555;}
+#sapere-nubie .sn-t1 .sn-trait-icon{background:#8b0000;}
+#sapere-nubie .sn-t2 .sn-trait-icon{background:#a84040;}
+#sapere-nubie .sn-t3 .sn-trait-icon{background:#7a6a3a;}
+#sapere-nubie .sn-t4 .sn-trait-icon{background:#5a5a5a;}
+#sapere-nubie .sn-traits-note{font-size:13px;font-style:italic;color:#777;margin-top:14px;}
+@media(max-width:640px){
+  #sapere-nubie .sn-trait-row{flex-wrap:wrap;}
+  #sapere-nubie .sn-trait-icon{flex:0 0 100%;padding:8px 0;}
+}
+
+/* ESSENTIELS */
+#sapere-nubie .sn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+#sapere-nubie .sn-card{background:#e6ecf2;border:1px solid #c5d2e0;border-top:3px solid #8b0000;padding:20px;}
+#sapere-nubie .sn-card h3{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;margin:0 0 10px;font-weight:700;}
+#sapere-nubie .sn-card p{font-size:17px;line-height:1.6;margin:0;color:#1a1a1a;}
+
+/* COULISSES */
+#sapere-nubie #ncontent3 p{font-size:19px;line-height:1.75;margin:0 0 20px;color:#1a1a1a;}
+
+/* CHRONO */
+#sapere-nubie .sn-timeline{position:relative;padding-left:30px;border-left:1px solid #000000;margin-top:10px;}
+#sapere-nubie .sn-jalon{position:relative;margin-bottom:38px;}
+#sapere-nubie .sn-jalon:last-child{margin-bottom:0;}
+#sapere-nubie .sn-dot{position:absolute;left:-36px;top:6px;width:11px;height:11px;background:#ffffff;border:2px solid #000000;border-radius:50%;box-sizing:border-box;}
+#sapere-nubie .sn-dot.pivot{background:#8b0000;border-color:#8b0000;width:13px;height:13px;left:-37px;}
+#sapere-nubie .sn-dot.final{background:#000;border-color:#000;width:13px;height:13px;left:-37px;}
+#sapere-nubie .sn-plabel{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-bottom:2px;}
+#sapere-nubie .sn-date{display:block;font-family:'Georgia',serif;font-weight:700;font-size:22px;color:#1a1a1a;margin-bottom:6px;}
+#sapere-nubie .sn-jalon p{font-size:18px;line-height:1.6;color:#1a1a1a;margin:0;text-align:justify;}
+
+@media(max-width:640px){#sapere-nubie .sn-grid{grid-template-columns:1fr;}
+#sapere-nubie .sn-dip-grid{grid-template-columns:1fr;}
+#sapere-nubie .sn-dip-col.heritage{border-right:none;border-bottom:1px solid #c5d2e0;}
+#sapere-nubie .sn-progress{gap:3px;}
+#sapere-nubie .sn-step-lbl{font-size:8px;line-height:1.15;letter-spacing:-0.2px;word-break:break-word;}
+#sapere-nubie .sn-duo{grid-template-columns:1fr;}}
+
+@media print{
+  #sapere-nubie .sapere-tab-content{display:block !important;padding:24px 0 30px;}
+  #sapere-nubie .sapere-tabs{display:none !important;}
+  #sapere-nubie .sapere-tab-content::before{content:attr(data-print-title);display:block;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#8b0000;border-bottom:2px solid #8b0000;padding-bottom:8px;margin-bottom:20px;}
+  #sapere-nubie .sh-formule{color:#5a0000 !important;}
+}
+</style>
+
+<!-- HEADER -->
+<div class="sn-header">
+  <p class="sn-serie">Une même fièvre, six foyers · Épisode 5</p>
+  <h1>Napata, le royaume qui survécut aux pharaons</h1>
+  <p class="sn-sub">Chassés du trône d'Égypte, les rois nubiens ne s'effondrent pas. Ils rentrent chez eux et recomposent l'héritage pharaonique au sein d'une souveraineté ancrée en Nubie.</p>
+</div>
+
+<!-- BANDEAU DE SERIE -->
+<div class="sn-bandeau">
+  <div class="sn-bandeau-top">
+    <span class="sn-bandeau-serie">Série <span>Une même fièvre : six foyers du Ve siècle avant notre ère</span></span>
+    <span class="sn-bandeau-compte">Épisode 5 sur 6</span>
+  </div>
+  <div class="sn-progress">
+    <div class="sn-step done"><div class="sn-step-bar"></div><span class="sn-step-lbl">1. Perse</span></div>
+    <div class="sn-step done"><div class="sn-step-bar"></div><span class="sn-step-lbl">2. Grèce</span></div>
+    <div class="sn-step done"><div class="sn-step-bar"></div><span class="sn-step-lbl">3. Inde</span></div>
+    <div class="sn-step done"><div class="sn-step-bar"></div><span class="sn-step-lbl">4. Chine</span></div>
+    <div class="sn-step current"><div class="sn-step-bar"></div><span class="sn-step-lbl">5. Nubie</span></div>
+    <div class="sn-step"><div class="sn-step-bar"></div><span class="sn-step-lbl">6. Marges</span></div>
+  </div>
+</div>
+
+<input type="radio" name="sn-tabs" id="ntab1" checked>
+<input type="radio" name="sn-tabs" id="ntab2">
+<input type="radio" name="sn-tabs" id="ntab3">
+<input type="radio" name="sn-tabs" id="ntab4">
+
+<div class="sapere-tabs">
+  <label for="ntab1">Article</label>
+  <label for="ntab2">Les Essentiels</label>
+  <label for="ntab3">Les Coulisses</label>
+  <label for="ntab4">Chronologie</label>
+</div>
+
+<!-- ===== ARTICLE ===== -->
+<div class="sapere-tab-content" id="ncontent1" data-print-title="Article">
+
+  <p>Il y a un siècle et demi encore, leurs ancêtres régnaient sur l'Égypte. Ils portaient <strong>la double couronne</strong> des pharaons, gouvernaient depuis <strong>Memphis</strong>, se faisaient enterrer sous des pyramides. Puis les armées assyriennes, mieux organisées et plus puissantes, les ont chassés du Nil inférieur. Les voilà refoulés vers le sud, vers leur terre d'origine, la Nubie. On pourrait croire l'histoire finie.</p>
+
+  <p>Elle ne fait que commencer. Car ces rois vaincus ne disparaissent pas. Ils rentrent chez eux, sur les rives du haut Nil, et là, au lieu de sombrer, ils recomposent un royaume sur ses propres bases, un royaume qui durera près de mille ans et forgera peu à peu ses propres dieux, sa propre écriture, ses reines. Au Ve siècle avant notre ère, sous nos yeux, <span class="sh-formule">un État africain vaincu hors d'Égypte se relève et se réinvente sur sa propre terre.</span></p>
+
+  <figure class="sn-hero">
+    <img src="https://sapere.page/wp-content/uploads/2026/07/NAPATA-cover-Souverain-koushite-revenu-sur-sa-terre-contemple-le-Nil-Napata-et-le-Gebel-Barkal-by-Chatgpt.png" alt="Un souverain koushite revenu sur sa terre contemple le Nil, Napata et le Gebel Barkal">
+    <figcaption>Le royaume de Koush se recentre sur Napata, au pied du Gebel Barkal. Chassés d'Égypte, ses souverains transforment leur repli vers le Sud en reconstruction politique. <span class="sn-credit">Illustration : SAPERE.</span></figcaption>
+  </figure>
+
+  <h2>Un royaume né d'une défaite</h2>
+
+  <p>Reprenons le fil. Cette terre nubienne n'avait rien de neuf. Bien avant Napata, <a href="https://sapere.page/kerma-capitale-dun-royaume-africain/">le royaume de Kerma</a> y avait fait rayonner, dès <strong>le troisième millénaire</strong>, l'une des plus anciennes civilisations urbaines d'Afrique, avec ses palais de brique, ses vastes nécropoles et ses ateliers. L'État africain ne commence donc pas avec Napata : il a, sur ce même Nil, une profondeur de plus de mille ans. Aux VIIIe et VIIe siècles, les rois de Napata avaient réussi un exploit inouï : conquérir l'Égypte et y régner, formant la <span class="sapere-tooltip" tabindex="0" data-tooltip="La XXVe dynastie égyptienne (vers 743-656 av. J.-C.), composée de rois nubiens. On les surnomme les « pharaons noirs ». Le plus célèbre est Taharqa.">XXVe dynastie</span>, celle qu'on surnomme les « pharaons noirs ». Ce fut bref et glorieux. Puis vinrent les campagnes assyriennes du VIIe siècle, et la domination nubienne sur l'Égypte prit fin lorsque <strong>Psammétique Ier</strong> réunifia le pays, vers 656.</p>
+
+  <p>C'est ce qui se passe ensuite qui nous intéresse. Beaucoup de royaumes, vaincus et refoulés, se seraient dissous dans les sables. Les Nubiens, eux, se replient sur Napata et y maintiennent un pouvoir royal. Mieux : ils entament une lente métamorphose. <span class="sh-formule">La perte de l'Égypte recentre durablement le royaume sur la Nubie, sans rompre avec l'héritage pharaonique.</span> N'ayant plus à gouverner depuis le Nord, ils recentrent leur royaume sur sa propre terre, et façonnent l'héritage reçu à leur main.</p>
+
+  <figure class="sn-dip">
+    <figcaption class="sn-dip-titre">D'un héritage reçu à un matériau approprié</figcaption>
+    <div class="sn-dip-grid">
+      <div class="sn-dip-col heritage">
+        <span class="sn-dip-head">Ce que la Nubie hérite de l'Égypte</span>
+        <span class="sn-dip-li">Le dieu Amon et une part du panthéon.</span>
+        <span class="sn-dip-li">Les pyramides comme tombeaux royaux.</span>
+        <span class="sn-dip-li">D'abord les hiéroglyphes et les codes pharaoniques.</span>
+        <span class="sn-dip-li">La figure sacrée du roi garant de l'ordre.</span>
+      </div>
+      <div class="sn-dip-col propre">
+        <span class="sn-dip-head">De l'héritage napatan aux créations méroïtiques ultérieures</span>
+        <span class="sn-dip-li">Le dieu-lion <strong>Apedemak</strong>, guerrier, sans modèle égyptien.</span>
+        <span class="sn-dip-li">L'écriture méroïtique, qui note sa propre langue.</span>
+        <span class="sn-dip-li">Les candaces, reines et reines mères au rôle politique de premier plan.</span>
+        <span class="sn-dip-li">Un centre africain, <strong>Méroé</strong>, loin de la Méditerranée.</span>
+      </div>
+    </div>
+  </figure>
+
+  <h2>Le glissement vers le sud</h2>
+
+  <figure class="sn-hero sn-hero-carte">
+    <img src="https://sapere.page/wp-content/uploads/2026/07/carte_napata_koush-by-Perplexity.png" alt="Carte du royaume de Napata et de Koush, le long du Nil dans l'actuel Soudan, de Napata vers Méroé">
+    <figcaption>Le royaume de Koush vers 400 avant notre ère : le long du Nil soudanais, le centre glisse peu à peu de Napata, au nord, vers Méroé, plus au sud. <span class="sn-credit">Carte : SAPERE.</span></figcaption>
+  </figure>
+
+  <p>Ce basculement a une géographie. En 591, une armée égyptienne, grossie de mercenaires grecs, remonte le Nil et met à sac Napata. Après ce coup, le poids politique et économique du Sud semble s'accroître, dans un déplacement dont les causes restent discutées : accès aux terres et aux réseaux méridionaux, logiques dynastiques, sécurité face au Nord. Le cœur du royaume glissera vers l'aval du fleuve, plus au sud, vers une cité promise à un grand avenir, Méroé, mieux pourvue en terres et en pâturages, insérée dans des réseaux agricoles, artisanaux et commerciaux. Ce transfert de capitale ne sera pleinement consommé que bien plus tard, <strong>vers 270</strong> avant notre ère. Mais tout s'amorce ici, au lendemain des défaites : replié sur Napata, le royaume cesse peu à peu de se penser comme un appendice de l'Égypte. <span class="sh-formule">Le Ve siècle n'est pas l'heure de l'apogée, mais celle de la bascule intérieure.</span></p>
+
+  <p>Ce royaume n'avait rien d'un monde clos. Vers 525, l'empire perse que nous avons vu au premier épisode tourne ses regards vers le sud : <span class="sapere-tooltip" tabindex="0" data-tooltip="Roi de Perse (règne vers 530-522 av. J.-C.), fils de Cyrus. Selon Hérodote, sa tentative d'expédition vers la Nubie échoua dans les déserts. L'ampleur réelle de cet épisode reste discutée.">Cambyse</span> envoie ses émissaires sonder la puissance nubienne. La réponse du roi de Koush, que rapporte <strong>Hérodote</strong>, est un défi tranquille : que les Perses reviennent quand ils sauront bander des arcs aussi grands que le sien. Selon le récit grec, une expédition perse s'y risqua pourtant et échoua dans les déserts, incapable de forcer le passage. <span class="sh-formule">Dans la mémoire grecque, le géant qui avait avalé l'Égypte dut renoncer devant la Nubie.</span> Le détail est légendaire, mais il dit une chose : ce royaume africain était pris dans les grands jeux de son temps, assez redouté pour qu'on raconte son inviolabilité.</p>
+
+  <p>La Nubie fascinait d'ailleurs les Grecs autant qu'elle les arrêtait. Vers 450, en plein cœur de notre siècle, Hérodote recueille des informations sur la vallée du Nil et, pour les régions situées au-delà d'<strong>Éléphantine</strong>, à la frontière sud de l'Égypte, il ne dispose plus guère que de récits indirects. Le pays de Koush reste, pour le regard grec, une lisière du monde, dont on parle sans y pénétrer vraiment, présente et pourtant hors d'atteinte.</p>
+
+  <p>Et quel acteur. Sur le site de Méroé, le voyageur découvrira un jour des dizaines de pyramides aux arêtes vives, plus étroites et plus abruptes que celles de Gizeh, dressées par centaines dans le désert soudanais. Autour, les vestiges d'une ville insérée dans des réseaux agricoles, artisanaux et commerciaux, où le travail du fer est attesté, reliée par les pistes caravanières à l'Afrique intérieure comme à la mer Rouge. Rien de tout cela n'est une pâle imitation. C'est le visage d'une civilisation qui a trouvé son style, ses formes, sa manière d'habiter le monde.</p>
+
+  <h2>Ce que Napata rendra possible</h2>
+
+  <p>Peu à peu, l'héritage égyptien cesse d'être un modèle dominant pour devenir un matériau nubien. Le mouvement se déploiera surtout aux siècles suivants, jusqu'à <a href="https://sapere.page/le-1er-siecle-apres-j-c-meroe-et-aksoum-quand-lafrique-antique-souvre-au-monde/">l'apogée méroïtique</a>. Le Ve siècle appartient à la longue phase de recomposition qui précède ce plein épanouissement, et cette recomposition mérite d'être nommée, car elle dessine peu à peu une civilisation à part entière.</p>
+
+  <p>D'abord, des dieux. La mécanique de l'appropriation se lit à merveille dans <strong>le culte d'Amon</strong>. Ce grand dieu égyptien, les Nubiens ne se contentent pas de le reprendre : ils l'enracinent dans leur propre géographie sacrée, à <span class="sapere-tooltip" tabindex="0" data-tooltip="Montagne-table près de Napata, surmontée d'un pinacle rocheux. Les anciens Égyptiens la nommaient déjà « la montagne pure ». Les Nubiens en font la demeure d'Amon et le cœur de la légitimité royale koushite.">Gebel Barkal</span>, la montagne sainte qui domine Napata. Sur une stèle, un roi de Napata fait parler ce dieu venu du Nord dans un langage politique désormais centré sur la royauté de Napata : <span class="sh-formule">« Amon de Napata m'a fait souverain de tout peuple. »</span> Le dieu égyptien devient le garant d'une royauté du Sud : l'héritage change de sol et de maître. À côté de cet Amon nubianisé s'impose ensuite une divinité proprement locale, <span class="sapere-tooltip" tabindex="0" data-tooltip="Dieu guerrier à tête de lion, propre à la Nubie, sans équivalent égyptien. Il devient une divinité majeure du royaume, protecteur de la dynastie.">Apedemak</span>, un dieu-lion guerrier, dispensateur de vie, inconnu du panthéon des pharaons. Vient aussi, plus tard, une écriture : les Nubiens finiront par abandonner les hiéroglyphes égyptiens pour créer leur propre système, <strong>l'écriture méroïtique</strong>, qui note la langue méroïtique, encore aujourd'hui imparfaitement comprise. Et, plus frappant encore, un pouvoir où des femmes tiendront une place de premier plan. <span class="sh-formule">Là où l'Égypte n'a couronné qu'exceptionnellement des femmes, la Nubie leur fera une place bien plus visible.</span></p>
+
+  <p>Ces reines, la tradition classique les appellera les <span class="sapere-tooltip" tabindex="0" data-tooltip="Titre des reines-mères et reines de Méroé (kdke), souvent traduit « reine-mère » ou « reine régente ». Plusieurs exercèrent la souveraineté. Le terme est surtout attesté à partir du IIe siècle av. J.-C.">candaces</span>. Certaines reines et reines mères occupèrent une place politique exceptionnelle, parfois jusqu'à exercer directement la souveraineté ; l'une d'elles, <strong>Amanirenas</strong>, osera bien plus tard défier <strong>Rome</strong> elle-même. Ces figures tardives montrent jusqu'où ira l'originalité politique nubienne : non une copie de l'Égypte, mais une autre grammaire royale, où des femmes purent tenir le premier rôle.</p>
+
+  <figure class="sn-traits">
+    <figcaption class="sn-traits-titre">Ce que Napata rendra possible</figcaption>
+    <p class="sn-traits-sub">En transformant progressivement l'héritage égyptien plutôt qu'en le rejetant, la Nubie ouvre la voie à des traits qui deviendront les siens. Ils s'épanouiront surtout après le Ve siècle : ce dernier n'en est pas l'apogée, mais l'un des moments où s'amorce le recentrement.</p>
+    <div class="sn-trait-row sn-t1">
+      <div class="sn-trait-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.5 2 4 3.5 4 6a4 4 0 0 1-8 0c0-2.5 1.5-4 4-6z"/><circle cx="9" cy="14" r="1.3"/><circle cx="15" cy="14" r="1.3"/><path d="M7 19c1.5-1.5 3-2 5-2s3.5.5 5 2"/></svg>
+      </div>
+      <div class="sn-trait-body">
+        <span class="sn-trait-nom">Ses propres dieux</span>
+        <span class="sn-trait-desc">À côté d'Amon hérité de l'Égypte s'impose Apedemak, dieu-lion guerrier, inconnu du panthéon des pharaons.</span>
+      </div>
+    </div>
+    <div class="sn-trait-row sn-t2">
+      <div class="sn-trait-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10"/><path d="M4 12h16"/><path d="M4 18h12"/><path d="M17 5l3 2-3 2"/></svg>
+      </div>
+      <div class="sn-trait-body">
+        <span class="sn-trait-nom">Sa propre écriture</span>
+        <span class="sn-trait-desc">Les Nubiens abandonnent les hiéroglyphes égyptiens pour créer l'écriture méroïtique, qui note une langue encore imparfaitement comprise.</span>
+      </div>
+    </div>
+    <div class="sn-trait-row sn-t3">
+      <div class="sn-trait-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20h14"/><path d="M7 20V9l5-5 5 5v11"/><path d="M10 20v-5h4v5"/><path d="M12 4V2"/></svg>
+      </div>
+      <div class="sn-trait-body">
+        <span class="sn-trait-nom">Des reines souveraines</span>
+        <span class="sn-trait-desc">Certaines candaces exercent directement la souveraineté ; d'autres occupent une place dynastique et politique majeure. Une visibilité des reines et reines mères remarquable.</span>
+      </div>
+    </div>
+    <div class="sn-trait-row sn-t4">
+      <div class="sn-trait-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 8v8l8 5 8-5V8z"/><path d="M12 8v8"/><path d="M8 10v4"/><path d="M16 10v4"/></svg>
+      </div>
+      <div class="sn-trait-body">
+        <span class="sn-trait-nom">Sa propre capitale</span>
+        <span class="sn-trait-desc">Le centre glisse de Napata vers Méroé, loin de l'Égypte, autour d'un travail du fer et d'un commerce florissants.</span>
+      </div>
+    </div>
+    <p class="sn-traits-note">Attention : ces traits s'épanouissent surtout entre le IIe siècle av. J.-C. et les premiers siècles de notre ère. Le Ve siècle appartient à la longue phase de recomposition qui précède leur plein épanouissement, il n'en est pas l'apogée.</p>
+  </figure>
+
+  <h2>L'Afrique dans le concert des foyers</h2>
+
+  <p>Gardons la mesure des choses. Ce royaume n'est pas une démocratie, ni un havre de douceur : c'est un État guerrier, hiérarchique et inégalitaire, probablement fondé aussi sur différentes formes de dépendance et de contrainte. Il ne s'agit pas de l'idéaliser, mais de lui rendre sa place, celle qu'une longue tradition lui a refusée. Car pendant des siècles, on a regardé la Nubie comme une pâle province de l'Égypte, un reflet sans lumière à lui. C'était une erreur, née d'un préjugé tenace.</p>
+
+  <p>La vérité est tout autre. Au moment même où <strong>Athènes</strong> vote sur la Pnyx et où <a href="https://sapere.page/la-chine-ou-lart-de-gouverner-le-chaos/" target="_blank" rel="noopener"><strong>Confucius</strong> cherche un prince</a>, un royaume africain vaincu se relève sur le haut Nil et affirme, sur sa propre terre, une souveraineté qui ne doit sa grandeur ni à l'Égypte ni à personne d'autre qu'à sa manière de transformer ce qu'il a reçu. <span class="sh-formule">L'Afrique n'a pas attendu qu'on vienne lui apporter l'État : elle en avait, de longue main, et Napata le prouve une fois de plus.</span></p>
+
+  <p>Et c'est ainsi que ce cinquième foyer complète notre tableau. La Perse gouvernait l'immense, Athènes se gouvernait entre citoyens, l'Inde cherchait à sortir du monde, la Chine à remettre les hommes en ordre. La Nubie, elle, répond à une question que nos récits scolaires ont longtemps reléguée à la marge : <span class="sh-formule">comment maintenir une souveraineté durable entre héritage égyptien, ancrage nubien et pression des grands empires ?</span> Sa réponse aura duré près de mille ans : non pas refuser l'héritage du plus grand voisin, mais le recomposer peu à peu en une langue politique proprement nubienne.</p>
+
+</div>
+
+<!-- ===== ESSENTIELS ===== -->
+<div class="sapere-tab-content" id="ncontent2" data-print-title="Les Essentiels">
+  <div class="sn-grid">
+    <div class="sn-card">
+      <h3>Le fait majeur</h3>
+      <p>Après les campagnes assyriennes et la réunification de l'Égypte par Psammétique Ier vers 656, les rois nubiens de Napata perdent l'Égypte mais ne disparaissent pas. Repliés sur leur terre, ils y maintiennent un État africain autonome qui, au Ve siècle, poursuit son recentrement sur la Nubie avant que la capitale ne glisse vers Méroé.</p>
+    </div>
+    <div class="sn-card">
+      <h3>Le contre-récit</h3>
+      <p>La Nubie n'est pas une pâle copie de l'Égypte, ni une Afrique « sans histoire ». C'est une civilisation originale, avec ses dieux, son écriture, ses reines. Les représentations scolaires et populaires ont longtemps minoré les États africains anciens et traité la Nubie comme une simple périphérie de l'Égypte.</p>
+    </div>
+    <div class="sn-card">
+      <h3>Le mécanisme central</h3>
+      <p>La perte de l'Égypte, conjuguée à des dynamiques internes et méridionales, recentre peu à peu la Nubie sur elle-même. N'ayant plus à gouverner depuis le Nord, le royaume façonne l'héritage pharaonique à sa main et prépare la longue bascule vers Méroé.</p>
+    </div>
+    <div class="sn-card">
+      <h3>Le verrouillage</h3>
+      <p>Un État africain souverain se maintient au moment même où Athènes vote et où Confucius enseigne. La Nubie élabore progressivement une grammaire politique propre, et cette civilisation durera près de mille ans.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== COULISSES ===== -->
+<div class="sapere-tab-content" id="ncontent3" data-print-title="Les Coulisses">
+  <p>Une précision de calendrier s'impose, car elle est au cœur de cet épisode. Les traits les plus éclatants de cette civilisation, l'écriture méroïtique, les grandes <span class="sapere-tooltip" tabindex="0" data-tooltip="Candace (du méroïtique kdke) : titre des reines et reines mères de Méroé. Plusieurs exercèrent la souveraineté et menèrent des campagnes militaires, comme Amanirenas face à Rome. Le titre est surtout attesté à partir du IIe siècle av. J.-C.">candaces guerrières</span>, les temples d'Apedemak, ne s'épanouissent pleinement qu'aux siècles suivants, entre le IIe siècle avant notre ère et les premiers siècles de notre ère. Les plaquer tels quels sur le Ve siècle serait une faute. Ce que nous saisissons au Ve siècle, c'est un moment de bascule, la lente translation de Napata vers Méroé, un recentrement encore inachevé. Le fruit mûrira bien plus tard ; ce siècle appartient à la longue phase qui le prépare, sans qu'on puisse y lire déjà tout ce qui adviendra.</p>
+
+  <figure class="sn-hero sn-hero-carte">
+    <img src="https://sapere.page/wp-content/uploads/2026/07/NAPATA-Temple-a-Naga-jpg.jpg" alt="Pylône du temple du Lion à Naga : le roi Natakamani et la kandake Amanitore soumettant leurs ennemis, un lion à leurs pieds">
+    <figcaption>Pylône avant du temple du Lion (Apedemak) à Naga : le roi Natakamani et la kandake Amanitore soumettant leurs ennemis, un lion à chaque pied. Un témoignage tardif, méroïtique, de la royauté partagée et du culte d'Apedemak. <span class="sn-credit">Photo : domaine public.</span></figcaption>
+  </figure>
+
+  <p>La date même de ce transfert vers Méroé divise d'ailleurs les spécialistes, et le désaccord mérite d'être dit. Certains la fixent tôt, dès le VIe siècle avant notre ère, en suivant l'apparition des premiers rois attestés dans le sud. Beaucoup situent dès le IVe siècle le moment où Méroé devient le véritable centre de gravité du royaume. D'autres repoussent jusque vers 270 le transfert pleinement consommé, quand la cité accueille sans conteste les sépultures royales. Les uns datent par les tombes, les autres par le statut politique de la cité, et la vérité se cache sans doute dans ce long intervalle. Loin d'affaiblir notre récit, ce flou le confirme : le passage de Napata à Méroé ne fut pas un déménagement brusque, mais un glissement de plusieurs siècles, dont le Ve siècle occupe précisément le cœur.</p>
+
+  <p>Il faut aussi être honnête sur les sources. La civilisation méroïtique nous reste en partie muette : son écriture, on sait la déchiffrer phonétiquement, mais sa langue demeure mal comprise. Beaucoup de ce que nous croyons savoir vient de sources extérieures, égyptiennes, grecques, romaines, avec les déformations que cela suppose. Nous regardons ce royaume à travers le regard de ses voisins, souvent condescendant. La prudence est de mise : nous connaissons la Nubie de loin, et de biais.</p>
+
+  <p>Prudence encore sur une image répandue, celle de Méroé « Birmingham de l'Afrique », grande cité sidérurgique. Le travail du fer y fut réel, attesté par d'énormes amas de scories, et il compta dans la prospérité du royaume. Mais les spécialistes les plus récents jugent l'expression exagérée : il ne faut pas transformer un savoir-faire métallurgique important en révolution industrielle avant l'heure. Là encore, rendre justice à la Nubie n'est pas la grandir au-delà du vrai, mais la mesurer avec exactitude.</p>
+
+  <p>Un mot, enfin, sur le préjugé que cet épisode entend corriger. Longtemps, l'histoire officielle a présenté l'Afrique subsaharienne comme un continent sans États, sans écriture, sans histoire avant l'arrivée des Européens. La Nubie dément cette fable à elle seule. Mais attention à ne pas verser dans l'excès inverse, celui d'une Afrique idéalisée. Ce royaume fut puissant et original ; il fut aussi guerrier, inégalitaire, esclavagiste. Lui rendre justice, ce n'est pas le parer de toutes les vertus : c'est le regarder comme un État réel, avec sa grandeur et ses ombres, à égalité avec les autres.</p>
+
+  <p>Reste une question ouverte. Si la Nubie a été si longtemps effacée de notre récit des origines, combien d'autres foyers l'ont été aussi ? Notre carte du Ve siècle, centrée sur quatre ou cinq grands noms, est encore le produit de ce que les archives ont bien voulu nous transmettre, et de ce que les historiens ont bien voulu chercher. Le prochain épisode, sur les mondes sans écriture, prolongera cette inquiétude.</p>
+</div>
+
+<!-- ===== CHRONOLOGIE ===== -->
+<div class="sapere-tab-content" id="ncontent4" data-print-title="Chronologie">
+  <div class="sn-timeline">
+    <div class="sn-jalon">
+      <span class="sn-date">VIIIe-VIIe siècle av. J.-C.</span>
+      <p>Depuis la région de Napata, devenue un centre royal majeur aux VIIIe-VIIe siècles, les rois de Koush conquièrent l'Égypte et fondent la XXVe dynastie, celle des « pharaons noirs ». Le plus fameux, Taharqa, règne sur un empire allant du Soudan à la Méditerranée.</p>
+    </div>
+    <div class="sn-jalon">
+      <span class="sn-date">vers 656 av. J.-C.</span>
+      <p>Après plusieurs campagnes assyriennes au VIIe siècle, puis la réunification de l'Égypte par Psammétique Ier, la domination koushite sur l'Égypte prend fin vers 656. Refoulés vers le sud, les rois nubiens se replient sur Napata et y maintiennent, contre toute attente, un pouvoir royal indépendant.</p>
+    </div>
+    <div class="sn-jalon">
+      <span class="sn-date">591 av. J.-C.</span>
+      <p>Une armée égyptienne, sous Psammétique II, remonte le Nil et met à sac Napata. C'est l'un des rares événements datés avec certitude de cette histoire. Après cet épisode, le poids des régions méridionales semble s'accroître, sans que l'on puisse réduire ce déplacement à une cause unique.</p>
+    </div>
+    <div class="sn-jalon">
+      <span class="sn-date">vers 525 av. J.-C.</span>
+      <p>Selon Hérodote, le roi perse Cambyse, maître de l'Égypte, aurait lancé une expédition vers la Nubie, qui aurait échoué dans le désert. L'ampleur réelle de l'épisode reste discutée, mais le récit dit assez la réputation d'inviolabilité du royaume de Koush.</p>
+    </div>
+    <div class="sn-jalon">
+      <span class="sn-dot pivot"></span>
+      <span class="sn-plabel">Le siècle de bascule</span>
+      <span class="sn-date">Ve siècle av. J.-C.</span>
+      <p>Replié sur Napata, le royaume poursuit son recentrement sur la Nubie. Il façonne l'héritage égyptien à sa main et cesse peu à peu de se penser comme un appendice de l'Égypte. C'est le siècle charnière de notre récit, avant le transfert de la capitale.</p>
+    </div>
+    <div class="sn-jalon">
+      <span class="sn-date">vers 270 av. J.-C.</span>
+      <p>Transfert de la capitale de Napata à Méroé, plus au sud. Le royaume recentre son cœur sur le Nil moyen et ses ressources minières. La civilisation méroïtique va s'y épanouir pleinement.</p>
+    </div>
+    <div class="sn-jalon">
+      <span class="sn-date">vers 150 av. J.-C.</span>
+      <p>Apparition de l'écriture méroïtique, qui note la langue méroïtique, encore imparfaitement comprise, et remplace peu à peu l'égyptien dans les textes officiels. Le royaume affirme sa propre identité graphique.</p>
+    </div>
+    <div class="sn-jalon">
+      <span class="sn-date">vers 30 av. J.-C.</span>
+      <p>La candace Amanirenas (r. 40-10) affronte les armées d'Auguste et marche sur Syène. Le conflit débouche sur un traité sans tribut, arrangement rare que peu de royaumes obtiendront de Rome.</p>
+    </div>
+    <div class="sn-jalon">
+      <span class="sn-dot final"></span>
+      <span class="sn-date">vers 350 apr. J.-C.</span>
+      <p>Le royaume de Méroé s'éteint, sous les coups d'Aksoum et la pression des peuples du désert. Plus de mille ans après la fondation de Napata, la civilisation nubienne indépendante s'achève, longtemps oubliée.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- POUR ALLER PLUS LOIN -->
+<div id="sapere-nubie-pal" style="max-width:100%;margin:0 auto;">
+<style>
+#sapere-nubie-pal{font-family:'Inter',system-ui,sans-serif;padding:0 24px 40px;}
+#sapere-nubie-pal h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;border-bottom:2px solid #8b0000;padding-bottom:8px;margin:30px 0 16px;font-weight:700;}
+#sapere-nubie-pal .sn-pal-sub{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;margin:28px 0 12px;font-weight:700;}
+#sapere-nubie-pal .sn-somm{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:28px;}
+#sapere-nubie-pal .sn-somm li{font-size:15px;line-height:1.45;padding:9px 0 9px 16px;border-bottom:1px solid #eee;position:relative;}
+#sapere-nubie-pal .sn-somm li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;border-radius:50%;background:#e0d0bb;}
+#sapere-nubie-pal .sn-somm li.fait::before{background:#c9a84f;}
+#sapere-nubie-pal .sn-somm li.actuel::before{background:#8b0000;}
+#sapere-nubie-pal .sn-somm li.actuel{font-weight:700;color:#8b0000;}
+#sapere-nubie-pal .sn-somm .sn-somm-tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-left:6px;}
+#sapere-nubie-pal .sn-somm .sn-somm-ven{color:#999;}
+#sapere-nubie-pal .sn-biblio{list-style:none;padding:0;margin:0;}
+#sapere-nubie-pal .sn-biblio li{font-size:18px;line-height:1.6;padding:10px 0;border-bottom:1px solid #eee;}
+#sapere-nubie-pal .sn-bib-auteur{font-weight:700;color:#1a1a1a;}
+#sapere-nubie-pal .sn-bib-titre{font-style:italic;}
+#sapere-nubie-pal .sn-bib-note{display:block;font-size:15px;color:#555;line-height:1.5;margin-top:3px;}
+@media(max-width:640px){#sapere-nubie-pal .sn-somm{grid-template-columns:1fr;}}
+</style>
+  <h2>Les six épisodes de la série</h2>
+  <ul class="sn-somm">
+    <li class="fait"><a href="https://sapere.page/six-foyers-une-meme-fievre/" target="_blank" rel="noopener">Introduction · Une même fièvre, six foyers</a></li>
+    <li class="fait"><a href="https://sapere.page/la-perse-ou-la-tolerance-comme-arme/" target="_blank" rel="noopener">Épisode 1 · La Perse, ou la tolérance comme arme</a></li>
+    <li class="fait"><a href="https://sapere.page/athenes-le-cercle-etroit-de-la-democratie/" target="_blank" rel="noopener">Épisode 2 · Athènes, le cercle étroit de la démocratie</a></li>
+    <li class="fait"><a href="https://sapere.page/linde-du-gange-quand-le-salut-echappe-aux-pretres/" target="_blank" rel="noopener">Épisode 3 · L'Inde du Gange, quand le salut échappe aux prêtres</a></li>
+    <li class="fait"><a href="https://sapere.page/la-chine-ou-lart-de-gouverner-le-chaos/" target="_blank" rel="noopener">Épisode 4 · La Chine, ou l'art de gouverner le chaos</a></li>
+    <li class="actuel">Épisode 5 · Napata, le royaume qui survécut aux pharaons<span class="sn-somm-tag">vous êtes ici</span></li>
+    <li class="fait"><a href="https://sapere.page/les-mondes-des-marges-inventer-sans-ecrire/" target="_blank" rel="noopener">Épisode 6 · Les mondes des marges, inventer sans écrire</a></li>
+  </ul>
+
+  <p class="sn-pal-sub">À lire aussi sur SAPERE</p>
+  <ul class="sn-biblio">
+    <li><a href="https://sapere.page/kerma-capitale-dun-royaume-africain/"><span class="sn-bib-titre">Kerma, capitale d'un royaume africain</span></a>
+      <span class="sn-bib-note">En amont de notre récit : la première grande civilisation nubienne, mille ans avant Napata. Pour comprendre d'où vient cette terre.</span></li>
+    <li><a href="https://sapere.page/le-1er-siecle-apres-j-c-meroe-et-aksoum-quand-lafrique-antique-souvre-au-monde/"><span class="sn-bib-titre">Méroé et Aksoum, quand l'Afrique antique s'ouvre au monde</span></a>
+      <span class="sn-bib-note">En aval : l'apogée méroïtique, les candaces face à Rome, le fer et l'or, et la bascule vers Aksoum. La suite de cette histoire.</span></li>
+  </ul>
+
+  <p class="sn-pal-sub">Pour aller plus loin</p>
+  <ul class="sn-biblio">
+    <li><span class="sn-bib-titre">Histoire générale de l'Afrique, tome II : Afrique ancienne</span>, sous la dir. de G. Mokhtar, UNESCO, 1980.
+      <span class="sn-bib-note">La grande somme collective de référence. Son chapitre sur l'empire de Koush, Napata et Méroé, est la source savante de cet épisode.</span></li>
+    <li><span class="sn-bib-titre">Le royaume de Méroé</span>, Claude Rilly (et ses travaux sur la langue méroïtique).
+      <span class="sn-bib-note">Le grand spécialiste français de Méroé et de son écriture. Pour entrer dans une civilisation qui nous parle encore à demi-mot.</span></li>
+    <li><span class="sn-bib-titre">L'Afrique ancienne. De l'Acacus au Zimbabwe</span>, François-Xavier Fauvelle.
+      <span class="sn-bib-note">Une synthèse de référence, qui rend à l'Afrique antique sa place dans l'histoire globale. Accessible et récente.</span></li>
+    <li><span class="sn-bib-titre">The History of Africa</span>, Molefi Kete Asante.
+      <span class="sn-bib-note">Une histoire écrite depuis l'Afrique, par le fondateur de l'afrocentricité. À lire avec un œil critique, car ses thèses les plus fortes sont discutées, mais précieuse pour changer de point de vue.</span></li>
+  </ul>
+</div>
+

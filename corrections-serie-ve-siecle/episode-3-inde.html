@@ -1,0 +1,456 @@
+<div id="sapere-inde">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+#sapere-inde{font-family:'Inter',system-ui,sans-serif;color:#1a1a1a;background:#ffffff;width:100%;max-width:100%;margin:0 auto;box-sizing:border-box;}
+#sapere-inde *{box-sizing:border-box;}
+
+/* HEADER */
+#sapere-inde .si-header{background:#ffffff;border-bottom:4px solid #8b0000;padding:30px 24px 26px;}
+#sapere-inde .si-serie{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;font-weight:700;margin:0 0 10px;}
+#sapere-inde .si-header h1{color:#1a1a1a;font-weight:800;font-size:clamp(26px,5vw,44px);line-height:1.15;margin:0 0 14px;}
+#sapere-inde .si-header .si-sub{color:#555;font-style:italic;font-size:18px;line-height:1.5;margin:0;}
+
+/* IMAGE */
+#sapere-inde .si-hero{margin:26px 0;}
+#sapere-inde .si-hero img{width:100%;max-width:100%;display:block;border:1px solid #e0e0e0;}
+#sapere-inde .si-hero figcaption{font-size:13px;color:#777;padding:8px 0;font-style:italic;}
+#sapere-inde .si-hero .si-credit{font-style:normal;color:#999;font-size:12px;}
+#sapere-inde .si-hero.si-hero-reduit img{width:75%;margin:0 auto;}
+#sapere-inde .si-hero.si-hero-reduit figcaption{width:75%;margin:0 auto;}
+@media(max-width:640px){
+  #sapere-inde .si-hero.si-hero-reduit img,
+  #sapere-inde .si-hero.si-hero-reduit figcaption{width:100%;}
+}
+
+/* BLOC TEXTE + IMAGE */
+#sapere-inde .si-duo{display:grid;grid-template-columns:1fr 1.35fr;gap:26px;align-items:center;margin:26px 0;}
+#sapere-inde .si-duo.si-duo-right{grid-template-columns:1.35fr 1fr;}
+#sapere-inde .si-duo p{margin:0;}
+#sapere-inde .si-duo figure{margin:0;}
+#sapere-inde .si-duo img{width:100%;max-width:100%;display:block;border:1px solid #e0e0e0;}
+#sapere-inde .si-duo figcaption{font-size:13px;color:#777;padding:8px 0 0;font-style:italic;}
+
+/* BANDEAU DE SERIE */
+#sapere-inde .si-bandeau{background:#e6ecf2;border:1px solid #c5d2e0;border-left:4px solid #8b0000;padding:16px 22px 18px;margin:0 24px 0;}
+#sapere-inde .si-bandeau-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+#sapere-inde .si-bandeau-serie{font-size:13px;font-weight:700;color:#1a1a1a;}
+#sapere-inde .si-bandeau-serie span{color:#8b0000;}
+#sapere-inde .si-bandeau-compte{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#8b0000;font-weight:700;}
+#sapere-inde .si-progress{display:flex;gap:6px;}
+#sapere-inde .si-step{flex:1 1 0;text-align:center;}
+#sapere-inde .si-step-bar{height:6px;border-radius:3px;background:#e0d0bb;margin-bottom:6px;}
+#sapere-inde .si-step.done .si-step-bar{background:#c9a84f;}
+#sapere-inde .si-step.current .si-step-bar{background:#8b0000;}
+#sapere-inde .si-step-lbl{display:block;font-size:10px;line-height:1.3;color:#999;}
+#sapere-inde .si-step.current .si-step-lbl{color:#8b0000;font-weight:700;}
+#sapere-inde .si-step.done .si-step-lbl{color:#7a6a3a;}
+
+/* ONGLETS */
+#sapere-inde input[type=radio]{position:absolute;opacity:0;width:1px;height:1px;}
+#sapere-inde .sapere-tabs{display:flex;flex-wrap:wrap;gap:0;border-bottom:2px solid #8b0000;margin:0 24px;padding-top:20px;}
+#sapere-inde .sapere-tabs label{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#999;padding:12px 18px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .15s;}
+#sapere-inde .sapere-tabs label:hover{color:#8b0000;}
+#sapere-inde .sapere-tab-content{display:none !important;padding:28px 24px 36px;}
+
+#sapere-inde #itab1:checked ~ .sapere-tabs label[for=itab1],
+#sapere-inde #itab2:checked ~ .sapere-tabs label[for=itab2],
+#sapere-inde #itab3:checked ~ .sapere-tabs label[for=itab3],
+#sapere-inde #itab4:checked ~ .sapere-tabs label[for=itab4]{color:#8b0000;border-bottom-color:#8b0000;}
+
+#sapere-inde #itab1:checked ~ .sapere-tab-content#icontent1,
+#sapere-inde #itab2:checked ~ .sapere-tab-content#icontent2,
+#sapere-inde #itab3:checked ~ .sapere-tab-content#icontent3,
+#sapere-inde #itab4:checked ~ .sapere-tab-content#icontent4{display:block !important;}
+
+/* CORPS */
+#sapere-inde #icontent1 p{font-size:20px;line-height:1.8;color:#1a1a1a;margin:0 0 22px;}
+#sapere-inde #icontent1 h2{font-weight:700;font-size:26px;color:#1a1a1a;margin:38px 0 18px;line-height:1.25;}
+#sapere-inde .sh-formule{color:#5a0000;font-weight:700;}
+#sapere-inde a{color:#8b0000;text-decoration:underline;text-underline-offset:2px;}
+
+/* TOOLTIP */
+#sapere-inde .sapere-tooltip{border-bottom:1px dotted #8b0000;cursor:help;position:relative;}
+#sapere-inde .sapere-tooltip:focus::after,#sapere-inde .sapere-tooltip:hover::after{content:attr(data-tooltip);position:absolute;left:50%;transform:translateX(-50%);top:140%;z-index:20;background:#1a1a1a;color:#fff;font-size:14px;font-style:normal;font-weight:400;line-height:1.45;padding:10px 14px;border-radius:4px;width:min(280px,80vw);box-shadow:0 4px 14px rgba(0,0,0,.25);text-align:left;}
+
+/* ENCADRE */
+#sapere-inde .si-box{background:#e6ecf2;border-left:4px solid #8b0000;padding:18px 22px;margin:30px 0;}
+#sapere-inde .si-box p{font-size:18px;line-height:1.65;margin:0;}
+
+/* DIPTYQUE */
+#sapere-inde .si-dip{margin:34px 0;border:1px solid #c5d2e0;background:#e6ecf2;}
+#sapere-inde .si-dip-titre{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;padding:16px 20px 14px;border-bottom:1px solid #c5d2e0;}
+#sapere-inde .si-dip-grid{display:grid;grid-template-columns:1fr 1fr;}
+#sapere-inde .si-dip-col{padding:18px 20px 22px;}
+#sapere-inde .si-dip-col.interne{border-right:1px solid #c5d2e0;background:#f6f9fc;}
+#sapere-inde .si-dip-head{display:block;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+#sapere-inde .si-dip-col.interne .si-dip-head{color:#3a5a78;}
+#sapere-inde .si-dip-col.externe .si-dip-head{color:#8b0000;}
+#sapere-inde .si-dip-li{display:block;font-size:16px;line-height:1.5;color:#1a1a1a;padding:7px 0 7px 18px;position:relative;}
+#sapere-inde .si-dip-li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;}
+#sapere-inde .si-dip-col.interne .si-dip-li::before{background:#3a5a78;}
+#sapere-inde .si-dip-col.externe .si-dip-li::before{background:#8b0000;}
+
+/* INFOGRAPHIE VARNA */
+#sapere-inde .si-varna{margin:34px 0;border:1px solid #c5d2e0;background:#e6ecf2;border-top:4px solid #8b0000;padding:22px 22px 22px;}
+#sapere-inde .si-varna-titre{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-bottom:6px;}
+#sapere-inde .si-varna-sub{font-size:14px;color:#555;font-style:italic;margin-bottom:22px;line-height:1.5;}
+#sapere-inde .si-varna-row{display:flex;align-items:stretch;gap:0;margin-bottom:10px;border:1px solid #c5d2e0;background:#fff;overflow:hidden;border-radius:3px;}
+#sapere-inde .si-varna-icon{flex:0 0 70px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:#fff;padding:14px 0;}
+#sapere-inde .si-varna-icon svg{width:30px;height:30px;}
+#sapere-inde .si-varna-rank{font-family:'Georgia',serif;font-weight:700;font-size:15px;opacity:.85;}
+#sapere-inde .si-varna-body{flex:1 1 auto;padding:13px 18px;display:flex;flex-direction:column;justify-content:center;}
+#sapere-inde .si-varna-nom{display:block;font-weight:700;font-size:17px;color:#1a1a1a;margin-bottom:3px;}
+#sapere-inde .si-varna-nom span{font-weight:400;font-style:italic;color:#777;font-size:15px;}
+#sapere-inde .si-varna-desc{display:block;font-size:14px;line-height:1.45;color:#555;}
+#sapere-inde .si-varna-corps{flex:0 0 118px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;padding:0 16px;border-left:1px solid #eee;text-align:right;}
+#sapere-inde .si-varna-corps b{font-size:13px;color:#8b0000;font-weight:700;line-height:1.3;}
+#sapere-inde .si-v1 .si-varna-icon{background:#8b0000;}
+#sapere-inde .si-v2 .si-varna-icon{background:#a84040;}
+#sapere-inde .si-v3 .si-varna-icon{background:#7a6a3a;}
+#sapere-inde .si-v4 .si-varna-icon{background:#5a5a5a;}
+#sapere-inde .si-varna-hors{margin-top:14px;padding:13px 16px 13px 52px;background:#f6f9fc;border:1px dashed #c5d2e0;border-radius:3px;font-size:14px;line-height:1.5;color:#555;position:relative;}
+#sapere-inde .si-varna-hors svg{position:absolute;left:16px;top:14px;width:24px;height:24px;color:#999;}
+#sapere-inde .si-varna-note{font-size:13px;font-style:italic;color:#777;margin-top:14px;}
+@media(max-width:640px){
+  #sapere-inde .si-varna-row{flex-wrap:wrap;}
+  #sapere-inde .si-varna-icon{flex:0 0 100%;flex-direction:row;padding:8px 0;}
+  #sapere-inde .si-varna-corps{flex:1 1 100%;align-items:flex-start;text-align:left;border-left:none;border-top:1px solid #eee;padding:8px 18px;}
+}
+
+/* FRISE */
+#sapere-inde .si-frise{margin:34px 0;border-top:4px solid #8b0000;background:#e6ecf2;border:1px solid #c5d2e0;border-top-width:4px;padding:18px 20px 22px;}
+#sapere-inde .si-frise-titre{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-bottom:16px;}
+#sapere-inde .si-frise-flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;}
+#sapere-inde .si-frise-item{flex:1 1 0;min-width:120px;padding:4px 10px;border-left:2px solid #c5d2e0;}
+#sapere-inde .si-frise-item:first-child{border-left:3px solid #8b0000;}
+#sapere-inde .si-frise-ep{display:block;font-family:'Georgia',serif;font-weight:700;font-size:16px;color:#1a1a1a;margin-bottom:3px;}
+#sapere-inde .si-frise-dt{display:block;font-size:12px;color:#8b0000;font-weight:700;margin-bottom:5px;}
+#sapere-inde .si-frise-nt{display:block;font-size:13px;line-height:1.45;color:#555;}
+
+/* ESSENTIELS */
+#sapere-inde .si-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+#sapere-inde .si-card{background:#e6ecf2;border:1px solid #c5d2e0;border-top:3px solid #8b0000;padding:20px;}
+#sapere-inde .si-card h3{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;margin:0 0 10px;font-weight:700;}
+#sapere-inde .si-card p{font-size:17px;line-height:1.6;margin:0;color:#1a1a1a;}
+
+/* COULISSES */
+#sapere-inde #icontent3 p{font-size:19px;line-height:1.75;margin:0 0 20px;color:#1a1a1a;}
+
+/* CHRONO */
+#sapere-inde .si-timeline{position:relative;padding-left:30px;border-left:1px solid #000000;margin-top:10px;}
+#sapere-inde .si-jalon{position:relative;margin-bottom:38px;}
+#sapere-inde .si-jalon:last-child{margin-bottom:0;}
+#sapere-inde .si-dot{position:absolute;left:-36px;top:6px;width:11px;height:11px;background:#ffffff;border:2px solid #000000;border-radius:50%;box-sizing:border-box;}
+#sapere-inde .si-dot.pivot{background:#8b0000;border-color:#8b0000;width:13px;height:13px;left:-37px;}
+#sapere-inde .si-dot.final{background:#000;border-color:#000;width:13px;height:13px;left:-37px;}
+#sapere-inde .si-plabel{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-bottom:2px;}
+#sapere-inde .si-date{display:block;font-family:'Georgia',serif;font-weight:700;font-size:22px;color:#1a1a1a;margin-bottom:6px;}
+#sapere-inde .si-jalon p{font-size:18px;line-height:1.6;color:#1a1a1a;margin:0;text-align:justify;}
+
+@media(max-width:640px){#sapere-inde .si-grid{grid-template-columns:1fr;}
+#sapere-inde .si-dip-grid{grid-template-columns:1fr;}
+#sapere-inde .si-dip-col.interne{border-right:none;border-bottom:1px solid #c5d2e0;}
+#sapere-inde .si-frise-item{flex:1 1 100%;border-left:3px solid #c5d2e0;border-top:1px solid #d4dfe9;padding:8px 10px;}
+#sapere-inde .si-frise-item:first-child{border-left:3px solid #8b0000;}
+#sapere-inde .si-progress{gap:3px;}
+#sapere-inde .si-step-lbl{font-size:8px;line-height:1.15;letter-spacing:-0.2px;word-break:break-word;}
+#sapere-inde .si-duo,
+#sapere-inde .si-duo.si-duo-right{grid-template-columns:1fr;}}
+
+@media print{
+  #sapere-inde .sapere-tab-content{display:block !important;padding:24px 0 30px;}
+  #sapere-inde .sapere-tabs{display:none !important;}
+  #sapere-inde .sapere-tab-content::before{content:attr(data-print-title);display:block;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#8b0000;border-bottom:2px solid #8b0000;padding-bottom:8px;margin-bottom:20px;}
+  #sapere-inde .sh-formule{color:#5a0000 !important;}
+}
+</style>
+
+<!-- HEADER -->
+<div class="si-header">
+  <p class="si-serie">Une même fièvre, six foyers · Épisode 3</p>
+  <h1>L'Inde du Gange, quand le salut échappe aux prêtres</h1>
+  <p class="si-sub">Pendant des siècles, il fallait un brahmane et un sacrifice pour espérer sauver son âme. Sur les routes du Gange, des hommes affirment soudain qu'on peut se sauver seul.</p>
+</div>
+
+<!-- BANDEAU DE SERIE -->
+<div class="si-bandeau">
+  <div class="si-bandeau-top">
+    <span class="si-bandeau-serie">Série <span>Une même fièvre : six foyers du Ve siècle avant notre ère</span></span>
+    <span class="si-bandeau-compte">Épisode 3 sur 6</span>
+  </div>
+  <div class="si-progress">
+    <div class="si-step done"><div class="si-step-bar"></div><span class="si-step-lbl">1. Perse</span></div>
+    <div class="si-step done"><div class="si-step-bar"></div><span class="si-step-lbl">2. Grèce</span></div>
+    <div class="si-step current"><div class="si-step-bar"></div><span class="si-step-lbl">3. Inde</span></div>
+    <div class="si-step"><div class="si-step-bar"></div><span class="si-step-lbl">4. Chine</span></div>
+    <div class="si-step"><div class="si-step-bar"></div><span class="si-step-lbl">5. Nubie</span></div>
+    <div class="si-step"><div class="si-step-bar"></div><span class="si-step-lbl">6. Marges</span></div>
+  </div>
+</div>
+
+<input type="radio" name="si-tabs" id="itab1" checked>
+<input type="radio" name="si-tabs" id="itab2">
+<input type="radio" name="si-tabs" id="itab3">
+<input type="radio" name="si-tabs" id="itab4">
+
+<div class="sapere-tabs">
+  <label for="itab1">Article</label>
+  <label for="itab2">Les Essentiels</label>
+  <label for="itab3">Les Coulisses</label>
+  <label for="itab4">Chronologie</label>
+</div>
+
+<!-- ===== ARTICLE ===== -->
+<div class="sapere-tab-content" id="icontent1" data-print-title="Article">
+
+  <p>L'image d'Épinal a la vie dure : le sage immobile sous son arbre, les yeux clos, dans une Inde hors du temps. Ce n'est pourtant pas là que tout commence. Ce qui commence, au Ve siècle avant notre ère, commence sur une route.</p>
+
+  <p>La plaine du Gange, à cette époque, ne ressemble en rien à un cloître. Des villes neuves poussent le long du fleuve, gonflées par le commerce du riz et du fer. Sur les pistes qui les relient, une foule bariolée se croise : des marchands qui comptent leurs gains, des princes qui lèvent des armées, des brahmanes qui récitent des formules vieilles de mille ans, et, parmi eux, de plus en plus nombreux, des hommes au crâne rasé, vêtus de peu, qui ont tout quitté. On les appelle les renonçants. Ils mendient leur nourriture, débattent sur les places, et proposent une idée qui va tout ébranler : et si <strong>le salut</strong> ne s'achetait plus au prix d'un sacrifice ?</p>
+
+  <h2>Une Inde en pleine ébullition</h2>
+
+  <p>Rien n'est immobile dans cette Inde-là. Le nord du sous-continent bouillonne. Une seconde vague d'urbanisation couvre la plaine gangétique de cités marchandes. Seize grands royaumes et républiques, les <span class="sapere-tooltip" tabindex="0" data-tooltip="Les « grands royaumes » (mahājanapada) : seize États rivaux qui se partagent le nord de l'Inde aux VIe-Ve siècles av. J.-C., certains monarchiques, d'autres organisés en républiques aristocratiques.">mahājanapada</span>, se disputent la plaine, se font la guerre, frappent monnaie, prélèvent l'impôt. Une classe nouvelle s'enrichit : <strong>les marchands</strong>, que le vieil ordre sacré plaçait pourtant assez bas.</p>
+
+  <figure class="si-hero si-hero-reduit">
+    <img src="https://sapere.page/wp-content/uploads/2026/07/INDE-MAP-THE-16-MAHAJANAPADAS-OF-ANCIENT-INDIA-500-BCE.png" alt="Carte des seize mahājanapada, les grands royaumes de l'Inde ancienne vers 500 avant notre ère, répartis sur la plaine du Gange et le nord du sous-continent">
+    <figcaption>Les seize mahājanapada vers 500 avant notre ère. C'est dans cette mosaïque de royaumes rivaux, de cités neuves et de routes marchandes, non dans une Inde immobile, que naît la quête du salut intérieur. <span class="si-credit">Carte : domaine public.</span></figcaption>
+  </figure>
+
+  <p>Voilà le décor réel, et il compte. Car les grandes doctrines de libération ne naissent pas d'une Inde éternelle et rêveuse. Elles naissent d'un monde qui change trop vite, où les anciens repères vacillent, où la richesse ne coïncide plus avec le rang que <strong>la naissance</strong> assignait. <span class="sh-formule">Le salut individuel n'est pas né dans l'immobilité d'un cloître, mais dans le vacarme d'un monde en train de se transformer.</span> Quand tout bouge, la question de savoir comment échapper à ce mouvement devient brûlante.</p>
+
+  <p>Un marchand enrichi par le négoce du fer, dont les caravanes sillonnent la plaine, en offre le meilleur exemple. Il possède plus d'or que bien des nobles, il prête aux princes, il bâtit des entrepôts. Mais dans l'ordre sacré, il reste un homme de troisième rang, tenu de s'effacer devant un brahmane sans le sou. Cet écart entre sa puissance réelle et sa place assignée le ronge. Quand passe sur la route un renonçant qui affirme que la naissance ne décide plus du salut, que chacun peut trouver sa voie par son seul effort, comment ne tendrait-il pas l'oreille ? Ce n'est pas un hasard si les communautés nouvelles trouveront chez les marchands leurs premiers protecteurs. Les idées de libération rencontraient une soif bien concrète.</p>
+
+  <h2>Le monopole des prêtres</h2>
+
+  <p>Pour saisir la rupture, il faut comprendre ce contre quoi elle s'élève. Depuis des siècles, la religion de l'Inde du Nord reposait sur le sacrifice védique et sur ceux qui seuls savaient l'accomplir : les <span class="sapere-tooltip" tabindex="0" data-tooltip="Caste sacerdotale, au sommet de la hiérarchie sociale indienne. Seuls les brahmanes maîtrisaient les formules et les gestes du sacrifice védique.">brahmanes</span>. Pour obtenir une bonne récolte, un fils, une victoire, ou une place favorable après la mort, il fallait un rite. Et le rite exigeait un prêtre, des formules exactes, des offrandes, souvent des animaux, parfois des richesses considérables. Se tromper d'un mot pouvait tout gâcher.</p>
+
+  <p>Ce système faisait des brahmanes les intermédiaires obligés entre les hommes et l'invisible. La place de chacun, dans cette société, était fixée par la naissance : on naissait prêtre, guerrier, marchand ou serviteur, et l'on ne changeait pas. <span class="sh-formule">Le salut était affaire de naissance et de rituel, non de mérite ni de recherche.</span> Le riche marchand pouvait payer les plus beaux sacrifices, il restait, dans l'ordre sacré, en dessous du plus modeste brahmane. On devine la frustration que ce décalage nourrissait.</p>
+
+  <figure class="si-varna">
+    <figcaption class="si-varna-titre">Les quatre ordres (varna) de la société védique</figcaption>
+    <p class="si-varna-sub">Un hymne du Rig-Veda fait naître les quatre ordres des parties du corps de l'Homme cosmique : la hiérarchie se présente comme l'ordre même du monde, donc indiscutable.</p>
+    <div class="si-varna-row si-v1">
+      <div class="si-varna-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c0 3-4 4.5-4 8a4 4 0 0 0 1.5 3.1C9 12 10.5 11 10.5 9c1.5 1 2 2.5 2 4 0 .8-.3 1.5-.7 2 1.3-.4 2.2-1.6 2.2-3.5 0-1.2-.5-2-.5-2 1.5.5 2.5 2 2.5 4a5 5 0 1 1-10 0c0-4 5.5-5.5 5.5-11.6z"/></svg>
+        <span class="si-varna-rank">I</span>
+      </div>
+      <div class="si-varna-body">
+        <span class="si-varna-nom">Brahmanes <span>(brāhmaṇa)</span></span>
+        <span class="si-varna-desc">Prêtres et lettrés. Seuls maîtres du sacrifice et des formules sacrées.</span>
+      </div>
+      <div class="si-varna-corps"><b>nés de la bouche</b></div>
+    </div>
+    <div class="si-varna-row si-v2">
+      <div class="si-varna-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5 20 3l-.5 5.5L8 20l-4-4L14.5 3.5z"/><path d="m6 14-3 3 4 4 3-3"/><path d="m14.5 9.5 1 1"/></svg>
+        <span class="si-varna-rank">II</span>
+      </div>
+      <div class="si-varna-body">
+        <span class="si-varna-nom">Guerriers <span>(kṣatriya)</span></span>
+        <span class="si-varna-desc">Rois, nobles, soldats. Détiennent le pouvoir temporel. <strong>Bouddha</strong> et <strong>Mahavira</strong> en sont issus.</span>
+      </div>
+      <div class="si-varna-corps"><b>nés des bras</b></div>
+    </div>
+    <div class="si-varna-row si-v3">
+      <div class="si-varna-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V11"/><path d="M12 11C12 7 9 5 5 5c0 4 3 6 7 6z"/><path d="M12 13c0-3 2.5-5 6-5 0 3.5-2.5 5-6 5z"/></svg>
+        <span class="si-varna-rank">III</span>
+      </div>
+      <div class="si-varna-body">
+        <span class="si-varna-nom">Producteurs <span>(vaiśya)</span></span>
+        <span class="si-varna-desc">Marchands, éleveurs, cultivateurs. Font vivre l'économie, sans accéder au sacré.</span>
+      </div>
+      <div class="si-varna-corps"><b>nés des cuisses</b></div>
+    </div>
+    <div class="si-varna-row si-v4">
+      <div class="si-varna-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8"/><path d="M9 3v2.5L7 8a6 6 0 0 0-1 3.3V16a5 5 0 0 0 5 5h2a5 5 0 0 0 5-5v-4.7A6 6 0 0 0 17 8l-2-2.5V3"/><path d="M6.5 12h11"/></svg>
+        <span class="si-varna-rank">IV</span>
+      </div>
+      <div class="si-varna-body">
+        <span class="si-varna-nom">Serviteurs <span>(śūdra)</span></span>
+        <span class="si-varna-desc">Travailleurs au service des trois ordres supérieurs. Exclus du rituel védique.</span>
+      </div>
+      <div class="si-varna-corps"><b>nés des pieds</b></div>
+    </div>
+    <p class="si-varna-hors">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>
+      <strong>Hors du schéma :</strong> ceux qu'on tiendra plus tard pour « intouchables » restent en dehors des quatre ordres, au bas de la société, sans place dans le corps sacré.
+    </p>
+    <p class="si-varna-note">Attention : ce système des quatre varna ne se confond pas avec les milliers de castes (jāti) de l'Inde moderne, stratification bien plus tardive et complexe.</p>
+  </figure>
+
+  <h2>La rupture des renonçants</h2>
+
+  <div class="si-duo">
+    <figure>
+      <img src="https://sapere.page/wp-content/uploads/2026/07/SAPERE-BLOG-ILLUSTRATION-INDE-le-Bouddha-Mahavira-le-grand-heros-du-jainisme.png" alt="Illustration représentant le Bouddha, l'Éveillé, et Mahavira, le grand héros du jaïnisme, les deux figures qui contestent le monopole rituel des brahmanes">
+      <figcaption>Le Bouddha et Mahavira. Deux fils de guerriers, non de prêtres, qui déplacent le salut du sacrifice vers la discipline intérieure.</figcaption>
+    </figure>
+    <p>C'est alors que des voix s'élèvent pour dire : cela ne suffit pas, et surtout, cela n'est pas nécessaire. Deux hommes, parmi beaucoup d'autres, vont marquer l'histoire. Le premier, un prince du clan des Śākya que la tradition appellera le Bouddha, l'Éveillé. Le second, Mahavira, le grand héros du jaïnisme. Détail qui n'en est pas un : aucun des deux n'est brahmane. Tous deux appartiennent à <strong>la caste</strong> des guerriers. La contestation du monopole sacerdotal vient de ceux qui n'en profitaient pas.</p>
+  </div>
+
+  <p>Leur message, par-delà d'immenses différences, partage une intuition commune. Les dieux existent peut-être, mais ils ne peuvent pas vous délivrer. Ce qui vous enchaîne, c'est le cycle des renaissances, où chacun revient sans fin, vie après vie, selon le poids de ses actes. Ce poids porte un nom, le <span class="sapere-tooltip" tabindex="0" data-tooltip="La loi des actes (karma) : chaque action, bonne ou mauvaise, produit des conséquences qui déterminent les vies futures.">karma</span>. Et pour en sortir, nul prêtre ni sacrifice ne servent : il faut un travail sur soi, une discipline, une ascèse, une connaissance. La libération, la délivrance, se gagne seul.</p>
+
+  <p>Le renversement est total. Là où <strong>le brahmanisme</strong> disait « paie le rite et respecte ton rang », le renonçant répond « change-toi toi-même ». La voie n'est plus héréditaire : elle est ouverte, en principe, à quiconque s'y engage, prince ou balayeur. <span class="sh-formule">La délivrance cesse d'être un privilège de caste pour devenir une possibilité de discipline.</span></p>
+
+  <h2>Pourquoi les rois écoutent les renonçants</h2>
+
+  <p>Ces mouvements auraient pu s'éteindre dans l'indifférence des puissants. C'est l'inverse qui se produit. Sur le Gange, les rois les plus ambitieux les accueillent, les protègent, les financent. Le plus remarquable d'entre eux, <strong>Bimbisâra</strong>, qui règne sur le Magadha à la fin du VIe siècle, se fait le protecteur des communautés bouddhistes et jaïnes. Il exempte les ascètes de taxes, reçoit le Bouddha, écoute Mahavira. Son fils Ajātaśatru, qui l'assassinera pour prendre son trône, poursuivra la même politique. Ce ne sont pas des dévots égarés : ce sont des bâtisseurs d'État.</p>
+
+  <p>Car un roi qui veut s'agrandir bute sur un obstacle invisible. Le vieil ordre sacerdotal lie le pouvoir à la naissance, au clan, au rang hérité, et le prêtre détient les clés de cette légitimité. Or le <strong>Magadha</strong> se tient justement aux marges du monde védique, méprisé par les brahmanes orthodoxes qui le jugent impur. Ce mépris devient une chance. Le souverain qui lève l'impôt, entretient une armée permanente et traite avec des marchands enrichis n'a plus besoin d'un ordre fondé sur le sang des lignages. Il lui faut une légitimité neuve, qui parle à tous ses sujets sans distinction de rang.</p>
+
+  <p><span class="sh-formule">Le salut ouvert à tous et l'État qui ignore les clans avancent, sans le savoir, dans la même direction.</span> Les renonçants offrent aux rois une parole qui contourne les prêtres ; les rois offrent aux renonçants des monastères, des routes sûres, des protecteurs. Nul calcul cynique ici, mais une convergence d'intérêts, comme il s'en noue souvent dans l'histoire. Deux siècles plus tard, le premier empereur à unifier presque toute l'Inde, <strong>Ashoka</strong>, se réclamera du Bouddha.</p>
+
+  <h2>Le sacrifice retourné vers l'intérieur</h2>
+
+  <p>Mais l'histoire aurait tort de se réduire à un duel entre <strong>les prêtres</strong> et leurs contestataires. Car au sein même de la tradition védique, une révolution silencieuse se produit, portée par des textes qu'on appelle les <span class="sapere-tooltip" tabindex="0" data-tooltip="Textes philosophiques (vers le VIIIe-Ve siècle av. J.-C.) qui prolongent les Veda en déplaçant le sens du sacrifice vers une quête intérieure. Base de la pensée indienne classique.">Upanishads</span>. Leur audace est d'un autre ordre. Ils ne rejettent pas <strong>le sacrifice</strong> : ils le déplacent. L'autel n'est plus le brasier de pierre, il devient le corps du méditant ; l'offrande n'est plus l'animal égorgé, elle devient le souffle et la pensée.</p>
+
+  <p>Ces textes formulent une idée qui traversera les siècles : au fond de chaque être réside un principe, l'<span class="sapere-tooltip" tabindex="0" data-tooltip="Le Soi profond, l'essence spirituelle de l'individu, selon les Upanishads. Distinct de l'ego passager.">ātman</span>, identique à l'absolu qui soutient l'univers, le brahman. Se sauver, dès lors, ce n'est plus apaiser <strong>les dieux</strong> : c'est connaître, en soi, cette identité cachée. Le rite extérieur cède la place à la quête <strong>intérieure</strong>.</p>
+
+  <p>Ces mots savants, ne vous laissez pas impressionner. Ils désignent une question très simple, et peut-être la plus ancienne du monde : qu'est-ce qui, en nous, peut être libéré de la souffrance, de la mort, et du retour sans fin des existences ?</p>
+
+  <p>D'un côté donc, <strong>les Upanishads</strong> réforment la tradition de l'intérieur, en spiritualisant le sacrifice. De l'autre, bouddhisme et jaïnisme la contestent de l'extérieur, en s'en passant tout à fait. Deux chemins opposés, une même direction : <span class="sh-formule">le salut quitte l'autel du prêtre pour se loger dans l'effort de l'homme.</span></p>
+
+  <p>Gardons-nous pourtant d'imaginer une rupture nette, où l'individu solitaire congédierait le clergé. Rien de tel. Les brahmanes ne disparaissent pas, et leur autorité rituelle traversera les siècles. Les Upanishads elles-mêmes naissent dans leurs écoles, non contre elles. Quant aux communautés du Bouddha et de Mahavira, elles deviendront vite des institutions à leur tour, avec leurs règles, leurs hiérarchies, leurs monastères et leurs mécènes. Ce qui se déplace n'est pas le pouvoir des prêtres, c'est le lieu où se joue la délivrance.</p>
+
+  <figure class="si-dip">
+    <figcaption class="si-dip-titre">Deux façons d'échapper au monopole des prêtres</figcaption>
+    <div class="si-dip-grid">
+      <div class="si-dip-col interne">
+        <span class="si-dip-head">La réforme interne : les Upanishads</span>
+        <span class="si-dip-li">On reste dans la tradition védique.</span>
+        <span class="si-dip-li">Le sacrifice n'est pas rejeté, mais intériorisé : l'autel devient le corps.</span>
+        <span class="si-dip-li">Se sauver, c'est connaître en soi l'identité de <strong>l'ātman</strong> et du brahman.</span>
+        <span class="si-dip-li">Le prêtre n'est plus indispensable ; la quête intérieure le remplace.</span>
+      </div>
+      <div class="si-dip-col externe">
+        <span class="si-dip-head">La rupture externe : Bouddha, Mahavira</span>
+        <span class="si-dip-li">On sort de la tradition védique.</span>
+        <span class="si-dip-li">Le sacrifice est jugé inutile : nul rite ne délivre.</span>
+        <span class="si-dip-li">Se sauver, c'est suivre une discipline, une ascèse, une voie personnelle.</span>
+        <span class="si-dip-li">La communauté des renonçants remplace l'ordre des brahmanes.</span>
+      </div>
+    </div>
+  </figure>
+
+  <h2>Ce que <strong>le Gange</strong> a inventé</h2>
+
+  <p>Gardons-nous pourtant d'un contresens. Ces renonçants ne sont pas des révolutionnaires modernes, et il serait faux d'en faire les hérauts d'une égalité sociale. Le bouddhisme accepte les rois, vit des dons des marchands, s'organise vite en communautés réglées, et deviendra à son tour une institution puissante. Il ouvre une porte hors du sacrifice ; il n'abolit pas d'un geste les hiérarchies du monde. La caste survivra, longtemps.</p>
+
+  <p>Ce qui change, et qui ne changera plus, c'est ailleurs. La plaine du Gange n'a pas inventé la spiritualité, qui existait bien avant elle. Elle a inventé quelque chose de plus radical : l'idée que le salut peut ne plus dépendre d'un dieu à nourrir ni d'un prêtre à payer, mais d'un travail patient sur soi-même. Une porte s'est ouverte, que nul rituel ne pouvait plus fermer.</p>
+
+  <p>Et c'est là que l'Inde rejoint, à sa manière, les autres foyers de ce siècle. La Perse cherchait à gouverner l'immense. Athènes, à se gouverner entre citoyens. L'Inde du Gange, elle, pose une question d'une tout autre échelle, la plus intime de toutes : <span class="sh-formule">comment se libérer d'un monde auquel on appartient encore ?</span> Vingt-cinq siècles plus tard, un demi-milliard d'hommes cherchent toujours la réponse sur le chemin qu'elle a tracé.</p>
+
+</div>
+
+<!-- ===== ESSENTIELS ===== -->
+<div class="sapere-tab-content" id="icontent2" data-print-title="Les Essentiels">
+  <div class="si-grid">
+    <div class="si-card">
+      <h3>Le fait majeur</h3>
+      <p>Au Ve siècle avant notre ère, dans la vallée du Gange, au nord de l'Inde, deux religions nouvelles apparaissent : le bouddhisme et le jaïnisme. Au même moment, des textes appelés Upanishads réinventent de l'intérieur la vieille religion des prêtres. Leur point commun, et c'est une révolution : pour être sauvé, il ne suffit plus, et il n'est même plus nécessaire, de payer un prêtre pour accomplir un sacrifice.</p>
+    </div>
+    <div class="si-card">
+      <h3>Le contre-récit</h3>
+      <p>On imagine volontiers une Inde éternelle, spirituelle et immobile, hors du temps. C'est faux. Ces doctrines naissent dans un monde qui bouge très vite : des villes neuves sortent de terre, seize royaumes rivaux se font la guerre, une classe de marchands s'enrichit et bouscule l'ordre ancien. Le repli vers le salut intérieur n'est pas une sagesse tombée du ciel, c'est une réponse à une société en pleine crise.</p>
+    </div>
+    <div class="si-card">
+      <h3>Le mécanisme central</h3>
+      <p>Deux façons de contester le pouvoir des prêtres, les brahmanes. La première réforme la religion de l'intérieur : les Upanishads gardent les rites, mais enseignent que l'essentiel se joue dans l'âme (l'ātman), reflet de l'absolu (le brahman). La seconde rompt franchement : le Bouddha et Mahavira ne nient pas les dieux, mais jugent qu'ils ne délivrent personne. Ils misent tout sur l'effort personnel, la méditation et l'ascèse.</p>
+    </div>
+    <div class="si-card">
+      <h3>Le verrouillage</h3>
+      <p>Les Indiens de ce temps croient que l'on renaît sans fin, vie après vie, dans une condition dictée par ses actes passés. La question devient alors : comment sortir de cette roue par ses propres forces ? La réponse, en principe, s'adresse à tous, quelle que soit la naissance. En principe seulement : l'ordre des castes, lui, ne sera pas aboli.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== COULISSES ===== -->
+<div class="sapere-tab-content" id="icontent3" data-print-title="Les Coulisses">
+  <p>Un mot doit être manié avec prudence : « hindouisme ». On serait tenté de dire que les Upanishads reformulent l'hindouisme. Ce serait un anachronisme. Au Ve siècle avant notre ère, l'hindouisme comme ensemble religieux identifiable n'existe pas encore : c'est une construction bien plus tardive, composite, stratifiée. Ce qui existe alors, c'est la tradition védique, le brahmanisme, un ensemble de pratiques et de textes. Nommer les choses avec justesse, ici, n'est pas un détail d'érudit : c'est refuser de projeter sur le passé une catégorie qu'il ignorait.</p>
+
+  <p>Autre prudence, sur les dates. Nous parlons du Ve siècle, mais la vie du Bouddha reste incertaine. La tradition la situait autour de 563-483 av. J.-C. ; la recherche récente tend à la rajeunir, plaçant sa mort plutôt vers 400. Pour Mahavira, la fourchette est comparable. Retenons l'essentiel, que les historiens ne contestent pas : ces figures et ces mouvements appartiennent bien au grand basculement du milieu du premier millénaire, ce moment où, sur la plaine du Gange, la question du salut change de mains.</p>
+
+  <p>Il faut aussi résister à deux tentations symétriques. La première ferait de cette Inde un Orient mystique et intemporel, replié sur la méditation loin du monde. La seconde, inverse, y verrait une soudaine victoire de la raison contre la religion, une sorte de Lumières avant l'heure. Les deux sont fausses. Ces renonçants ne fuyaient pas un monde immobile : ils réagissaient à un monde qui bougeait trop. Et ils ne combattaient pas la religion : ils en proposaient une autre voie, plus intérieure, moins tributaire des prêtres.</p>
+
+  <p>Reste une question que ce volet laisse ouverte. En déplaçant le salut du rite collectif vers l'effort individuel, l'Inde du Gange a-t-elle libéré l'homme, ou l'a-t-elle chargé d'un fardeau nouveau ? Car si nul prêtre ne peut plus vous sauver, nul ne peut non plus le faire à votre place. La délivrance devient une affaire personnelle, et donc une responsabilité personnelle. C'est peut-être là, plus que dans aucune doctrine, l'invention la plus lourde de conséquences.</p>
+</div>
+
+<!-- ===== CHRONOLOGIE ===== -->
+<div class="sapere-tab-content" id="icontent4" data-print-title="Chronologie">
+  <div class="si-timeline">
+    <div class="si-jalon">
+      <span class="si-date">avant le VIe siècle av. J.-C.</span>
+      <p>La religion védique domine le nord de l'Inde. Le sacrifice, confié aux seuls brahmanes, est la voie obligée vers les faveurs des dieux et l'ordre du monde. La place de chacun est fixée par la naissance.</p>
+    </div>
+    <div class="si-jalon">
+      <span class="si-date">VIIIe-Ve siècle av. J.-C.</span>
+      <p>Composition progressive des Upanishads. Au sein de la tradition védique, le sens du sacrifice se déplace vers l'intérieur : émergence des notions d'ātman, de brahman, de karma et de délivrance.</p>
+    </div>
+    <div class="si-jalon">
+      <span class="si-date">VIe-Ve siècle av. J.-C.</span>
+      <p>Seconde urbanisation de la plaine du Gange. Seize royaumes et républiques rivalisent, le commerce prospère, une classe marchande s'enrichit. Le vieil ordre sacré se fissure sous la pression du monde nouveau.</p>
+    </div>
+    <div class="si-jalon">
+      <span class="si-dot pivot"></span>
+      <span class="si-plabel">Le basculement</span>
+      <span class="si-date">Ve siècle av. J.-C.</span>
+      <p>Les mouvements des renonçants (śramaṇa) se multiplient. Mahavira rénove le jaïnisme, le Bouddha prêche l'Éveil sur les routes du Gange. Tous deux, issus de la caste guerrière, contestent le monopole des brahmanes.</p>
+    </div>
+    <div class="si-jalon">
+      <span class="si-date">vers 400 av. J.-C.</span>
+      <p>Mort probable du Bouddha (la datation reste discutée). Il laisse une communauté organisée, la Sangha, qui essaimera bien au-delà de l'Inde, portée plus tard par le patronage des rois et des marchands.</p>
+    </div>
+    <div class="si-jalon">
+      <span class="si-dot final"></span>
+      <span class="si-date">aujourd'hui</span>
+      <p>Près d'un demi-milliard de bouddhistes dans le monde, un jaïnisme toujours vivant, une pensée indienne encore structurée par le vocabulaire forgé alors. La question du salut par soi-même n'a jamais cessé d'être posée.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- POUR ALLER PLUS LOIN -->
+<div id="sapere-inde-pal" style="max-width:100%;margin:0 auto;">
+<style>
+#sapere-inde-pal{font-family:'Inter',system-ui,sans-serif;padding:0 24px 40px;}
+#sapere-inde-pal h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;border-bottom:2px solid #8b0000;padding-bottom:8px;margin:30px 0 16px;font-weight:700;}
+#sapere-inde-pal .si-pal-sub{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;margin:28px 0 12px;font-weight:700;}
+#sapere-inde-pal .si-somm{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:28px;}
+#sapere-inde-pal .si-somm li{font-size:15px;line-height:1.45;padding:9px 0 9px 16px;border-bottom:1px solid #eee;position:relative;}
+#sapere-inde-pal .si-somm li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;border-radius:50%;background:#e0d0bb;}
+#sapere-inde-pal .si-somm li.fait::before{background:#c9a84f;}
+#sapere-inde-pal .si-somm li.actuel::before{background:#8b0000;}
+#sapere-inde-pal .si-somm li.actuel{font-weight:700;color:#8b0000;}
+#sapere-inde-pal .si-somm .si-somm-tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-left:6px;}
+#sapere-inde-pal .si-somm .si-somm-ven{color:#999;}
+#sapere-inde-pal .si-biblio{list-style:none;padding:0;margin:0;}
+#sapere-inde-pal .si-biblio li{font-size:18px;line-height:1.6;padding:10px 0;border-bottom:1px solid #eee;}
+#sapere-inde-pal .si-bib-auteur{font-weight:700;color:#1a1a1a;}
+#sapere-inde-pal .si-bib-titre{font-style:italic;}
+#sapere-inde-pal .si-bib-note{display:block;font-size:15px;color:#555;line-height:1.5;margin-top:3px;}
+@media(max-width:640px){#sapere-inde-pal .si-somm{grid-template-columns:1fr;}}
+</style>
+  <h2>Les six épisodes de la série</h2>
+  <ul class="si-somm">
+    <li class="fait"><a href="https://sapere.page/six-foyers-une-meme-fievre/" target="_blank" rel="noopener">Introduction · Une même fièvre, six foyers</a></li>
+    <li class="fait"><a href="https://sapere.page/la-perse-ou-la-tolerance-comme-arme/" target="_blank" rel="noopener">Épisode 1 · La Perse, ou la tolérance comme arme</a></li>
+    <li class="fait"><a href="https://sapere.page/athenes-le-cercle-etroit-de-la-democratie/" target="_blank" rel="noopener">Épisode 2 · Athènes, le cercle étroit de la démocratie</a></li>
+    <li class="actuel">Épisode 3 · L'Inde du Gange, quand le salut échappe aux prêtres<span class="si-somm-tag">vous êtes ici</span></li>
+    <li class="fait"><a href="https://sapere.page/la-chine-ou-lart-de-gouverner-le-chaos/" target="_blank" rel="noopener">Épisode 4 · La Chine, ou l'art de gouverner le chaos</a></li>
+    <li class="fait"><a href="https://sapere.page/napata-le-royaume-qui-survecut-aux-pharaons/" target="_blank" rel="noopener">Épisode 5 · Napata, le royaume qui survécut aux pharaons</a></li>
+    <li class="fait"><a href="https://sapere.page/les-mondes-des-marges-inventer-sans-ecrire/" target="_blank" rel="noopener">Épisode 6 · Les mondes des marges, inventer sans écrire</a></li>
+  </ul>
+
+  <p class="si-pal-sub">Pour aller plus loin</p>
+  <ul class="si-biblio">
+    <li><span class="si-bib-titre">Cuire le monde. Rite et pensée dans l'Inde ancienne</span>, <span class="si-bib-auteur">Charles Malamoud</span> (La Découverte, rééd. 2002).
+      <span class="si-bib-note">Le grand livre sur la logique du sacrifice védique et de la pensée brahmanique. Exigeant, mais lumineux sur ce que le renoncement conteste.</span></li>
+    <li><span class="si-bib-titre">L'Inde ancienne. Histoire, religions, philosophies</span>, <span class="si-bib-auteur">Gérard Colas et coll.</span> (diverses éditions).
+      <span class="si-bib-note">Pour situer bouddhisme, jaïnisme et Upanishads dans leur contexte social et politique, sans les couper du monde qui les a vus naître.</span></li>
+  </ul>
+</div>
+

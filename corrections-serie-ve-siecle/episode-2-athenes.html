@@ -1,0 +1,418 @@
+<div id="sapere-athenes">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+#sapere-athenes{font-family:'Inter',system-ui,sans-serif;color:#1a1a1a;background:#ffffff;width:100%;max-width:100%;margin:0 auto;box-sizing:border-box;}
+#sapere-athenes *{box-sizing:border-box;}
+
+/* HEADER */
+#sapere-athenes .sa-header{background:#ffffff;border-bottom:4px solid #8b0000;padding:30px 24px 26px;}
+#sapere-athenes .sa-serie{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;font-weight:700;margin:0 0 10px;}
+#sapere-athenes .sa-header h1{color:#1a1a1a;font-weight:800;font-size:clamp(26px,5vw,44px);line-height:1.15;margin:0 0 14px;}
+#sapere-athenes .sa-header .sa-sub{color:#555;font-style:italic;font-size:18px;line-height:1.5;margin:0;}
+
+/* IMAGE */
+#sapere-athenes .sa-hero{margin:26px 0;}
+#sapere-athenes .sa-hero img{width:100%;max-width:100%;display:block;border:1px solid #e0e0e0;}
+#sapere-athenes .sa-hero figcaption{font-size:13px;color:#777;padding:8px 0;font-style:italic;}
+#sapere-athenes .sa-hero .sa-credit{font-style:normal;color:#999;font-size:12px;}
+
+/* BLOC TEXTE + IMAGE (2 colonnes) */
+#sapere-athenes .sa-duo{display:grid;grid-template-columns:1fr 1.35fr;gap:26px;align-items:center;margin:26px 0;}
+#sapere-athenes .sa-duo.sa-duo-right{grid-template-columns:1.35fr 1fr;}
+#sapere-athenes .sa-duo p{margin:0;}
+#sapere-athenes .sa-duo figure{margin:0;}
+#sapere-athenes .sa-duo img{width:100%;max-width:100%;display:block;border:1px solid #e0e0e0;}
+#sapere-athenes .sa-duo figcaption{font-size:13px;color:#777;padding:8px 0 0;font-style:italic;}
+
+/* BANDEAU DE SERIE */
+#sapere-athenes .sa-bandeau{background:#e6ecf2;border:1px solid #c5d2e0;border-left:4px solid #8b0000;padding:16px 22px 18px;margin:0 24px 0;}
+#sapere-athenes .sa-bandeau-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+#sapere-athenes .sa-bandeau-serie{font-size:13px;font-weight:700;color:#1a1a1a;}
+#sapere-athenes .sa-bandeau-serie span{color:#8b0000;}
+#sapere-athenes .sa-bandeau-compte{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#8b0000;font-weight:700;}
+#sapere-athenes .sa-progress{display:flex;gap:6px;}
+#sapere-athenes .sa-step{flex:1 1 0;text-align:center;}
+#sapere-athenes .sa-step-bar{height:6px;border-radius:3px;background:#e0d0bb;margin-bottom:6px;}
+#sapere-athenes .sa-step.done .sa-step-bar{background:#c9a84f;}
+#sapere-athenes .sa-step.current .sa-step-bar{background:#8b0000;}
+#sapere-athenes .sa-step-lbl{display:block;font-size:10px;line-height:1.3;color:#999;}
+#sapere-athenes .sa-step.current .sa-step-lbl{color:#8b0000;font-weight:700;}
+#sapere-athenes .sa-step.done .sa-step-lbl{color:#7a6a3a;}
+
+/* ONGLETS */
+#sapere-athenes input[type=radio]{position:absolute;opacity:0;width:1px;height:1px;}
+#sapere-athenes .sapere-tabs{display:flex;flex-wrap:wrap;gap:0;border-bottom:2px solid #8b0000;margin:0 24px;padding-top:20px;}
+#sapere-athenes .sapere-tabs label{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#999;padding:12px 18px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .15s;}
+#sapere-athenes .sapere-tabs label:hover{color:#8b0000;}
+#sapere-athenes .sapere-tab-content{display:none !important;padding:28px 24px 36px;}
+
+#sapere-athenes #atab1:checked ~ .sapere-tabs label[for=atab1],
+#sapere-athenes #atab2:checked ~ .sapere-tabs label[for=atab2],
+#sapere-athenes #atab3:checked ~ .sapere-tabs label[for=atab3],
+#sapere-athenes #atab4:checked ~ .sapere-tabs label[for=atab4]{color:#8b0000;border-bottom-color:#8b0000;}
+
+#sapere-athenes #atab1:checked ~ .sapere-tab-content#acontent1,
+#sapere-athenes #atab2:checked ~ .sapere-tab-content#acontent2,
+#sapere-athenes #atab3:checked ~ .sapere-tab-content#acontent3,
+#sapere-athenes #atab4:checked ~ .sapere-tab-content#acontent4{display:block !important;}
+
+/* CORPS */
+#sapere-athenes #acontent1 p{font-size:20px;line-height:1.8;color:#1a1a1a;margin:0 0 22px;}
+#sapere-athenes #acontent1 h2{font-weight:700;font-size:26px;color:#1a1a1a;margin:38px 0 18px;line-height:1.25;}
+#sapere-athenes .sh-formule{color:#5a0000;font-weight:700;}
+#sapere-athenes a{color:#8b0000;text-decoration:underline;text-underline-offset:2px;}
+
+/* TOOLTIP */
+#sapere-athenes .sapere-tooltip{border-bottom:1px dotted #8b0000;cursor:help;position:relative;}
+#sapere-athenes .sapere-tooltip:focus::after,#sapere-athenes .sapere-tooltip:hover::after{content:attr(data-tooltip);position:absolute;left:50%;transform:translateX(-50%);top:140%;z-index:20;background:#1a1a1a;color:#fff;font-size:14px;font-style:normal;font-weight:400;line-height:1.45;padding:10px 14px;border-radius:4px;width:min(280px,80vw);box-shadow:0 4px 14px rgba(0,0,0,.25);text-align:left;}
+
+/* ENCADRE */
+#sapere-athenes .sa-box{background:#e6ecf2;border-left:4px solid #8b0000;padding:18px 22px;margin:30px 0;}
+#sapere-athenes .sa-box p{font-size:18px;line-height:1.65;margin:0;}
+
+/* DIPTYQUE */
+#sapere-athenes .sa-dip{margin:34px 0;border:1px solid #c5d2e0;background:#e6ecf2;}
+#sapere-athenes .sa-dip-titre{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;padding:16px 20px 14px;border-bottom:1px solid #c5d2e0;}
+#sapere-athenes .sa-dip-grid{display:grid;grid-template-columns:1fr 1fr;}
+#sapere-athenes .sa-dip-col{padding:18px 20px 22px;}
+#sapere-athenes .sa-dip-col.lumiere{border-right:1px solid #c5d2e0;background:#f6f9fc;}
+#sapere-athenes .sa-dip-head{display:block;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+#sapere-athenes .sa-dip-col.lumiere .sa-dip-head{color:#3a5a78;}
+#sapere-athenes .sa-dip-col.ombre .sa-dip-head{color:#8b0000;}
+#sapere-athenes .sa-dip-li{display:block;font-size:16px;line-height:1.5;color:#1a1a1a;padding:7px 0 7px 18px;position:relative;}
+#sapere-athenes .sa-dip-li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;}
+#sapere-athenes .sa-dip-col.lumiere .sa-dip-li::before{background:#3a5a78;}
+#sapere-athenes .sa-dip-col.ombre .sa-dip-li::before{background:#8b0000;}
+
+/* CAMEMBERT POPULATION */
+#sapere-athenes .sa-pop{margin:34px 0;border:1px solid #c5d2e0;background:#e6ecf2;border-top:4px solid #8b0000;padding:18px 20px 22px;}
+#sapere-athenes .sa-pop-titre{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-bottom:18px;}
+#sapere-athenes .sa-pop-flow{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+#sapere-athenes .sa-pop-bars{flex:1 1 300px;}
+#sapere-athenes .sa-pop-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+#sapere-athenes .sa-pop-lbl{flex:0 0 150px;font-size:14px;color:#1a1a1a;}
+#sapere-athenes .sa-pop-lbl strong{display:block;font-size:12px;color:#8b0000;font-weight:700;}
+#sapere-athenes .sa-pop-track{flex:1 1 auto;display:block;background:#d4dfe9;border-radius:3px;height:22px;position:relative;overflow:hidden;}
+#sapere-athenes .sa-pop-fill{display:block;height:100%;border-radius:3px;}
+#sapere-athenes .sa-pop-pct{flex:0 0 44px;text-align:right;font-family:'Georgia',serif;font-weight:700;font-size:16px;color:#1a1a1a;}
+#sapere-athenes .sa-pop-cit .sa-pop-fill{background:#8b0000;}
+#sapere-athenes .sa-pop-met .sa-pop-fill{background:#3a5a78;}
+#sapere-athenes .sa-pop-esc .sa-pop-fill{background:#5a1a5a;}
+#sapere-athenes .sa-pop-fem .sa-pop-fill{background:#7a6a3a;}
+#sapere-athenes .sa-pop-note{font-size:13px;font-style:italic;color:#777;margin-top:12px;}
+
+/* ESSENTIELS */
+#sapere-athenes .sa-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+#sapere-athenes .sa-card{background:#e6ecf2;border:1px solid #c5d2e0;border-top:3px solid #8b0000;padding:20px;}
+#sapere-athenes .sa-card h3{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;margin:0 0 10px;font-weight:700;}
+#sapere-athenes .sa-card p{font-size:17px;line-height:1.6;margin:0;color:#1a1a1a;}
+
+/* COULISSES */
+#sapere-athenes #acontent3 p{font-size:19px;line-height:1.75;margin:0 0 20px;color:#1a1a1a;}
+
+/* CHRONO */
+#sapere-athenes .sa-timeline{position:relative;padding-left:30px;border-left:1px solid #000000;margin-top:10px;}
+#sapere-athenes .sa-jalon{position:relative;margin-bottom:38px;}
+#sapere-athenes .sa-jalon:last-child{margin-bottom:0;}
+#sapere-athenes .sa-dot{position:absolute;left:-36px;top:6px;width:11px;height:11px;background:#ffffff;border:2px solid #000000;border-radius:50%;box-sizing:border-box;}
+#sapere-athenes .sa-dot.pivot{background:#8b0000;border-color:#8b0000;width:13px;height:13px;left:-37px;}
+#sapere-athenes .sa-dot.final{background:#000;border-color:#000;width:13px;height:13px;left:-37px;}
+#sapere-athenes .sa-plabel{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-bottom:2px;}
+#sapere-athenes .sa-date{display:block;font-family:'Georgia',serif;font-weight:700;font-size:22px;color:#1a1a1a;margin-bottom:6px;}
+#sapere-athenes .sa-jalon p{font-size:18px;line-height:1.6;color:#1a1a1a;margin:0;text-align:justify;}
+
+@media(max-width:640px){#sapere-athenes .sa-grid{grid-template-columns:1fr;}
+#sapere-athenes .sa-dip-grid{grid-template-columns:1fr;}
+#sapere-athenes .sa-dip-col.lumiere{border-right:none;border-bottom:1px solid #c5d2e0;}
+#sapere-athenes .sa-progress{gap:3px;}
+#sapere-athenes .sa-step-lbl{font-size:8px;line-height:1.15;letter-spacing:-0.2px;word-break:break-word;}
+#sapere-athenes .sa-duo{grid-template-columns:1fr;}
+#sapere-athenes .sa-pop-lbl{flex:0 0 110px;}}
+
+@media print{
+  #sapere-athenes .sapere-tab-content{display:block !important;padding:24px 0 30px;}
+  #sapere-athenes .sapere-tabs{display:none !important;}
+  #sapere-athenes .sapere-tab-content::before{content:attr(data-print-title);display:block;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#8b0000;border-bottom:2px solid #8b0000;padding-bottom:8px;margin-bottom:20px;}
+  #sapere-athenes .sh-formule{color:#5a0000 !important;}
+}
+</style>
+
+<!-- HEADER -->
+<div class="sa-header">
+  <p class="sa-serie">Une même fièvre, six foyers · Épisode 2</p>
+  <h1>Athènes, le cercle étroit de la démocratie</h1>
+  <p class="sa-sub">La cité inventa le mot « démocratie » : le pouvoir du peuple. Restait à décider qui était le peuple. La réponse tient tout entière dans ce qu'elle laisse dehors.</p>
+</div>
+
+<!-- BANDEAU DE SERIE -->
+<div class="sa-bandeau">
+  <div class="sa-bandeau-top">
+    <span class="sa-bandeau-serie">Série <span>Une même fièvre : six foyers du Ve siècle avant notre ère</span></span>
+    <span class="sa-bandeau-compte">Épisode 2 sur 6</span>
+  </div>
+  <div class="sa-progress">
+    <div class="sa-step done"><div class="sa-step-bar"></div><span class="sa-step-lbl">1. Perse</span></div>
+    <div class="sa-step current"><div class="sa-step-bar"></div><span class="sa-step-lbl">2. Grèce</span></div>
+    <div class="sa-step"><div class="sa-step-bar"></div><span class="sa-step-lbl">3. Inde</span></div>
+    <div class="sa-step"><div class="sa-step-bar"></div><span class="sa-step-lbl">4. Chine</span></div>
+    <div class="sa-step"><div class="sa-step-bar"></div><span class="sa-step-lbl">5. Nubie</span></div>
+    <div class="sa-step"><div class="sa-step-bar"></div><span class="sa-step-lbl">6. Marges</span></div>
+  </div>
+</div>
+
+<input type="radio" name="sa-tabs" id="atab1" checked>
+<input type="radio" name="sa-tabs" id="atab2">
+<input type="radio" name="sa-tabs" id="atab3">
+<input type="radio" name="sa-tabs" id="atab4">
+
+<div class="sapere-tabs">
+  <label for="atab1">Article</label>
+  <label for="atab2">Les Essentiels</label>
+  <label for="atab3">Les Coulisses</label>
+  <label for="atab4">Chronologie</label>
+</div>
+
+<!-- ===== ARTICLE ===== -->
+<div class="sapere-tab-content" id="acontent1" data-print-title="Article">
+
+  <p>Un matin d'été, sur une colline pelée qui domine Athènes, quelques milliers d'hommes se rassemblent avant l'aube. Ils viennent des champs, des ateliers, du port. Ils vont, à main levée, décider de la guerre et de la paix, condamner un général, voter l'exil d'un rival, fixer le sort de cités lointaines. Aucun roi ne les commande, aucun prêtre ne parle en leur nom. Sur <span class="sapere-tooltip" tabindex="0" data-tooltip="Colline rocheuse de l'ouest d'Athènes, face à l'Acropole. C'est là, sur un terre-plein aménagé, que se réunissait l'assemblée des citoyens (l'ecclésia) pour débattre et voter. Le lieu même de la démocratie directe.">la Pnyx</span>, ce jour-là, le peuple est souverain, et il le sait.</p>
+
+  <p>C'est l'une des plus belles images que l'Antiquité nous ait léguées, et l'une des plus trompeuses. Car pour comprendre <strong>la démocratie</strong> athénienne, il faut d'abord compter ceux qui montent sur la colline. Et surtout, ceux qui n'y montent jamais.</p>
+
+  <h2>Le mot le plus lourd de l'histoire</h2>
+
+  <p>Athènes n'a pas seulement pratiqué la démocratie : elle a forgé le mot. Dêmokratia, le pouvoir du peuple. Rien de tel n'existait ailleurs. Autour d'elle, le monde du Ve siècle est peuplé de rois, de tyrans, d'empires, l'immense Perse voisine en tête. Athènes fait l'inverse : elle confie le pouvoir à l'assemblée de ses citoyens, sans intermédiaire. Pas de représentants, pas de professionnels de la politique. Le citoyen vote lui-même les lois, siège lui-même au tribunal, peut être tiré au sort pour administrer <strong>la cité</strong>.</p>
+
+  <p>Le dispositif est d'une audace vertigineuse. La plupart des magistrats ne sont pas élus mais tirés au sort : on estime que n'importe quel citoyen, fût-il potier ou paysan, est présumé capable de gouverner. Les mandats durent un an, ne se cumulent pas, se rendent des comptes. Pour que les plus pauvres puissent siéger sans y perdre leur journée, Périclès invente une indemnité, le <span class="sapere-tooltip" tabindex="0" data-tooltip="Indemnité versée aux citoyens pauvres pour compenser le temps consacré aux fonctions publiques. Une invention de Périclès pour rendre la participation réelle.">misthos</span>. Jamais, avant Athènes, un pouvoir n'avait autant fait confiance au grand nombre. <span class="sh-formule">La cité ne demandait pas à ses citoyens d'obéir, mais de décider.</span></p>
+
+  <p>Le peuple peut même se protéger de ses propres chefs. Une fois l'an, sur <strong>l'agora</strong>, <strong>les citoyens</strong> gravent sur un tesson de poterie le nom de l'homme qu'ils jugent trop puissant. Si six mille tessons portent le même nom, celui-là part en exil pour dix ans, sans procès, sans confiscation, sans déshonneur : c'est l'<span class="sapere-tooltip" tabindex="0" data-tooltip="Procédure par laquelle l'assemblée athénienne pouvait exiler un citoyen pour dix ans, en écrivant son nom sur un tesson (ostrakon), afin d'écarter quiconque menaçait l'équilibre du pouvoir.">ostracisme</span>. La portée du geste est considérable. Un peuple qui se donne <strong>le droit</strong> d'écarter d'avance quiconque menace de devenir un maître, c'est un peuple qui a compris que la démocratie meurt d'abord par le haut, quand un homme se croit indispensable. L'outil sera parfois détourné en règlement de comptes, mais l'intuition demeure : le pouvoir doit rester rotatif, ou il cesse d'être partagé.</p>
+
+  <h2>Qui est le peuple ?</h2>
+
+  <p>Mais posons la question que le mot « démocratie » nous fait toujours oublier : de quel peuple parle-t-on ? À Athènes, au milieu du Ve siècle, sur une population que les historiens estiment entre 250,000 et 300,000 personnes, les citoyens sont environ 40,000. Un habitant sur dix, à peu près. Les neuf autres n'ont aucun droit politique.</p>
+
+  <p>Qui sont-ils, ces neuf ? D'abord <strong>les femmes</strong>, la moitié de la population libre, exclues à vie de la parole publique, sans droit de vote, sous tutelle masculine pour les actes juridiques essentiels. Puis les <span class="sapere-tooltip" tabindex="0" data-tooltip="Étrangers libres résidant à Athènes, souvent grecs d'autres cités. Commerçants et artisans, ils payaient un impôt spécial mais n'accédaient jamais à la citoyenneté.">métèques</span>, ces étrangers libres, souvent grecs eux-mêmes, qui font marcher le commerce et l'artisanat sans jamais accéder à la citoyenneté, quelle que soit leur richesse ou leur dévouement. Et surtout, tout en bas, la masse des esclaves, peut-être un tiers de la population, considérés comme des objets qu'on vend, qu'on loue, qu'on transmet par héritage.</p>
+
+  <figure class="sa-pop">
+    <figcaption class="sa-pop-titre">Ordres de grandeur de la population attique au Ve siècle</figcaption>
+    <div class="sa-pop-flow">
+      <div class="sa-pop-bars">
+        <div class="sa-pop-row sa-pop-cit">
+          <span class="sa-pop-lbl">Citoyens<strong>voix au chapitre</strong></span>
+          <span class="sa-pop-track"><span class="sa-pop-fill" style="width:10%"></span></span>
+          <span class="sa-pop-pct">~10%</span>
+        </div>
+        <div class="sa-pop-row sa-pop-met">
+          <span class="sa-pop-lbl">Métèques<strong>aucun droit politique</strong></span>
+          <span class="sa-pop-track"><span class="sa-pop-fill" style="width:17%"></span></span>
+          <span class="sa-pop-pct">~17%</span>
+        </div>
+        <div class="sa-pop-row sa-pop-esc">
+          <span class="sa-pop-lbl">Esclaves<strong>aucun droit</strong></span>
+          <span class="sa-pop-track"><span class="sa-pop-fill" style="width:35%"></span></span>
+          <span class="sa-pop-pct">~35%</span>
+        </div>
+        <div class="sa-pop-row sa-pop-fem">
+          <span class="sa-pop-lbl">Femmes et enfants<strong>exclus de la parole</strong></span>
+          <span class="sa-pop-track"><span class="sa-pop-fill" style="width:38%"></span></span>
+          <span class="sa-pop-pct">~38%</span>
+        </div>
+      </div>
+    </div>
+    <p class="sa-pop-note">Répartition schématique : les catégories varient selon les sources et selon qu'on compte les seuls adultes mâles ou l'ensemble des habitants. Un seul de ces groupes votait.</p>
+  </figure>
+
+  <p>Faites le compte. La démocratie la plus pure de l'histoire, celle où le peuple décide sans intermédiaire, réservait ce privilège à un habitant sur dix. <span class="sh-formule">Athènes n'a pas inventé l'égalité : elle a inventé un cercle très étroit à l'intérieur duquel l'égalité était totale.</span></p>
+
+  <p>La scène se laisse reconstituer, ce matin de vote sur <strong>la Pnyx</strong>. Le citoyen quitte sa maison pour rejoindre l'assemblée. Derrière lui, dans la pénombre du <span class="sapere-tooltip" tabindex="0" data-tooltip="Partie de la maison grecque réservée aux femmes, à l'écart des espaces où l'on recevait. Les Athéniennes de bonne famille y passaient l'essentiel de leur vie, tenues à distance de la vie publique.">gynécée</span>, son épouse, qui ne votera jamais, restera toute la journée. Dans l'atelier voisin, le métèque qui fabrique les amphores dont vit la cité continuera son travail : il paie l'impôt, sert à l'armée, mais n'a pas voix au chapitre. Et loin, sous terre, dans les galeries de la mine d'argent, l'esclave qui creuse ne saura même pas qu'un vote a lieu. Trois personnes, trois exclusions, et un seul homme qui monte vers la colline pour y être souverain. Voilà la démocratie athénienne en un seul matin.</p>
+
+  <h2>La lumière avait besoin de l'ombre</h2>
+
+  <p>On pourrait s'arrêter là, et conclure au procès facile : la belle démocratie n'était qu'un club fermé. Mais ce serait manquer le plus intéressant, et le plus dérangeant. Car l'exclusion n'était pas un simple accident du système : elle en soutenait largement le fonctionnement.</p>
+
+  <p>Ce que suppose la démocratie directe mérite qu'on s'y arrête. Pour que quarante mille citoyens passent leurs journées à l'assemblée, au tribunal, aux magistratures, il faut bien que quelqu'un d'autre laboure les champs, taille la pierre, tienne les comptes, serve à table. Ce temps politique, ce loisir du citoyen, reposait sur le travail de ceux qui n'étaient pas citoyens. L'esclave dans la mine d'argent du Laurion, le métèque dans son atelier, l'épouse au foyer : chacun libérait, par son labeur, le temps qu'un homme libre consacrait à la cité. <span class="sh-formule">Le citoyen pouvait délibérer parce que d'autres travaillaient à sa place.</span></p>
+
+  <figure class="sa-dip">
+    <figcaption class="sa-dip-titre">Athènes : la lumière et l'ombre d'un même geste</figcaption>
+    <div class="sa-dip-grid">
+      <div class="sa-dip-col lumiere">
+        <span class="sa-dip-head">La lumière</span>
+        <span class="sa-dip-li">Le citoyen vote lui-même les lois, sans intermédiaire.</span>
+        <span class="sa-dip-li">Les magistrats sont tirés au sort : tout citoyen est présumé apte à gouverner.</span>
+        <span class="sa-dip-li">Une indemnité permet même aux plus pauvres de siéger.</span>
+        <span class="sa-dip-li">Le pouvoir n'appartient plus à un roi ni à un dieu, mais à l'assemblée.</span>
+      </div>
+      <div class="sa-dip-col ombre">
+        <span class="sa-dip-head">L'ombre</span>
+        <span class="sa-dip-li">Neuf habitants sur dix n'ont aucun droit politique.</span>
+        <span class="sa-dip-li">Les femmes sont exclues à vie de la parole publique.</span>
+        <span class="sa-dip-li">Une masse d'esclaves fait tourner la cité, sans exister comme personnes.</span>
+        <span class="sa-dip-li">Le loisir politique des citoyens repose sur le travail des exclus.</span>
+      </div>
+    </div>
+  </figure>
+
+  <p>La démocratie athénienne n'était pas seulement une démocratie inachevée, à laquelle il aurait suffi d'étendre le suffrage. C'était aussi un système cohérent, où la liberté politique des uns s'appuyait sur la dépendance des autres. Les historiens débattent encore du poids exact de ce travail servile dans l'économie athénienne, mais aucun ne conteste qu'il ait libéré, pour le citoyen, le temps du débat public. La lumière et l'ombre venaient du même geste.</p>
+
+  <p>Un détail, ici, en dit long, et l'historien Paulin Ismard l'a mis en lumière. Qui donc, à Athènes, tenait les archives, vérifiait la monnaie, dressait les comptes, assurait la police des rues ? Non pas des citoyens, mais des esclaves publics, les dêmosioi, propriété de la cité elle-même. Le geste n'a rien d'anodin. Ces tâches exigeaient une compétence, une expertise, que le citoyen amateur n'avait pas. Et c'est précisément pour cela qu'on les confiait à des esclaves : pour que le savoir technique ne devienne jamais un titre à gouverner. L'expert était un esclave, afin que jamais l'expertise ne se change en pouvoir. Renversement vertigineux pour nous qui confions la cité à ses spécialistes : Athènes tenait le savant à l'écart de la décision, réservée au citoyen ordinaire.</p>
+
+  <h2>L'autre ombre : la démocratie qui se fit empire</h2>
+
+  <p>Il y a pourtant une seconde ombre, et elle s'étend bien au-delà des murs de la cité. Pour la comprendre, il faut remonter à un bateau : la trière. Après les guerres médiques, Athènes mise tout sur la mer. L'argent du Laurion finance une flotte, et cette flotte a besoin de bras : cent soixante-dix rameurs par navire, recrutés chez les plus pauvres, ces thètes qui n'avaient pas de quoi s'offrir l'armure du soldat. Or celui qui tient la rame tient bientôt le pouvoir. Devenus le muscle de la cité, les pauvres exigent leur pleine part politique, et l'obtiennent. <span class="sh-formule">La démocratie radicale n'est pas tombée du ciel des idées : elle est montée du banc des rameurs.</span></p>
+
+  <p>Mais cette même flotte qui fonde la démocratie au-dedans fonde <strong>l'empire</strong> au-dehors. La <span class="sapere-tooltip" tabindex="0" data-tooltip="Alliance de cités grecques fondée en 478 av. J.-C. sous direction d'Athènes, d'abord pour se défendre des Perses. Elle se mua peu à peu en empire athénien.">Ligue de Délos</span>, née pour défendre les Grecs contre la Perse, se change en machine de domination. En 454, Athènes rapatrie chez elle le trésor commun de l'alliance ; l'argent des « alliés » servira désormais à parer <strong>l'Acropole</strong> et à dresser le Parthénon. Les cités qui veulent partir, Thasos, Samos, sont matées, leurs murailles abattues, leur tribut alourdi. Athènes plante des colonies de citoyens pauvres sur les terres confisquées, impose sa monnaie, ses poids, ses mesures. La démocratie au-dedans, la sujétion au-dehors : <strong>les alliés</strong> sont devenus des sujets.</p>
+
+  <p>Cette part-là de l'ombre a un visage, et il est terrible. En 416, la petite île de Mélos, qui voulait rester neutre, refuse de se soumettre. Les envoyés athéniens lui tiennent alors, si l'on en croit l'historien Thucydide, un discours d'une franchise glaçante : les forts font ce qu'ils peuvent, les faibles subissent ce qu'ils doivent. Mélos refuse encore. Les hommes sont massacrés, les femmes et les enfants vendus comme esclaves. Ce n'est pas un tyran qui a décidé cela : c'est l'assemblée du peuple, à main levée. <span class="sh-formule">La même main qui votait les lois de la liberté pouvait voter la mort d'une cité entière.</span></p>
+
+  <p>Le vertige culmine dans l'expédition de Sicile. En 415, l'assemblée vote l'envoi d'une flotte immense pour conquérir la lointaine <strong>Syracuse</strong>. La décision ne fut pas un simple emballement de la foule : elle naquit d'un affrontement, le fougueux Alcibiade plaidant la conquête, le prudent Nicias tentant de l'en dissuader, l'assemblée tranchant entre les deux. C'est le système même, avec ses orateurs rivaux et son vote souverain, qui a produit ce choix. Deux ans plus tard, tout est perdu : la flotte anéantie, des milliers de citoyens morts ou réduits en esclavage dans les carrières siciliennes. Le peuple souverain venait de voter sa propre saignée, non par folie passagère, mais au terme d'une délibération que rien n'avait su freiner.</p>
+
+  <h2>Ce qu'Athènes a verrouillé</h2>
+
+  <p>Pourquoi, alors, célébrer encore Athènes ? Parce que, malgré tout, quelque chose de neuf y fut inventé, qui ne s'est plus jamais éteint : l'idée qu'un groupe d'hommes peut se gouverner lui-même, sans maître, en discutant et en votant. L'idée que le pouvoir n'appartient pas à un roi ni à un dieu, mais à une assemblée. Le cercle était étroit, mais à l'intérieur du cercle, l'invention était réelle, et elle était sans précédent.</p>
+
+  <p>Toute l'histoire de la démocratie depuis lors n'est au fond que l'élargissement laborieux de ce cercle trop petit. Les esclaves, les femmes, les étrangers, les pauvres sans terre : un à un, sur vingt-cinq siècles, et le plus souvent de haute lutte, ils ont fini par franchir la ligne qu'Athènes avait tracée entre ceux qui décident et ceux qui subissent. Le combat n'est pas clos.</p>
+
+  <p>Mais Athènes nous laisse un second avertissement, plus rude encore. Sa démocratie ne l'a rendue ni douce ni prudente. Elle a dominé ses alliés, massacré Mélos, rêvé de conquêtes lointaines et s'y est brisée. La leçon dérange nos certitudes contemporaines : un peuple libre n'est pas, par nature, un peuple pacifique, et l'assemblée qui vote ses lois peut voter aussi l'oppression des autres. La démocratie borne le pouvoir au-dedans ; elle ne garantit rien au-dehors.</p>
+
+  <p>Athènes ne nous a pas légué la démocratie que nous connaissons. Elle nous a légué mieux, et pire : <span class="sh-formule">une invention magnifique et deux frontières, celle qui exclut au-dedans et celle qui écrase au-dehors, et la tâche infinie de repousser l'une et l'autre sans perdre l'invention.</span></p>
+
+</div>
+
+<!-- ===== ESSENTIELS ===== -->
+<div class="sapere-tab-content" id="acontent2" data-print-title="Les Essentiels">
+  <div class="sa-grid">
+    <div class="sa-card">
+      <h3>Le fait majeur</h3>
+      <p>Au Ve siècle av. J.-C., Athènes invente la démocratie directe : les citoyens votent eux-mêmes les lois à l'assemblée, tirent au sort les magistrats, sans roi ni représentants. Une audace sans précédent dans le monde antique.</p>
+    </div>
+    <div class="sa-card">
+      <h3>Le contre-récit</h3>
+      <p>Ce « pouvoir du peuple » ne concernait qu'une minorité, peut-être un habitant sur dix. Femmes, métèques et esclaves, soit l'immense majorité, en étaient exclus. La démocratie la plus pure réservait l'égalité à un cercle très étroit.</p>
+    </div>
+    <div class="sa-card">
+      <h3>Le mécanisme central</h3>
+      <p>L'exclusion n'était pas un simple accident : elle soutenait le fonctionnement du système. Le loisir politique du citoyen reposait sur le travail des exclus : esclaves, métèques, femmes. La liberté des uns se payait de la servitude des autres.</p>
+    </div>
+    <div class="sa-card">
+      <h3>Le verrouillage</h3>
+      <p>Athènes lègue l'idée qu'un groupe peut se gouverner sans maître. Toute l'histoire démocratique depuis n'est que l'élargissement, de haute lutte, du cercle trop petit qu'elle avait tracé.</p>
+    </div>
+    <div class="sa-card">
+      <h3>L'ombre extérieure</h3>
+      <p>Cette démocratie fut aussi un empire. La Ligue de Délos, muée en machine de domination, imposa tribut et garnisons ; Mélos fut massacrée, votée par l'assemblée. Un peuple libre n'est pas un peuple pacifique.</p>
+    </div>
+    <div class="sa-card">
+      <h3>La leçon géopolitique</h3>
+      <p>La nature d'un régime ne dicte pas la morale de sa politique étrangère. La démocratie borne le pouvoir au-dedans, mais ne garantit rien au-dehors : Athènes s'est épuisée dans ses propres conquêtes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== COULISSES ===== -->
+<div class="sapere-tab-content" id="acontent3" data-print-title="Les Coulisses">
+  <p>Un mot mérite qu'on s'y arrête, car il a déformé notre regard : « démocratie ». Nous le chargeons de tout ce que vingt-cinq siècles y ont déposé, le suffrage universel, les droits de l'homme, l'égalité. Athènes, elle, entendait autre chose. Projeter notre définition sur la sienne, c'est commettre l'erreur exacte que nous avons dénoncée à propos de la Perse : lire le passé avec les lunettes du présent.</p>
+
+  <p>Faut-il alors juger Athènes ? La tentation est grande de la condamner au nom de nos valeurs, ou, à l'inverse, de l'excuser au nom de son époque. Les deux facilités se valent. Reprocher aux Athéniens de n'avoir pas aboli l'esclavage, c'est leur demander d'avoir pensé ce que personne, alors, ne pensait, pas même les esclaves. Mais tenir leur démocratie pour un pur modèle, c'est oublier les femmes recluses au gynécée et les corps épuisés dans les galeries du Laurion. La vérité honnête est que leur système fut à la fois une avancée prodigieuse et une clôture brutale, et que ces deux faces ne se séparent pas.</p>
+
+  <p>Une prudence encore, sur la scène de Mélos. Nous n'en connaissons qu'une version, celle de Thucydide, qui a composé le dialogue des Méliens et des Athéniens des décennies plus tard, comme un morceau de démonstration. Nul greffier n'a pris ces paroles en note. Le dialogue est donc en partie une reconstruction littéraire, ce qui ne l'invalide pas : il condense, avec une lucidité rare, la logique de puissance que la cité mettait en œuvre. Mais on le lit pour ce qu'il est, un miroir tendu par un historien, non un procès-verbal.</p>
+
+  <p>Une prudence, aussi, sur les chiffres. Quand on dit « un citoyen sur dix », on avance une estimation, pas une mesure. Les historiens ne s'accordent qu'à peu près sur la population de l'Attique, et les proportions varient selon les décennies et les sources : certains parlent d'un habitant sur dix, d'autres d'un sur cinq si l'on ne compte que les hommes adultes. Retenons l'ordre de grandeur, qui suffit à la démonstration : les citoyens furent toujours une minorité, et l'écrasante majorité des habitants n'eut jamais voix au chapitre.</p>
+
+  <p>Reste enfin une question que ce volet laisse ouverte, et qu'il faut poser sans y répondre trop vite. Si la démocratie athénienne reposait sur l'exclusion, nos démocraties modernes ont-elles vraiment refermé la question, ou seulement déplacé la ligne ? Le cercle s'est élargi, immensément. Mais l'idée qu'une communauté politique se définit toujours par ceux qu'elle inclut et par ceux qu'elle laisse dehors, cette idée-là, Athènes fut la première à l'inscrire dans la pierre. Elle nous accompagne encore.</p>
+</div>
+
+<!-- ===== CHRONOLOGIE ===== -->
+<div class="sapere-tab-content" id="acontent4" data-print-title="Chronologie">
+  <div class="sa-timeline">
+    <div class="sa-jalon">
+      <span class="sa-date">vers 508 av. J.-C.</span>
+      <p>Les réformes de Clisthène posent les fondations de la démocratie athénienne : découpage de la cité en tribus, égalité des citoyens devant la loi. C'est l'acte de naissance du régime.</p>
+    </div>
+    <div class="sa-jalon">
+      <span class="sa-date">vers 487 av. J.-C.</span>
+      <p>L'ostracisme entre dans les mœurs : chaque année, les citoyens peuvent voter l'exil, pour dix ans, d'un homme jugé trop puissant. Une arme contre le retour de la tyrannie, un outil de règlement de comptes aussi.</p>
+    </div>
+    <div class="sa-jalon">
+      <span class="sa-date">478 av. J.-C.</span>
+      <p>Fondation de la Ligue de Délos, alliance des cités grecques contre la Perse, sous direction d'Athènes. Une union défensive, d'abord.</p>
+    </div>
+    <div class="sa-jalon">
+      <span class="sa-dot pivot"></span>
+      <span class="sa-plabel">Apogée</span>
+      <span class="sa-date">461-429 av. J.-C.</span>
+      <p>Le « siècle de Périclès ». Le stratège domine la vie politique, fait verser le misthos aux citoyens pauvres, embellit l'Acropole. La démocratie atteint sa forme la plus radicale, l'assemblée décidant de tout.</p>
+    </div>
+    <div class="sa-jalon">
+      <span class="sa-date">454 av. J.-C.</span>
+      <p>Le trésor de la Ligue est transféré de Délos à Athènes. L'alliance devient empire : l'argent des « alliés » financera le Parthénon. Ceux qui veulent partir sont matés par la force.</p>
+    </div>
+    <div class="sa-jalon">
+      <span class="sa-date">451 av. J.-C.</span>
+      <p>Périclès restreint la citoyenneté aux seuls fils de père et de mère athéniens. Le cercle des citoyens, loin de s'ouvrir, se referme davantage. La démocratie se veut aussi une clôture du sang.</p>
+    </div>
+    <div class="sa-jalon">
+      <span class="sa-date">416 av. J.-C.</span>
+      <p>L'assemblée vote le sort de Mélos, île neutre qui refusait de se soumettre : les hommes massacrés, les femmes et les enfants réduits en esclavage. La démocratie découvre qu'elle peut être impitoyable.</p>
+    </div>
+    <div class="sa-jalon">
+      <span class="sa-date">415-413 av. J.-C.</span>
+      <p>L'expédition de Sicile, votée dans l'enthousiasme, tourne au désastre. La flotte est anéantie, des milliers de citoyens périssent. Le peuple souverain a voté sa propre saignée.</p>
+    </div>
+    <div class="sa-jalon">
+      <span class="sa-date">404 av. J.-C.</span>
+      <p>Athènes capitule devant Sparte. La démocratie est renversée, remplacée par le régime sanglant des Trente Tyrans. Sa violence est telle que les Athéniens rétablissent la démocratie dès l'année suivante : on ne détruit pas si aisément l'invention.</p>
+    </div>
+    <div class="sa-jalon">
+      <span class="sa-dot final"></span>
+      <span class="sa-date">399 av. J.-C.</span>
+      <p>L'assemblée condamne à mort le philosophe Socrate. Le peuple souverain peut aussi faire taire celui qui le dérange. La démocratie découvre qu'elle n'est pas, par nature, du côté de la vérité.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- POUR ALLER PLUS LOIN -->
+<div id="sapere-athenes-pal" style="max-width:100%;margin:0 auto;">
+<style>
+#sapere-athenes-pal{font-family:'Inter',system-ui,sans-serif;padding:0 24px 40px;}
+#sapere-athenes-pal h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;border-bottom:2px solid #8b0000;padding-bottom:8px;margin:30px 0 16px;font-weight:700;}
+#sapere-athenes-pal .sa-pal-sub{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8b0000;margin:28px 0 12px;font-weight:700;}
+#sapere-athenes-pal .sa-somm{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:28px;}
+#sapere-athenes-pal .sa-somm li{font-size:15px;line-height:1.45;padding:9px 0 9px 16px;border-bottom:1px solid #eee;position:relative;}
+#sapere-athenes-pal .sa-somm li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;border-radius:50%;background:#e0d0bb;}
+#sapere-athenes-pal .sa-somm li.fait::before{background:#c9a84f;}
+#sapere-athenes-pal .sa-somm li.actuel::before{background:#8b0000;}
+#sapere-athenes-pal .sa-somm li.actuel{font-weight:700;color:#8b0000;}
+#sapere-athenes-pal .sa-somm .sa-somm-tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#8b0000;font-weight:700;margin-left:6px;}
+#sapere-athenes-pal .sa-somm .sa-somm-ven{color:#999;}
+#sapere-athenes-pal .sa-biblio{list-style:none;padding:0;margin:0;}
+#sapere-athenes-pal .sa-biblio li{font-size:18px;line-height:1.6;padding:10px 0;border-bottom:1px solid #eee;}
+#sapere-athenes-pal .sa-bib-auteur{font-weight:700;color:#1a1a1a;}
+#sapere-athenes-pal .sa-bib-titre{font-style:italic;}
+#sapere-athenes-pal .sa-bib-note{display:block;font-size:15px;color:#555;line-height:1.5;margin-top:3px;}
+@media(max-width:640px){#sapere-athenes-pal .sa-somm{grid-template-columns:1fr;}}
+</style>
+  <h2>Les six épisodes de la série</h2>
+  <ul class="sa-somm">
+    <li class="fait"><a href="https://sapere.page/six-foyers-une-meme-fievre/" target="_blank" rel="noopener">Introduction · Une même fièvre, six foyers</a></li>
+    <li class="fait"><a href="https://sapere.page/la-perse-ou-la-tolerance-comme-arme/" target="_blank" rel="noopener">Épisode 1 · La Perse, ou la tolérance comme arme</a></li>
+    <li class="actuel">Épisode 2 · Athènes, le cercle étroit de la démocratie<span class="sa-somm-tag">vous êtes ici</span></li>
+    <li><a href="https://sapere.page/linde-du-gange-quand-le-salut-echappe-aux-pretres/" target="_blank" rel="noopener">Épisode 3 · L'Inde du Gange, quand le salut échappe aux prêtres</a></li>
+    <li class="fait"><a href="https://sapere.page/la-chine-ou-lart-de-gouverner-le-chaos/" target="_blank" rel="noopener">Épisode 4 · La Chine, ou l'art de gouverner le chaos</a></li>
+    <li class="fait"><a href="https://sapere.page/napata-le-royaume-qui-survecut-aux-pharaons/" target="_blank" rel="noopener">Épisode 5 · Napata, le royaume qui survécut aux pharaons</a></li>
+    <li class="fait"><a href="https://sapere.page/les-mondes-des-marges-inventer-sans-ecrire/" target="_blank" rel="noopener">Épisode 6 · Les mondes des marges, inventer sans écrire</a></li>
+  </ul>
+
+  <p class="sa-pal-sub">Pour aller plus loin</p>
+  <ul class="sa-biblio">
+    <li><span class="sa-bib-titre">La Guerre du Péloponnèse</span>, <span class="sa-bib-auteur">Thucydide</span> (trad. Jacqueline de Romilly, éd. de la Pléiade ou Robert Laffont, coll. « Bouquins »).
+      <span class="sa-bib-note">La source première, et le premier traité de réalisme politique de l'histoire. Voir surtout le Dialogue de Mélos et l'expédition de Sicile. La traduction de Romilly est la référence française.</span></li>
+    <li><span class="sa-bib-titre">Démocratie antique et démocratie moderne</span>, <span class="sa-bib-auteur">Moses I. Finley</span> (Payot, coll. « Petite Bibliothèque »).
+      <span class="sa-bib-note">L'antidote à l'anachronisme. Finley montre comment l'égalité politique des citoyens reposait sur l'empire et l'esclavage : le citoyen athénien, écrit-il, était un « rentier de l'empire ». Court et décisif.</span></li>
+    <li><span class="sa-bib-titre">La Démocratie contre les experts. Les esclaves publics en Grèce ancienne</span>, <span class="sa-bib-auteur">Paulin Ismard</span> (Seuil, 2015).
+      <span class="sa-bib-note">Un angle inédit et fascinant : Athènes confiait l'expertise administrative à des esclaves pour empêcher que le savoir technique ne devienne un pouvoir. Le miroir inversé de notre technocratie.</span></li>
+  </ul>
+</div>
+
