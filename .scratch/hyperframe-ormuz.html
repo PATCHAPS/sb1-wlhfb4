@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Un détroit sans texte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  /* palette: ink naval + brass accent + scorched red / layout: single-column editorial, max 720, inline map */
+  :root {
+    --ink: #0B1E33;
+    --paper: #F2EFE7;
+    --paper-raise: #FFFFFF;
+    --rule: #D6D1C4;
+    --mute: #5A6775;
+    --brass: #B8893A;
+    --brass-soft: #E8D4A6;
+    --scorched: #A33A2A;
+    --sea: #1C3A5E;
+    --sand: #D9C8A6;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #ECE6D7;
+      --paper: #0B1620;
+      --paper-raise: #152331;
+      --rule: #2A3845;
+      --mute: #8A96A2;
+      --brass: #D4A95E;
+      --brass-soft: #4A3D28;
+      --scorched: #D96652;
+      --sea: #4A7FB8;
+      --sand: #8A7A5A;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #ECE6D7;
+    --paper: #0B1620;
+    --paper-raise: #152331;
+    --rule: #2A3845;
+    --mute: #8A96A2;
+    --brass: #D4A95E;
+    --brass-soft: #4A3D28;
+    --scorched: #D96652;
+    --sea: #4A7FB8;
+    --sand: #8A7A5A;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  /* Masthead */
+  .mast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .mast .brand {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .mast .brand span {
+    color: var(--brass);
+  }
+
+  /* Hero */
+  .hero { margin: 56px 0 48px; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 20px;
+  }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(38px, 6vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--brass);
+    font-weight: 500;
+  }
+  .deck {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--mute);
+    margin: 0;
+    max-width: 620px;
+    text-wrap: balance;
+  }
+
+  .meta-line {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .meta-line span strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* Body prose */
+  p.lede {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 24px;
+    line-height: 1.45;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 48px 0 32px;
+    text-wrap: balance;
+  }
+  p.lede::first-letter {
+    font-size: 1.3em;
+    font-weight: 500;
+    color: var(--brass);
+  }
+  p { margin: 0 0 20px; max-width: 65ch; }
+  p + p { margin-top: 20px; }
+  strong { font-weight: 600; color: var(--ink); }
+
+  /* Section heads */
+  .section-head {
+    margin: 72px 0 32px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .section-head .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--brass);
+    font-weight: 500;
+    padding-top: 8px;
+  }
+  .section-head h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  /* Fact cards */
+  .fact {
+    border-top: 1px solid var(--rule);
+    padding: 32px 0 28px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+  }
+  .fact:last-of-type { border-bottom: 1px solid var(--rule); }
+  .fact .idx {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 44px;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1;
+    color: var(--brass);
+  }
+  .fact h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.25;
+    margin: 2px 0 14px;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  .fact p { margin-bottom: 14px; }
+  .fact .aphorism {
+    display: block;
+    margin: 16px 0 4px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--mute);
+    padding-left: 16px;
+    border-left: 2px solid var(--brass);
+  }
+
+  /* Data tiles */
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 24px 0 8px;
+  }
+  .tile {
+    background: var(--paper-raise);
+    padding: 18px 16px;
+  }
+  .tile .lbl {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 6px;
+  }
+  .tile .val {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .tile .val small {
+    display: block;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--mute);
+    margin-top: 4px;
+    letter-spacing: 0;
+  }
+  @media (max-width: 560px) {
+    .tiles { grid-template-columns: 1fr; }
+  }
+
+  /* Map */
+  figure.map {
+    margin: 32px 0;
+    padding: 0;
+  }
+  figure.map svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: var(--paper-raise);
+    border: 1px solid var(--rule);
+  }
+  figure.map figcaption {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--mute);
+    margin-top: 10px;
+    padding: 0 4px;
+  }
+
+  /* Big pull quote */
+  blockquote.pull {
+    margin: 48px -24px;
+    padding: 40px 48px;
+    background: var(--paper-raise);
+    border-top: 2px solid var(--brass);
+    border-bottom: 2px solid var(--brass);
+  }
+  blockquote.pull p {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+    margin: 0;
+    max-width: none;
+    text-wrap: balance;
+  }
+  @media (max-width: 560px) {
+    blockquote.pull {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 32px 24px;
+    }
+    blockquote.pull p { font-size: 20px; }
+  }
+
+  /* Compose block */
+  .compose {
+    margin: 48px 0;
+  }
+
+  /* Thesis */
+  .thesis {
+    margin: 64px 0 48px;
+    padding: 36px 32px;
+    background: var(--paper-raise);
+    border: 1px solid var(--rule);
+    position: relative;
+  }
+  .thesis::before {
+    content: "LA THÈSE";
+    position: absolute;
+    top: -10px;
+    left: 24px;
+    background: var(--paper);
+    padding: 0 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--brass);
+    font-weight: 600;
+  }
+  .thesis p {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 20px;
+    line-height: 1.45;
+    margin: 0 0 16px;
+    color: var(--ink);
+    max-width: none;
+  }
+  .thesis p:last-child { margin-bottom: 0; }
+
+  /* Closing question */
+  .closer {
+    margin: 64px 0 48px;
+    padding: 48px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+  }
+  .closer .lbl {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 20px;
+  }
+  .closer p {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.35;
+    color: var(--ink);
+    margin: 0 auto;
+    max-width: 580px;
+    text-wrap: balance;
+  }
+
+  /* Method note */
+  .method {
+    margin: 48px 0 0;
+    padding: 20px 24px;
+    border-left: 2px solid var(--rule);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--mute);
+  }
+  .method strong { color: var(--ink); font-weight: 500; }
+
+  /* Footer */
+  footer.foot {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mute);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer.foot span strong { color: var(--ink); font-weight: 500; }
+
+  /* Horizontal flow bar for traffic */
+  .flow {
+    margin: 28px 0 12px;
+  }
+  .flow-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 80px;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+  }
+  .flow-row + .flow-row { border-top: 1px dashed var(--rule); }
+  .flow-row .k { color: var(--mute); font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .flow-row .bar {
+    height: 14px;
+    background: var(--brass-soft);
+    position: relative;
+    border-radius: 1px;
+    overflow: hidden;
+  }
+  .flow-row .bar .fill {
+    height: 100%;
+    background: var(--sea);
+  }
+  .flow-row .v {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    color: var(--ink);
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+  }
+  @media (max-width: 460px) {
+    .flow-row { grid-template-columns: 1fr; gap: 4px; }
+    .flow-row .v { text-align: left; }
+  }
+
+  a { color: var(--brass); text-decoration: none; border-bottom: 1px solid var(--brass-soft); }
+  a:hover { border-bottom-color: var(--brass); }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <div class="mast">
+    <div class="brand"><span>SAPERE</span> · Série Iran 2026</div>
+    <div>Bulletin N° 9 · Hyperframe</div>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow">Moyen-Orient · Arrêté au 30 septembre 2026</div>
+    <h1>Un détroit <em>sans texte</em>, un corridor sous escorte</h1>
+    <p class="deck">Fin août, un seul navire franchissait parfois Ormuz dans la journée. Fin septembre, les trois quarts du trafic d'avant-guerre y repassent. Entre les deux : aucun accord. Juste des convois. Et derrière eux, un porte-avions.</p>
+    <div class="meta-line">
+      <span>Lecture · <strong>3 min</strong></span>
+      <span>Période · <strong>17 août – 30 septembre</strong></span>
+      <span>Zone · <strong>Iran · Ormuz · Golfe · mer Rouge</strong></span>
+    </div>
+  </header>
+
+  <p class="lede">Le numéro précédent montrait des textes que personne n'abandonne et que personne n'applique. Celui-ci traite l'autre guerre, celle d'Ormuz, et il y trouve l'inverse : aucun texte, et pourtant un résultat.</p>
+
+  <p>C'est le fait qui défait la principale thèse de cette série : non, le détroit n'est pas devenu iranien. Mais il n'est pas redevenu libre pour autant. Les six semaines qui viennent de passer ont déplacé la question, moins par ce qu'elles ont réglé que par ce qu'elles ont laissé apparaître.</p>
+
+  <div class="section-head">
+    <div class="num">PARTIE 1</div>
+    <h2>Les cinq faits qui ont tout décalé</h2>
+  </div>
+
+  <!-- Fact 1 -->
+  <article class="fact">
+    <div class="idx">1</div>
+    <div>
+      <h3>La guerre reprise en quatre jours</h3>
+      <p>Le 27 août, Washington annonce à ses alliés que les frappes sont improbables pour le moment. Le 31 août, elles reprenaient. Depuis, les vagues se succèdent sans interruption, et le Pentagone a prolongé ses déploiements au Moyen-Orient jusqu'en 2027, contre l'avis formel de quatre chefs de commandement.</p>
+      <p>Pendant que le secrétaire au Trésor déclare viser l'effondrement du régime, le président promet, en campagne, la fin de la guerre après les élections de mi-mandat. Deux horloges, et elles ne donnent pas la même heure.</p>
+      <div class="tiles">
+        <div class="tile"><div class="lbl">Militaires tués</div><div class="val">20–24<small>côté américain depuis le début</small></div></div>
+        <div class="tile"><div class="lbl">Blessés</div><div class="val">861<small>appareils perdus : 98</small></div></div>
+        <div class="tile"><div class="lbl">Chefs en désaccord</div><div class="val">4<small>sur la prolongation jusqu'en 2027</small></div></div>
+      </div>
+      <em class="aphorism">Une guerre qu'on annonce terminée et qui reprend en quatre jours n'est pas conduite par ses objectifs. Elle est conduite par ses interruptions.</em>
+    </div>
+  </article>
+
+  <!-- Fact 2 -->
+  <article class="fact">
+    <div class="idx">2</div>
+    <div>
+      <h3>Mille deux cents kilomètres de désert, tenus par quelques pompes</h3>
+      <p>Le 10 septembre, des drones partis d'Irak frappent deux stations de pompage de l'oléoduc est-ouest saoudien, dans les régions de Riyad et de Médine. Riyad ferme le lendemain l'intégralité de ce conduit de 1 201 kilomètres. Cet oléoduc, d'une capacité de 7 millions de barils par jour, acheminait 4 à 5 millions quotidiens vers Yanbu, sur la mer Rouge : la seule route de sortie saoudienne qui ne franchit pas Ormuz.</p>
+
+      <figure class="map">
+        <svg viewBox="0 0 760 360" role="img" aria-label="Carte schématique de l'oléoduc est-ouest saoudien et du détroit d'Ormuz">
+          <defs>
+            <pattern id="sea-pat" width="4" height="4" patternUnits="userSpaceOnUse">
+              <rect width="4" height="4" fill="var(--sea)" opacity="0.08"/>
+            </pattern>
+          </defs>
+          <!-- Water -->
+          <rect x="0" y="0" width="760" height="360" fill="var(--paper-raise)"/>
+          <!-- Red Sea -->
+          <path d="M 60 60 Q 50 200 140 320 L 180 320 Q 150 200 150 60 Z" fill="var(--sea)" opacity="0.14"/>
+          <text x="78" y="200" font-family="Fraunces, serif" font-size="13" font-style="italic" fill="var(--sea)" transform="rotate(-72 78 200)">Mer Rouge</text>
+          <!-- Persian Gulf -->
+          <path d="M 440 50 Q 500 90 560 110 Q 620 125 680 130 L 700 170 Q 620 175 540 155 Q 460 130 420 100 Z" fill="var(--sea)" opacity="0.18"/>
+          <text x="520" y="105" font-family="Fraunces, serif" font-size="13" font-style="italic" fill="var(--sea)">Golfe persique</text>
+          <!-- Oman gulf / Hormuz -->
+          <path d="M 680 130 Q 720 150 740 190 L 740 240 Q 720 220 700 190 Z" fill="var(--sea)" opacity="0.18"/>
+          <!-- Saudi Arabia landmass outline -->
+          <path d="M 160 70 L 440 60 L 480 90 L 540 140 L 600 160 L 640 190 L 650 230 L 620 290 L 540 320 L 400 330 L 260 320 L 180 290 L 150 220 L 160 150 Z"
+                fill="var(--sand)" opacity="0.28" stroke="var(--sand)" stroke-width="1"/>
+          <text x="340" y="230" font-family="Fraunces, serif" font-size="16" font-weight="500" fill="var(--ink)" text-anchor="middle">ARABIE SAOUDITE</text>
+
+          <!-- Iran -->
+          <path d="M 500 20 L 740 30 L 740 100 L 680 115 L 540 70 Z" fill="var(--scorched)" opacity="0.20" stroke="var(--scorched)" stroke-width="1"/>
+          <text x="620" y="55" font-family="Fraunces, serif" font-size="14" font-weight="500" fill="var(--scorched)" text-anchor="middle">IRAN</text>
+
+          <!-- Pipeline east → west -->
+          <line x1="560" y1="195" x2="190" y2="195" stroke="var(--brass)" stroke-width="2.5" stroke-dasharray="0"/>
+          <!-- Pipeline label -->
+          <text x="375" y="186" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--brass)" font-weight="500" text-anchor="middle">OLÉODUC EST–OUEST · 1 201 km · 4–5 Mb/j</text>
+
+          <!-- Pumping stations struck -->
+          <g>
+            <circle cx="420" cy="195" r="7" fill="var(--scorched)"/>
+            <circle cx="420" cy="195" r="12" fill="none" stroke="var(--scorched)" stroke-width="1" opacity="0.5"/>
+            <text x="420" y="222" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--scorched)" font-weight="500" text-anchor="middle">Région de Riyad</text>
+          </g>
+          <g>
+            <circle cx="310" cy="195" r="7" fill="var(--scorched)"/>
+            <circle cx="310" cy="195" r="12" fill="none" stroke="var(--scorched)" stroke-width="1" opacity="0.5"/>
+            <text x="310" y="222" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--scorched)" font-weight="500" text-anchor="middle">Région de Médine</text>
+          </g>
+
+          <!-- Yanbu -->
+          <circle cx="190" cy="195" r="5" fill="var(--ink)"/>
+          <text x="190" y="183" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink)" font-weight="500" text-anchor="middle">Yanbu</text>
+
+          <!-- Abqaiq / eastern fields -->
+          <circle cx="560" cy="195" r="5" fill="var(--ink)"/>
+          <text x="560" y="183" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink)" font-weight="500" text-anchor="middle">Abqaiq</text>
+
+          <!-- Hormuz strait marker -->
+          <g>
+            <path d="M 695 155 Q 710 170 710 185" fill="none" stroke="var(--scorched)" stroke-width="2.5"/>
+            <path d="M 705 182 L 710 190 L 714 182" fill="none" stroke="var(--scorched)" stroke-width="2.5"/>
+            <text x="720" y="150" font-family="Fraunces, serif" font-size="13" font-style="italic" fill="var(--scorched)" text-anchor="end" font-weight="500">Détroit d'Ormuz</text>
+          </g>
+
+          <!-- Legend -->
+          <g transform="translate(60, 310)">
+            <circle cx="8" cy="0" r="6" fill="var(--scorched)"/>
+            <text x="22" y="4" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink)">Stations frappées le 10 septembre</text>
+            <line x1="260" y1="0" x2="285" y2="0" stroke="var(--brass)" stroke-width="2.5"/>
+            <text x="295" y="4" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink)">Oléoduc fermé du 11 au 29 septembre</text>
+          </g>
+        </svg>
+        <figcaption>Schéma de situation, non à l'échelle. Les drones ont visé les stations de pompage, pas le tube. Mille deux cents kilomètres de désert tiennent à quelques installations fixes, repérables et isolées.</figcaption>
+      </figure>
+
+      <div class="tiles">
+        <div class="tile"><div class="lbl">Volume suspendu</div><div class="val">4–5 Mb/j<small>soit 4 à 5 % de l'offre mondiale</small></div></div>
+        <div class="tile"><div class="lbl">Stocks de Yanbu</div><div class="val">5–7 j<small>à la fermeture</small></div></div>
+        <div class="tile"><div class="lbl">Baril (brent)</div><div class="val">+ 100 $<small>semaine en hausse de 8 %</small></div></div>
+      </div>
+      <em class="aphorism">Contourner un goulot d'étranglement ne supprime pas la vulnérabilité, cela la déplace vers un objet plus long, plus fixe, et plus facile à frapper qu'un détroit.</em>
+    </div>
+  </article>
+
+  <!-- Fact 3 -->
+  <article class="fact">
+    <div class="idx">3</div>
+    <div>
+      <h3>Le détroit rouvert aux trois quarts, sous escorte</h3>
+      <p>En août, le trafic avait touché des planchers absolus : certains jours, un seul navire marchand franchissait Ormuz. Six semaines plus tard, les producteurs du Golfe, avec l'appui de la marine américaine, font passer le brut par convois escortés, sous le nez de l'Iran. Au 29 septembre, Kpler mesure 13,2 Mb/j en moyenne hebdomadaire — 77 % du niveau d'avant-guerre.</p>
+      <div class="flow">
+        <div class="flow-row"><div class="k">Avant-guerre</div><div class="bar"><div class="fill" style="width:100%"></div></div><div class="v">17 Mb/j</div></div>
+        <div class="flow-row"><div class="k">Plancher août</div><div class="bar"><div class="fill" style="width:6%"></div></div><div class="v">1 navire/j</div></div>
+        <div class="flow-row"><div class="k">29 septembre</div><div class="bar"><div class="fill" style="width:77%"></div></div><div class="v">13,2 Mb/j</div></div>
+      </div>
+      <p>Les navires passent, mais sans qu'aucune autorité iranienne ne les autorise ni ne les taxe. Le flux s'est normalisé. Le détroit, non.</p>
+      <em class="aphorism">Un péage que l'on contourne avec un porte-avions n'est plus un régime juridique. Mais il faut encore le porte-avions.</em>
+    </div>
+  </article>
+
+  <!-- Fact 4 -->
+  <article class="fact">
+    <div class="idx">4</div>
+    <div>
+      <h3>L'offre iranienne, et le refus</h3>
+      <p>À l'Assemblée générale des Nations unies, Téhéran a proposé de rouvrir le détroit en sept jours contre sept conditions, puis un cessez-le-feu assorti d'une réouverture par étapes, contre la libération d'avoirs gelés. Pas contre une reconnaissance de souveraineté. Contre de l'argent.</p>
+      <p>Washington a refusé. Dans l'heure qui a suivi, des explosions près de l'île de Qeshm. Des missiles antinavires. Des drones. Les pourparlers se tiennent désormais à Islamabad, à l'est de l'Iran — plus à l'ouest, comme en 2015. L'Europe est absente d'une négociation sur un détroit dont elle subit la fermeture.</p>
+      <em class="aphorism">Que la réouverture devienne négociable et qu'elle ne suffise plus à arrêter la guerre indique que la liberté de navigation n'en est plus le seul objet.</em>
+    </div>
+  </article>
+
+  <!-- Fact 5 -->
+  <article class="fact">
+    <div class="idx">5</div>
+    <div>
+      <h3>Le dossier nucléaire devant le Conseil de sécurité</h3>
+      <p>Le 9 septembre, le Conseil des gouverneurs de l'AIEA a renvoyé l'Iran devant le Conseil de sécurité. Vingt-trois voix sur trente-cinq. Une procédure qui n'avait pas été employée depuis vingt ans. Au même moment, un ancien commandant des Gardiens de la révolution, nommé début août, mettait publiquement en cause l'appartenance de l'Iran au Traité de non-prolifération. Pendant trente ans, le Guide précédent avait maintenu le pays au plus près du seuil sans jamais le franchir.</p>
+      <em class="aphorism">Une guerre menée pour empêcher l'arme pourrait avoir fourni la meilleure raison de la construire.</em>
+    </div>
+  </article>
+
+  <!-- Compose -->
+  <div class="section-head">
+    <div class="num">PARTIE 2</div>
+    <h2>Ce que le tout compose</h2>
+  </div>
+  <div class="compose">
+    <p>L'étranglement s'est accéléré plus vite que les projections. Le FMI est passé d'une contraction de 5,4 % à 6,1 % pour 2026, avec plus d'un million d'emplois perdus. L'inflation frôle 88 %. Le rial a perdu 60 % de sa valeur depuis mars. Certains médicaments auraient augmenté de plus de 500 %. Et des manifestations de retraités ont éclaté dans plusieurs villes.</p>
+    <p>Et pourtant. L'île de Kharg aurait été frappée environ 550 fois sans cesser de fonctionner. Le régime a reconstitué sa chaîne de commandement en 48 heures. Le Guide suprême n'a fait aucune apparition publique depuis sa nomination début mars : moins de cinq personnes l'auraient rencontré, selon la presse régionale.</p>
+    <p>Et à la périphérie, trois détroits se contractent simultanément : Ormuz, Bab el-Mandeb depuis l'offensive houthie du 3 septembre, et la mer Rouge. <strong>Deux détroits fermés en même temps ne doublent pas le problème : ils suppriment le contournement régional.</strong></p>
+  </div>
+
+  <!-- Pull quote -->
+  <blockquote class="pull">
+    <p>Le numéro précédent montrait des textes que le temps vide de leur objet. Celui-ci montre l'inverse : un résultat obtenu sans texte, par escorte militaire — et donc révocable du jour au lendemain.</p>
+  </blockquote>
+
+  <!-- Thesis -->
+  <div class="thesis">
+    <p>Le détroit d'Ormuz n'est devenu ni iranien, ni libre au sens antérieur. Il est passé d'un bien commun garanti par une règle à un corridor garanti par un rapport de force.</p>
+    <p>Téhéran n'a pas réussi à faire du passage un service qu'il administre. Mais il a réussi à en faire un corridor dont l'ouverture se paie — non pas en droits de péage, mais en escorte navale permanente, en prime d'assurance durablement réévaluée, en présence militaire immobilisée.</p>
+    <p>Une thèse plus dure à entendre que la précédente. Et plus difficile à réfuter.</p>
+  </div>
+
+  <!-- Closer -->
+  <div class="closer">
+    <div class="lbl">La question qui reste</div>
+    <p>Combien de temps une marine peut-elle tenir ouvert ce qu'aucun accord ne garantit — et que se passe-t-il le jour où elle est appelée ailleurs ?</p>
+  </div>
+
+  <!-- Method -->
+  <div class="method">
+    <strong>Note de méthode.</strong> Les faits datés sont vérifiables aux sources indiquées dans le bulletin SAPERE n°9. Les blocs en italique sont des lectures, non des constats : ils proposent une interprétation que les faits rendent plausible sans l'établir. Les volumes de trafic proviennent de sociétés de suivi maritime dont les décomptes divergent, les transpondeurs étant éteints et le signal satellitaire brouillé dans le détroit ; les bilans militaires émanent de belligérants qui censurent leurs propres dégâts.
+  </div>
+
+  <footer class="foot">
+    <span>SAPERE · Série Iran 2026 · <strong>Bulletin N° 9</strong></span>
+    <span>Arrêté au <strong>30 septembre 2026</strong></span>
+  </footer>
+
+</main>
+</body>
+</html>
