@@ -752,76 +752,216 @@
       <h2 class="section-title">Mille deux cents kilomètres de désert tenus par <em>quelques pompes</em>.</h2>
 
       <figure class="map">
-        <svg viewBox="0 0 980 460" role="img" aria-label="Carte schématique de l'oléoduc est-ouest saoudien et du détroit d'Ormuz">
-          <!-- water fills -->
-          <rect x="0" y="0" width="980" height="460" fill="var(--paper-raise)"/>
+        <svg viewBox="0 0 1200 1000" role="img" aria-label="Carte vectorielle du Moyen-Orient : oléoduc est-ouest saoudien, détroit d'Ormuz et Bab el-Mandeb">
+          <defs>
+            <!-- subtle coastline halo -->
+            <filter id="coast-halo" x="-5%" y="-5%" width="110%" height="110%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
 
-          <!-- Mer Rouge -->
-          <path d="M 60 60 Q 50 240 160 420 L 220 420 Q 180 240 190 60 Z" fill="var(--sea)" opacity="0.12"/>
-          <text x="100" y="250" font-family="Fraunces, serif" font-size="15" font-style="italic" fill="var(--sea)" transform="rotate(-72 100 250)" font-weight="500">Mer Rouge</text>
+          <!-- WATER BASE -->
+          <rect x="0" y="0" width="1200" height="1000" fill="var(--sea)" opacity="0.07"/>
 
-          <!-- Golfe persique -->
-          <path d="M 560 50 Q 640 100 720 125 Q 800 150 880 150 L 900 220 Q 820 220 720 190 Q 620 160 540 115 Z" fill="var(--sea)" opacity="0.18"/>
-          <text x="680" y="120" font-family="Fraunces, serif" font-size="16" font-style="italic" fill="var(--sea)" font-weight="500">Golfe persique</text>
-
-          <!-- Golfe d'Oman -->
-          <path d="M 880 150 Q 930 175 950 220 L 960 320 Q 930 280 905 245 Z" fill="var(--sea)" opacity="0.2"/>
-
-          <!-- Arabie Saoudite -->
-          <path d="M 200 80 L 540 70 L 600 100 L 680 155 L 760 190 L 830 240 L 835 295 L 790 365 L 700 410 L 540 420 L 360 410 L 240 380 L 200 310 L 190 180 Z"
-                fill="var(--sand)" opacity="0.3" stroke="var(--sand-deep)" stroke-width="1"/>
-          <text x="450" y="290" font-family="Fraunces, serif" font-size="22" font-weight="500" fill="var(--ink)" text-anchor="middle" letter-spacing="2">ARABIE SAOUDITE</text>
-
-          <!-- Iran -->
-          <path d="M 620 20 L 960 30 L 955 140 L 870 145 L 760 110 L 650 70 Z" fill="var(--scorched)" opacity="0.20" stroke="var(--scorched)" stroke-width="1"/>
-          <text x="800" y="78" font-family="Fraunces, serif" font-size="18" font-weight="500" fill="var(--scorched)" text-anchor="middle" letter-spacing="2">IRAN</text>
-
-          <!-- Irak (origine des drones) -->
-          <path d="M 520 20 L 620 20 L 650 70 L 580 85 L 520 70 Z" fill="var(--brass)" opacity="0.18" stroke="var(--brass)" stroke-width="1"/>
-          <text x="585" y="55" font-family="Fraunces, serif" font-size="12" font-style="italic" fill="var(--brass)" text-anchor="middle" font-weight="500">Irak</text>
-
-          <!-- Pipeline east -> west -->
-          <line x1="720" y1="240" x2="220" y2="240" stroke="var(--brass)" stroke-width="3"/>
-          <text x="470" y="228" font-family="IBM Plex Mono, monospace" font-size="12" fill="var(--brass)" font-weight="600" text-anchor="middle" letter-spacing="2">OLÉODUC EST–OUEST · 1 201 km · 4–5 Mb/j</text>
-
-          <!-- Drone attack arrows from Iraq -->
-          <path d="M 580 100 Q 540 160 530 220" fill="none" stroke="var(--scorched)" stroke-width="1.5" stroke-dasharray="3 3"/>
-          <path d="M 525 215 L 530 225 L 536 215" fill="none" stroke="var(--scorched)" stroke-width="1.5"/>
-          <path d="M 585 100 Q 475 160 400 225" fill="none" stroke="var(--scorched)" stroke-width="1.5" stroke-dasharray="3 3"/>
-          <path d="M 395 220 L 400 230 L 406 220" fill="none" stroke="var(--scorched)" stroke-width="1.5"/>
-          <text x="530" y="155" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--scorched)" text-anchor="middle" font-weight="500" letter-spacing="1">DRONES · 10 SEPT.</text>
-
-          <!-- Pumping stations -->
-          <g>
-            <circle cx="530" cy="240" r="9" fill="var(--scorched)"/>
-            <circle cx="530" cy="240" r="18" fill="none" stroke="var(--scorched)" stroke-width="1.5" opacity="0.5"/>
-            <circle cx="530" cy="240" r="28" fill="none" stroke="var(--scorched)" stroke-width="1" opacity="0.3"/>
-            <text x="530" y="285" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="var(--scorched)" font-weight="600" text-anchor="middle">Région de Riyad</text>
-            <text x="530" y="302" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--mute)" text-anchor="middle" letter-spacing="1">STATION FRAPPÉE</text>
+          <!-- GRATICULE (lat/lon grid) -->
+          <g stroke="var(--rule)" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.5" fill="none">
+            <!-- parallels at 15°, 20°, 25°, 30°N -->
+            <line x1="0" y1="840" x2="1200" y2="840"/>
+            <line x1="0" y1="640" x2="1200" y2="640"/>
+            <line x1="0" y1="440" x2="1200" y2="440"/>
+            <line x1="0" y1="240" x2="1200" y2="240"/>
+            <line x1="0" y1="40" x2="1200" y2="40"/>
+            <!-- meridians at 35°, 40°, 45°, 50°, 55°, 60°E -->
+            <line x1="120" y1="0" x2="120" y2="1000"/>
+            <line x1="320" y1="0" x2="320" y2="1000"/>
+            <line x1="520" y1="0" x2="520" y2="1000"/>
+            <line x1="720" y1="0" x2="720" y2="1000"/>
+            <line x1="920" y1="0" x2="920" y2="1000"/>
+            <line x1="1120" y1="0" x2="1120" y2="1000"/>
           </g>
-          <g>
-            <circle cx="400" cy="240" r="9" fill="var(--scorched)"/>
-            <circle cx="400" cy="240" r="18" fill="none" stroke="var(--scorched)" stroke-width="1.5" opacity="0.5"/>
-            <circle cx="400" cy="240" r="28" fill="none" stroke="var(--scorched)" stroke-width="1" opacity="0.3"/>
-            <text x="400" y="285" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="var(--scorched)" font-weight="600" text-anchor="middle">Région de Médine</text>
-            <text x="400" y="302" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--mute)" text-anchor="middle" letter-spacing="1">STATION FRAPPÉE</text>
+          <g font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--mute)" opacity="0.7" letter-spacing="1">
+            <text x="8" y="36">35°N</text>
+            <text x="8" y="236">30°N</text>
+            <text x="8" y="436">25°N</text>
+            <text x="8" y="636">20°N</text>
+            <text x="8" y="836">15°N</text>
+            <text x="124" y="994">35°E</text>
+            <text x="524" y="994">45°E</text>
+            <text x="924" y="994">55°E</text>
           </g>
 
-          <!-- Yanbu -->
-          <circle cx="220" cy="240" r="6" fill="var(--ink)"/>
-          <text x="220" y="225" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="var(--ink)" font-weight="600" text-anchor="middle">Yanbu</text>
-          <text x="220" y="265" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--mute)" text-anchor="middle" letter-spacing="1">EXPORT MER ROUGE</text>
+          <!-- WATER BODY LABELS (behind land) -->
+          <g font-family="Fraunces, serif" font-style="italic" fill="var(--sea)" font-weight="500" opacity="0.75">
+            <text x="310" y="600" font-size="18" letter-spacing="4" transform="rotate(-68 310 600)">MER ROUGE</text>
+            <text x="640" y="330" font-size="16" letter-spacing="3">Golfe persique</text>
+            <text x="1120" y="520" font-size="13" letter-spacing="2" text-anchor="end">Golfe d'Oman</text>
+            <text x="800" y="920" font-size="13" letter-spacing="2">Golfe d'Aden</text>
+            <text x="1150" y="800" font-size="13" letter-spacing="2" text-anchor="end">Mer d'Arabie</text>
+          </g>
 
-          <!-- Abqaiq -->
-          <circle cx="720" cy="240" r="6" fill="var(--ink)"/>
-          <text x="720" y="225" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="var(--ink)" font-weight="600" text-anchor="middle">Abqaiq</text>
-          <text x="720" y="265" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--mute)" text-anchor="middle" letter-spacing="1">CHAMPS DE L'EST</text>
+          <!-- ARABIAN PENINSULA -->
+          <polygon points="116,260 150,310 200,400 240,476 288,580 360,680 424,764 438,848 452,908 456,936 480,896 520,928 580,900 684,860 760,820 870,760 960,720 1028,654 1080,580 1110,540 1070,490 988,462 976,432 972,398 970,378 988,420 940,428 912,432 870,460 800,462 782,462 780,428 775,398 755,390 725,388 720,380 700,360 660,310 642,280 660,244 630,220 520,170 380,140 260,180 180,220 150,250"
+            fill="var(--sand)" fill-opacity="0.42" stroke="var(--sand-deep)" stroke-width="1" stroke-linejoin="round"/>
 
-          <!-- Hormuz -->
+          <!-- IRAN (highlighted) -->
+          <polygon points="660,244 680,232 752,284 815,330 864,360 920,370 970,378 990,355 1032,416 1100,432 1144,428 1184,440 1200,440 1200,0 540,0 540,20 520,80 520,160 560,220 640,240"
+            fill="var(--scorched)" fill-opacity="0.14" stroke="var(--scorched)" stroke-width="1" stroke-linejoin="round"/>
+
+          <!-- NORTH BLOCK (Iraq, Jordan, Syria, Palestine, Egypt-Sinai fragment) -->
+          <polygon points="0,0 540,0 540,20 520,80 520,160 560,220 640,240 660,244 630,220 520,170 380,140 260,180 180,220 150,250 116,260 0,260"
+            fill="var(--sand)" fill-opacity="0.22" stroke="var(--sand-deep)" stroke-width="1" stroke-linejoin="round" opacity="0.7"/>
+
+          <!-- IRAK (highlighted — origine des drones) -->
+          <polygon points="520,160 560,220 640,240 660,244 630,220 520,170"
+            fill="var(--brass)" fill-opacity="0.22" stroke="var(--brass)" stroke-width="1" stroke-linejoin="round"/>
+
+          <!-- HORN OF AFRICA (Djibouti / Somalie tip) -->
+          <polygon points="300,1000 310,870 380,900 445,970 520,1000"
+            fill="var(--sand)" fill-opacity="0.3" stroke="var(--sand-deep)" stroke-width="1" stroke-linejoin="round"/>
+
+          <!-- COUNTRY LABELS -->
+          <g font-family="Fraunces, serif" font-weight="500" fill="var(--ink)" letter-spacing="6">
+            <text x="500" y="500" font-size="22" text-anchor="middle">ARABIE SAOUDITE</text>
+            <text x="880" y="150" font-size="20" text-anchor="middle" fill="var(--scorched)">IRAN</text>
+            <text x="300" y="110" font-size="12" fill="var(--mute)" letter-spacing="4">JORDANIE · SYRIE · IRAK</text>
+            <text x="590" y="200" font-size="13" fill="var(--brass)" text-anchor="middle" letter-spacing="4">IRAK</text>
+            <text x="625" y="880" font-size="12" fill="var(--mute)" letter-spacing="4">YÉMEN</text>
+            <text x="950" y="680" font-size="12" fill="var(--mute)" letter-spacing="4">OMAN</text>
+            <text x="900" y="470" font-size="10" fill="var(--mute)" letter-spacing="3">É.A.U.</text>
+            <text x="782" y="455" font-size="9" fill="var(--mute)" letter-spacing="2">QATAR</text>
+            <text x="400" y="970" font-size="10" fill="var(--mute)" letter-spacing="3">DJIBOUTI</text>
+          </g>
+
+          <!-- OLÉODUC EST-OUEST (Petroline) -->
+          <line x1="708" y1="404" x2="240" y2="476" stroke="var(--brass)" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- Habshan-Fujairah bypass (UAE) -->
+          <line x1="896" y1="470" x2="976" y2="438" stroke="var(--brass)" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round" opacity="0.7"/>
+          <text x="936" y="508" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--brass)" font-weight="500" text-anchor="middle" letter-spacing="1" opacity="0.75">HABSHAN–FUJAIRAH</text>
+
+          <!-- DRONE TRAJECTORIES from Iraq -->
+          <g fill="none" stroke="var(--scorched)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.75">
+            <path d="M 590 220 Q 580 320 590 440"/>
+            <path d="M 590 220 Q 490 310 395 465"/>
+          </g>
+          <path d="M 585 435 L 590 448 L 596 435" fill="none" stroke="var(--scorched)" stroke-width="2"/>
+          <path d="M 389 459 L 395 471 L 402 459" fill="none" stroke="var(--scorched)" stroke-width="2"/>
+          <text x="470" y="310" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--scorched)" font-weight="600" letter-spacing="2" transform="rotate(42 470 310)">DRONES · 10 SEPT.</text>
+
+          <!-- PIPELINE LABEL -->
+          <text x="474" y="455" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--brass)" font-weight="600" text-anchor="middle" letter-spacing="2">OLÉODUC EST–OUEST · 1 201 km · 4–5 Mb/j</text>
+
+          <!-- PUMPING STATIONS STRUCK -->
           <g>
-            <path d="M 900 190 Q 920 220 925 260" fill="none" stroke="var(--scorched)" stroke-width="3"/>
-            <path d="M 918 258 L 925 268 L 932 258" fill="none" stroke="var(--scorched)" stroke-width="3"/>
-            <text x="938" y="195" font-family="Fraunces, serif" font-size="15" font-style="italic" fill="var(--scorched)" text-anchor="end" font-weight="500">Détroit d'Ormuz</text>
+            <circle cx="590" cy="440" r="9" fill="var(--scorched)"/>
+            <circle cx="590" cy="440" r="18" fill="none" stroke="var(--scorched)" stroke-width="1.5" opacity="0.55"/>
+            <circle cx="590" cy="440" r="30" fill="none" stroke="var(--scorched)" stroke-width="1" opacity="0.3"/>
+            <text x="614" y="440" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="var(--scorched)" font-weight="600" dominant-baseline="middle">Région de Riyad</text>
+            <text x="614" y="457" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--mute)" letter-spacing="2" dominant-baseline="middle">STATION FRAPPÉE</text>
+          </g>
+          <g>
+            <circle cx="395" cy="465" r="9" fill="var(--scorched)"/>
+            <circle cx="395" cy="465" r="18" fill="none" stroke="var(--scorched)" stroke-width="1.5" opacity="0.55"/>
+            <circle cx="395" cy="465" r="30" fill="none" stroke="var(--scorched)" stroke-width="1" opacity="0.3"/>
+            <text x="395" y="510" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="var(--scorched)" font-weight="600" text-anchor="middle">Région de Médine</text>
+            <text x="395" y="527" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--mute)" text-anchor="middle" letter-spacing="2">STATION FRAPPÉE</text>
+          </g>
+
+          <!-- CITIES -->
+          <g font-family="IBM Plex Sans, sans-serif" font-size="12" fill="var(--ink)" font-weight="600">
+            <!-- Yanbu (terminal) -->
+            <rect x="235" y="471" width="10" height="10" fill="var(--ink)"/>
+            <text x="252" y="474" dominant-baseline="middle">Yanbu</text>
+            <text x="252" y="490" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--mute)" letter-spacing="2" dominant-baseline="middle">TERMINAL MER ROUGE</text>
+
+            <!-- Abqaiq (origine) -->
+            <rect x="703" y="399" width="10" height="10" fill="var(--ink)"/>
+            <text x="720" y="402" dominant-baseline="middle">Abqaiq</text>
+            <text x="720" y="418" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--mute)" letter-spacing="2" dominant-baseline="middle">CHAMPS DE L'EST</text>
+
+            <!-- Autres villes de contexte -->
+            <circle cx="588" cy="452" r="2.5" fill="var(--mute)"/>
+            <text x="582" y="430" font-size="10" font-weight="500" fill="var(--mute)" text-anchor="end">Riyad</text>
+
+            <circle cx="304" cy="460" r="2.5" fill="var(--mute)"/>
+            <text x="298" y="454" font-size="10" font-weight="500" fill="var(--mute)" text-anchor="end">Médine</text>
+
+            <circle cx="312" cy="584" r="2.5" fill="var(--mute)"/>
+            <text x="306" y="588" font-size="10" font-weight="500" fill="var(--mute)" text-anchor="end">La Mecque</text>
+
+            <circle cx="776" cy="12" r="2.5" fill="var(--mute)"/>
+            <text x="782" y="16" font-size="11" font-weight="500" fill="var(--mute)">Téhéran</text>
+
+            <circle cx="972" cy="384" r="2.5" fill="var(--mute)"/>
+            <text x="978" y="378" font-size="9" font-weight="500" fill="var(--mute)">Bandar Abbas</text>
+
+            <circle cx="780" cy="428" r="2.5" fill="var(--mute)"/>
+            <text x="786" y="420" font-size="9" font-weight="500" fill="var(--mute)">Doha</text>
+
+            <circle cx="912" cy="432" r="2.5" fill="var(--mute)"/>
+            <text x="920" y="426" font-size="9" font-weight="500" fill="var(--mute)">Dubaï</text>
+
+            <circle cx="976" cy="438" r="2.5" fill="var(--mute)"/>
+            <text x="982" y="454" font-size="9" font-weight="500" fill="var(--mute)">Fujairah</text>
+
+            <circle cx="1060" cy="496" r="2.5" fill="var(--mute)"/>
+            <text x="1066" y="500" font-size="9" font-weight="500" fill="var(--mute)">Mascate</text>
+
+            <circle cx="520" cy="928" r="2.5" fill="var(--mute)"/>
+            <text x="526" y="925" font-size="9" font-weight="500" fill="var(--mute)">Aden</text>
+          </g>
+
+          <!-- HORMUZ STRAIT MARKER -->
+          <g>
+            <path d="M 972 378 L 920 370" fill="none" stroke="var(--scorched)" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="946" cy="374" r="5" fill="var(--paper-raise)" stroke="var(--scorched)" stroke-width="2"/>
+            <text x="1030" y="330" font-family="Fraunces, serif" font-size="15" font-style="italic" fill="var(--scorched)" font-weight="600" text-anchor="middle">Détroit d'Ormuz</text>
+            <text x="1030" y="348" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--scorched)" text-anchor="middle" letter-spacing="2">54 km AU PLUS ÉTROIT</text>
+          </g>
+
+          <!-- BAB EL-MANDEB MARKER -->
+          <g>
+            <circle cx="465" cy="945" r="5" fill="var(--paper-raise)" stroke="var(--scorched)" stroke-width="2"/>
+            <text x="420" y="990" font-family="Fraunces, serif" font-size="13" font-style="italic" fill="var(--scorched)" font-weight="600" text-anchor="end">Bab el-Mandeb</text>
+          </g>
+
+          <!-- SCALE BAR -->
+          <g transform="translate(60, 920)">
+            <line x1="0" y1="0" x2="200" y2="0" stroke="var(--ink)" stroke-width="1.5"/>
+            <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--ink)" stroke-width="1.5"/>
+            <line x1="100" y1="-3" x2="100" y2="3" stroke="var(--ink)" stroke-width="1"/>
+            <line x1="200" y1="-5" x2="200" y2="5" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="0" y="-10" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink)" font-weight="500">0</text>
+            <text x="100" y="-10" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink)" font-weight="500" text-anchor="middle">250</text>
+            <text x="200" y="-10" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink)" font-weight="500" text-anchor="middle">500 km</text>
+          </g>
+
+          <!-- COMPASS (N arrow) -->
+          <g transform="translate(1140, 60)">
+            <line x1="0" y1="-26" x2="0" y2="20" stroke="var(--ink)" stroke-width="1.2"/>
+            <path d="M -6 -16 L 0 -28 L 6 -16 Z" fill="var(--ink)"/>
+            <text x="0" y="36" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink)" font-weight="600" text-anchor="middle" letter-spacing="2">N</text>
+          </g>
+
+          <!-- LEGEND -->
+          <g transform="translate(60, 60)">
+            <rect x="-10" y="-10" width="260" height="140" fill="var(--paper-raise)" stroke="var(--rule)" stroke-width="1" opacity="0.95"/>
+            <text x="0" y="8" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--mute)" font-weight="600" letter-spacing="2">LÉGENDE</text>
+
+            <line x1="0" y1="28" x2="24" y2="28" stroke="var(--brass)" stroke-width="3.5"/>
+            <text x="32" y="31" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink)">Oléoduc est-ouest</text>
+
+            <line x1="0" y1="48" x2="24" y2="48" stroke="var(--brass)" stroke-width="1.5" stroke-dasharray="3 2"/>
+            <text x="32" y="51" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink)">Contournement émirati</text>
+
+            <circle cx="12" cy="68" r="6" fill="var(--scorched)"/>
+            <text x="32" y="71" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink)">Station de pompage frappée</text>
+
+            <path d="M 0 88 L 24 88" fill="none" stroke="var(--scorched)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <text x="32" y="91" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink)">Trajectoire de drone</text>
+
+            <circle cx="12" cy="108" r="5" fill="var(--paper-raise)" stroke="var(--scorched)" stroke-width="2"/>
+            <text x="32" y="111" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink)">Détroit stratégique</text>
           </g>
         </svg>
         <figcaption>
