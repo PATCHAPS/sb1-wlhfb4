@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "_comment": "Hook UserPromptSubmit : chaque prompt est inspecté par .claude/hooks/route-skill.py, qui détecte les invocations `/skill-name` et injecte une décision de routage (modèle + sous-agent) consultable par Claude avant exécution. La table est .claude/skill-routing.json. Le hook n'est jamais bloquant.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/route-skill.py\""
+          }
+        ]
+      }
+    ]
+  }
+}

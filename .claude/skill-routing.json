@@ -1,0 +1,509 @@
+{
+  "_comment": "Table de routage skill → modèle Claude. 'routes' = correspondances exactes (clé = nom de skill sans slash). 'patterns' = regex appliquées si aucune correspondance exacte. 'default' = filet de sécurité. Les modèles acceptés : opus (claude-opus-4-7), sonnet (claude-sonnet-5-5), haiku (claude-haiku-5-5), fable (claude-fable-5-1). Modifier ce fichier seul suffit à changer le routage — ni le hook ni l'advisor ne sont à recompiler.",
+  "version": 1,
+
+  "default": {
+    "model": "sonnet",
+    "agent": "code-worker",
+    "why": "Choix médian sûr quand rien ne correspond"
+  },
+
+  "routes": {
+    "advisor": {
+      "model": "haiku",
+      "agent": "advisor",
+      "why": "Le routeur lui-même tourne sur Haiku"
+    },
+
+    "anthropic-skills:article-histoire-sapere": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Article de fond SAPERE à plume littéraire"
+    },
+    "anthropic-skills:angle-mort": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Analyse éditoriale narrative SAPERE"
+    },
+    "anthropic-skills:eclats-du-silence": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Récit narratif SAPERE"
+    },
+    "anthropic-skills:en-dessous-des-radars": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Enquête narrative SAPERE"
+    },
+    "anthropic-skills:la-phrase-les-faits": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Analyse éditoriale factuelle en style SAPERE"
+    },
+    "anthropic-skills:bonne-ou-mauvaise-nouvelle": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Édito narratif court"
+    },
+    "anthropic-skills:bulletin-moyen-orient": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Bulletin géopolitique rédigé"
+    },
+    "anthropic-skills:dossier-pays-sapere": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Dossier narratif long"
+    },
+    "anthropic-skills:chronologie-pays-sapere": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Chronologie commentée en style narratif"
+    },
+    "anthropic-skills:miroir-des-nations": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Récit comparatif éditorial"
+    },
+    "anthropic-skills:monde-et-ses-silences": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Reportage narratif"
+    },
+    "anthropic-skills:opinion-sapere": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Tribune / édito SAPERE"
+    },
+    "anthropic-skills:culture-societe-sapere": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Chronique culture / société"
+    },
+    "anthropic-skills:fabuleux": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Récit littéraire"
+    },
+    "anthropic-skills:forces-a-loeuvre": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Analyse éditoriale narrative"
+    },
+    "anthropic-skills:complement-notebooklm": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Génération de notes structurées, pas de prose longue"
+    },
+    "anthropic-skills:analyse-geopolitique-pays": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Analyse géopolitique transversale — raisonnement multi-sources"
+    },
+    "anthropic-skills:analyse-de-revue-sapere": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Méta-analyse éditoriale à plusieurs étapes"
+    },
+    "anthropic-skills:veille-geopolitique-continent": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Veille structurée multi-pays"
+    },
+    "anthropic-skills:veille-citoyenne": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Veille structurée, pas de prose longue"
+    },
+    "anthropic-skills:audit-base-sapere": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Audit croisé de base de contenus — raisonnement profond"
+    },
+    "anthropic-skills:registre-des-theses-sapere": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Gestion de registre structuré"
+    },
+    "anthropic-skills:trouver-skills": {
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Recherche dans un catalogue — rapide"
+    },
+    "anthropic-skills:skill-creator": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Génération de frontmatter + instructions"
+    },
+    "anthropic-skills:import-memory": {
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Extraction / import — rapide"
+    },
+
+    "security-review": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Audit de sécurité — raisonnement profond"
+    },
+    "code-review": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Revue de PR standard ; monter à Opus seulement avec level xhigh/max"
+    },
+    "simplify": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Cleanups ciblés sur diff courant"
+    },
+    "init": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Génération de scaffolding"
+    },
+    "run": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Lancer l'app + vérifier"
+    },
+    "plugin-authoring": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Code de plugin CC"
+    },
+    "workflow-authoring": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Orchestration multi-agents — conception"
+    },
+    "update-config": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Édition de settings.json"
+    },
+    "keybindings-help": {
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Lecture + petit patch"
+    },
+    "fewer-permission-prompts": {
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Scan de transcripts + liste"
+    },
+    "loop": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Boucle de poll — exécution standard"
+    },
+    "claude-api": {
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Référence rapide à consulter"
+    },
+    "dataviz": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Génération de graphiques et dashboards"
+    },
+
+    "data:statistical-analysis": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Stats sérieuses — raisonnement"
+    },
+    "data:analyze": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Analyse exploratoire standard"
+    },
+    "data:build-dashboard": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Construction d'UI dashboard"
+    },
+    "data:create-viz": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Génération de viz"
+    },
+    "data:explore-data": {
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Profilage rapide"
+    },
+    "data:sql-queries": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Écriture de SQL"
+    },
+    "data:write-query": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Écriture de requête"
+    },
+    "data:validate-data": {
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Vérification de schéma"
+    },
+
+    "legal:brief": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Note de briefing rédigée"
+    },
+    "legal:compliance-check": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Vérification réglementaire — raisonnement multi-jurisdictions"
+    },
+    "legal:legal-risk-assessment": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Évaluation de risque — severity × likelihood"
+    },
+    "legal:review-contract": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Revue de contrat clause par clause"
+    },
+    "legal:triage-nda": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Triage rapide vs playbook"
+    },
+    "legal:legal-response": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Rédaction de réponse formelle"
+    },
+    "legal:signature-request": {
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Checklist pré-signature"
+    },
+    "legal:vendor-check": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Agrégation de données vendor"
+    },
+    "legal:meeting-briefing": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Briefing rédigé"
+    },
+
+    "marketing:content-creation": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Rédaction marketing de fond"
+    },
+    "marketing:draft-content": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Draft d'article / email long"
+    },
+    "marketing:brand-review": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Audit de marque structuré"
+    },
+    "marketing:campaign-plan": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Planification de campagne"
+    },
+    "marketing:competitive-brief": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Analyse concurrentielle croisée"
+    },
+    "marketing:email-sequence": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Séquence d'emails rédigés"
+    },
+    "marketing:performance-report": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Rapport chiffré structuré"
+    },
+    "marketing:seo-audit": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Audit technique SEO"
+    },
+
+    "design:ux-copy": {
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Microcopy soigné"
+    },
+    "design:research-synthesis": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Synthèse de recherche utilisateur"
+    },
+    "design:design-critique": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Critique de design structurée"
+    },
+    "design:accessibility-review": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Audit WCAG"
+    },
+    "design:design-handoff": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Génération de specs"
+    },
+    "design:design-system": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Conception / audit transversal de design system"
+    },
+    "design:user-research": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Plan d'interview structuré"
+    },
+
+    "enterprise-search:search": {
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Recherche fédérée — rapide"
+    },
+    "enterprise-search:digest": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Digest structuré"
+    },
+    "enterprise-search:knowledge-synthesis": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Synthèse de connaissance — raisonnement"
+    },
+
+    "productivity:start": {
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Démarrage de journée — rapide"
+    },
+    "productivity:task-management": {
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Gestion de tâches"
+    },
+    "productivity:update": {
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Mise à jour rapide"
+    },
+    "productivity:memory-management": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Gestion de mémoire structurée"
+    },
+
+    "bigdata-com:bigdata-investment-memo": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Memo d'investissement — raisonnement profond"
+    },
+    "bigdata-com:bigdata-scenario-analysis": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Analyse scénarios"
+    },
+    "bigdata-com:bigdata-variant-perception": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Thèse d'investissement contrariante"
+    },
+    "bigdata-com:bigdata-risk-assessment": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Évaluation de risque"
+    },
+    "bigdata-com:bigdata-quick-take": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Prise rapide — pas profonde"
+    },
+    "bigdata-com:bigdata-earnings-digest": {
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Digest de résultats"
+    },
+
+    "carta-investors:carta-fund-modeling": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Modélisation de fonds"
+    },
+    "carta-investors:carta-fund-forecasting": {
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Projection de fonds"
+    },
+    "carta-investors:carta-explore-data": {
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Exploration de données"
+    }
+  },
+
+  "patterns": [
+    {
+      "match": "^anthropic-skills:(article-|bulletin-|dossier-|opinion-|culture-|eclats-|miroir-|monde-|serie-|forces-|france-|territoire-|puissances-|trajectoires-|patrimoine-)",
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Skill SAPERE à vocation éditoriale / narrative (règle par préfixe)"
+    },
+    {
+      "match": "^anthropic-skills:(analyse-|audit-|cartographie-|observatoire-|registre-|veille-geopolitique)",
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Skill SAPERE analytique transversale (règle par préfixe)"
+    },
+    {
+      "match": "^anthropic-skills:",
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Skill SAPERE non catégorisée (fallback)"
+    },
+    {
+      "match": "(security|audit|threat|cve|vulnerability)",
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Mot-clé sécurité"
+    },
+    {
+      "match": "^(data|statistical|forecast|modeling)",
+      "model": "opus",
+      "agent": "deep-reasoner",
+      "why": "Mot-clé analyse profonde"
+    },
+    {
+      "match": "^small-business:",
+      "model": "sonnet",
+      "agent": "code-worker",
+      "why": "Skill small-business (standard)"
+    },
+    {
+      "match": "^(search|find|list|triage|digest)",
+      "model": "haiku",
+      "agent": "fast-scout",
+      "why": "Mot-clé lecture rapide"
+    },
+    {
+      "match": "(article|redige|rédige|portrait|reportage|edito|édito|blog|storytelling)",
+      "model": "fable",
+      "agent": "narrative-writer",
+      "why": "Mot-clé plume narrative"
+    }
+  ]
+}

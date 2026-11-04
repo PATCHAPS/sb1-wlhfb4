@@ -1,64 +1,118 @@
 # Advisor — Sélection automatique du modèle Claude
 
-Ce dossier équipe le dépôt d'un **advisor** qui route chaque tâche vers le modèle Claude le mieux adapté, et de quatre sous-agents spécialisés — chacun figé sur un modèle précis.
+Ce dossier équipe le dépôt d'un dispositif de routage qui envoie chaque tâche vers le modèle Claude le mieux adapté. Il fonctionne à trois étages, du plus automatique au plus explicite.
 
-## Les quatre voies de routage
+## Architecture
 
-| Sous-agent | Modèle | Pour quoi |
+```
+┌───────────────────────────────────────────────────────────────┐
+│  Prompt utilisateur                                           │
+│    │                                                          │
+│    ▼                                                          │
+│  Hook UserPromptSubmit (.claude/hooks/route-skill.py)         │  ← ÉTAGE 1 : automatique
+│    ├─ Repère les /skill-name dans le prompt                   │
+│    ├─ Consulte .claude/skill-routing.json                     │
+│    └─ Injecte un bloc <advisor-routing>...</advisor-routing>  │
+│       dans le contexte, AVANT que Claude ne réponde           │
+│                                                               │
+│  ─────────────────────────────────────────────────────────    │
+│                                                               │
+│  Orchestrateur (ta session principale)                        │
+│    ├─ Voit la décision injectée                               │
+│    └─ Délègue à l'agent recommandé                            │
+│                                                               │
+│  ─────────────────────────────────────────────────────────    │
+│                                                               │
+│  Sous-agent spécialisé (Agent tool)                           │  ← ÉTAGE 2 : délégation
+│    ├─ advisor         → Haiku 5.5                             │
+│    ├─ fast-scout      → Haiku 5.5                             │
+│    ├─ code-worker     → Sonnet 5.5                            │
+│    ├─ deep-reasoner   → Opus 4.7                              │
+│    └─ narrative-writer→ Fable 5.1                             │
+│                                                               │
+│  ─────────────────────────────────────────────────────────    │
+│                                                               │
+│  Slash command /advisor <tâche>                               │  ← ÉTAGE 3 : explicite
+│    └─ Pour forcer une décision quand aucun /skill n'est cité  │
+└───────────────────────────────────────────────────────────────┘
+```
+
+## Les fichiers
+
+| Fichier | Rôle |
+|---|---|
+| `.claude/skill-routing.json` | **Table de routage** : `routes` (correspondances exactes) + `patterns` (regex fallback) + `default`. Modifier ce fichier seul suffit à changer le routage. |
+| `.claude/hooks/route-skill.py` | **Hook** Python exécuté à chaque `UserPromptSubmit`. Lit le prompt, repère `/skill-name`, consulte la table, injecte un bloc `<advisor-routing>`. Jamais bloquant. |
+| `.claude/settings.json` | Enregistre le hook auprès de Claude Code. |
+| `.claude/agents/advisor.md` | Routeur léger (Haiku) pour les cas non-couverts par le hook. |
+| `.claude/agents/deep-reasoner.md` | Opus 4.7 — architecture, concurrence, sécurité, refactors transversaux. |
+| `.claude/agents/code-worker.md` | Sonnet 5.5 — workhorse code courant. |
+| `.claude/agents/fast-scout.md` | Haiku 5.5 — recherches, extractions, classifications. |
+| `.claude/agents/narrative-writer.md` | Fable 5.1 — prose longue, style SAPERE. |
+| `.claude/commands/advisor.md` | Slash command `/advisor <tâche>` pour un routage explicite. |
+
+## Ce que fait le hook, étape par étape
+
+1. Claude Code vous passe le prompt via stdin au format JSON (`{"prompt": "...", "cwd": "...", ...}`).
+2. Le script extrait les occurrences de `/<name>` avec une regex prudente (ignore les URLs, les chemins système `/tmp`, `/etc`...).
+3. Pour chaque skill, il cherche dans l'ordre :
+   - `routes[<skill>]` → correspondance exacte,
+   - `patterns[].match` → premier pattern regex qui matche,
+   - `default` → sinon rien d'injecté (fallback silencieux).
+4. Il émet sur stdout un bloc `<advisor-routing>` listant `skill → agent (modèle) — pourquoi`.
+5. Claude Code intègre ce bloc dans le contexte comme s'il faisait partie du prompt, **avant** de commencer à répondre.
+
+Résultat : vous tapez `/anthropic-skills:article-histoire-sapere sur la Commune`, et avant même que l'orchestrateur ne lise la skill, il sait qu'il doit déléguer à `narrative-writer` (Fable).
+
+## Modifier le routage
+
+### Ajouter une skill connue
+Éditer `.claude/skill-routing.json` et ajouter une entrée dans `routes` :
+```json
+"ma-nouvelle-skill": {
+  "model": "opus",
+  "agent": "deep-reasoner",
+  "why": "Raisonnement multi-étapes"
+}
+```
+
+### Ajouter une règle par motif
+Dans `patterns` (ordonné : premier match gagne) :
+```json
+{ "match": "^legal:(review|compliance)", "model": "opus", "agent": "deep-reasoner" }
+```
+
+### Changer le défaut
+Modifier la section `default` du JSON. C'est ce qui s'applique quand une skill est absente *et* qu'aucun pattern ne matche.
+
+### Ajouter un sous-agent
+Créer `.claude/agents/<nom>.md` avec frontmatter `name/description/model/tools`. Le `description` est ce qui pousse l'orchestrateur à déléguer tout seul quand la demande colle. Référencer ensuite ce nouvel agent dans `skill-routing.json`.
+
+## Les quatre modèles — grille mnémotechnique
+
+| Déclencheur dans la demande | Modèle | Agent |
 |---|---|---|
-| `advisor` | Haiku 5.5 | Classe la demande, renvoie une recommandation. Ne fait pas le travail. |
-| `deep-reasoner` | Opus 4.7 | Architecture, bugs de concurrence, sécurité, refactors lourds, specs floues. |
-| `code-worker` | Sonnet 5.5 | Workhorse : features, bugs standards, tests, intégrations d'API, édits moyens. |
-| `fast-scout` | Haiku 5.5 | Recherches, extractions, comptages, classifications, résumés courts. |
-| `narrative-writer` | Fable 5.1 | Articles, portraits, reportages, prose longue en français travaillé. |
+| `architecte`, `audit`, `race condition`, `sécurité`, `refactor transversal`, skill d'analyse multi-sources | Opus 4.7 | `deep-reasoner` |
+| `ajoute`, `implémente`, `corrige`, `écris les tests`, `intègre`, skill small-business / data standard | Sonnet 5.5 | `code-worker` |
+| `trouve`, `liste`, `combien`, `extrais`, `classe`, `résume en 3 lignes` | Haiku 5.5 | `fast-scout` |
+| `article`, `rédige`, `portrait`, `récit`, `reportage`, `édito`, skill SAPERE éditoriale, blog | Fable 5.1 | `narrative-writer` |
 
-## Comment ça marche
+## Tests rapides
 
-Claude Code lit les fichiers `.claude/agents/*.md` au démarrage. Chaque fichier déclare un sous-agent avec, dans son frontmatter YAML :
-- `name` : l'identifiant pour l'invoquer,
-- `description` : la règle d'activation (lue par l'orchestrateur quand il décide de déléguer),
-- `model` : le modèle Claude verrouillé pour ce sous-agent (`opus`, `sonnet`, `haiku`, `fable`),
-- `tools` (optionnel) : la liste restreinte des outils autorisés.
+```bash
+# Vérifier que le JSON est valide
+python3 -c "import json; json.load(open('.claude/skill-routing.json'))"
 
-L'orchestrateur principal (le Claude Code que vous pilotez) choisit d'invoquer un sous-agent quand le profil de la tâche correspond à sa `description`. Chaque invocation **tourne sur le modèle déclaré**, pas sur celui de la session principale.
+# Simuler le hook avec un prompt
+echo '{"prompt":"lance /anthropic-skills:article-histoire-sapere","cwd":"'"$PWD"'"}' \
+  | python3 .claude/hooks/route-skill.py
 
-## Deux manières d'utiliser l'advisor
-
-### 1. Routage explicite — slash command
-
-```
-/advisor Rédige un portrait de Mujica, 1500 mots, style SAPERE
+# Lister toutes les routes définies
+jq '.routes | keys' .claude/skill-routing.json
 ```
 
-L'advisor renvoie :
-```
-## Recommandation du routeur
-- Modèle : claude-fable-5-1
-- Sous-agent suggéré : narrative-writer
-- Confiance : haute
-- Pourquoi : « rédige un portrait » + style SAPERE → plume narrative
-- Alternative si échec : claude-sonnet-5-5
-```
+## Limites honnêtes
 
-### 2. Routage automatique — par description d'agent
-
-Vous dites simplement la tâche à Claude Code ; la `description` des sous-agents (notamment « Use PROACTIVELY » sur l'advisor) pousse l'orchestrateur à déléguer tout seul au bon modèle. Pas besoin de `/advisor` pour les cas évidents.
-
-## Grille de décision rapide
-
-- **Signaux Opus** : `architecte`, `audit`, `race condition`, `fuite`, `sécurité`, `refactor transversal`.
-- **Signaux Sonnet** : `ajoute`, `implémente`, `corrige`, `écris les tests`, `intègre`.
-- **Signaux Haiku** : `trouve`, `liste`, `combien`, `extrais`, `classe`.
-- **Signaux Fable** : `article`, `rédige`, `portrait`, `récit`, `reportage`, `édito`, `SAPERE`, `blog`.
-
-## Ce que l'advisor **ne fait pas**
-
-- Il ne change pas le modèle de votre session principale (celle que vous pilotez). Seul `/model` le fait.
-- Il ne peut pas bifurquer entre modèles au milieu d'un même tour.
-- Il ne connaît pas l'état de votre portefeuille/quota — il recommande selon la tâche, pas selon la trésorerie en tokens.
-
-## Modifier le dispositif
-
-- **Ajouter un sous-agent** : créer `.claude/agents/<nom>.md` avec frontmatter `name/description/model/tools` et un corps d'instructions.
-- **Déplacer un déclencheur** : éditer la section « Signaux lexicaux déclencheurs » dans `.claude/agents/advisor.md`.
-- **Changer le modèle par défaut** d'un sous-agent : modifier la clé `model` de son frontmatter.
+- **Le hook n'exécute rien lui-même.** Il injecte une décision ; c'est l'orchestrateur qui doit effectivement déléguer via l'outil `Agent`. Si une skill est conçue pour s'exécuter directement sur la session principale, l'injection ne forcera pas le changement de modèle de cette session (Claude Code ne permet pas de switcher mid-tour). Dans ce cas, le gain est seulement conscientisant : vous saurez que la skill *aurait dû* tourner ailleurs.
+- **Détection par pattern ≠ détection sémantique.** Un prompt comme « *inspire-toi du style de l'article-histoire-sapere* » ne déclenchera pas le hook (pas de `/`). Pour ces cas, invoquez `/advisor` explicitement.
+- **Le quota tokens n'est pas pris en compte.** La table recommande par profil de tâche, pas selon votre budget.
